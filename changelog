@@ -1,10 +1,22 @@
-commit 9740f4016b685b3a324bbdac5c983a02b7e17146 (HEAD -> main, origin/main)
+commit 7e03f0d79486a673c419f86225b8bdf95f362177 (HEAD -> main, origin/main, origin/HEAD)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 29 12:15:19 2024 -0400
+
+    * se agrega langfuse como comentario por si es necesario
+
+commit 3d20d951205abd520d08385f0743f65d4c3a735c
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 29 12:07:04 2024 -0400
+
+    * changelog
+
+commit 9740f4016b685b3a324bbdac5c983a02b7e17146
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Dec 29 12:06:56 2024 -0400
 
     * redis
 
-commit 91f346c3a742a266e45ce727031d057645eea3f4
+commit 91f346c3a742a266e45ce727031d057645eea3f4 (tag: v1.0)
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Dec 29 11:58:01 2024 -0400
 

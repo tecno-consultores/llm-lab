@@ -1,0 +1,126 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    privileged: true
+    pull_policy: always
+    runtime: nvidia
+    tty: true
+    ulimits:
+      memlock: -1
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+      - OLLAMA_FLASH_ATTENTION=true
+      - OLLAMA_SCHED_SPREAD=true
+      - OLLAMA_INTEL_GPU=true
+      - OLLAMA_KV_CACHE_TYPE=q4_0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    volumes:
+      - ./ollama:/root/.ollama
+
+  flowise:
+    image: flowiseai/flowise:latest
+    container_name: flowise
+    pull_policy: always
+    depends_on:
+      - ollama
+    environment:
+      - PORT=3000
+      - DATABASE_PATH=/root/.flowise
+      - APIKEY_PATH=/root/.flowise
+      - SECRETKEY_PATH=/root/.flowise
+      - LOG_PATH=/root/.flowise/logs
+      #- REDIS_URL=redis://redis:6379
+      #- FLOWISE_USERNAME=user
+      #- FLOWISE_PASSWORD=1234
+      #- DEBUG=true
+      #- LOG_LEVEL=debug
+      #- DATABASE_TYPE=postgres
+      #- DATABASE_PORT=5432
+      #- DATABASE_HOST=localhost
+      #- DATABASE_NAME="flowise"
+      #- DATABASE_USER=
+      #- DATABASE_PASSWORD=
+      #- FLOWISE_SECRETKEY_OVERWRITE=myencryptionkey
+      #- NUMBER_OF_PROXIES= 1
+      #- TOOL_FUNCTION_BUILTIN_DEP=crypto,fs
+      #- TOOL_FUNCTION_EXTERNAL_DEP=moment,lodash
+      #- LANGCHAIN_TRACING_V2=true
+      #- LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
+      #- LANGCHAIN_API_KEY=your_api_key
+      #- LANGCHAIN_PROJECT=your_project
+    ports:
+      - 3000:3000
+    volumes:
+      - ./flowise:/root/.flowise
+    command: /bin/sh -c "sleep 3; flowise start"
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    pull_policy: always
+    container_name: open-webui
+    depends_on:
+      - ollama
+    ports:
+      - "4000:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./openwebui:/app/backend/data
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    pull_policy: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=KrFgLvKJRvinkEG5
+      - POSTGRES_DB=lab
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -h localhost -U user -d lab']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    pull_policy: always
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_USER=user
+      - DB_POSTGRESDB_PASSWORD=KrFgLvKJRvinkEG5
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_PERSONALIZATION_ENABLED=false
+      - N8N_ENCRYPTION_KEY
+      - N8N_USER_MANAGEMENT_JWT_SECRET
+    links:
+      - postgres
+    ports:
+      - 5678:5678
+    volumes:
+      - ./storage:/home/node/.n8n
+      - ./n8n/backup:/backup
+      - ./shared:/data/shared
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    pull_policy: always
+    ports:
+      - 6333:6333
+    volumes:
+      - ./qdrant:/qdrant/storage

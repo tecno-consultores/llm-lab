@@ -47,23 +47,24 @@ services:
     pull_policy: always
     depends_on:
       - ollama
+      - redis
     environment:
       - PORT=3000
       - DATABASE_PATH=/root/.flowise
       - APIKEY_PATH=/root/.flowise
       - SECRETKEY_PATH=/root/.flowise
       - LOG_PATH=/root/.flowise/logs
-      #- REDIS_URL=redis://redis:6379
+      - REDIS_URL=redis://redis:6379
       #- FLOWISE_USERNAME=user
       #- FLOWISE_PASSWORD=1234
       #- DEBUG=true
       #- LOG_LEVEL=debug
-      #- DATABASE_TYPE=postgres
-      #- DATABASE_PORT=5432
-      #- DATABASE_HOST=localhost
-      #- DATABASE_NAME="flowise"
-      #- DATABASE_USER=
-      #- DATABASE_PASSWORD=
+      - DATABASE_TYPE=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_HOST=postgres
+      - DATABASE_NAME=lab
+      - DATABASE_USER=user
+      - DATABASE_PASSWORD=KrFgLvKJRvinkEG5
       #- FLOWISE_SECRETKEY_OVERWRITE=myencryptionkey
       #- NUMBER_OF_PROXIES= 1
       #- TOOL_FUNCTION_BUILTIN_DEP=crypto,fs
@@ -74,9 +75,11 @@ services:
       #- LANGCHAIN_PROJECT=your_project
     ports:
       - 3000:3000
+    links:
+      - redis
     volumes:
       - ./flowise:/root/.flowise
-    command: /bin/sh -c "sleep 3; flowise start"
+    #command: /bin/sh -c "sleep 3; flowise start"
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:main

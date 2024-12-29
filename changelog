@@ -1,4 +1,16 @@
-commit b258b8d6c6b16ac3fb6d935d8f54119b89ef845a (HEAD -> main, origin/main)
+commit 0076aa49764fdc5143c37d4e14c34de62b8a934a (HEAD -> main, origin/main)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 29 11:56:27 2024 -0400
+
+    * ya funciona todo
+
+commit ba470e58d2d84afcc9e5117a82ee3e4916e958d2
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 29 11:41:48 2024 -0400
+
+    * changelog
+
+commit b258b8d6c6b16ac3fb6d935d8f54119b89ef845a
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Dec 29 11:41:34 2024 -0400
 

@@ -152,3 +152,22 @@ services:
       - REDIS_ARGS=--save 20 1
     volumes: 
       - ./redis:/data
+
+#  langfuse:
+#    image: ghcr.io/langfuse/langfuse:latest
+#    container_name: langfuse
+#    pull_policy: always
+#    depends_on:
+#      - postgres
+#      - flowise
+#    ports:
+#      - 4000:3000
+#    environment:
+#      - NODE_ENV=production
+#      - DATABASE_URL=postgresql://user:KrFgLvKJRvinkEG5@postgres:5432/lab
+#      - NEXTAUTH_SECRET=mysecret
+#      - SALT=mysalt
+#      - NEXTAUTH_URL=http://localhost:4000
+#      - TELEMETRY_ENABLED=${TELEMETRY_ENABLED:-true}
+#      - NEXT_PUBLIC_SIGN_UP_DISABLED=${NEXT_PUBLIC_SIGN_UP_DISABLED:-false}
+#      - LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES=${LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES:-false}

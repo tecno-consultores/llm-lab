@@ -29,6 +29,11 @@ services:
               capabilities: [gpu]
     volumes:
       - ./ollama:/root/.ollama
+    healthcheck:
+      test: ['CMD-SHELL', 'ollama --version && ollama ps || exit 1']
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
   flowise:
     image: flowiseai/flowise:latest

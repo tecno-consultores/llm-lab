@@ -1,4 +1,16 @@
-commit b51ce743f69b7fef0aea08e141466aa091e6e4f5 (HEAD -> main, origin/main)
+commit fc5746ef42fc0f8b087a7cce3051626de443657a (HEAD -> main, origin/main)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Dec 28 23:58:18 2024 -0400
+
+    * redis
+
+commit c703a223758ffe9a3dc8f209439c8bcd13a5cc40
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Dec 28 22:54:53 2024 -0400
+
+    * changelog
+
+commit b51ce743f69b7fef0aea08e141466aa091e6e4f5
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Dec 28 22:54:39 2024 -0400
 

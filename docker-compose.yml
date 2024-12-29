@@ -84,7 +84,7 @@ services:
       - PDF_EXTRACT_IMAGES=true
       - ENABLE_WEBSOCKET_SUPPORT=true
       - WEBSOCKET_MANAGER=redis
-      - WEBSOCKET_REDIS_URL=redis://redis:6379/16
+      - WEBSOCKET_REDIS_URL=redis://redis:6379/1
     depends_on:
       - ollama
       - redis
@@ -119,9 +119,9 @@ services:
     ports:
       - 5678:5678
     volumes:
-      - ./storage:/home/node/.n8n
+      - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
-      - ./shared:/data/shared
+      - ./n8n/shared:/data/shared
     depends_on:
       postgres:
         condition: service_healthy
@@ -152,6 +152,12 @@ services:
       - REDIS_ARGS=--save 20 1
     volumes: 
       - ./redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli","ping"]
+      start_period: 5s
+      interval: 1s
+      timeout: 3s
+      retries: 5
 
 #  langfuse:
 #    image: ghcr.io/langfuse/langfuse:latest

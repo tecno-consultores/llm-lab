@@ -13,7 +13,6 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
       - OLLAMA_FLASH_ATTENTION=true
       - OLLAMA_SCHED_SPREAD=true
-      - OLLAMA_INTEL_GPU=true
       - OLLAMA_KV_CACHE_TYPE=q4_0
     deploy:
       resources:
@@ -66,6 +65,9 @@ services:
     image: ghcr.io/open-webui/open-webui:main
     pull_policy: always
     container_name: open-webui
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - WEBUI_SECRET_KEY=
     depends_on:
       - ollama
     ports:

@@ -12,8 +12,13 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
       - OLLAMA_FLASH_ATTENTION=true
-      - OLLAMA_SCHED_SPREAD=true
       - OLLAMA_KV_CACHE_TYPE=q4_0
+      - OLLAMA_SCHED_SPREAD=true
+      - OLLAMA_NOHISTORY=true
+      - OLLAMA_NOPRUNE=false
+      - OLLAMA_NUM_PARALLEL=1
+      - OLLAMA_MAX_LOADED_MODELS=1
+      - OLLAMA_MAX_QUEUE=512
     deploy:
       resources:
         reservations:
@@ -23,6 +28,18 @@ services:
               capabilities: [gpu]
     volumes:
       - ./ollama:/root/.ollama
+
+  redis:
+    image: redislabs/redismod:latest
+    container_name: redis
+    pull_policy: always
+    environment:
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=16
+      - REDIS_ARGS=--save 20 1
+    #command: redis-server --dir /data --save 20 1
+    volumes: 
+      - ./redis:/data
 
   flowise:
     image: flowiseai/flowise:latest
@@ -66,16 +83,29 @@ services:
     pull_policy: always
     container_name: open-webui
     environment:
+      - ENABLE_OLLAMA_API=true
       - OLLAMA_BASE_URL=http://ollama:11434
-      - WEBUI_SECRET_KEY=
+      - ENABLE_OPENAI_API=false
+      - USE_CUDA_DOCKER=true
+      - DEFAULT_LOCALE=en
+      - SAFE_MODE=false
+      - CORS_ALLOW_ORIGIN=*
+      - RAG_EMBEDDING_ENGINE=ollama
+      - PDF_EXTRACT_IMAGES=true
+      - ENABLE_WEBSOCKET_SUPPORT=true
+      - WEBSOCKET_MANAGER=redis
+      - WEBSOCKET_REDIS_URL=redis://redis:6379/0
     depends_on:
       - ollama
+      - redis
     ports:
       - "4000:8080"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
       - ./openwebui:/app/backend/data
+    links:
+      - redis
 
   postgres:
     image: postgres:latest

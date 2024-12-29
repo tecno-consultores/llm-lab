@@ -1,4 +1,16 @@
-commit fc5746ef42fc0f8b087a7cce3051626de443657a (HEAD -> main, origin/main)
+commit 53b01d4c7dfd4a589ba24a48d39ec714209373fd (HEAD -> main, origin/main)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 29 11:03:26 2024 -0400
+
+    * flowise ya funciona
+
+commit fb7cc47bc0e7c0624a822a28b13346ab4ec0925e
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Dec 28 23:58:25 2024 -0400
+
+    * changelog
+
+commit fc5746ef42fc0f8b087a7cce3051626de443657a
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Dec 28 23:58:18 2024 -0400
 

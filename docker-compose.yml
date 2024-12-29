@@ -29,18 +29,6 @@ services:
     volumes:
       - ./ollama:/root/.ollama
 
-  redis:
-    image: redislabs/redismod:latest
-    container_name: redis
-    pull_policy: always
-    environment:
-      - REDIS_PORT=6379
-      - REDIS_DATABASES=16
-      - REDIS_ARGS=--save 20 1
-    #command: redis-server --dir /data --save 20 1
-    volumes: 
-      - ./redis:/data
-
   flowise:
     image: flowiseai/flowise:latest
     container_name: flowise
@@ -79,7 +67,6 @@ services:
       - redis
     volumes:
       - ./flowise:/root/.flowise
-    #command: /bin/sh -c "sleep 3; flowise start"
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
@@ -110,22 +97,6 @@ services:
     links:
       - redis
 
-  postgres:
-    image: postgres:latest
-    container_name: postgres
-    pull_policy: always
-    environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=KrFgLvKJRvinkEG5
-      - POSTGRES_DB=lab
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -h localhost -U user -d lab']
-      interval: 5s
-      timeout: 5s
-      retries: 10
-
   n8n:
     image: n8nio/n8n:latest
     container_name: n8n
@@ -151,11 +122,30 @@ services:
       postgres:
         condition: service_healthy
 
-  qdrant:
-    image: qdrant/qdrant:latest
-    container_name: qdrant
+  postgres:
+    image: postgres:latest
+    container_name: postgres
     pull_policy: always
-    ports:
-      - 6333:6333
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=KrFgLvKJRvinkEG5
+      - POSTGRES_DB=lab
     volumes:
-      - ./qdrant:/qdrant/storage
+      - ./postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -h localhost -U user -d lab']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redislabs/redismod:latest
+    container_name: redis
+    pull_policy: always
+    environment:
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=16
+      - REDIS_ARGS=--save 20 1
+    #command: redis-server --dir /data --save 20 1
+    volumes: 
+      - ./redis:/data

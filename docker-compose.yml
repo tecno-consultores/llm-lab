@@ -84,7 +84,7 @@ services:
       - PDF_EXTRACT_IMAGES=true
       - ENABLE_WEBSOCKET_SUPPORT=true
       - WEBSOCKET_MANAGER=redis
-      - WEBSOCKET_REDIS_URL=redis://redis:6379/0
+      - WEBSOCKET_REDIS_URL=redis://redis:6379/16
     depends_on:
       - ollama
       - redis

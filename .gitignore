@@ -1,8 +1,6 @@
-qdrant
-shared
-n8n
-storage
+redis
 postgres
+n8n
 openwebui
 flowise
 ollama

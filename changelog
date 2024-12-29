@@ -1,4 +1,16 @@
-commit 53b01d4c7dfd4a589ba24a48d39ec714209373fd (HEAD -> main, origin/main)
+commit b258b8d6c6b16ac3fb6d935d8f54119b89ef845a (HEAD -> main, origin/main)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 29 11:41:34 2024 -0400
+
+    * se elimina qdrant y se utilizara redir en su lugar
+
+commit 916acb220b244c3f7dbc3429f3d19e044bf5e865
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 29 11:03:43 2024 -0400
+
+    * changelog
+
+commit 53b01d4c7dfd4a589ba24a48d39ec714209373fd
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Dec 29 11:03:26 2024 -0400
 

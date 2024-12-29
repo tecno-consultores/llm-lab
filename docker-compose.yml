@@ -104,12 +104,16 @@ services:
     environment:
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=lab
       - DB_POSTGRESDB_USER=user
       - DB_POSTGRESDB_PASSWORD=KrFgLvKJRvinkEG5
       - N8N_DIAGNOSTICS_ENABLED=false
       - N8N_PERSONALIZATION_ENABLED=false
-      - N8N_ENCRYPTION_KEY
-      - N8N_USER_MANAGEMENT_JWT_SECRET
+      - EXECUTIONS_DATA_PRUNE=true
+      - EXECUTIONS_DATA_MAX_AGE=168
+      - EXECUTIONS_DATA_PRUNE_MAX_COUNT=50000
+      - N8N_SECURE_COOKIE=false
     links:
       - postgres
     ports:
@@ -146,6 +150,5 @@ services:
       - REDIS_PORT=6379
       - REDIS_DATABASES=16
       - REDIS_ARGS=--save 20 1
-    #command: redis-server --dir /data --save 20 1
     volumes: 
       - ./redis:/data

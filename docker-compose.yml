@@ -158,6 +158,26 @@ services:
       postgres:
         condition: service_healthy
 
+  langflow:
+    image: langflowai/langflow:latest
+    hostname: langflow
+    container_name: langflow
+    restart: always
+    ports:
+      - 7860:7860
+    environment:
+      - LANGFLOW_AUTO_LOGIN=false
+      - LANGFLOW_SUPERUSER=user
+      - LANGFLOW_SUPERUSER_PASSWORD=123456
+      - LANGFLOW_AUTO_SAVING=true
+      - LANGFLOW_AUTO_SAVING_INTERVAL=1000
+      - LANGFLOW_PORT=7860
+      - LANGFLOW_PROMETHEUS_ENABLED=false
+    depends_on:
+      - ollama
+    volumes:
+      - ./langflow:/app/langflow
+
   postgres:
     image: postgres:latest
     hostname: postgres

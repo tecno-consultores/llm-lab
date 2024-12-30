@@ -1,39 +1,39 @@
 services:
-  ollama:
-    image: ollama/ollama:latest
-    hostname: ollama
-    container_name: ollama
-    privileged: true
-    pull_policy: always
-    runtime: nvidia
-    tty: true
-    ulimits:
-      memlock: -1
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=all
-      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
-      - OLLAMA_FLASH_ATTENTION=true
-      - OLLAMA_KV_CACHE_TYPE=q4_0
-      - OLLAMA_SCHED_SPREAD=true
-      - OLLAMA_NOHISTORY=true
-      - OLLAMA_NOPRUNE=false
-      - OLLAMA_NUM_PARALLEL=1
-      - OLLAMA_MAX_LOADED_MODELS=1
-      - OLLAMA_MAX_QUEUE=512
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-    volumes:
-      - ./ollama:/root/.ollama
-    healthcheck:
-      test: ['CMD-SHELL', 'ollama --version && ollama ps || exit 1']
-      interval: 5s
-      timeout: 5s
-      retries: 10
+#  ollama:
+#    image: ollama/ollama:latest
+#    hostname: ollama
+#    container_name: ollama
+#    privileged: true
+#    pull_policy: always
+#    runtime: nvidia
+#    tty: true
+#    ulimits:
+#      memlock: -1
+#    environment:
+#      - NVIDIA_VISIBLE_DEVICES=all
+#      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+#      - OLLAMA_FLASH_ATTENTION=true
+#      - OLLAMA_KV_CACHE_TYPE=q4_0
+#      - OLLAMA_SCHED_SPREAD=true
+#      - OLLAMA_NOHISTORY=true
+#      - OLLAMA_NOPRUNE=false
+#      - OLLAMA_NUM_PARALLEL=1
+#      - OLLAMA_MAX_LOADED_MODELS=1
+#      - OLLAMA_MAX_QUEUE=512
+#    deploy:
+#      resources:
+#        reservations:
+#          devices:
+#            - driver: nvidia
+#              count: all
+#              capabilities: [gpu]
+#    volumes:
+#      - ./ollama:/root/.ollama
+#    healthcheck:
+#      test: ['CMD-SHELL', 'ollama --version && ollama ps || exit 1']
+#      interval: 5s
+#      timeout: 5s
+#      retries: 10
 
   flowise:
     image: flowiseai/flowise:latest
@@ -62,7 +62,7 @@ services:
     links:
       - redis
     depends_on:
-      - ollama
+#      - ollama
       - redis
     volumes:
       - ./flowise:/root/.flowise
@@ -125,7 +125,7 @@ services:
     links:
       - redis
     depends_on:
-      - ollama
+#      - ollama
       - redis
     volumes:
       - ./openwebui:/app/backend/data
@@ -148,6 +148,10 @@ services:
       - EXECUTIONS_DATA_MAX_AGE=168
       - EXECUTIONS_DATA_PRUNE_MAX_COUNT=50000
       - N8N_SECURE_COOKIE=false
+      - N8N_QUEUE_TYPE=redis
+      - N8N_QUEUE_HOST=redis
+      - N8N_QUEUE_PORT=6379
+      - N8N_QUEUE_NAME=n8n
     ports:
       - 5678:5678
     volumes:
@@ -155,17 +159,20 @@ services:
       - ./n8n/backup:/backup
       - ./n8n/shared:/data/shared
     depends_on:
-      postgres:
-        condition: service_healthy
+      - "redis"
+      - "postgres"
+    #condition: service_healthy
 
   langflow:
     image: langflowai/langflow:latest
+    pull_policy: always               # set to 'always' when using 'latest' image
     hostname: langflow
     container_name: langflow
     restart: always
     ports:
       - 7860:7860
     environment:
+      - LANGFLOW_DATABASE_URL=postgresql://user:KrFgLvKJRvinkEG5@postgres:5432/langflow
       - LANGFLOW_AUTO_LOGIN=false
       - LANGFLOW_SUPERUSER=user
       - LANGFLOW_SUPERUSER_PASSWORD=123456
@@ -174,9 +181,25 @@ services:
       - LANGFLOW_PORT=7860
       - LANGFLOW_PROMETHEUS_ENABLED=false
     depends_on:
-      - ollama
+#      - ollama
+      - postgres
     volumes:
       - ./langflow:/app/langflow
+
+
+  anythingllm:
+    image: mintplexlabs/anythingllm
+    container_name: anythingllm
+    ports:
+      - 3001:3001
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      - STORAGE_DIR=/app/server/storage
+    volumes:
+      - ${HOME}/anythingllm:/app/server/storage
+      - ${HOME}/anythingllm/.env:/app/server/.env
+    restart: always # Opcional, para reiniciar automáticamente el contenedor si se detiene
 
   postgres:
     image: postgres:latest

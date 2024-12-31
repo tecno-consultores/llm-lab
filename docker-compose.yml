@@ -61,7 +61,6 @@ x-openwebui-base: &openwebui-base
       - ENABLE_ADMIN_CHAT_ACCESS=true
       - ENABLE_CHANNELS=true
       - DEFAULT_LOCALE=en
-      - USE_CUDA_DOCKER=true
       - AIOHTTP_CLIENT_TIMEOUT=100
       - ENABLE_OLLAMA_API=true
       - OLLAMA_BASE_URL=http://ollama:11434

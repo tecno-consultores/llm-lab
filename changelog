@@ -1,10 +1,40 @@
-commit 7f45cd57ef7bfb8efef67528e52287fcc9da61c7 (HEAD -> main, origin/main, origin/HEAD)
+commit 293971bdf50bc22f87b2b4115cf0e7b470afe317 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Dec 31 10:42:08 2024 -0400
+
+    * profile
+
+commit 9fd11f16217b40b4ce560ae665b3daa77eb47005
+Author: Ernesto Crespo <ecrespo@protonmail.com>
+Date:   Mon Dec 30 19:48:49 2024 -0400
+
+    Added anythingLLM.
+
+commit 08e22efc22027a7f8ed1a07b95c4dfe8a0354fab
+Author: Ernesto Crespo <ecrespo@protonmail.com>
+Date:   Mon Dec 30 19:48:26 2024 -0400
+
+    Updated gitignore file
+
+commit 6f286b3518ca61f31245cf988ed84328ccacb266 (origin/main, origin/HEAD, main)
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Dec 30 13:29:04 2024 -0400
+
+    Update docker-compose.yml
+
+commit c17cfd73d4a3ce50434c1368cadc72d837dee8fe
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 29 17:56:31 2024 -0400
+
+    * changelog
+
+commit 7f45cd57ef7bfb8efef67528e52287fcc9da61c7
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Dec 29 17:56:22 2024 -0400
 
     * salud ollama
 
-commit 168c7deb4c42dc09d9f4542e4349b0d3a6890d43
+commit 168c7deb4c42dc09d9f4542e4349b0d3a6890d43 (tag: v1.2)
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Dec 29 17:48:31 2024 -0400
 
@@ -29,7 +59,7 @@ Date:   Sun Dec 29 17:44:41 2024 -0400
     * hostname
     * variables
 
-commit b80e0f8201abba9611a38ee02e0b4947600356bf
+commit b80e0f8201abba9611a38ee02e0b4947600356bf (tag: v1.1)
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Dec 29 13:08:25 2024 -0400
 

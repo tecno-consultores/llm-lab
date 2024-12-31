@@ -1,4 +1,16 @@
-commit 293971bdf50bc22f87b2b4115cf0e7b470afe317 (HEAD -> develop, origin/develop)
+commit 801f530f5a2159db9eb34928bd81358490e623f3 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Dec 31 10:45:19 2024 -0400
+
+    * bugfix
+
+commit e50b618d0a5e946e975fb04945b4c632498a6c4a
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Dec 31 10:42:16 2024 -0400
+
+    * changelog
+
+commit 293971bdf50bc22f87b2b4115cf0e7b470afe317
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Tue Dec 31 10:42:08 2024 -0400
 

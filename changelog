@@ -1,4 +1,28 @@
-commit 801f530f5a2159db9eb34928bd81358490e623f3 (HEAD -> develop, origin/develop)
+commit 0d379e3a605df5fb6fa9ec47768f648258a5ee71 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Wed Jan 1 11:37:48 2025 -0400
+
+    * open ollama port
+
+commit b6db22868982e0c089e7ea3dfb73b1588d548b21
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Dec 31 18:17:13 2024 -0400
+
+    Update COPYING
+
+commit 1a6ac34991778a52e2f732a0915626992a3bc552
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Dec 31 18:16:18 2024 -0400
+
+    Update AUTHORS
+
+commit 7fab89f1b5b4e11cc1800dc47dc44202f528bec1
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Dec 31 10:45:26 2024 -0400
+
+    * changelog
+
+commit 801f530f5a2159db9eb34928bd81358490e623f3
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Tue Dec 31 10:45:19 2024 -0400
 
@@ -28,7 +52,7 @@ Date:   Mon Dec 30 19:48:26 2024 -0400
 
     Updated gitignore file
 
-commit 6f286b3518ca61f31245cf988ed84328ccacb266 (origin/main, origin/HEAD, main)
+commit 6f286b3518ca61f31245cf988ed84328ccacb266
 Author: Jesús Palencia <sinfallas@gmail.com>
 Date:   Mon Dec 30 13:29:04 2024 -0400
 

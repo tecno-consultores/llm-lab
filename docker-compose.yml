@@ -4,6 +4,8 @@ x-ollama-base: &ollama-base
     privileged: true
     pull_policy: always
     tty: true
+    ports:
+      - 11434:11434
     ulimits:
       memlock: -1
     environment:

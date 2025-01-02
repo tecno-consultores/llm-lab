@@ -262,9 +262,9 @@ services:
           - nvidia
         container_name: flowise
         links:
-          - redis
+          - redis-nvidia
         depends_on:
-          - redis
+          - redis-nvidia
 
     openwebui-nvidia:
         <<: *openwebui-base
@@ -272,10 +272,10 @@ services:
           - nvidia
         container_name: openwebui
         links:
-          - redis
+          - redis-nvidia
         depends_on:
-          - ollama
-          - redis
+          - ollama-nvidia
+          - redis-nvidia
 
     n8n-nvidia:
         <<: *n8n-base
@@ -283,10 +283,10 @@ services:
           - nvidia
         container_name: n8n
         links:
-          - redis
+          - redis-nvidia
         depends_on:
-          - postgres
-          - redis
+          - postgres-nvidia
+          - redis-nvidia
 
     langflow-nvidia:
         <<: *langflow-base
@@ -332,9 +332,9 @@ services:
           - others
         container_name: flowise
         links:
-          - redis
+          - redis-others
         depends_on:
-          - redis
+          - redis-others
 
     openwebui-others:
         <<: *openwebui-base
@@ -342,10 +342,10 @@ services:
           - others
         container_name: openwebui
         links:
-          - redis
+          - redis-others
         depends_on:
-          - ollama
-          - redis
+          - ollama-others
+          - redis-others
 
     n8n-others:
         <<: *n8n-base
@@ -353,10 +353,10 @@ services:
           - others
         container_name: n8n
         links:
-          - redis
+          - redis-others
         depends_on:
-          - postgres
-          - redis
+          - postgres-others
+          - redis-others
 
     langflow-others:
         <<: *langflow-base

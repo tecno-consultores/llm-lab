@@ -115,6 +115,7 @@ x-n8n-base: &n8n-base
     environment:
       - N8N_DIAGNOSTICS_ENABLED=false
       - N8N_PERSONALIZATION_ENABLED=false
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
       - EXECUTIONS_DATA_PRUNE=true
       - EXECUTIONS_DATA_MAX_AGE=168
       - EXECUTIONS_DATA_PRUNE_MAX_COUNT=50000
@@ -248,7 +249,6 @@ services:
         links:
           - redis-nvidia
         depends_on:
-          - ollama-nvidia
           - redis-nvidia
 
     openwebui-nvidia:
@@ -278,8 +278,6 @@ services:
         profiles:
           - nvidia
         container_name: langflow-nvidia
-        depends_on:
-          - ollama-nvidia
 
     anythingllm-nvidia:
         <<: *anythingllm-base
@@ -315,7 +313,6 @@ services:
         links:
           - redis-others
         depends_on:
-          - ollama-others
           - redis-others
 
     openwebui-others:
@@ -345,8 +342,6 @@ services:
         profiles:
           - others
         container_name: langflow-others
-        depends_on:
-          - ollama-others
 
     anythingllm-others:
         <<: *anythingllm-base

@@ -1,4 +1,17 @@
-commit 6d43fccd7b84f43c19603fd5683a7edeed7883ce (HEAD -> develop, origin/develop)
+commit 8a670cf963251ce88e48bc20e5c21210d9b0d7f5 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Wed Jan 1 22:22:26 2025 -0400
+
+    * se eliminan dependencias
+    * se corrigen permisos de n8n
+
+commit cde070f81a7847aa43f24bfb091e25169589c494
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Wed Jan 1 22:02:50 2025 -0400
+
+    * changelog
+
+commit 6d43fccd7b84f43c19603fd5683a7edeed7883ce
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Wed Jan 1 21:58:44 2025 -0400
 

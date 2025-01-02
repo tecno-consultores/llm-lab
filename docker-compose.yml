@@ -224,7 +224,7 @@ x-redis-base: &redis-base
       retries: 5
 
 x-chroma-base: &chroma-base
-    image: chromadb/chroma:latest:latest
+    image: chromadb/chroma:latest
     hostname: chroma
     pull_policy: always
     volumes:

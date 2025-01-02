@@ -184,6 +184,8 @@ x-anythingllm-base: &anythingllm-base
       - PASSWORDNUMERIC=${PASSWORDNUMERIC}
       - PASSWORDSYMBOL=${PASSWORDSYMBOL}
       - PASSWORDREQUIREMENTS=${PASSWORDREQUIREMENTS}
+      - VECTOR_DB=${VECTOR_DB}
+      - CHROMA_ENDPOINT=${CHROMA_ENDPOINT}
     volumes:
       - ./anythingllm:/app/server/storage
 

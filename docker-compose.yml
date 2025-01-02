@@ -243,7 +243,7 @@ services:
         <<: *ollama-base
         profiles:
           - nvidia
-        container_name: ollama-nvidia
+        container_name: ollama
         environment:
           - NVIDIA_VISIBLE_DEVICES=all
           - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
@@ -260,63 +260,63 @@ services:
         <<: *flowise-base
         profiles:
           - nvidia
-        container_name: flowise-nvidia
+        container_name: flowise
         links:
-          - redis-nvidia
+          - redis
         depends_on:
-          - redis-nvidia
+          - redis
 
     openwebui-nvidia:
         <<: *openwebui-base
         profiles:
           - nvidia
-        container_name: openwebui-nvidia
+        container_name: openwebui
         links:
-          - redis-nvidia
+          - redis
         depends_on:
-          - ollama-nvidia
-          - redis-nvidia
+          - ollama
+          - redis
 
     n8n-nvidia:
         <<: *n8n-base
         profiles:
           - nvidia
-        container_name: n8n-nvidia
+        container_name: n8n
         links:
-          - redis-nvidia
+          - redis
         depends_on:
-          - postgres-nvidia
-          - redis-nvidia
+          - postgres
+          - redis
 
     langflow-nvidia:
         <<: *langflow-base
         profiles:
           - nvidia
-        container_name: langflow-nvidia
+        container_name: langflow
 
     anythingllm-nvidia:
         <<: *anythingllm-base
         profiles:
           - nvidia
-        container_name: anythingllm-nvidia
+        container_name: anythingllm
 
     postgres-nvidia:
         <<: *postgres-base
         profiles:
           - nvidia
-        container_name: postgres-nvidia
+        container_name: postgres
 
     redis-nvidia:
         <<: *redis-base
         profiles:
           - nvidia
-        container_name: redis-nvidia
+        container_name: redis
 
     chroma-nvidia:
         <<: *chroma-base
         profiles:
           - nvidia
-        container_name: chroma-nvidia
+        container_name: chroma
 
 ################################################
 
@@ -324,66 +324,66 @@ services:
         <<: *ollama-base
         profiles:
           - others
-        container_name: ollama-others
+        container_name: ollama
 
     flowise-others:
         <<: *flowise-base
         profiles:
           - others
-        container_name: flowise-others
+        container_name: flowise
         links:
-          - redis-others
+          - redis
         depends_on:
-          - redis-others
+          - redis
 
     openwebui-others:
         <<: *openwebui-base
         profiles:
           - others
-        container_name: openwebui-others
+        container_name: openwebui
         links:
-          - redis-others
+          - redis
         depends_on:
-          - ollama-others
-          - redis-others
+          - ollama
+          - redis
 
     n8n-others:
         <<: *n8n-base
         profiles:
           - others
-        container_name: n8n-others
+        container_name: n8n
         links:
-          - redis-others
+          - redis
         depends_on:
-          - postgres-others
-          - redis-others
+          - postgres
+          - redis
 
     langflow-others:
         <<: *langflow-base
         profiles:
           - others
-        container_name: langflow-others
+        container_name: langflow
 
     anythingllm-others:
         <<: *anythingllm-base
         profiles:
           - others
-        container_name: anythingllm-others
+        container_name: anythingllm
 
     postgres-others:
         <<: *postgres-base
         profiles:
           - others
-        container_name: postgres-others
+        container_name: postgres
 
     redis-others:
         <<: *redis-base
         profiles:
           - others
-        container_name: redis-others
+        container_name: redis
 
     chroma-others:
         <<: *chroma-base
         profiles:
           - others
-        container_name: chroma-others
+        container_name: chroma

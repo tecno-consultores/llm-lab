@@ -21,6 +21,7 @@ x-ollama-base: &ollama-base
       - ./ollama:/root/.ollama
     healthcheck:
       test: ['CMD-SHELL', 'ollama --version && ollama ps || exit 1']
+      start_period: 5s
       interval: 5s
       timeout: 5s
       retries: 10
@@ -197,6 +198,7 @@ x-postgres-base: &postgres-base
       - POSTGRES_DB=${POSTGRES_DB}
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -h localhost -U user -d lab']
+      start_period: 5s
       interval: 5s
       timeout: 5s
       retries: 10

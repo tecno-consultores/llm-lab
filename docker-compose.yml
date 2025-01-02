@@ -221,6 +221,19 @@ x-redis-base: &redis-base
       timeout: 3s
       retries: 5
 
+x-chroma-base: &chroma-base
+    image: chromadb/chroma:latest:latest
+    hostname: chroma
+    pull_policy: always
+    volumes:
+      - ./chroma:/chroma/chroma
+    healthcheck:
+      test: [ "CMD", "/bin/bash", "-c", "cat < /dev/null > /dev/tcp/localhost/8000" ]
+      start_period: 5s
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
 ################################################
 
 services:
@@ -297,6 +310,12 @@ services:
           - nvidia
         container_name: redis-nvidia
 
+    chroma-nvidia:
+        <<: *chroma-base
+        profiles:
+          - nvidia
+        container_name: chroma-nvidia
+
 ################################################
 
     ollama-others:
@@ -360,3 +379,9 @@ services:
         profiles:
           - others
         container_name: redis-others
+
+    chroma-others:
+        <<: *chroma-base
+        profiles:
+          - others
+        container_name: chroma-others

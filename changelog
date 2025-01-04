@@ -1,9 +1,136 @@
-commit 8a670cf963251ce88e48bc20e5c21210d9b0d7f5 (HEAD -> develop, origin/develop)
+commit 05a0f887c782eef60f0e816d6ad2476378e20949 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jan 4 10:46:11 2025 -0400
+
+    * variables
+
+commit 8456064f2afb5e2b073c3b4a7ba7a23f92155531
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jan 4 09:54:57 2025 -0400
+
+    * changelog
+
+commit 8acc9611cb9b219285b5ab868fdbe1a2b1df3587
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jan 4 09:54:48 2025 -0400
+
+    * ports
+
+commit 6b00e0066466a02cdb26efb508d13de2f70d3e46
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Fri Jan 3 23:24:59 2025 -0400
+
+    * changelog
+
+commit 8eac8579fb08e78d7bc11979409871eaea077157
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Fri Jan 3 23:24:42 2025 -0400
+
+    * se elimina la dependencia
+
+commit 9233af1a8d838688f24269d499233a202133df4b
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Fri Jan 3 23:13:22 2025 -0400
+
+    * variables
+    * healthcheck
+
+commit 15baa0642987e3b58882cfccc94151df0f9f70fe
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jan 2 14:01:29 2025 -0400
+
+    Update docker-compose.yml
+
+commit 9d767345f7d46665bf01ba6a76167a73395055dc
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jan 2 13:56:33 2025 -0400
+
+    Update docker-compose.yml
+
+commit 7ed0a92258f39fa69c639c5461bc5cc988f6c9ae
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jan 2 13:51:06 2025 -0400
+
+    Update docker-compose.yml
+
+commit 503363d679654f5c834756126222f2a3b970dae8
+Merge: 19add56 e7af60e
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jan 2 13:48:30 2025 -0400
+
+    Merge pull request #7 from tecno-consultores/main
+    
+    variables
+
+commit e7af60ebd511ffa74d94b2f67592dfd86769d7ea
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jan 2 13:46:21 2025 -0400
+
+    Update docker-compose.yml
+
+commit 0dc7032bff8081005bef17b78b00fd4dbfc5b7e7
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jan 2 13:44:49 2025 -0400
+
+    Update .gitignore
+
+commit 0d4186dce9e4a9fd849c2a3f0577c4c2288e4e2c
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jan 2 13:44:16 2025 -0400
+
+    Update .env-example
+
+commit 612d537a934240ad00fee0a90c6ab58a058e7e5d
+Merge: 1b25527 19add56
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jan 2 13:07:53 2025 -0400
+
+    Merge pull request #6 from tecno-consultores/develop
+    
+    Develop
+
+commit 19add562e7409a0823c63c7f07f81c32c85caf4e
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jan 2 10:51:10 2025 -0400
+
+    Create reflection-prompt.txt
+
+commit af369476bccecbc62d581debe6beae3f37840171
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jan 2 10:31:03 2025 -0400
+
+    Update docker-compose.yml
+
+commit 1b25527444f4feba650e0e1738e4bf4b5c3160f1
+Merge: 1d2f82c cca6830
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed Jan 1 22:25:08 2025 -0400
+
+    Merge pull request #5 from tecno-consultores/develop
+    
+    Develop
+
+commit cca6830a13ebf8b5e56db36067da4bc775ca5670
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Wed Jan 1 22:24:25 2025 -0400
+
+    * changelog
+
+commit 8a670cf963251ce88e48bc20e5c21210d9b0d7f5
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Wed Jan 1 22:22:26 2025 -0400
 
     * se eliminan dependencias
     * se corrigen permisos de n8n
+
+commit 1d2f82ca7cf08b8a723b5c4f7ebbd3a149fb5188
+Merge: 277ddf8 cde070f
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed Jan 1 22:04:34 2025 -0400
+
+    Merge pull request #4 from tecno-consultores/develop
+    
+    Develop
 
 commit cde070f81a7847aa43f24bfb091e25169589c494
 Author: Jesus Palencia <sinfallas@gmail.com>
@@ -17,6 +144,15 @@ Date:   Wed Jan 1 21:58:44 2025 -0400
 
     * health
 
+commit 277ddf88824c8a4a5fd0f575e02f6155ebb81598
+Merge: e424b66 cdf08f6
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed Jan 1 11:38:55 2025 -0400
+
+    Merge pull request #3 from tecno-consultores/develop
+    
+    Develop
+
 commit cdf08f68590ef570471bd7f31b4ac7a67a4cfc3d
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Wed Jan 1 11:37:58 2025 -0400
@@ -29,6 +165,15 @@ Date:   Wed Jan 1 11:37:48 2025 -0400
 
     * open ollama port
 
+commit e424b66538fca664544d2e303ba0323c9246a8eb
+Merge: 91df997 b6db228
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Dec 31 18:18:01 2024 -0400
+
+    Merge pull request #2 from tecno-consultores/develop
+    
+    Develop
+
 commit b6db22868982e0c089e7ea3dfb73b1588d548b21
 Author: Jesús Palencia <sinfallas@gmail.com>
 Date:   Tue Dec 31 18:17:13 2024 -0400
@@ -40,6 +185,15 @@ Author: Jesús Palencia <sinfallas@gmail.com>
 Date:   Tue Dec 31 18:16:18 2024 -0400
 
     Update AUTHORS
+
+commit 91df9976d8c8ab31f06ce937a4434583241d2918 (tag: v1.3)
+Merge: 6f286b3 7fab89f
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Dec 31 18:12:06 2024 -0400
+
+    Merge pull request #1 from tecno-consultores/develop
+    
+    Develop
 
 commit 7fab89f1b5b4e11cc1800dc47dc44202f528bec1
 Author: Jesus Palencia <sinfallas@gmail.com>

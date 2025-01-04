@@ -59,7 +59,7 @@ x-flowise-base: &flowise-base
       - METRICS_OPEN_TELEMETRY_DEBUG=${METRICS_OPEN_TELEMETRY_DEBUG}
       - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
     ports:
-      - 3000:3000
+      - ${FPORT}:${FPORT}
     volumes:
       - ./flowise:/root/.flowise
       - /etc/timezone:/etc/timezone:ro
@@ -116,7 +116,7 @@ x-openwebui-base: &openwebui-base
       - RAG_WEB_SEARCH_ENGINE=${RAG_WEB_SEARCH_ENGINE}
       - BRAVE_SEARCH_API_KEY=${BRAVE_SEARCH_API_KEY}
     ports:
-      - 4000:8080
+      - ${PORT}:${PORT}
     extra_hosts:
       - host.docker.internal:host-gateway
     volumes:
@@ -152,7 +152,7 @@ x-n8n-base: &n8n-base
       - N8N_GRACEFUL_SHUTDOWN_TIMEOUT=10
       - QUEUE_HEALTH_CHECK_ACTIVE=${QUEUE_HEALTH_CHECK_ACTIVE}
     ports:
-      - 5678:5678
+      - ${N8N_PORT}:${N8N_PORT}
     volumes:
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
@@ -171,8 +171,6 @@ x-langflow-base: &langflow-base
     hostname: langflow
     pull_policy: ${pull_policy}
     restart: ${restart}
-    ports:
-      - 7860:7860
     environment:
       - LANGFLOW_PORT=${LANGFLOW_PORT}
       - LANGFLOW_AUTO_LOGIN=false
@@ -181,6 +179,8 @@ x-langflow-base: &langflow-base
       - LANGFLOW_PROMETHEUS_ENABLED=false
       - LANGFLOW_SUPERUSER=${LANGFLOW_SUPERUSER}
       - LANGFLOW_SUPERUSER_PASSWORD=${LANGFLOW_SUPERUSER_PASSWORD}
+    ports:
+      - ${LANGFLOW_PORT}:${LANGFLOW_PORT}
     volumes:
       - ./langflow:/app/langflow
       - /etc/timezone:/etc/timezone:ro
@@ -191,8 +191,6 @@ x-anythingllm-base: &anythingllm-base
     hostname: anythingllm
     pull_policy: ${pull_policy}
     restart: ${restart}
-    ports:
-      - 3001:3001
     cap_add:
       - SYS_ADMIN
     environment:
@@ -219,6 +217,8 @@ x-anythingllm-base: &anythingllm-base
       - PASSWORDREQUIREMENTS=${PASSWORDREQUIREMENTS}
       - VECTOR_DB=${VECTOR_DB}
       - CHROMA_ENDPOINT=${CHROMA_ENDPOINT}
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
     volumes:
       - ./anythingllm:/app/server/storage
       - /etc/timezone:/etc/timezone:ro

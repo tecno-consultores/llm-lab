@@ -2,7 +2,8 @@ x-ollama-base: &ollama-base
     image: ollama/ollama:latest
     hostname: ollama
     privileged: true
-    pull_policy: always
+    pull_policy: ${pull_policy}
+    restart: ${restart}
     tty: true
     ports:
       - 11434:11434
@@ -19,6 +20,8 @@ x-ollama-base: &ollama-base
       - OLLAMA_MAX_QUEUE=512
     volumes:
       - ./ollama:/root/.ollama
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     healthcheck:
       test: ['CMD-SHELL', 'ollama --version && ollama ps || exit 1']
       start_period: 5s
@@ -29,44 +32,55 @@ x-ollama-base: &ollama-base
 x-flowise-base: &flowise-base
     image: flowiseai/flowise:latest
     hostname: flowise
-    pull_policy: always
+    pull_policy: ${pull_policy}
+    restart: ${restart}
     environment:
-      - PORT=3000
+      - PORT=${FPORT}
       - CORS_ORIGINS=*
       - DATABASE_PATH=/root/.flowise
       - DATABASE_SSL=false
       - APIKEY_PATH=/root/.flowise
       - SECRETKEY_PATH=/root/.flowise
       - LOG_PATH=/root/.flowise/logs
-      - REDIS_URL=redis://redis:6379
+      - REDIS_URL=${REDIS_URL}
       - FLOWISE_USERNAME=${FLOWISE_USERNAME}
       - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}
       - DATABASE_TYPE=${DATABASE_TYPE}
       - DATABASE_HOST=${DATABASE_HOST}
-      - DATABASE_PORT=${DATABASE_PORT}
-      - DATABASE_USER=${DATABASE_USER}
-      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
-      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_PORT=${POSTGRESDB_PORT}
+      - DATABASE_USER=${POSTGRES_USER}
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
+      - DATABASE_NAME=${POSTGRES_DB}
+      - FLOWISE_FILE_SIZE_LIMIT=${FLOWISE_FILE_SIZE_LIMIT}
+      - CORS_ORIGINS=${CORS_ORIGINS}
+      - IFRAME_ORIGINS=${IFRAME_ORIGINS}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - ENABLE_METRICS=${ENABLE_METRICS}
+      - METRICS_OPEN_TELEMETRY_DEBUG=${METRICS_OPEN_TELEMETRY_DEBUG}
+      - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
     ports:
       - 3000:3000
     volumes:
       - ./flowise:/root/.flowise
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
 x-openwebui-base: &openwebui-base
     image: ghcr.io/open-webui/open-webui:main
     hostname: open-webui
-    pull_policy: always
+    pull_policy: ${pull_policy}
+    restart: ${restart}
     environment:
+      - PORT=${PORT}
       - ENV=prod
       - CUSTOM_NAME=lab
       - WEBUI_NAME=lab
-      - PORT=8080
       - ENABLE_ADMIN_CHAT_ACCESS=true
       - ENABLE_CHANNELS=true
       - DEFAULT_LOCALE=en
       - AIOHTTP_CLIENT_TIMEOUT=100
       - ENABLE_OLLAMA_API=true
-      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_BASE_URL=${UOLLAMA}
       - ENABLE_AUTOCOMPLETE_GENERATION=true
       - AUTOCOMPLETE_GENERATION_INPUT_MAX_LENGTH=-1
       - ENABLE_FORWARD_USER_INFO_HEADERS=false
@@ -77,8 +91,8 @@ x-openwebui-base: &openwebui-base
       - RAG_EMBEDDING_MODEL_AUTO_UPDATE=true
       - RAG_RERANKING_MODEL_AUTO_UPDATE=true
       - WHISPER_MODEL_AUTO_UPDATE=true
-      - RAG_EMBEDDING_ENGINE=ollama
-      - RAG_EMBEDDING_MODEL=nomic-embed-text:latest
+      - RAG_EMBEDDING_ENGINE=${RAG_EMBEDDING_ENGINE}
+      - RAG_EMBEDDING_MODEL=${RAG_EMBEDDING_MODEL}
       - ENABLE_GOOGLE_DRIVE_INTEGRATION=false
       - GOOGLE_DRIVE_CLIENT_ID=
       - GOOGLE_DRIVE_API_KEY=
@@ -87,12 +101,12 @@ x-openwebui-base: &openwebui-base
       - IMAGE_GENERATION_MODEL=
       - IMAGE_SIZE=512x512
       - IMAGE_STEPS=50
-      - COMFYUI_BASE_URL=
-      - COMFYUI_API_KEY=
+      - COMFYUI_BASE_URL=${COMFYUI_BASE_URL}
+      - COMFYUI_API_KEY=${COMFYUI_API_KEY}
       - ENABLE_WEBSOCKET_SUPPORT=true
       - WEBSOCKET_MANAGER=redis
-      - WEBSOCKET_REDIS_URL=redis://redis:6379/1
-      - REDIS_URL=redis://redis:6379/1
+      - WEBSOCKET_REDIS_URL=${UREDIS}
+      - REDIS_URL=${UREDIS}
       - ENABLE_RAG_WEB_SEARCH=true
       - ENABLE_SEARCH_QUERY_GENERATION=true
       - RAG_WEB_SEARCH_RESULT_COUNT=3
@@ -107,12 +121,16 @@ x-openwebui-base: &openwebui-base
       - host.docker.internal:host-gateway
     volumes:
       - ./openwebui:/app/backend/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
 x-n8n-base: &n8n-base
     image: n8nio/n8n:latest
     hostname: n8n
-    pull_policy: always
+    pull_policy: ${pull_policy}
+    restart: ${restart}
     environment:
+      - N8N_PORT=${N8N_PORT}
       - N8N_DIAGNOSTICS_ENABLED=false
       - N8N_PERSONALIZATION_ENABLED=false
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
@@ -120,61 +138,76 @@ x-n8n-base: &n8n-base
       - EXECUTIONS_DATA_MAX_AGE=168
       - EXECUTIONS_DATA_PRUNE_MAX_COUNT=50000
       - N8N_SECURE_COOKIE=false
-      - N8N_QUEUE_TYPE=redis
-      - N8N_QUEUE_HOST=redis
-      - N8N_QUEUE_PORT=6379
-      - N8N_QUEUE_NAME=n8n
+      - N8N_QUEUE_TYPE=${N8N_QUEUE_HOST}
+      - N8N_QUEUE_HOST=${N8N_QUEUE_HOST}
+      - N8N_QUEUE_PORT=${REDIS_PORT}
+      - N8N_QUEUE_NAME=${N8N_QUEUE_NAME}
       - DB_TYPE=${DB_TYPE}
-      - DB_POSTGRESDB_HOST=${DB_POSTGRESDB_HOST}
-      - DB_POSTGRESDB_PORT=${DB_POSTGRESDB_PORT}
-      - DB_POSTGRESDB_DATABASE=${DB_POSTGRESDB_DATABASE}
-      - DB_POSTGRESDB_USER=${DB_POSTGRESDB_USER}
-      - DB_POSTGRESDB_PASSWORD=${DB_POSTGRESDB_PASSWORD}
+      - DB_POSTGRESDB_HOST=${DATABASE_HOST}
+      - DB_POSTGRESDB_PORT=${POSTGRESDB_PORT}
+      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
+      - DB_POSTGRESDB_USER=${POSTGRES_USER}
+      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+      - N8N_TEMPLATES_ENABLED=true
+      - N8N_GRACEFUL_SHUTDOWN_TIMEOUT=10
+      - QUEUE_HEALTH_CHECK_ACTIVE=${QUEUE_HEALTH_CHECK_ACTIVE}
     ports:
       - 5678:5678
     volumes:
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
       - ./n8n/shared:/data/shared
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
+      start_period: 1m00s
+      interval: 5s
+      timeout: 10s
+      retries: 10
 
 x-langflow-base: &langflow-base
     image: langflowai/langflow:latest
     hostname: langflow
-    pull_policy: always
+    pull_policy: ${pull_policy}
+    restart: ${restart}
     ports:
       - 7860:7860
     environment:
+      - LANGFLOW_PORT=${LANGFLOW_PORT}
       - LANGFLOW_AUTO_LOGIN=false
       - LANGFLOW_AUTO_SAVING=true
       - LANGFLOW_AUTO_SAVING_INTERVAL=1000
-      - LANGFLOW_PORT=7860
       - LANGFLOW_PROMETHEUS_ENABLED=false
       - LANGFLOW_SUPERUSER=${LANGFLOW_SUPERUSER}
       - LANGFLOW_SUPERUSER_PASSWORD=${LANGFLOW_SUPERUSER_PASSWORD}
     volumes:
       - ./langflow:/app/langflow
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
 x-anythingllm-base: &anythingllm-base
     image: mintplexlabs/anythingllm
     hostname: anythingllm
-    pull_policy: always
+    pull_policy: ${pull_policy}
+    restart: ${restart}
     ports:
       - 3001:3001
     cap_add:
       - SYS_ADMIN
     environment:
-      - STORAGE_DIR=/app/server/storage
       - SERVER_PORT=${SERVER_PORT}
+      - STORAGE_DIR=/app/server/storage
       - UID=${UID}
       - GID=${GID}
       - LLM_PROVIDER=${LLM_PROVIDER}
-      - OLLAMA_BASE_PATH=${OLLAMA_BASE_PATH}
+      - OLLAMA_BASE_PATH=${UOLLAMA}
       - OLLAMA_MODEL_PREF=${OLLAMA_MODEL_PREF}
       - OLLAMA_MODEL_TOKEN_LIMIT=${OLLAMA_MODEL_TOKEN_LIMIT}
       - OPEN_AI_KEY=${OPEN_AI_KEY}
       - OPEN_MODEL_PREF=${OPEN_MODEL_PREF}
       - EMBEDDING_ENGINE=${EMBEDDING_ENGINE}
-      - EMBEDDING_BASE_PATH=${EMBEDDING_BASE_PATH}
+      - EMBEDDING_BASE_PATH=${UOLLAMA}
       - EMBEDDING_MODEL_PREF=${EMBEDDING_MODEL_PREF}
       - EMBEDDING_MODEL_MAX_CHUNK_LENGTH=${EMBEDDING_MODEL_MAX_CHUNK_LENGTH}
       - PASSWORDMINCHAR=${PASSWORDMINCHAR}
@@ -188,17 +221,22 @@ x-anythingllm-base: &anythingllm-base
       - CHROMA_ENDPOINT=${CHROMA_ENDPOINT}
     volumes:
       - ./anythingllm:/app/server/storage
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
 x-postgres-base: &postgres-base
     image: postgres:latest
     hostname: postgres
-    pull_policy: always
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
+    pull_policy: ${pull_policy}
+    restart: ${restart}
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -h localhost -U user -d lab']
       start_period: 5s
@@ -209,13 +247,16 @@ x-postgres-base: &postgres-base
 x-redis-base: &redis-base
     image: redislabs/redismod:latest
     hostname: redis
-    pull_policy: always
+    pull_policy: ${pull_policy}
+    restart: ${restart}
     environment:
-      - REDIS_PORT=6379
+      - REDIS_PORT=${REDIS_PORT}
       - REDIS_DATABASES=16
       - REDIS_ARGS=--save 20 1
     volumes:
       - ./redis:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     healthcheck:
       test: ["CMD", "redis-cli","ping"]
       start_period: 5s
@@ -226,11 +267,18 @@ x-redis-base: &redis-base
 x-chroma-base: &chroma-base
     image: chromadb/chroma:latest
     hostname: chroma
-    pull_policy: always
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    environment:
+      - ANONYMIZED_TELEMETRY=FALSE
+      - IS_PERSISTENT=TRUE
+      - ALLOW_RESET=TRUE
     volumes:
       - ./chroma:/chroma/chroma
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     healthcheck:
-      test: [ "CMD", "/bin/bash", "-c", "cat < /dev/null > /dev/tcp/localhost/8000" ]
+      test: [ "CMD", "curl", "-f", "http://127.0.0.1:8000/api/v2/heartbeat" ]
       start_period: 5s
       interval: 30s
       timeout: 10s

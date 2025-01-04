@@ -322,7 +322,6 @@ services:
         links:
           - redis-nvidia
         depends_on:
-          - ollama-nvidia
           - redis-nvidia
 
     n8n-nvidia:
@@ -392,7 +391,6 @@ services:
         links:
           - redis-others
         depends_on:
-          - ollama-others
           - redis-others
 
     n8n-others:

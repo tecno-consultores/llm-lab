@@ -1,4 +1,16 @@
-commit 8acc9611cb9b219285b5ab868fdbe1a2b1df3587 (HEAD -> develop, origin/develop)
+commit 05a0f887c782eef60f0e816d6ad2476378e20949 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jan 4 10:46:11 2025 -0400
+
+    * variables
+
+commit 8456064f2afb5e2b073c3b4a7ba7a23f92155531
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jan 4 09:54:57 2025 -0400
+
+    * changelog
+
+commit 8acc9611cb9b219285b5ab868fdbe1a2b1df3587
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Jan 4 09:54:48 2025 -0400
 

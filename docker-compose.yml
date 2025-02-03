@@ -27,7 +27,6 @@ x-flowise-base: &flowise-base
     restart: ${restart}
     environment:
       - PORT=${FPORT}
-      - CORS_ORIGINS=*
       - DATABASE_PATH=/root/.flowise
       - DATABASE_SSL=false
       - APIKEY_PATH=/root/.flowise

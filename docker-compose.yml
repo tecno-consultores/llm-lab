@@ -368,7 +368,7 @@ services:
 
     kafka-all:
         <<: *kafka-base
-        profiles: ["extras",]
+        profiles: ["extras"]
         container_name: kafka
 
     ollama-others:

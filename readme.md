@@ -17,3 +17,15 @@ To run minimal services:
 ```bash
 docker compose -f docker-compose.yml --env-file .env-example --profile minimal up -d
 ```
+
+To run the extras that need GPU (nvidia) like Whisper:
+
+```bash
+docker compose -f docker-compose.yml --env-file .env-example --profile extras-gpu up -d
+```
+
+To run the extras like Kafka:
+
+```bash
+docker compose -f docker-compose.yml --env-file .env-example --profile extras up -d
+```

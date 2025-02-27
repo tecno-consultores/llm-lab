@@ -27,7 +27,6 @@ x-flowise-base: &flowise-base
     restart: ${restart}
     environment:
       - PORT=${FPORT}
-      - CORS_ORIGINS=*
       - DATABASE_PATH=/root/.flowise
       - DATABASE_SSL=false
       - APIKEY_PATH=/root/.flowise
@@ -278,10 +277,81 @@ x-chroma-base: &chroma-base
 ################################################
 
 services:
+    flowise-all:
+        <<: *flowise-base
+	profiles: ["nvidia", "others", "minimal"]
+        container_name: flowise
+        links:
+          - redis-all
+        depends_on:
+          - redis-all
+          - postgres-all
+
+    n8n-all:
+        <<: *n8n-base
+	profiles: ["nvidia", "others", "minimal"]
+        container_name: n8n
+        links:
+          - redis-all
+        depends_on:
+          - postgres-all
+          - redis-all
+
+    postgres-all:
+        <<: *postgres-base
+	profiles: ["nvidia", "others", "minimal"]
+        container_name: postgres
+
+    redis-all:
+        <<: *redis-base
+	profiles: ["nvidia", "others", "minimal"]
+        container_name: redis
+
+    chroma-all:
+        <<: *chroma-base
+	profiles: ["nvidia", "others", "minimal"]
+        container_name: chroma
+
+    langflow-all:
+        <<: *langflow-base
+	profiles: ["nvidia", "others"]
+        container_name: langflow
+
+    anythingllm-all:
+        <<: *anythingllm-base
+	profiles: ["nvidia", "others"]
+        container_name: anythingllm
+
+    openwebui-all:
+        <<: *openwebui-base
+	profiles: ["nvidia", "others"]
+        container_name: openwebui
+        links:
+          - redis-all
+        depends_on:
+          - redis-all
+
+################################################
+
+    ollama-others:
+        <<: *ollama-base
+	profiles: ["others"]
+        container_name: ollama
+        environment:
+          - OLLAMA_DEBUG=${OLLAMA_DEBUG}
+          - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
+          - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}
+          - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
+          - OLLAMA_NUM_PARALLEL=${OLLAMA_NUM_PARALLEL}
+          - OLLAMA_NOPRUNE=${OLLAMA_NOPRUNE}
+          - OLLAMA_SCHED_SPREAD=${OLLAMA_SCHED_SPREAD}
+          - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
+          - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
+          - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
+
     ollama-nvidia:
         <<: *ollama-base
-        profiles:
-          - nvidia
+	profiles: ["nvidia"]
         container_name: ollama
         environment:
           - NVIDIA_VISIBLE_DEVICES=all
@@ -304,143 +374,3 @@ services:
                 - driver: nvidia
                   count: all
                   capabilities: [gpu]
-
-    flowise-nvidia:
-        <<: *flowise-base
-        profiles:
-          - nvidia
-        container_name: flowise
-        links:
-          - redis-nvidia
-        depends_on:
-          - redis-nvidia
-
-    openwebui-nvidia:
-        <<: *openwebui-base
-        profiles:
-          - nvidia
-        container_name: openwebui
-        links:
-          - redis-nvidia
-        depends_on:
-          - redis-nvidia
-
-    n8n-nvidia:
-        <<: *n8n-base
-        profiles:
-          - nvidia
-        container_name: n8n
-        links:
-          - redis-nvidia
-        depends_on:
-          - postgres-nvidia
-          - redis-nvidia
-
-    langflow-nvidia:
-        <<: *langflow-base
-        profiles:
-          - nvidia
-        container_name: langflow
-
-    anythingllm-nvidia:
-        <<: *anythingllm-base
-        profiles:
-          - nvidia
-        container_name: anythingllm
-
-    postgres-nvidia:
-        <<: *postgres-base
-        profiles:
-          - nvidia
-        container_name: postgres
-
-    redis-nvidia:
-        <<: *redis-base
-        profiles:
-          - nvidia
-        container_name: redis
-
-    chroma-nvidia:
-        <<: *chroma-base
-        profiles:
-          - nvidia
-        container_name: chroma
-
-################################################
-
-    ollama-others:
-        <<: *ollama-base
-        profiles:
-          - others
-        container_name: ollama
-        environment:
-          - OLLAMA_DEBUG=${OLLAMA_DEBUG}
-          - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
-          - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}
-          - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
-          - OLLAMA_NUM_PARALLEL=${OLLAMA_NUM_PARALLEL}
-          - OLLAMA_NOPRUNE=${OLLAMA_NOPRUNE}
-          - OLLAMA_SCHED_SPREAD=${OLLAMA_SCHED_SPREAD}
-          - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
-          - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
-          - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
-    flowise-others:
-        <<: *flowise-base
-        profiles:
-          - others
-        container_name: flowise
-        links:
-          - redis-others
-        depends_on:
-          - redis-others
-
-    openwebui-others:
-        <<: *openwebui-base
-        profiles:
-          - others
-        container_name: openwebui
-        links:
-          - redis-others
-        depends_on:
-          - redis-others
-
-    n8n-others:
-        <<: *n8n-base
-        profiles:
-          - others
-        container_name: n8n
-        links:
-          - redis-others
-        depends_on:
-          - postgres-others
-          - redis-others
-
-    langflow-others:
-        <<: *langflow-base
-        profiles:
-          - others
-        container_name: langflow
-
-    anythingllm-others:
-        <<: *anythingllm-base
-        profiles:
-          - others
-        container_name: anythingllm
-
-    postgres-others:
-        <<: *postgres-base
-        profiles:
-          - others
-        container_name: postgres
-
-    redis-others:
-        <<: *redis-base
-        profiles:
-          - others
-        container_name: redis
-
-    chroma-others:
-        <<: *chroma-base
-        profiles:
-          - others
-        container_name: chroma

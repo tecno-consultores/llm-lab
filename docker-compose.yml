@@ -279,7 +279,7 @@ x-chroma-base: &chroma-base
 services:
     flowise-all:
         <<: *flowise-base
-	profiles: ["nvidia", "others", "minimal"]
+        profiles: ["nvidia", "others", "minimal"]
         container_name: flowise
         links:
           - redis-all
@@ -289,7 +289,7 @@ services:
 
     n8n-all:
         <<: *n8n-base
-	profiles: ["nvidia", "others", "minimal"]
+        profiles: ["nvidia", "others", "minimal"]
         container_name: n8n
         links:
           - redis-all
@@ -299,32 +299,32 @@ services:
 
     postgres-all:
         <<: *postgres-base
-	profiles: ["nvidia", "others", "minimal"]
+        profiles: ["nvidia", "others", "minimal"]
         container_name: postgres
 
     redis-all:
         <<: *redis-base
-	profiles: ["nvidia", "others", "minimal"]
+        profiles: ["nvidia", "others", "minimal"]
         container_name: redis
 
     chroma-all:
         <<: *chroma-base
-	profiles: ["nvidia", "others", "minimal"]
+        profiles: ["nvidia", "others", "minimal"]
         container_name: chroma
 
     langflow-all:
         <<: *langflow-base
-	profiles: ["nvidia", "others"]
+        profiles: ["nvidia", "others"]
         container_name: langflow
 
     anythingllm-all:
         <<: *anythingllm-base
-	profiles: ["nvidia", "others"]
+        profiles: ["nvidia", "others"]
         container_name: anythingllm
 
     openwebui-all:
         <<: *openwebui-base
-	profiles: ["nvidia", "others"]
+        profiles: ["nvidia", "others"]
         container_name: openwebui
         links:
           - redis-all
@@ -335,7 +335,7 @@ services:
 
     ollama-others:
         <<: *ollama-base
-	profiles: ["others"]
+        profiles: ["others"]
         container_name: ollama
         environment:
           - OLLAMA_DEBUG=${OLLAMA_DEBUG}
@@ -351,7 +351,7 @@ services:
 
     ollama-nvidia:
         <<: *ollama-base
-	profiles: ["nvidia"]
+        profiles: ["nvidia"]
         container_name: ollama
         environment:
           - NVIDIA_VISIBLE_DEVICES=all

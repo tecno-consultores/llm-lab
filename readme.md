@@ -11,3 +11,9 @@ To run with another gpu/cpu:
 ```bash
 docker compose -f docker-compose.yml --env-file .env-example --profile others up -d
 ```
+
+To run minimal services:
+
+```bash
+docker compose -f docker-compose.yml --env-file .env-example --profile minimal up -d
+```

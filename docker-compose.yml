@@ -274,6 +274,30 @@ x-chroma-base: &chroma-base
       timeout: 10s
       retries: 3
 
+x-kafka-base: &kafka-base
+    image: apache/kafka:latest
+    hostname: kafka
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - ${kafka1}:${kafka1}
+      - ${kafka2}:${kafka2}
+    environment:
+      - KAFKA_NODE_ID=1
+      - KAFKA_PROCESS_ROLES=broker,controller
+      - KAFKA_LISTENERS=PLAINTEXT://localhost:${kafka1},CONTROLLER://localhost:${kafka2}
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:${kafka1}
+      - KAFKA_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      - KAFKA_CONTROLLER_QUORUM_VOTERS=1@localhost:${kafka2}
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
+      - KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1
+      - KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS=0
+      - KAFKA_NUM_PARTITIONS=3
+    volumes: 
+      - ./broker/data:/var/lib/kafka/data
+
 ################################################
 
 services:
@@ -330,6 +354,11 @@ services:
           - redis-all
         depends_on:
           - redis-all
+
+    kafka-all:
+        <<: *kafka-base
+        profiles: ["nvidia", "others"]
+        container_name: kafka
 
 ################################################
 

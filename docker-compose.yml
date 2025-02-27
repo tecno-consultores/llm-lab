@@ -298,6 +298,17 @@ x-kafka-base: &kafka-base
     volumes: 
       - ./broker/data:/var/lib/kafka/data
 
+x-whisper-base: &whisper-base
+    image: onerahmet/openai-whisper-asr-webservice:latest-gpu
+    hostname: whisper
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - ${wport}:${wport}
+    volumes:
+      - ./whisper:/app/app
+      - ./cache-whisper:/root/.cache
+
 ################################################
 
 services:
@@ -357,10 +368,8 @@ services:
 
     kafka-all:
         <<: *kafka-base
-        profiles: ["nvidia", "others"]
+        profiles: ["extras",]
         container_name: kafka
-
-################################################
 
     ollama-others:
         <<: *ollama-base
@@ -395,6 +404,24 @@ services:
           - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
           - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
           - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
+        runtime: nvidia
+        deploy:
+          resources:
+            reservations:
+              devices:
+                - driver: nvidia
+                  count: all
+                  capabilities: [gpu]
+
+    whisper-nvidia:
+        <<: *whisper-base
+        profiles: ["extras-gpu"]
+        container_name: whisper
+        environment:
+          - ASR_ENGINE=${ASR_ENGINE}
+          - ASR_MODEL=${ASR_MODEL}
+          - ASR_DEVICE=cuda
+          - MODEL_IDLE_TIMEOUT=300
         runtime: nvidia
         deploy:
           resources:

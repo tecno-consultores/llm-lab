@@ -1,3 +1,13 @@
+volumes:
+#  n8n_storage:
+#  postgres_storage:
+#  ollama_storage:
+  qdrant_storage:
+
+networks:
+  demo:
+
+
 x-ollama-base: &ollama-base
     image: ollama/ollama:latest
     hostname: ollama
@@ -6,7 +16,7 @@ x-ollama-base: &ollama-base
     restart: ${restart}
     tty: true
     ports:
-      - 11434:11434
+      - 11435:11434
     ulimits:
       memlock: -1
     volumes:
@@ -142,6 +152,10 @@ x-n8n-base: &n8n-base
       - N8N_TEMPLATES_ENABLED=true
       - N8N_GRACEFUL_SHUTDOWN_TIMEOUT=10
       - QUEUE_HEALTH_CHECK_ACTIVE=${QUEUE_HEALTH_CHECK_ACTIVE}
+      - N8N_HOST=n8n.seraph13.dev
+      - WEBHOOK_URL=https://n8n.seraph13.dev
+      - GENERIC_TIMEZONE=America/Caracas
+      - TZ="America/Caracas"
     ports:
       - ${N8N_PORT}:${N8N_PORT}
     volumes:
@@ -274,6 +288,18 @@ x-chroma-base: &chroma-base
       interval: 30s
       timeout: 10s
       retries: 3
+
+x-qdrant:
+    image: qdrant/qdrant
+    hostname: qdrant
+    container_name: qdrant
+    networks: ['demo']
+    restart: unless-stopped
+    ports:
+      - 6333:6333
+    volumes:
+      - qdrant_storage:/qdrant/storage
+
 
 ################################################
 

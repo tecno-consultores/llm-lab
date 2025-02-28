@@ -254,25 +254,19 @@ x-redis-base: &redis-base
       timeout: 3s
       retries: 5
 
-x-chroma-base: &chroma-base
-    image: chromadb/chroma:latest
-    hostname: chroma
+x-qdrant-base: &qdrant-base
+    image: qdrant/qdrant
+    hostname: qdrant
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
-      - ANONYMIZED_TELEMETRY=FALSE
-      - IS_PERSISTENT=TRUE
-      - ALLOW_RESET=TRUE
+      - QDRANT__SERVICE__GRPC_PORT=6334
+      - QDRANT__LOG_LEVEL=INFO
+    ports:
+      - ${qdrant}:6333
+      #- ${qdrant2}:6334
     volumes:
-      - ./chroma:/chroma/chroma
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://127.0.0.1:8000/api/v2/heartbeat" ]
-      start_period: 5s
-      interval: 30s
-      timeout: 10s
-      retries: 3
+      - ./qdrant:/qdrant/storage
 
 x-kafka-base: &kafka-base
     image: apache/kafka:latest
@@ -299,18 +293,15 @@ x-kafka-base: &kafka-base
       - ./broker/data:/var/lib/kafka/data
 
 x-whisper-base: &whisper-base
-    image: jhj0517/whisper-webui:latest
+    image: onerahmet/openai-whisper-asr-webservice:latest-gpu
     hostname: whisper
     pull_policy: ${pull_policy}
     restart: ${restart}
-    volumes:
-      - ./models:/Whisper-WebUI/models
-      - ./outputs:/Whisper-WebUI/outputs
     ports:
       - ${wport}:${wport}
-    stdin_open: true
-    tty: true
-    entrypoint: ["python", "app.py", "--server_port", "7860", "--server_name", "0.0.0.0",]
+    volumes:
+      - ./whisper:/app/app
+      - ./cache-whisper:/root/.cache
 
 ################################################
 
@@ -345,10 +336,10 @@ services:
         profiles: ["nvidia", "others", "minimal"]
         container_name: redis
 
-    chroma-all:
-        <<: *chroma-base
+    qdrant-all:
+        <<: *qdrant-base
         profiles: ["nvidia", "others", "minimal"]
-        container_name: chroma
+        container_name: qdrant
 
     langflow-all:
         <<: *langflow-base
@@ -362,7 +353,7 @@ services:
 
     openwebui-all:
         <<: *openwebui-base
-        profiles: ["extras"]
+        profiles: ["nvidia", "others"]
         container_name: openwebui
         links:
           - redis-all
@@ -420,6 +411,11 @@ services:
         <<: *whisper-base
         profiles: ["extras-gpu"]
         container_name: whisper
+        environment:
+          - ASR_ENGINE=${ASR_ENGINE}
+          - ASR_MODEL=${ASR_MODEL}
+          - ASR_DEVICE=cuda
+          - MODEL_IDLE_TIMEOUT=300
         runtime: nvidia
         deploy:
           resources:

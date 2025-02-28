@@ -299,15 +299,18 @@ x-kafka-base: &kafka-base
       - ./broker/data:/var/lib/kafka/data
 
 x-whisper-base: &whisper-base
-    image: onerahmet/openai-whisper-asr-webservice:latest-gpu
+    image: jhj0517/whisper-webui:latest
     hostname: whisper
     pull_policy: ${pull_policy}
     restart: ${restart}
+    volumes:
+      - ./models:/Whisper-WebUI/models
+      - ./outputs:/Whisper-WebUI/outputs
     ports:
       - ${wport}:${wport}
-    volumes:
-      - ./whisper:/app/app
-      - ./cache-whisper:/root/.cache
+    stdin_open: true
+    tty: true
+    entrypoint: ["python", "app.py", "--server_port", "7860", "--server_name", "0.0.0.0",]
 
 ################################################
 
@@ -417,11 +420,6 @@ services:
         <<: *whisper-base
         profiles: ["extras-gpu"]
         container_name: whisper
-        environment:
-          - ASR_ENGINE=${ASR_ENGINE}
-          - ASR_MODEL=${ASR_MODEL}
-          - ASR_DEVICE=cuda
-          - MODEL_IDLE_TIMEOUT=300
         runtime: nvidia
         deploy:
           resources:

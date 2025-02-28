@@ -359,7 +359,7 @@ services:
 
     openwebui-all:
         <<: *openwebui-base
-        profiles: ["nvidia", "others"]
+        profiles: ["extras"]
         container_name: openwebui
         links:
           - redis-all

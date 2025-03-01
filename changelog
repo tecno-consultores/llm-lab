@@ -1,4 +1,134 @@
-commit 05a0f887c782eef60f0e816d6ad2476378e20949 (HEAD -> develop, origin/develop)
+commit c83af1087fbd030dc24ef9eb18583957a4fe0537 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 13:20:41 2025 -0400
+
+    * se eliminan variables que no se usan
+
+commit e134af919fb8d006a6204632ae8189fc215cf293
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 12:09:16 2025 -0400
+
+    * changelog
+
+commit ec09a77d102924624827f58f5b77093a2786e82a
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 12:09:09 2025 -0400
+
+    * bugfix
+
+commit dd0909c11710cc33fd02a606d84dd67384d1d9a2
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 12:08:03 2025 -0400
+
+    * bugfix
+
+commit e002918c1b84d81cc98012fa07c72ca00063f6f1
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 12:07:15 2025 -0400
+
+    * ignorados
+
+commit 4bf0e72c4cbae935a354b8619740db26dae9a42f
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Feb 28 15:35:46 2025 -0400
+
+    Update docker-compose.yml
+
+commit d13b0e3bb700a44096fdc72fb4c9272925cdffa5
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Feb 28 15:29:58 2025 -0400
+
+    Update .env-example
+
+commit 2385da69e82551554d2efc354a3f38ba57e8c4ff
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Feb 28 15:26:42 2025 -0400
+
+    Update .env-example
+
+commit d37a6645295a7377132b84d676e7e670fcdf10b4
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Feb 28 10:20:41 2025 -0400
+
+    Update docker-compose.yml
+    
+    whisper with GUI
+
+commit f908e4a38f55263cb1c1a8d364d8e85dfe6d4652
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Feb 28 10:19:01 2025 -0400
+
+    Update .env-example
+
+commit 1a9d8d68b5ab3df19ec21b16d5f44cd382c065f5
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Feb 28 10:01:44 2025 -0400
+
+    Update docker-compose.yml
+    
+    openwebui como extra
+
+commit 62998797230cc8f6f057f33345ef4fdbf05b1525
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Feb 27 16:19:01 2025 -0400
+
+    Update readme.md
+
+commit d38bb0a9633f411d9ef62c37b60073025369171b
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Feb 27 16:16:26 2025 -0400
+
+    Update docker-compose.yml
+
+commit 327d4861107c13c418e5e01f56576fc2745d45aa
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Feb 27 15:50:45 2025 -0400
+
+    Update docker-compose.yml
+
+commit 9b52a9bd0c76261671a80d9e30daf0559c7110a6
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Feb 27 15:43:09 2025 -0400
+
+    Update .env-example
+
+commit 32e2ad10fc7977906905d38986574bcaa0008c4f
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Feb 27 14:06:51 2025 -0400
+
+    Update docker-compose.yml
+
+commit 566bee00cc2aaaa3311192317a5077d6d793b7e1
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Feb 27 14:04:45 2025 -0400
+
+    Update .env-example
+
+commit cec72a02d699ddfd395ec630b766ba693f798571
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Feb 27 13:17:54 2025 -0400
+
+    Update readme.md
+
+commit d70d15c3a95d7f3fd37ab09b7bcad4d9730cfbc8
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Feb 27 13:14:50 2025 -0400
+
+    Update docker-compose.yml
+
+commit 0f0a8da6e468a1c42437ecf24a8dd6dfa4569984
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Feb 27 11:58:27 2025 -0400
+
+    Update docker-compose.yml
+
+commit 9c9c394a1b225df232a7d634aba02383f885f264
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jan 4 10:46:19 2025 -0400
+
+    * changelog
+
+commit 05a0f887c782eef60f0e816d6ad2476378e20949
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Jan 4 10:46:11 2025 -0400
 

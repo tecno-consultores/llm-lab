@@ -1,4 +1,22 @@
-commit c83af1087fbd030dc24ef9eb18583957a4fe0537 (HEAD -> develop, origin/develop)
+commit 87d573fdda66a57af3a19188da0c52d056fabcaa (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 19:43:25 2025 -0400
+
+    * whisper cpu
+
+commit 4d8830e5263be6b728978699003fa2cfe7fc108a
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 14:14:17 2025 -0400
+
+    * redis for arm
+
+commit a81395693a46561932e7d8a112bab695e7f3f1c6
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 13:20:56 2025 -0400
+
+    * changelog
+
+commit c83af1087fbd030dc24ef9eb18583957a4fe0537
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Mar 1 13:20:41 2025 -0400
 

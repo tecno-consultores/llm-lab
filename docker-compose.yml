@@ -294,7 +294,6 @@ x-kafka-base: &kafka-base
       - ./broker/data:/var/lib/kafka/data
 
 x-whisper-base: &whisper-base
-    image: onerahmet/openai-whisper-asr-webservice:latest-gpu
     hostname: whisper
     pull_policy: ${pull_policy}
     restart: ${restart}
@@ -361,11 +360,6 @@ services:
         depends_on:
           - redis-all
 
-    kafka-all:
-        <<: *kafka-base
-        profiles: ["extras"]
-        container_name: kafka
-
     ollama-others:
         <<: *ollama-base
         profiles: ["others"]
@@ -410,10 +404,13 @@ services:
 
     whisper-nvidia:
         <<: *whisper-base
+        image: onerahmet/openai-whisper-asr-webservice:latest-gpu
         profiles: ["extras-gpu"]
         container_name: whisper
         environment:
           - ASR_DEVICE=cuda
+          - ASR_MODEL=${ASR_MODEL}
+          - ASR_ENGINE=${ASR_ENGINE}
           - MODEL_IDLE_TIMEOUT=300
         runtime: nvidia
         deploy:
@@ -423,3 +420,19 @@ services:
                 - driver: nvidia
                   count: all
                   capabilities: [gpu]
+
+    whisper-cpu:
+        <<: *whisper-base
+        image: onerahmet/openai-whisper-asr-webservice:latest
+        profiles: ["extras"]
+        container_name: whisper
+        environment:
+          - ASR_DEVICE=cpu
+          - ASR_MODEL=${ASR_MODEL}
+          - ASR_ENGINE=${ASR_ENGINE}
+          - MODEL_IDLE_TIMEOUT=300
+
+    kafka-all:
+        <<: *kafka-base
+        profiles: ["extras"]
+        container_name: kafka

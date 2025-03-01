@@ -1,4 +1,46 @@
-commit c83af1087fbd030dc24ef9eb18583957a4fe0537 (HEAD -> develop, origin/develop)
+commit ce37be6e3ac88bebb90aea5e438dc58d344cc695 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 19:53:35 2025 -0400
+
+    * readme
+
+commit 968482d1a3eb6ccd559102f0fd17d6e909bfa84b
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 19:47:14 2025 -0400
+
+    * changelog
+
+commit 3ec77d0cfa183a07764cfb8726324b8062386d89
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 19:47:06 2025 -0400
+
+    * carpeta
+
+commit 873813065cb52edbcdf2d96e97fd0cfb0ac1a5d5
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 19:43:38 2025 -0400
+
+    * changelog
+
+commit 87d573fdda66a57af3a19188da0c52d056fabcaa
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 19:43:25 2025 -0400
+
+    * whisper cpu
+
+commit 4d8830e5263be6b728978699003fa2cfe7fc108a
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 14:14:17 2025 -0400
+
+    * redis for arm
+
+commit a81395693a46561932e7d8a112bab695e7f3f1c6
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 13:20:56 2025 -0400
+
+    * changelog
+
+commit c83af1087fbd030dc24ef9eb18583957a4fe0537
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Mar 1 13:20:41 2025 -0400
 

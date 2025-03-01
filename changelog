@@ -1,4 +1,16 @@
-commit ec09a77d102924624827f58f5b77093a2786e82a (HEAD -> develop, origin/develop)
+commit c83af1087fbd030dc24ef9eb18583957a4fe0537 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 13:20:41 2025 -0400
+
+    * se eliminan variables que no se usan
+
+commit e134af919fb8d006a6204632ae8189fc215cf293
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 12:09:16 2025 -0400
+
+    * changelog
+
+commit ec09a77d102924624827f58f5b77093a2786e82a
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Mar 1 12:09:09 2025 -0400
 

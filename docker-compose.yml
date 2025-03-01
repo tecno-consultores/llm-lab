@@ -412,8 +412,6 @@ services:
         profiles: ["extras-gpu"]
         container_name: whisper
         environment:
-          - ASR_ENGINE=${ASR_ENGINE}
-          - ASR_MODEL=${ASR_MODEL}
           - ASR_DEVICE=cuda
           - MODEL_IDLE_TIMEOUT=300
         runtime: nvidia

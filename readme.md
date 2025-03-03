@@ -1,6 +1,6 @@
 # llm-lab
 
-To run [flowise](https://flowiseai.com/){:target="_blank"} and [N8N](https://n8n.io/){:target="_blank"} with all dependencies:
+To run [flowise](https://flowiseai.com/) and [N8N](https://n8n.io/) with all dependencies:
 
 ```bash
 docker compose -f docker-compose.yml --env-file .env-example --profile complete up -d

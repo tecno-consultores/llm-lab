@@ -158,7 +158,7 @@ x-n8n-base: &n8n-base
 
 x-postgres-base: &postgres-base
     image: postgres:latest
-    hostname: postgres
+    hostname: postgres-ai
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -179,7 +179,7 @@ x-postgres-base: &postgres-base
 x-redis-base: &redis-base
     #image: redislabs/redismod:latest
     image: redis:latest
-    hostname: redis
+    hostname: redis-ai
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -252,7 +252,7 @@ x-kafka-base: &kafka-base
       - KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1
       - KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS=0
       - KAFKA_NUM_PARTITIONS=3
-    volumes: 
+    volumes:
       - ./broker/data:/var/lib/kafka/data
 
 x-whisper-base: &whisper-base
@@ -291,12 +291,12 @@ services:
     postgres-all:
         <<: *postgres-base
         profiles: ["complete", "n8n", "flow"]
-        container_name: postgres
+        container_name: postgres-ai
 
     redis-all:
         <<: *redis-base
         profiles: ["complete", "n8n", "flow"]
-        container_name: redis
+        container_name: redis-ai
 
     qdrant-all:
         <<: *qdrant-base
@@ -316,7 +316,7 @@ services:
           - redis-all
         depends_on:
           - redis-all
-  
+
     kafka-all:
         <<: *kafka-base
         profiles: ["extras"]

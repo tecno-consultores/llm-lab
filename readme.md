@@ -1,6 +1,6 @@
 # llm-lab
 
-To run Flowise and N8N with dependencies (Postgres, Redis, Qdrant):
+To run [flowise](https://flowiseai.com/){:target="_blank"} and [N8N](https://n8n.io/){:target="_blank"} with all dependencies:
 
 ```bash
 docker compose -f docker-compose.yml --env-file .env-example --profile complete up -d
@@ -12,7 +12,7 @@ To run Flowise with dependencies (Postgres, Redis, Chroma):
 docker compose -f docker-compose.yml --env-file .env-example --profile flow up -d
 ```
 
-To run N8N with dependencies:
+To run N8N with dependencies (Postgres, Redis, Qdrant):
 
 ```bash
 docker compose -f docker-compose.yml --env-file .env-example --profile n8n up -d

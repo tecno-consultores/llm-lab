@@ -1,4 +1,16 @@
-commit ce37be6e3ac88bebb90aea5e438dc58d344cc695 (HEAD -> develop, origin/develop)
+commit a20a92e56671ef09df596b9ab870ca2f8c2bb0c6 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 2 22:56:16 2025 -0400
+
+    * se eliminan servicios innecesarios y se reordenan los perfiles
+
+commit d2eafb94ce12c069ffba4e8ca02217af0d307e81
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Mar 1 19:53:43 2025 -0400
+
+    * changelog
+
+commit ce37be6e3ac88bebb90aea5e438dc58d344cc695
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Mar 1 19:53:35 2025 -0400
 

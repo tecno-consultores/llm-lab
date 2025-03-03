@@ -156,64 +156,6 @@ x-n8n-base: &n8n-base
       timeout: 10s
       retries: 10
 
-x-langflow-base: &langflow-base
-    image: langflowai/langflow:latest
-    hostname: langflow
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    environment:
-      - LANGFLOW_PORT=${LANGFLOW_PORT}
-      - LANGFLOW_AUTO_LOGIN=false
-      - LANGFLOW_AUTO_SAVING=true
-      - LANGFLOW_AUTO_SAVING_INTERVAL=1000
-      - LANGFLOW_PROMETHEUS_ENABLED=false
-      - LANGFLOW_SUPERUSER=${LANGFLOW_SUPERUSER}
-      - LANGFLOW_SUPERUSER_PASSWORD=${LANGFLOW_SUPERUSER_PASSWORD}
-    ports:
-      - ${LANGFLOW_PORT}:${LANGFLOW_PORT}
-    volumes:
-      - ./langflow:/app/langflow
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-
-x-anythingllm-base: &anythingllm-base
-    image: mintplexlabs/anythingllm
-    hostname: anythingllm
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    cap_add:
-      - SYS_ADMIN
-    environment:
-      - SERVER_PORT=${SERVER_PORT}
-      - STORAGE_DIR=/app/server/storage
-      - UID=${UID}
-      - GID=${GID}
-      - LLM_PROVIDER=${LLM_PROVIDER}
-      - OLLAMA_BASE_PATH=${UOLLAMA}
-      - OLLAMA_MODEL_PREF=${OLLAMA_MODEL_PREF}
-      - OLLAMA_MODEL_TOKEN_LIMIT=${OLLAMA_MODEL_TOKEN_LIMIT}
-      - OPEN_AI_KEY=${OPEN_AI_KEY}
-      - OPEN_MODEL_PREF=${OPEN_MODEL_PREF}
-      - EMBEDDING_ENGINE=${EMBEDDING_ENGINE}
-      - EMBEDDING_BASE_PATH=${UOLLAMA}
-      - EMBEDDING_MODEL_PREF=${EMBEDDING_MODEL_PREF}
-      - EMBEDDING_MODEL_MAX_CHUNK_LENGTH=${EMBEDDING_MODEL_MAX_CHUNK_LENGTH}
-      - PASSWORDMINCHAR=${PASSWORDMINCHAR}
-      - PASSWORDMAXCHAR=${PASSWORDMAXCHAR}
-      - PASSWORDLOWERCASE=${PASSWORDLOWERCASE}
-      - PASSWORDUPPERCASE=${PASSWORDUPPERCASE}
-      - PASSWORDNUMERIC=${PASSWORDNUMERIC}
-      - PASSWORDSYMBOL=${PASSWORDSYMBOL}
-      - PASSWORDREQUIREMENTS=${PASSWORDREQUIREMENTS}
-      - VECTOR_DB=${VECTOR_DB}
-      - CHROMA_ENDPOINT=${CHROMA_ENDPOINT}
-    ports:
-      - ${SERVER_PORT}:${SERVER_PORT}
-    volumes:
-      - ./anythingllm:/app/server/storage
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-
 x-postgres-base: &postgres-base
     image: postgres:latest
     hostname: postgres
@@ -269,6 +211,26 @@ x-qdrant-base: &qdrant-base
     volumes:
       - ./qdrant:/qdrant/storage
 
+x-chroma-base: &chroma-base
+    image: chromadb/chroma:latest
+    hostname: chroma
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    environment:
+      - ANONYMIZED_TELEMETRY=FALSE
+      - IS_PERSISTENT=TRUE
+      - ALLOW_RESET=TRUE
+    volumes:
+      - ./chroma:/chroma/chroma
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://127.0.0.1:8000/api/v2/heartbeat" ]
+      start_period: 5s
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
 x-kafka-base: &kafka-base
     image: apache/kafka:latest
     hostname: kafka
@@ -308,7 +270,7 @@ x-whisper-base: &whisper-base
 services:
     flowise-all:
         <<: *flowise-base
-        profiles: ["nvidia", "others", "minimal"]
+        profiles: ["complete", "flow"]
         container_name: flowise
         links:
           - redis-all
@@ -318,7 +280,7 @@ services:
 
     n8n-all:
         <<: *n8n-base
-        profiles: ["nvidia", "others", "minimal"]
+        profiles: ["complete", "n8n"]
         container_name: n8n
         links:
           - redis-all
@@ -328,41 +290,41 @@ services:
 
     postgres-all:
         <<: *postgres-base
-        profiles: ["nvidia", "others", "minimal"]
+        profiles: ["complete", "n8n", "flow"]
         container_name: postgres
 
     redis-all:
         <<: *redis-base
-        profiles: ["nvidia", "others", "minimal"]
+        profiles: ["complete", "n8n", "flow"]
         container_name: redis
 
     qdrant-all:
         <<: *qdrant-base
-        profiles: ["nvidia", "others", "minimal"]
+        profiles: ["complete", "n8n"]
         container_name: qdrant
 
-    langflow-all:
-        <<: *langflow-base
-        profiles: ["nvidia", "others"]
-        container_name: langflow
-
-    anythingllm-all:
-        <<: *anythingllm-base
-        profiles: ["nvidia", "others"]
-        container_name: anythingllm
+    chroma-all:
+        <<: *chroma-base
+        profiles: ["complete", "flow"]
+        container_name: chroma
 
     openwebui-all:
         <<: *openwebui-base
-        profiles: ["nvidia", "others"]
+        profiles: ["extras"]
         container_name: openwebui
         links:
           - redis-all
         depends_on:
           - redis-all
+  
+    kafka-all:
+        <<: *kafka-base
+        profiles: ["extras"]
+        container_name: kafka
 
     ollama-others:
         <<: *ollama-base
-        profiles: ["others"]
+        profiles: ["ollama-cpu"]
         container_name: ollama
         environment:
           - OLLAMA_DEBUG=${OLLAMA_DEBUG}
@@ -378,7 +340,7 @@ services:
 
     ollama-nvidia:
         <<: *ollama-base
-        profiles: ["nvidia"]
+        profiles: ["ollama-gpu"]
         container_name: ollama
         environment:
           - NVIDIA_VISIBLE_DEVICES=all
@@ -431,8 +393,3 @@ services:
           - ASR_MODEL=${ASR_MODEL}
           - ASR_ENGINE=${ASR_ENGINE}
           - MODEL_IDLE_TIMEOUT=300
-
-    kafka-all:
-        <<: *kafka-base
-        profiles: ["extras"]
-        container_name: kafka

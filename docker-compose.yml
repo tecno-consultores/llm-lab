@@ -76,7 +76,7 @@ x-openwebui-base: &openwebui-base
       - ENABLE_CHANNELS=true
       - SHOW_ADMIN_DETAILS=true
       - DEFAULT_USER_ROLE=pending
-      - DEFAULT_LOCALE=en      
+      - DEFAULT_LOCALE=en
       - AIOHTTP_CLIENT_TIMEOUT=100
       - ENABLE_OLLAMA_API=true
       - OLLAMA_BASE_URL=${UOLLAMA}
@@ -410,7 +410,7 @@ services:
           - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
 
     ollama-nvidia:
-        <<: *ollama-base
+        <<: [*ollama-base, *nvidia-base]
         profiles: ["ollama-gpu"]
         environment:
           - NVIDIA_VISIBLE_DEVICES=all
@@ -425,10 +425,9 @@ services:
           - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
           - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
           - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
-        <<: *nvidia-base
 
     whisper-nvidia:
-        <<: *whisper-base
+        <<: [*whisper-base, *nvidia-base]
         image: onerahmet/openai-whisper-asr-webservice:latest-gpu
         profiles: ["whisper-gpu"]
         environment:
@@ -436,7 +435,6 @@ services:
           - ASR_MODEL=${ASR_MODEL}
           - ASR_ENGINE=${ASR_ENGINE}
           - MODEL_IDLE_TIMEOUT=300
-        <<: *nvidia-base
 
     whisper-cpu:
         <<: *whisper-base
@@ -457,3 +455,4 @@ services:
         <<: *crawl4ai-base
         image: unclecode/crawl4ai:all-arm64
         profiles: ["crawl4ai-arm64"]
+

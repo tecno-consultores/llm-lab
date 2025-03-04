@@ -265,6 +265,34 @@ x-whisper-base: &whisper-base
       - ./whisper:/app/app
       - ./cache-whisper:/root/.cache
 
+x-crawl4ai-base: &crawl4ai-base
+    hostname: crawl4ai
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - "11235:11235"
+      - "8000:8000"
+      - "9222:9222"
+      - "8080:8080"
+    volumes:
+      - /dev/shm:/dev/shm
+    environment:
+      - CRAWL4AI_API_TOKEN=${CRAWL4AI_API_TOKEN}
+      #- OPENAI_API_KEY=${OPENAI_API_KEY}
+      #- CLAUDE_API_KEY=${CLAUDE_API_KEY}
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11235/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
 ################################################
 
 services:
@@ -310,7 +338,7 @@ services:
 
     openwebui-all:
         <<: *openwebui-base
-        profiles: ["extras"]
+        profiles: ["openwebui"]
         container_name: openwebui
         links:
           - redis-all
@@ -319,7 +347,7 @@ services:
 
     kafka-all:
         <<: *kafka-base
-        profiles: ["extras"]
+        profiles: ["kafka"]
         container_name: kafka
 
     ollama-others:
@@ -367,7 +395,7 @@ services:
     whisper-nvidia:
         <<: *whisper-base
         image: onerahmet/openai-whisper-asr-webservice:latest-gpu
-        profiles: ["extras-gpu"]
+        profiles: ["whisper-gpu"]
         container_name: whisper
         environment:
           - ASR_DEVICE=cuda
@@ -386,10 +414,22 @@ services:
     whisper-cpu:
         <<: *whisper-base
         image: onerahmet/openai-whisper-asr-webservice:latest
-        profiles: ["extras"]
+        profiles: ["whisper"]
         container_name: whisper
         environment:
           - ASR_DEVICE=cpu
           - ASR_MODEL=${ASR_MODEL}
           - ASR_ENGINE=${ASR_ENGINE}
           - MODEL_IDLE_TIMEOUT=300
+
+    crawl4ai-amd64:
+        <<: *crawl4ai-base
+        image: unclecode/crawl4ai:all-amd64
+        profiles: ["crawl4ai-amd64"]
+        container_name: crawl4ai
+
+    crawl4ai-arm:
+        <<: *crawl4ai-base
+        image: unclecode/crawl4ai:all-arm64
+        profiles: ["crawl4ai-arm64"]
+        container_name: crawl4ai

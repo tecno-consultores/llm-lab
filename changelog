@@ -1,4 +1,53 @@
-commit a20a92e56671ef09df596b9ab870ca2f8c2bb0c6 (HEAD -> develop, origin/develop)
+commit 015c24546210b570e5ed6e25aa1aff5f0ca53085 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Mar 4 12:14:27 2025 -0400
+
+    * bugfix en openwebui
+    * nuevas variables de entorno para openwebui
+
+commit dff3b12f257f3c0ccefd3c21ef97c1528824d4f7
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Mon Mar 3 23:08:49 2025 -0400
+
+    * perfiles por servicio
+
+commit c7c67126553167bff4a8cb0bb2f013be85c9fe9b
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Mon Mar 3 12:00:36 2025 -0400
+
+    * enlaces
+
+commit d89ae5dea007344e7f18a1dd7557c73e9bc2846e
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Mon Mar 3 11:53:04 2025 -0400
+
+    * bugfix
+
+commit fd6bc29a14cf81237b244662fe8d9d3663d064a4
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Mon Mar 3 11:51:45 2025 -0400
+
+    * readme
+
+commit 70d84fc9d916df160f876c73d44fdfd8040faa82
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 2 23:20:50 2025 -0400
+
+    * variables
+
+commit 963df0eda6287fb632526a9fbd31bf157d96aaa8
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 2 23:10:18 2025 -0400
+
+    * nombres
+
+commit be5c50fa3205f3f4f047340939f52616c7433e10
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 2 22:56:44 2025 -0400
+
+    * changelog
+
+commit a20a92e56671ef09df596b9ab870ca2f8c2bb0c6
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Mar 2 22:56:16 2025 -0400
 

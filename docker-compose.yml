@@ -1,6 +1,7 @@
 x-ollama-base: &ollama-base
     image: ollama/ollama:latest
     hostname: ollama
+    container_name: ollama
     privileged: true
     pull_policy: ${pull_policy}
     restart: ${restart}
@@ -23,6 +24,7 @@ x-ollama-base: &ollama-base
 x-flowise-base: &flowise-base
     image: flowiseai/flowise:latest
     hostname: flowise
+    container_name: flowise
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -57,7 +59,8 @@ x-flowise-base: &flowise-base
 
 x-openwebui-base: &openwebui-base
     image: ghcr.io/open-webui/open-webui:main
-    hostname: open-webui
+    hostname: openwebui
+    container_name: openwebui
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -73,7 +76,7 @@ x-openwebui-base: &openwebui-base
       - ENABLE_CHANNELS=true
       - SHOW_ADMIN_DETAILS=true
       - DEFAULT_USER_ROLE=pending
-      - DEFAULT_LOCALE=en      
+      - DEFAULT_LOCALE=en
       - AIOHTTP_CLIENT_TIMEOUT=100
       - ENABLE_OLLAMA_API=true
       - OLLAMA_BASE_URL=${UOLLAMA}
@@ -148,6 +151,7 @@ x-openwebui-base: &openwebui-base
 x-n8n-base: &n8n-base
     image: n8nio/n8n:latest
     hostname: n8n
+    container_name: n8n
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -190,6 +194,7 @@ x-n8n-base: &n8n-base
 x-postgres-base: &postgres-base
     image: postgres:latest
     hostname: postgres-ai
+    container_name: postgres-ai
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -211,6 +216,7 @@ x-redis-base: &redis-base
     #image: redislabs/redismod:latest
     image: redis:latest
     hostname: redis-ai
+    container_name: redis-ai
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -231,6 +237,7 @@ x-redis-base: &redis-base
 x-qdrant-base: &qdrant-base
     image: qdrant/qdrant
     hostname: qdrant
+    container_name: qdrant
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -245,6 +252,7 @@ x-qdrant-base: &qdrant-base
 x-chroma-base: &chroma-base
     image: chromadb/chroma:latest
     hostname: chroma
+    container_name: chroma
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -265,6 +273,7 @@ x-chroma-base: &chroma-base
 x-kafka-base: &kafka-base
     image: apache/kafka:latest
     hostname: kafka
+    container_name: kafka
     pull_policy: ${pull_policy}
     restart: ${restart}
     ports:
@@ -288,6 +297,7 @@ x-kafka-base: &kafka-base
 
 x-whisper-base: &whisper-base
     hostname: whisper
+    container_name: whisper
     pull_policy: ${pull_policy}
     restart: ${restart}
     ports:
@@ -298,6 +308,7 @@ x-whisper-base: &whisper-base
 
 x-crawl4ai-base: &crawl4ai-base
     hostname: crawl4ai
+    container_name: crawl4ai
     pull_policy: ${pull_policy}
     restart: ${restart}
     ports:
@@ -324,13 +335,22 @@ x-crawl4ai-base: &crawl4ai-base
       retries: 3
       start_period: 40s
 
+x-nvidia-base: &nvidia-base
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
 ################################################
 
 services:
     flowise-all:
         <<: *flowise-base
         profiles: ["complete", "flow"]
-        container_name: flowise
         links:
           - redis-all
         depends_on:
@@ -340,7 +360,6 @@ services:
     n8n-all:
         <<: *n8n-base
         profiles: ["complete", "n8n"]
-        container_name: n8n
         links:
           - redis-all
         depends_on:
@@ -350,27 +369,22 @@ services:
     postgres-all:
         <<: *postgres-base
         profiles: ["complete", "n8n", "flow"]
-        container_name: postgres-ai
 
     redis-all:
         <<: *redis-base
         profiles: ["complete", "n8n", "flow", "openwebui"]
-        container_name: redis-ai
 
     qdrant-all:
         <<: *qdrant-base
         profiles: ["complete", "n8n"]
-        container_name: qdrant
 
     chroma-all:
         <<: *chroma-base
         profiles: ["complete", "flow"]
-        container_name: chroma
 
     openwebui-all:
         <<: *openwebui-base
         profiles: ["openwebui"]
-        container_name: openwebui
         links:
           - redis-all
         depends_on:
@@ -379,12 +393,10 @@ services:
     kafka-all:
         <<: *kafka-base
         profiles: ["kafka"]
-        container_name: kafka
 
     ollama-others:
         <<: *ollama-base
         profiles: ["ollama-cpu"]
-        container_name: ollama
         environment:
           - OLLAMA_DEBUG=${OLLAMA_DEBUG}
           - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
@@ -398,9 +410,8 @@ services:
           - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
 
     ollama-nvidia:
-        <<: *ollama-base
+        <<: [*ollama-base, *nvidia-base]
         profiles: ["ollama-gpu"]
-        container_name: ollama
         environment:
           - NVIDIA_VISIBLE_DEVICES=all
           - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
@@ -414,39 +425,21 @@ services:
           - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
           - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
           - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
-        runtime: nvidia
-        deploy:
-          resources:
-            reservations:
-              devices:
-                - driver: nvidia
-                  count: all
-                  capabilities: [gpu]
 
     whisper-nvidia:
-        <<: *whisper-base
+        <<: [*whisper-base, *nvidia-base]
         image: onerahmet/openai-whisper-asr-webservice:latest-gpu
         profiles: ["whisper-gpu"]
-        container_name: whisper
         environment:
           - ASR_DEVICE=cuda
           - ASR_MODEL=${ASR_MODEL}
           - ASR_ENGINE=${ASR_ENGINE}
           - MODEL_IDLE_TIMEOUT=300
-        runtime: nvidia
-        deploy:
-          resources:
-            reservations:
-              devices:
-                - driver: nvidia
-                  count: all
-                  capabilities: [gpu]
 
     whisper-cpu:
         <<: *whisper-base
         image: onerahmet/openai-whisper-asr-webservice:latest
         profiles: ["whisper"]
-        container_name: whisper
         environment:
           - ASR_DEVICE=cpu
           - ASR_MODEL=${ASR_MODEL}
@@ -457,10 +450,9 @@ services:
         <<: *crawl4ai-base
         image: unclecode/crawl4ai:all-amd64
         profiles: ["crawl4ai-amd64"]
-        container_name: crawl4ai
 
     crawl4ai-arm:
         <<: *crawl4ai-base
         image: unclecode/crawl4ai:all-arm64
         profiles: ["crawl4ai-arm64"]
-        container_name: crawl4ai
+

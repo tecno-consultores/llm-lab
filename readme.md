@@ -18,16 +18,16 @@ To run N8N with dependencies (Postgres, Redis, [Qdrant](https://github.com/qdran
 docker compose -f docker-compose.yml --env-file .env-example --profile n8n up -d
 ```
 
-To run the extras that need nvidia gpu like Whisper:
+To run [OpenwebUI](https://github.com/open-webui/open-webui):
 
 ```bash
-docker compose -f docker-compose.yml --env-file .env-example --profile extras-gpu up -d
+docker compose -f docker-compose.yml --env-file .env-example --profile openwebui up -d
 ```
 
-To run the extras [Kafka](https://kafka.apache.org/), [Whisper](https://github.com/openai/whisper) and [OpenwebUI](https://github.com/open-webui/open-webui):
+To run [Kafka](https://kafka.apache.org/):
 
 ```bash
-docker compose -f docker-compose.yml --env-file .env-example --profile extras up -d
+docker compose -f docker-compose.yml --env-file .env-example --profile kafka up -d
 ```
 
 To run [Ollama](https://ollama.com/) over Nvidia:
@@ -40,4 +40,28 @@ To run Ollama over CPU or AMD GPU:
 
 ```bash
 docker compose -f docker-compose.yml --env-file .env-example --profile ollama-cpu up -d
+```
+
+To run Whisper over Nvidia:
+
+```bash
+docker compose -f docker-compose.yml --env-file .env-example --profile whisper-gpu up -d
+```
+
+To run [Whisper](https://github.com/openai/whisper):
+
+```bash
+docker compose -f docker-compose.yml --env-file .env-example --profile whisper up -d
+```
+
+To run [crawl4ai](https://crawl4ai.com/) on AMD64:
+
+```bash
+docker compose -f docker-compose.yml --env-file .env-example --profile crawl4ai-amd64 up -d
+```
+
+To run crawl4ai on ARM64:
+
+```bash
+docker compose -f docker-compose.yml --env-file .env-example --profile crawl4ai-arm64 up -d
 ```

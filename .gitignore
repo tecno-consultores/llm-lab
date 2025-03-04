@@ -4,8 +4,7 @@ ollama
 flowise
 openwebui
 n8n
-langflow
-anythingllm
+chroma
 postgres
 redis
 qdrant

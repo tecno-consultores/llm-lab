@@ -1,7 +1,6 @@
 x-ollama-base: &ollama-base
     image: ollama/ollama:latest
     hostname: ollama
-    container_name: ollama
     privileged: true
     pull_policy: ${pull_policy}
     restart: ${restart}
@@ -24,7 +23,6 @@ x-ollama-base: &ollama-base
 x-flowise-base: &flowise-base
     image: flowiseai/flowise:latest
     hostname: flowise
-    container_name: flowise
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -59,59 +57,32 @@ x-flowise-base: &flowise-base
 
 x-openwebui-base: &openwebui-base
     image: ghcr.io/open-webui/open-webui:main
-    hostname: openwebui
-    container_name: openwebui
+    hostname: open-webui
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
+      - PORT=${PORT}
       - ENV=prod
       - CUSTOM_NAME=lab
       - WEBUI_NAME=lab
-      - PORT=${PORT}
-      - ENABLE_SIGNUP=true
-      - ENABLE_LOGIN_FORM=true
-      - ENABLE_REALTIME_CHAT_SAVE=false
-      - ENABLE_ADMIN_EXPORT=true
       - ENABLE_ADMIN_CHAT_ACCESS=true
       - ENABLE_CHANNELS=true
-      - SHOW_ADMIN_DETAILS=true
-      - DEFAULT_USER_ROLE=pending
       - DEFAULT_LOCALE=en
       - AIOHTTP_CLIENT_TIMEOUT=100
       - ENABLE_OLLAMA_API=true
       - OLLAMA_BASE_URL=${UOLLAMA}
-      - ENABLE_OPENAI_API=${ENABLE_OPENAI_API}
-      - OPENAI_API_BASE_URL=${OPENAI_API_BASE_URL}
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - ENABLE_AUTOCOMPLETE_GENERATION=true
       - AUTOCOMPLETE_GENERATION_INPUT_MAX_LENGTH=-1
-      - ENABLE_EVALUATION_ARENA_MODELS=true
-      - ENABLE_MESSAGE_RATING=true
-      - ENABLE_COMMUNITY_SHARING=false
-      - ENABLE_TAGS_GENERATION=true
       - ENABLE_FORWARD_USER_INFO_HEADERS=false
-      - ENABLE_RAG_LOCAL_WEB_FETCH=true
-      - ENABLE_RAG_WEB_LOADER_SSL_VERIFICATION=true
-      - WEBUI_SESSION_COOKIE_SAME_SITE=strict
-      - WEBUI_SESSION_COOKIE_SECURE=true
-      - WEBUI_AUTH_COOKIE_SAME_SITE=strict
-      - WEBUI_AUTH_COOKIE_SECURE=true
-      - WEBUI_AUTH=true
-      - OFFLINE_MODE=false
+      - ENABLE_RAG_LOCAL_WEB_FETCH=false
       - RESET_CONFIG_ON_START=false
       - SAFE_MODE=false
       - CORS_ALLOW_ORIGIN=*
-      - RAG_EMBEDDING_MODEL_TRUST_REMOTE_CODE=true
-      - RAG_RERANKING_MODEL_TRUST_REMOTE_CODE=true
       - RAG_EMBEDDING_MODEL_AUTO_UPDATE=true
       - RAG_RERANKING_MODEL_AUTO_UPDATE=true
       - WHISPER_MODEL_AUTO_UPDATE=true
-      - VECTOR_DB=chroma
       - RAG_EMBEDDING_ENGINE=${RAG_EMBEDDING_ENGINE}
       - RAG_EMBEDDING_MODEL=${RAG_EMBEDDING_MODEL}
-      - CHROMA_HTTP_HOST=http://chroma
-      - CHROMA_HTTP_PORT=8000
-      - CHROMA_HTTP_SSL=false
       - ENABLE_GOOGLE_DRIVE_INTEGRATION=false
       - GOOGLE_DRIVE_CLIENT_ID=
       - GOOGLE_DRIVE_API_KEY=
@@ -130,15 +101,10 @@ x-openwebui-base: &openwebui-base
       - ENABLE_SEARCH_QUERY_GENERATION=true
       - RAG_WEB_SEARCH_RESULT_COUNT=3
       - RAG_WEB_SEARCH_CONCURRENT_REQUESTS=3
-      - WHISPER_MODEL=base
-      - AUDIO_STT_ENGINE=openai
-      - AUDIO_STT_MODEL=whisper-1
-      - AUDIO_TTS_ENGINE=openai
-      - AUDIO_TTS_MODEL=tts-1
+      - ENABLE_OPENAI_API=${ENABLE_OPENAI_API}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - RAG_WEB_SEARCH_ENGINE=${RAG_WEB_SEARCH_ENGINE}
       - BRAVE_SEARCH_API_KEY=${BRAVE_SEARCH_API_KEY}
-      #- http_proxy=${http_proxy}
-      #- https_proxy=${https_proxy}
     ports:
       - ${PORT}:${PORT}
     extra_hosts:
@@ -151,7 +117,6 @@ x-openwebui-base: &openwebui-base
 x-n8n-base: &n8n-base
     image: n8nio/n8n:latest
     hostname: n8n
-    container_name: n8n
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -176,6 +141,9 @@ x-n8n-base: &n8n-base
       - N8N_TEMPLATES_ENABLED=true
       - N8N_GRACEFUL_SHUTDOWN_TIMEOUT=10
       - QUEUE_HEALTH_CHECK_ACTIVE=${QUEUE_HEALTH_CHECK_ACTIVE}
+      - WEBHOOK_URL=${WEBHOOK_URL}
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
+      - TZ=${GENERIC_TIMEZONE}
     ports:
       - ${N8N_PORT}:${N8N_PORT}
     volumes:
@@ -194,7 +162,6 @@ x-n8n-base: &n8n-base
 x-postgres-base: &postgres-base
     image: postgres:latest
     hostname: postgres-ai
-    container_name: postgres-ai
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -216,7 +183,6 @@ x-redis-base: &redis-base
     #image: redislabs/redismod:latest
     image: redis:latest
     hostname: redis-ai
-    container_name: redis-ai
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -237,7 +203,6 @@ x-redis-base: &redis-base
 x-qdrant-base: &qdrant-base
     image: qdrant/qdrant
     hostname: qdrant
-    container_name: qdrant
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -252,7 +217,6 @@ x-qdrant-base: &qdrant-base
 x-chroma-base: &chroma-base
     image: chromadb/chroma:latest
     hostname: chroma
-    container_name: chroma
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -273,7 +237,6 @@ x-chroma-base: &chroma-base
 x-kafka-base: &kafka-base
     image: apache/kafka:latest
     hostname: kafka
-    container_name: kafka
     pull_policy: ${pull_policy}
     restart: ${restart}
     ports:
@@ -297,7 +260,6 @@ x-kafka-base: &kafka-base
 
 x-whisper-base: &whisper-base
     hostname: whisper
-    container_name: whisper
     pull_policy: ${pull_policy}
     restart: ${restart}
     ports:
@@ -308,7 +270,6 @@ x-whisper-base: &whisper-base
 
 x-crawl4ai-base: &crawl4ai-base
     hostname: crawl4ai
-    container_name: crawl4ai
     pull_policy: ${pull_policy}
     restart: ${restart}
     ports:
@@ -335,22 +296,13 @@ x-crawl4ai-base: &crawl4ai-base
       retries: 3
       start_period: 40s
 
-x-nvidia-base: &nvidia-base
-    runtime: nvidia
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-
 ################################################
 
 services:
     flowise-all:
         <<: *flowise-base
         profiles: ["complete", "flow"]
+        container_name: flowise
         links:
           - redis-all
         depends_on:
@@ -360,6 +312,7 @@ services:
     n8n-all:
         <<: *n8n-base
         profiles: ["complete", "n8n"]
+        container_name: n8n
         links:
           - redis-all
         depends_on:
@@ -369,22 +322,27 @@ services:
     postgres-all:
         <<: *postgres-base
         profiles: ["complete", "n8n", "flow"]
+        container_name: postgres-ai
 
     redis-all:
         <<: *redis-base
-        profiles: ["complete", "n8n", "flow", "openwebui"]
+        profiles: ["complete", "n8n", "flow"]
+        container_name: redis-ai
 
     qdrant-all:
         <<: *qdrant-base
         profiles: ["complete", "n8n"]
+        container_name: qdrant
 
     chroma-all:
         <<: *chroma-base
         profiles: ["complete", "flow"]
+        container_name: chroma
 
     openwebui-all:
         <<: *openwebui-base
         profiles: ["openwebui"]
+        container_name: openwebui
         links:
           - redis-all
         depends_on:
@@ -393,10 +351,12 @@ services:
     kafka-all:
         <<: *kafka-base
         profiles: ["kafka"]
+        container_name: kafka
 
     ollama-others:
         <<: *ollama-base
         profiles: ["ollama-cpu"]
+        container_name: ollama
         environment:
           - OLLAMA_DEBUG=${OLLAMA_DEBUG}
           - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
@@ -410,8 +370,9 @@ services:
           - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
 
     ollama-nvidia:
-        <<: [*ollama-base, *nvidia-base]
+        <<: *ollama-base
         profiles: ["ollama-gpu"]
+        container_name: ollama
         environment:
           - NVIDIA_VISIBLE_DEVICES=all
           - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
@@ -425,21 +386,39 @@ services:
           - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
           - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
           - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
+        runtime: nvidia
+        deploy:
+          resources:
+            reservations:
+              devices:
+                - driver: nvidia
+                  count: all
+                  capabilities: [gpu]
 
     whisper-nvidia:
-        <<: [*whisper-base, *nvidia-base]
+        <<: *whisper-base
         image: onerahmet/openai-whisper-asr-webservice:latest-gpu
         profiles: ["whisper-gpu"]
+        container_name: whisper
         environment:
           - ASR_DEVICE=cuda
           - ASR_MODEL=${ASR_MODEL}
           - ASR_ENGINE=${ASR_ENGINE}
           - MODEL_IDLE_TIMEOUT=300
+        runtime: nvidia
+        deploy:
+          resources:
+            reservations:
+              devices:
+                - driver: nvidia
+                  count: all
+                  capabilities: [gpu]
 
     whisper-cpu:
         <<: *whisper-base
         image: onerahmet/openai-whisper-asr-webservice:latest
         profiles: ["whisper"]
+        container_name: whisper
         environment:
           - ASR_DEVICE=cpu
           - ASR_MODEL=${ASR_MODEL}
@@ -450,9 +429,10 @@ services:
         <<: *crawl4ai-base
         image: unclecode/crawl4ai:all-amd64
         profiles: ["crawl4ai-amd64"]
+        container_name: crawl4ai
 
     crawl4ai-arm:
         <<: *crawl4ai-base
         image: unclecode/crawl4ai:all-arm64
         profiles: ["crawl4ai-arm64"]
-
+        container_name: crawl4ai

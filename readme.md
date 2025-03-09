@@ -24,6 +24,7 @@ Other profiles you can run:
 * Whisper over CPU (--profile whisper)
 * [Crawl4ai](https://github.com/unclecode/crawl4ai) on AMD64 (--profile crawl4ai-amd64)
 * Crawl4ai on ARM64 (--profile crawl4ai-arm64)
+* [OpenHands](https://github.com/All-Hands-AI/OpenHands) (--profile openhands)
 
 Example:
 

@@ -203,7 +203,7 @@ x-postgres-base: &postgres-base
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -h localhost -U user -d lab']
+      test: ['CMD-SHELL', 'pg_isready -h localhost -U user -d ${POSTGRES_DB}']
       start_period: 5s
       interval: 5s
       timeout: 5s
@@ -344,6 +344,26 @@ x-nvidia-base: &nvidia-base
               count: all
               capabilities: [gpu]
 
+x-openhands-base: &openhands-base
+    hostname: ${handhostname}
+    container_name: ${handhostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    stdin_open: true
+    tty: true
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./openhands-state:/.openhands-state
+    environment:
+      - SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.28-nikolaik
+      - LOG_ALL_EVENTS=true
+      - WORKSPACE_BASE=${WORKSPACE_BASE}
+      - LLM_PROVIDER=${LLM_PROVIDER}
+      - LLM_MODEL=${LLM_MODEL}
+      - LLM_API_KEY=${LLM_API_KEY}
+      - TARGET_BRANCH=main
+
 ################################################
 
 services:
@@ -454,3 +474,8 @@ services:
         <<: *crawl4ai-base
         image: unclecode/crawl4ai:all-arm64
         profiles: ["crawl4ai-arm64"]
+
+    openhands:
+        <<: *openhands-base
+        image: docker.all-hands.dev/all-hands-ai/openhands:0.28
+        profiles: ["openhands"]

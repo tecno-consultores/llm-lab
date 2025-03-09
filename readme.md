@@ -20,7 +20,7 @@ Other profiles you can run:
 * [Kafka](https://kafka.apache.org/) (--profile kafka)
 * [Ollama](https://ollama.com/) over Nvidia (--profile ollama-gpu)
 * Ollama over CPU or AMD GPU (--profile ollama-cpu)
-* [Whisper](https://github.com/openai/whisper) over Nvidia (whisper-gpu)
+* [Whisper](https://github.com/openai/whisper) over Nvidia (--profile whisper-gpu)
 * Whisper over CPU (--profile whisper)
 * [Crawl4ai](https://crawl4ai.com/) on AMD64 (--profile crawl4ai-amd64)
 * Crawl4ai on ARM64 (--profile crawl4ai-arm64)

@@ -1,13 +1,13 @@
 x-ollama-base: &ollama-base
     image: ollama/ollama:latest
-    hostname: ollama
-    container_name: ollama
+    hostname: ${ohostname}
+    container_name: ${ohostname}
     privileged: true
     pull_policy: ${pull_policy}
     restart: ${restart}
     tty: true
     ports:
-      - 11434:11434
+      - ${OPORT}:11434
     ulimits:
       memlock: -1
     volumes:
@@ -23,12 +23,11 @@ x-ollama-base: &ollama-base
 
 x-flowise-base: &flowise-base
     image: flowiseai/flowise:latest
-    hostname: flowise
-    container_name: flowise
+    hostname: ${fhostname}
+    container_name: ${fhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
-      - PORT=${FPORT}
       - DATABASE_PATH=/root/.flowise
       - DATABASE_SSL=false
       - APIKEY_PATH=/root/.flowise
@@ -51,7 +50,7 @@ x-flowise-base: &flowise-base
       - METRICS_OPEN_TELEMETRY_DEBUG=${METRICS_OPEN_TELEMETRY_DEBUG}
       - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
     ports:
-      - ${FPORT}:${FPORT}
+      - ${FPORT}:3000
     volumes:
       - ./flowise:/root/.flowise
       - /etc/timezone:/etc/timezone:ro
@@ -59,15 +58,14 @@ x-flowise-base: &flowise-base
 
 x-openwebui-base: &openwebui-base
     image: ghcr.io/open-webui/open-webui:main
-    hostname: openwebui
-    container_name: openwebui
+    hostname: ${openhostname}
+    container_name: ${openhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
       - ENV=prod
-      - CUSTOM_NAME=lab
-      - WEBUI_NAME=lab
-      - PORT=${PORT}
+      - CUSTOM_NAME=${CUSTOM_NAME}
+      - WEBUI_NAME=${CUSTOM_NAME}
       - ENABLE_SIGNUP=true
       - ENABLE_LOGIN_FORM=true
       - ENABLE_REALTIME_CHAT_SAVE=false
@@ -106,12 +104,12 @@ x-openwebui-base: &openwebui-base
       - RAG_EMBEDDING_MODEL_AUTO_UPDATE=true
       - RAG_RERANKING_MODEL_AUTO_UPDATE=true
       - WHISPER_MODEL_AUTO_UPDATE=true
-      - VECTOR_DB=chroma
+      #- VECTOR_DB=chroma
       - RAG_EMBEDDING_ENGINE=${RAG_EMBEDDING_ENGINE}
       - RAG_EMBEDDING_MODEL=${RAG_EMBEDDING_MODEL}
-      - CHROMA_HTTP_HOST=http://chroma
-      - CHROMA_HTTP_PORT=8000
-      - CHROMA_HTTP_SSL=false
+      #- CHROMA_HTTP_HOST=http://chroma
+      #- CHROMA_HTTP_PORT=${CPORT}
+      #- CHROMA_HTTP_SSL=false
       - ENABLE_GOOGLE_DRIVE_INTEGRATION=false
       - GOOGLE_DRIVE_CLIENT_ID=
       - GOOGLE_DRIVE_API_KEY=
@@ -140,7 +138,7 @@ x-openwebui-base: &openwebui-base
       #- http_proxy=${http_proxy}
       #- https_proxy=${https_proxy}
     ports:
-      - ${PORT}:${PORT}
+      - ${PORT}:8080
     extra_hosts:
       - host.docker.internal:host-gateway
     volumes:
@@ -150,12 +148,11 @@ x-openwebui-base: &openwebui-base
 
 x-n8n-base: &n8n-base
     image: n8nio/n8n:latest
-    hostname: n8n
-    container_name: n8n
+    hostname: ${nhostname}
+    container_name: ${nhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
-      - N8N_PORT=${N8N_PORT}
       - N8N_DIAGNOSTICS_ENABLED=false
       - N8N_PERSONALIZATION_ENABLED=false
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
@@ -177,7 +174,7 @@ x-n8n-base: &n8n-base
       - N8N_GRACEFUL_SHUTDOWN_TIMEOUT=10
       - QUEUE_HEALTH_CHECK_ACTIVE=${QUEUE_HEALTH_CHECK_ACTIVE}
     ports:
-      - ${N8N_PORT}:${N8N_PORT}
+      - ${N8N_PORT}:5678
     volumes:
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
@@ -193,8 +190,8 @@ x-n8n-base: &n8n-base
 
 x-postgres-base: &postgres-base
     image: postgres:latest
-    hostname: postgres-ai
-    container_name: postgres-ai
+    hostname: ${phostname}
+    container_name: ${phostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -215,8 +212,8 @@ x-postgres-base: &postgres-base
 x-redis-base: &redis-base
     #image: redislabs/redismod:latest
     image: redis:latest
-    hostname: redis-ai
-    container_name: redis-ai
+    hostname: ${rhostname}
+    container_name: ${rhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -236,8 +233,8 @@ x-redis-base: &redis-base
 
 x-qdrant-base: &qdrant-base
     image: qdrant/qdrant
-    hostname: qdrant
-    container_name: qdrant
+    hostname: ${qhostname}
+    container_name: ${qhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -251,14 +248,16 @@ x-qdrant-base: &qdrant-base
 
 x-chroma-base: &chroma-base
     image: chromadb/chroma:latest
-    hostname: chroma
-    container_name: chroma
+    hostname: ${chostname}
+    container_name: ${chostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
       - ANONYMIZED_TELEMETRY=FALSE
       - IS_PERSISTENT=TRUE
       - ALLOW_RESET=TRUE
+    ports:
+      - ${CPORT}:8000
     volumes:
       - ./chroma:/chroma/chroma
       - /etc/timezone:/etc/timezone:ro
@@ -272,8 +271,8 @@ x-chroma-base: &chroma-base
 
 x-kafka-base: &kafka-base
     image: apache/kafka:latest
-    hostname: kafka
-    container_name: kafka
+    hostname: ${khostname}
+    container_name: ${khostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     ports:
@@ -296,8 +295,8 @@ x-kafka-base: &kafka-base
       - ./broker/data:/var/lib/kafka/data
 
 x-whisper-base: &whisper-base
-    hostname: whisper
-    container_name: whisper
+    hostname: ${whostname}
+    container_name: ${whostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     ports:
@@ -307,15 +306,15 @@ x-whisper-base: &whisper-base
       - ./cache-whisper:/root/.cache
 
 x-crawl4ai-base: &crawl4ai-base
-    hostname: crawl4ai
-    container_name: crawl4ai
+    hostname: ${crawhostname}
+    container_name: ${crawhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     ports:
-      - "11235:11235"
-      - "8000:8000"
-      - "9222:9222"
-      - "8080:8080"
+      - ${CRAW1}:11235
+      - ${CRAW2}:8000
+      - ${CRAW3}:9222
+      - ${CRAW4}:8080
     volumes:
       - /dev/shm:/dev/shm
     environment:
@@ -350,7 +349,7 @@ x-nvidia-base: &nvidia-base
 services:
     flowise-all:
         <<: *flowise-base
-        profiles: ["complete", "flow"]
+        profiles: ["flowise"]
         links:
           - redis-all
         depends_on:
@@ -359,7 +358,7 @@ services:
 
     n8n-all:
         <<: *n8n-base
-        profiles: ["complete", "n8n"]
+        profiles: ["n8n"]
         links:
           - redis-all
         depends_on:
@@ -368,19 +367,19 @@ services:
 
     postgres-all:
         <<: *postgres-base
-        profiles: ["complete", "n8n", "flow"]
+        profiles: ["n8n", "flowise"]
 
     redis-all:
         <<: *redis-base
-        profiles: ["complete", "n8n", "flow", "openwebui"]
+        profiles: ["n8n", "flowise", "openwebui"]
 
     qdrant-all:
         <<: *qdrant-base
-        profiles: ["complete", "n8n"]
+        profiles: ["qdrant"]
 
     chroma-all:
         <<: *chroma-base
-        profiles: ["complete", "flow"]
+        profiles: ["chroma"]
 
     openwebui-all:
         <<: *openwebui-base
@@ -455,4 +454,3 @@ services:
         <<: *crawl4ai-base
         image: unclecode/crawl4ai:all-arm64
         profiles: ["crawl4ai-arm64"]
-

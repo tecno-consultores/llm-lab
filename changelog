@@ -1,4 +1,42 @@
-commit 015c24546210b570e5ed6e25aa1aff5f0ca53085 (HEAD -> develop, origin/develop)
+commit 4579515821817a6d0838110392bcc3f7e833eba6 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 12:35:36 2025 -0400
+
+    * perfiles
+    * hostname
+    * puertos
+
+commit 83975ef0fb48415dd1a6188a9e32ffd102d6f18f
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Mar 4 12:50:42 2025 -0400
+
+    * correccion del mappeo de variables
+
+commit e7144b788b6f13e7cba57eed6fd8edd8ba8c722b
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Mar 4 12:37:03 2025 -0400
+
+    * readme
+
+commit b74809229f0617e90d764e1d420e9c348180a5d7
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Mar 4 12:33:06 2025 -0400
+
+    * se crea nvidia-base para acortar el codigo
+
+commit a007cae5e33e46f21d7e0c37c883d6d1931017c2
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Mar 4 12:19:17 2025 -0400
+
+    * ignore
+
+commit 0a4492b2e15a0760c9a532072e986f8f98982037
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Mar 4 12:15:30 2025 -0400
+
+    * changelog
+
+commit 015c24546210b570e5ed6e25aa1aff5f0ca53085
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Tue Mar 4 12:14:27 2025 -0400
 

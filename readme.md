@@ -31,3 +31,9 @@ Example:
 ```bash
 docker compose -f docker-compose.yml --env-file .env-example --profile openwebui --profile ollama-gpu up -d
 ```
+
+Before running OpenHands for the first time on Linux you must run the following command:
+
+```bash
+echo "127.0.0.1 host.docker.internal" >> /etc/hosts
+```

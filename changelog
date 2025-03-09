@@ -1,4 +1,46 @@
-commit 4ed476b09c15613d534d3572ec52b9f7b23ffdee (HEAD -> develop, origin/develop)
+commit 70065dcedf93f22df1bf94ef9ff8f48ac649c3bf (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 18:38:17 2025 -0400
+
+    * readme
+
+commit b82068f8de1d5b53b4ca9834ac1a56498bd28c93
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 18:26:15 2025 -0400
+
+    * changelog
+
+commit 20282c597848aae5954af690c31c6f614e931743
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 18:26:08 2025 -0400
+
+    * env bugfix
+
+commit a2a266798bded3797abe88f4e7a1cf7a7295e94a
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 18:23:00 2025 -0400
+
+    * env
+
+commit 44c0fbbdac06873393b66d0be5eaaf3122dfdb37
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 18:17:50 2025 -0400
+
+    * bugfix
+
+commit f9133dd370b1596b99aaa35cfae47f64e7d16e04
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 15:02:00 2025 -0400
+
+    * openhands
+
+commit 682ddb93f41f171090ed6829c18e890cdb4f0a77
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 13:52:40 2025 -0400
+
+    * changelog
+
+commit 4ed476b09c15613d534d3572ec52b9f7b23ffdee
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Mar 9 13:52:34 2025 -0400
 

@@ -3,7 +3,7 @@
 To run Flowise with recommendations (Postgres, Redis):
 
 ```bash
-docker compose -f docker-compose.yml --env-file .env-example --profile flow up -d
+docker compose -f docker-compose.yml --env-file .env-example --profile flowise up -d
 ```
 
 To run N8N with recommendations (Postgres, Redis):

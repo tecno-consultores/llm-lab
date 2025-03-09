@@ -104,12 +104,12 @@ x-openwebui-base: &openwebui-base
       - RAG_EMBEDDING_MODEL_AUTO_UPDATE=true
       - RAG_RERANKING_MODEL_AUTO_UPDATE=true
       - WHISPER_MODEL_AUTO_UPDATE=true
-      - VECTOR_DB=chroma
+      #- VECTOR_DB=chroma
       - RAG_EMBEDDING_ENGINE=${RAG_EMBEDDING_ENGINE}
       - RAG_EMBEDDING_MODEL=${RAG_EMBEDDING_MODEL}
-      - CHROMA_HTTP_HOST=http://chroma
-      - CHROMA_HTTP_PORT=${CPORT}
-      - CHROMA_HTTP_SSL=false
+      #- CHROMA_HTTP_HOST=http://chroma
+      #- CHROMA_HTTP_PORT=${CPORT}
+      #- CHROMA_HTTP_SSL=false
       - ENABLE_GOOGLE_DRIVE_INTEGRATION=false
       - GOOGLE_DRIVE_CLIENT_ID=
       - GOOGLE_DRIVE_API_KEY=
@@ -349,7 +349,7 @@ x-nvidia-base: &nvidia-base
 services:
     flowise-all:
         <<: *flowise-base
-        profiles: ["flow"]
+        profiles: ["flowise"]
         links:
           - redis-all
         depends_on:
@@ -367,11 +367,11 @@ services:
 
     postgres-all:
         <<: *postgres-base
-        profiles: ["n8n", "flow"]
+        profiles: ["n8n", "flowise"]
 
     redis-all:
         <<: *redis-base
-        profiles: ["n8n", "flow", "openwebui"]
+        profiles: ["n8n", "flowise", "openwebui"]
 
     qdrant-all:
         <<: *qdrant-base

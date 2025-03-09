@@ -17,12 +17,12 @@ Other profiles you can run:
 * [Chroma](https://github.com/chroma-core/chroma) (--profile chroma)
 * [Qdrant](https://github.com/qdrant/qdrant) (--profile qdrant)
 * [OpenwebUI](https://github.com/open-webui/open-webui) (--profile openwebui)
-* [Kafka](https://kafka.apache.org/) (--profile kafka)
-* [Ollama](https://ollama.com/) over Nvidia (--profile ollama-gpu)
+* [Kafka](https://github.com/apache/kafka) (--profile kafka)
+* [Ollama](https://github.com/ollama/ollama) over Nvidia (--profile ollama-gpu)
 * Ollama over CPU or AMD GPU (--profile ollama-cpu)
 * [Whisper](https://github.com/openai/whisper) over Nvidia (--profile whisper-gpu)
 * Whisper over CPU (--profile whisper)
-* [Crawl4ai](https://crawl4ai.com/) on AMD64 (--profile crawl4ai-amd64)
+* [Crawl4ai](https://github.com/unclecode/crawl4ai) on AMD64 (--profile crawl4ai-amd64)
 * Crawl4ai on ARM64 (--profile crawl4ai-arm64)
 
 Example:

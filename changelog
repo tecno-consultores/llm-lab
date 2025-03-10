@@ -1,4 +1,16 @@
-commit c95d484e100ae814936a5ce595c6e04084877b97 (HEAD -> develop, origin/develop)
+commit 01fd759f551711a0003ff84b6844fc5f857da50e (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 21:29:52 2025 -0400
+
+    * readme
+
+commit ba220f0a0502577b67ca18a084fc17e7c681bdcc
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 18:45:42 2025 -0400
+
+    * changelog
+
+commit c95d484e100ae814936a5ce595c6e04084877b97
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Mar 9 18:45:35 2025 -0400
 

@@ -3,13 +3,13 @@
 To run Flowise with recommendations on AMD64/ARM64 (Postgres, Redis):
 
 ```bash
-docker compose -f docker-compose.yml --env-file .env-example --profile flowise up -d
+docker compose -f docker-compose.yml --env-file env.example --profile flowise up -d
 ```
 
 To run N8N with recommendations on AMD64/ARM64 (Postgres, Redis):
 
 ```bash
-docker compose -f docker-compose.yml --env-file .env-example --profile n8n up -d
+docker compose -f docker-compose.yml --env-file env.example --profile n8n up -d
 ```
 
 Other profiles you can run:
@@ -29,7 +29,7 @@ Other profiles you can run:
 Example:
 
 ```bash
-docker compose -f docker-compose.yml --env-file .env-example --profile openwebui --profile ollama-gpu up -d
+docker compose -f docker-compose.yml --env-file env.example --profile openwebui --profile ollama-gpu up -d
 ```
 
 Before running OpenHands for the first time on Linux you must run the following command:

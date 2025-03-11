@@ -1,5 +1,7 @@
 # llm-lab
 
+Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
+
 To run Flowise with recommendations on AMD64/ARM64 (Postgres, Redis):
 
 ```bash

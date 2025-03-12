@@ -186,6 +186,7 @@ x-n8n-base: &n8n-base
       - EXECUTIONS_DATA_SAVE_ON_PROGRESS=false
       - EXECUTIONS_DATA_SAVE_MANUAL_EXECUTIONS=true
       - N8N_COMMUNITY_PACKAGES_ENABLED=true
+      - WEBHOOK_URL=${WEBHOOK_URL}
     ports:
       - ${N8N_PORT}:5678
     volumes:

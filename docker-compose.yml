@@ -385,6 +385,10 @@ x-proxy-base: &proxy-base
     container_name: ${proxyhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
+    environment:
+      - DISABLE_IPV6=${DISABLE_IPV6}
+      - INITIAL_ADMIN_EMAIL=${INITIAL_ADMIN_EMAIL}
+      - INITIAL_ADMIN_PASSWORD=${INITIAL_ADMIN_PASSWORD}
     ports:
       - 80:80
       - 443:443

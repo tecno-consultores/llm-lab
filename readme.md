@@ -27,6 +27,7 @@ Other profiles you can run:
 * [Crawl4ai](https://github.com/unclecode/crawl4ai) on AMD64 (--profile crawl4ai-amd64)
     + Crawl4ai on ARM64 (--profile crawl4ai-arm64)
 * [OpenHands](https://github.com/All-Hands-AI/OpenHands) on AMD64/ARM64 (--profile openhands)
+* [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) on AMD64/ARM64 (--profile proxy)
 
 Example:
 

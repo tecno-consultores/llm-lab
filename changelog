@@ -1,4 +1,106 @@
-commit 01fd759f551711a0003ff84b6844fc5f857da50e (HEAD -> develop, origin/develop)
+commit 9f6b77e5266a4dc8cd71435a43d6c784cfb046c6 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 19:45:49 2025 -0400
+
+    * variables del proxy
+
+commit 5f00c6430636dd789da6f766c961805008fc5e52
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 19:36:46 2025 -0400
+
+    * readme
+
+commit f1867dd07ffc6b35c1f81109d71e330167f78e20
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 19:34:57 2025 -0400
+
+    * changelog
+
+commit 9097e9c2003928a4f717b6a31b92111445e65f2b
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 19:34:36 2025 -0400
+
+    * searxng
+
+commit 49231430858c326ba34e29aa5f83f2b21b7c7234
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 19:15:40 2025 -0400
+
+    * readme
+
+commit 42d963e4f8c87df1075b21ba69e22d951427e30d
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 19:13:33 2025 -0400
+
+    * nginx reverse proxy
+
+commit 75ae45f34af765567d48472bd111c689199dc192
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 09:39:15 2025 -0400
+
+    Create funciones-n8n.txt
+
+commit ffcea63b83b2279ab22c7b335bfb2ea982e9e0d3
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed Mar 12 12:02:14 2025 -0400
+
+    Update env.example
+
+commit 1b982455960c669ae2d597221934baa902139f81
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed Mar 12 12:01:38 2025 -0400
+
+    Update docker-compose.yml
+
+commit 1baf197bc643ed41ccde9b4e326d941d4ddea58d
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed Mar 12 10:30:11 2025 -0400
+
+    Update docker-compose.yml
+
+commit 395e950e676d7807e13ec06dc4d90f3f970230bc
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed Mar 12 09:56:16 2025 -0400
+
+    Update docker-compose.yml
+
+commit 52ca71b180bbf034a691b6251a4b532434eef096
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Mar 11 10:37:10 2025 -0400
+
+    Update docker-compose.yml
+
+commit 6a9e15a2a5185d2d4a67809c8011bd7e382d6dd2
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Mar 11 10:36:28 2025 -0400
+
+    Update readme.md
+
+commit 6ae9431e973bc73a72fbca1406e365acc07c5661
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Mon Mar 10 20:25:26 2025 -0400
+
+    * se cambia el nombre del archivo de variables
+
+commit f252253b16a4249baffed8a7cc46ea67bb3241d2
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Mar 10 09:38:16 2025 -0400
+
+    Update .env-example
+
+commit b86397cfeb99c42f44561dd7f96c3b101d97f2f6
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 21:37:19 2025 -0400
+
+    * prompt data
+
+commit 832b0c14e87a9f4203b2692cbfbf0821f589cf78
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 9 21:30:08 2025 -0400
+
+    * changelog
+
+commit 01fd759f551711a0003ff84b6844fc5f857da50e
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Mar 9 21:29:52 2025 -0400
 

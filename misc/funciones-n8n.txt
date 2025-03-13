@@ -1,0 +1,5 @@
+fecha y hora:
+{{ new Date().toISOString() }}
+
+query a multiagente
+{{ $json.query }}

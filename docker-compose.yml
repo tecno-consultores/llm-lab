@@ -397,6 +397,32 @@ x-proxy-base: &proxy-base
       interval: 10s
       timeout: 3s
 
+x-searxng-base: &searxng-base
+    image: docker.io/searxng/searxng:latest
+    hostname: ${searxnghostname}
+    container_name: ${searxnghostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - ${psearch}:8080
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    environment:
+      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
+      - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS:-4}
+      - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS:-4}
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+
 ################################################
 
 services:
@@ -515,3 +541,7 @@ services:
     proxy:
         <<: *proxy-base
         profiles: ["proxy"]
+
+    searxng:
+        <<: *searxng-base
+        profiles: ["searxng"]

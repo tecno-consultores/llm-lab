@@ -1,4 +1,22 @@
-commit 9097e9c2003928a4f717b6a31b92111445e65f2b (HEAD -> develop, origin/develop)
+commit 9f6b77e5266a4dc8cd71435a43d6c784cfb046c6 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 19:45:49 2025 -0400
+
+    * variables del proxy
+
+commit 5f00c6430636dd789da6f766c961805008fc5e52
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 19:36:46 2025 -0400
+
+    * readme
+
+commit f1867dd07ffc6b35c1f81109d71e330167f78e20
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 19:34:57 2025 -0400
+
+    * changelog
+
+commit 9097e9c2003928a4f717b6a31b92111445e65f2b
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Thu Mar 13 19:34:36 2025 -0400
 

@@ -359,6 +359,7 @@ x-nvidia-base: &nvidia-base
               capabilities: [gpu]
 
 x-openhands-base: &openhands-base
+    image: docker.all-hands.dev/all-hands-ai/openhands:0.28
     hostname: ${handhostname}
     container_name: ${handhostname}
     pull_policy: ${pull_policy}
@@ -377,6 +378,24 @@ x-openhands-base: &openhands-base
       #- LLM_MODEL=${LLM_MODEL}
       #- LLM_API_KEY=${LLM_API_KEY}
       - TARGET_BRANCH=main
+
+x-proxy-base: &proxy-base
+    image: 'jc21/nginx-proxy-manager:latest'
+    hostname: ${proxyhostname}
+    container_name: ${proxyhostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - 80:80
+      - 443:443
+      - ${pproxy}:81
+    volumes:
+      - ./proxy/data:/data
+      - ./proxy/letsencrypt:/etc/letsencrypt
+    healthcheck:
+      test: ["CMD", "/usr/bin/check-health"]
+      interval: 10s
+      timeout: 3s
 
 ################################################
 
@@ -491,5 +510,8 @@ services:
 
     openhands:
         <<: *openhands-base
-        image: docker.all-hands.dev/all-hands-ai/openhands:0.28
         profiles: ["openhands"]
+
+    proxy:
+        <<: *proxy-base
+        profiles: ["proxy"]

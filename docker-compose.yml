@@ -105,12 +105,8 @@ x-openwebui-base: &openwebui-base
       - RAG_EMBEDDING_MODEL_AUTO_UPDATE=true
       - RAG_RERANKING_MODEL_AUTO_UPDATE=true
       - WHISPER_MODEL_AUTO_UPDATE=true
-      #- VECTOR_DB=chroma
       - RAG_EMBEDDING_ENGINE=${RAG_EMBEDDING_ENGINE}
       - RAG_EMBEDDING_MODEL=${RAG_EMBEDDING_MODEL}
-      #- CHROMA_HTTP_HOST=http://chroma
-      #- CHROMA_HTTP_PORT=${CPORT}
-      #- CHROMA_HTTP_SSL=false
       - ENABLE_GOOGLE_DRIVE_INTEGRATION=false
       - GOOGLE_DRIVE_CLIENT_ID=
       - GOOGLE_DRIVE_API_KEY=
@@ -129,11 +125,6 @@ x-openwebui-base: &openwebui-base
       - ENABLE_SEARCH_QUERY_GENERATION=true
       - RAG_WEB_SEARCH_RESULT_COUNT=3
       - RAG_WEB_SEARCH_CONCURRENT_REQUESTS=3
-      - WHISPER_MODEL=base
-      - AUDIO_STT_ENGINE=openai
-      - AUDIO_STT_MODEL=whisper-1
-      - AUDIO_TTS_ENGINE=openai
-      - AUDIO_TTS_MODEL=tts-1
       - RAG_WEB_SEARCH_ENGINE=${RAG_WEB_SEARCH_ENGINE}
       - BRAVE_SEARCH_API_KEY=${BRAVE_SEARCH_API_KEY}
       #- http_proxy=${http_proxy}
@@ -436,8 +427,12 @@ services:
         links:
           - redis-all
         depends_on:
-          - redis-all
-          - postgres-all
+          postgres-all:
+            condition: service_healthy
+            restart: true
+          redis-all:
+            condition: service_healthy
+            restart: true
 
     n8n-all:
         <<: *n8n-base
@@ -445,8 +440,12 @@ services:
         links:
           - redis-all
         depends_on:
-          - postgres-all
-          - redis-all
+          postgres-all:
+            condition: service_healthy
+            restart: true
+          redis-all:
+            condition: service_healthy
+            restart: true
 
     postgres-all:
         <<: *postgres-base
@@ -470,7 +469,9 @@ services:
         links:
           - redis-all
         depends_on:
-          - redis-all
+          redis-all:
+            condition: service_healthy
+            restart: true
 
     kafka-all:
         <<: *kafka-base

@@ -1,5 +1,14 @@
-fecha y hora:
+fecha y hora generica:
 {{ new Date().toISOString() }}
+
+fecha y hora ubicacion:
+{{ $now }}
 
 query a multiagente
 {{ $json.query }}
+
+nombre tool mcp
+{{ $fromAI("tool","the selected tool to use") }}
+
+webhook openwebui chat input
+{{ $json.body.chatInput }}

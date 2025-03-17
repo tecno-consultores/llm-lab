@@ -180,6 +180,7 @@ x-n8n-base: &n8n-base
       - WEBHOOK_URL=${WEBHOOK_URL}
       - N8N_PAYLOAD_SIZE_MAX=${N8N_PAYLOAD_SIZE_MAX}
       - N8N_FORMDATA_FILE_SIZE_MAX=${N8N_FORMDATA_FILE_SIZE_MAX}
+      - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
     ports:
       - ${N8N_PORT}:5678
     volumes:

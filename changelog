@@ -1,4 +1,65 @@
-commit 9f6b77e5266a4dc8cd71435a43d6c784cfb046c6 (HEAD -> develop, origin/develop)
+commit 30b0713e9b7e86e9a01466a4e88ac960b4aacabb (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 23 10:38:34 2025 -0400
+
+    * funcion para conectar n8n con openweb ui
+
+commit f70971d54008a3fd32201c174adabbda8fd228f8
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Mar 18 22:53:05 2025 -0400
+
+    * se agrega la variable N8N_RUNNERS_ENABLED=true por recomendacion del programa
+
+commit c138faca3733c3b87a2ceb5e4b93151fe07915a8
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Mar 17 15:09:18 2025 -0400
+
+    Update docker-compose.yml
+
+commit 608424a32069909f27d63929532ad0f2f1ccc1d2
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Mar 17 15:08:17 2025 -0400
+
+    Update env.example
+
+commit 5da9015a6283232240c1b94e076bc6a192d18263
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Mar 17 15:06:32 2025 -0400
+
+    Update docker-compose.yml
+
+commit 8d6934f82edb9e695b3408f609f1c4754937fac1
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Mar 17 14:31:49 2025 -0400
+
+    Update docker-compose.yml
+
+commit 5a5491f153de3c0e122fe89ca011e34b1f8362da
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 16 16:46:24 2025 -0400
+
+    * memory
+
+commit 67078e36610692d4a3f9d8333ed0ad5757311a41
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 16 16:17:04 2025 -0400
+
+    * funciones
+
+commit d6e707267517b1b9b188bc3e2ebb8332046716e4
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 16 12:20:29 2025 -0400
+
+    * openwebui variables
+    * dependencias
+
+commit eba20dc157f7f020d32c7f0ff5053025cd1a87de
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 13 19:46:06 2025 -0400
+
+    * changelog
+
+commit 9f6b77e5266a4dc8cd71435a43d6c784cfb046c6
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Thu Mar 13 19:45:49 2025 -0400
 

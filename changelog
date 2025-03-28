@@ -1,4 +1,16 @@
-commit 30b0713e9b7e86e9a01466a4e88ac960b4aacabb (HEAD -> develop, origin/develop)
+commit 26ebe3afc533a4602945f94ee772b9f095f8f249 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Mar 27 21:27:08 2025 -0400
+
+    * limpieza
+
+commit 4dadca38d75c3ec5fa00f96a8073e539df119e6e
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Mar 23 10:38:54 2025 -0400
+
+    * changelog
+
+commit 30b0713e9b7e86e9a01466a4e88ac960b4aacabb
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Mar 23 10:38:34 2025 -0400
 

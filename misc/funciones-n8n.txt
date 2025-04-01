@@ -12,3 +12,13 @@ nombre tool mcp
 
 webhook openwebui chat input
 {{ $json.body.chatInput }}
+
+-----------------------------------------
+
+para instalar librerias de node dentro del contenedor:
+
+1) modifique el docker-compose.yml para agregar la libreria en: NODE_FUNCTION_ALLOW_EXTERNAL=example1,example2
+2) docker compose down (con los perfiles correspondientes)
+3) docker compose up -d (con los perfiles correspondientes)
+4) docker exec -it --user root n8n sh
+5) npm install -g example1 example2

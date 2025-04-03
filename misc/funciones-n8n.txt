@@ -7,8 +7,8 @@ fecha y hora ubicacion:
 query a multiagente
 {{ $json.query }}
 
-nombre tool mcp
-{{ $fromAI("tool","the selected tool to use") }}
+from-ai
+{{ $fromAI("name", "The commenter's name", "string", "Jane Doe") }}
 
 webhook openwebui chat input
 {{ $json.body.chatInput }}

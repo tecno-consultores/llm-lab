@@ -6,7 +6,6 @@ LOCKFILE="/tmp/$(basename $0)_$(whoami)"
 LOCKFD="150"
 token="TOKEN"
 url="https://n8n.example.com/webhook/path"
-
 if ! [[ -f $HOME/.sid.txt ]]; then
 	echo $RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM > $HOME/.sid.txt
 	sid=$(cat $HOME/.sid.txt)

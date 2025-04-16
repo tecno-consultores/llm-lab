@@ -34,6 +34,8 @@ if [[ -z $1 ]]; then
 else
 	if [[ "$1" == "retro" ]]; then
 		modo="retro"
+	else
+ 		modo="normal"
 	fi
 fi
 

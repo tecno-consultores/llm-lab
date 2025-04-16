@@ -6,7 +6,7 @@ LOCKFILE="/tmp/$(basename $0)_$(whoami)"
 LOCKFD="150"
 token="TOKEN"
 url="https://n8n.example.com/webhook/path"
-disponible=$(curl -s -o /dev/null -w "%{http_code}" --request POST https://n8n.example.com/webhook/path)
+disponible=$(curl -s -o /dev/null -w "%{http_code}" --request POST ${url})
 
 function clean_1() {
         rm -f /tmp/$(basename $0)_$(whoami)
@@ -55,7 +55,7 @@ while true; do
         echo -e "\e[00;1;92mEscribe tu mensaje:\e[00m"
         read -t 60 prompt
         if [[ $? -gt 128 ]] ; then
-                echo -e "\e[00;31mERROR: Tiempo de espera agotado.\e[00m"
+                echo -e "\e[00;31mTiempo de espera agotado.\e[00m"
                 exit 1
         fi
         if [[ "$modo" == "normal" ]]; then

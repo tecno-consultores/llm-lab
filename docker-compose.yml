@@ -165,6 +165,7 @@ x-n8n-base: &n8n-base
       - N8N_FORMDATA_FILE_SIZE_MAX=${N8N_FORMDATA_FILE_SIZE_MAX}
       - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
       - N8N_PUBLIC_API_SWAGGERUI_DISABLED=true
+      - N8N_RUNNERS_ENABLED=true
     ports:
       - ${N8N_PORT}:5678
     volumes:

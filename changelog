@@ -1,4 +1,40 @@
-commit 22fb71fade5b7795af3285ccf598bad3ffb72bc9 (HEAD -> develop, origin/develop)
+commit 04910d230dc0efd3a0549d1fcf21d72f3f19840c (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Apr 22 19:29:15 2025 -0400
+
+    * smtp bugfix
+
+commit c9d064e6b13fe6aea9d2dec05acfe46bef4c072a
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Apr 22 19:11:48 2025 -0400
+
+    * changelog
+
+commit 329db84102f395f70352c537a289a086753d19d2
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Apr 22 19:11:36 2025 -0400
+
+    * smtp para las invitaciones
+
+commit e59aa0e19228a28e4f9c26de7ca223051ce20b41
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Fri Apr 18 12:03:54 2025 -0400
+
+    * se sustituye agente.sh por una version optimizada y con el nombre final del script
+
+commit 4db1f39264cd295d0c42ebc31390fdb31325292f
+Author: Ernesto Crespo <ecrespo@protonmail.com>
+Date:   Thu Apr 17 07:14:12 2025 -0400
+
+    Added file .env to gitignore
+
+commit cb1601cf8b1137f747aeb891dc6a5bf0d22f019f
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Wed Apr 16 18:08:58 2025 -0400
+
+    * changelog
+
+commit 22fb71fade5b7795af3285ccf598bad3ffb72bc9
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Wed Apr 16 18:08:50 2025 -0400
 

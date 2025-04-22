@@ -10,3 +10,4 @@ redis
 qdrant
 broker
 openhands-state
+.env

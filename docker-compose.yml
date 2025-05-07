@@ -76,7 +76,7 @@ x-openwebui-base: &openwebui-base
       - SHOW_ADMIN_DETAILS=true
       - DEFAULT_USER_ROLE=pending
       - DEFAULT_LOCALE=es
-      - AIOHTTP_CLIENT_TIMEOUT=100
+      - AIOHTTP_CLIENT_TIMEOUT=1000
       - ENABLE_OLLAMA_API=true
       - OLLAMA_BASE_URL=${UOLLAMA}
       - ENABLE_OPENAI_API=${ENABLE_OPENAI_API}

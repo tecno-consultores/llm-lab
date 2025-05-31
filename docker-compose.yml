@@ -115,7 +115,10 @@ x-openwebui-base: &openwebui-base
       - /etc/localtime:/etc/localtime:ro
 
 x-n8n-base: &n8n-base
-    image: n8nio/n8n:latest
+#    image: n8nio/n8n:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile_n8n
     hostname: n8n
     pull_policy: ${pull_policy}
     restart: ${restart}
@@ -141,14 +144,19 @@ x-n8n-base: &n8n-base
       - N8N_TEMPLATES_ENABLED=true
       - N8N_GRACEFUL_SHUTDOWN_TIMEOUT=10
       - QUEUE_HEALTH_CHECK_ACTIVE=${QUEUE_HEALTH_CHECK_ACTIVE}
+      - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
+      - GENERIC_TIMEZONE=${TIMEZONE}
+      - TZ=${TIMEZONE}
     ports:
       - ${N8N_PORT}:${N8N_PORT}
     volumes:
       - ./n8n/storage:/home/node/.n8n
+      - ./n8n/mcp:/data/mcp
       - ./n8n/backup:/backup
       - ./n8n/shared:/data/shared
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+
     healthcheck:
       test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
       start_period: 1m00s

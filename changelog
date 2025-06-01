@@ -1,4 +1,40 @@
-commit 04910d230dc0efd3a0549d1fcf21d72f3f19840c (HEAD -> develop, origin/develop)
+commit 51e1819a9d7a774f9d2b7a01d413808f1ab358af (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Jun 1 13:08:18 2025 -0400
+
+    * readme
+
+commit 98ff6eba85ddd9e215380fcea674bedcfbc90a1f
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Jun 1 13:06:23 2025 -0400
+
+    * changelog
+
+commit 594c3cc893eff1b5bf566fedb10082d7da7425f7
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Jun 1 13:06:09 2025 -0400
+
+    * n8n-uv y su perfil
+
+commit 05476a4dd5254741426a5506d28e170756218dca
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun May 11 21:06:35 2025 -0400
+
+    * prompt para documentacion
+
+commit 07cacad540d4af2b05149e7ad93e941ba37abb62
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed May 7 10:05:03 2025 -0400
+
+    Update docker-compose.yml
+
+commit fe3d9052108ac633927d896992c91afeaaf9f325
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Apr 22 19:29:24 2025 -0400
+
+    * changelog
+
+commit 04910d230dc0efd3a0549d1fcf21d72f3f19840c
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Tue Apr 22 19:29:15 2025 -0400
 

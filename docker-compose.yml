@@ -175,12 +175,85 @@ x-n8n-base: &n8n-base
       - N8N_SMTP_PASS=${N8N_SMTP_PASS}
       - N8N_SMTP_SENDER=${N8N_SMTP_USER}
       - N8N_SMTP_SSL=false
+      - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
+      - GENERIC_TIMEZONE=${TIMEZONE}
+      - TZ=${TIMEZONE}
     ports:
       - ${N8N_PORT}:5678
     volumes:
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
       - ./n8n/shared:/data/shared
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
+      start_period: 1m00s
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
+x-n8n-uv: &n8n-uv
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    hostname: ${nhostname}
+    container_name: ${nhostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    environment:
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_PERSONALIZATION_ENABLED=true
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+      - EXECUTIONS_DATA_PRUNE=true
+      - EXECUTIONS_DATA_MAX_AGE=168
+      - EXECUTIONS_DATA_PRUNE_MAX_COUNT=10000
+      - N8N_SECURE_COOKIE=false
+      - DB_TYPE=${DB_TYPE}
+      - DB_POSTGRESDB_HOST=${DATABASE_HOST}
+      - DB_POSTGRESDB_PORT=${POSTGRESDB_PORT}
+      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
+      - DB_POSTGRESDB_USER=${POSTGRES_USER}
+      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_POSTGRESDB_POOL_SIZE=2
+      - DB_POSTGRESDB_SSL_ENABLED=false
+      - N8N_TEMPLATES_ENABLED=true
+      - NODE_FUNCTION_ALLOW_EXTERNAL=*
+      - NODE_FUNCTION_ALLOW_BUILTIN=*
+      - N8N_HIRING_BANNER_ENABLED=false
+      - N8N_GRACEFUL_SHUTDOWN_TIMEOUT=30
+      - N8N_REINSTALL_MISSING_PACKAGES=true
+      - N8N_METRICS=false
+      - EXECUTIONS_DATA_SAVE_ON_ERROR=all
+      - EXECUTIONS_DATA_SAVE_ON_SUCCESS=all
+      - EXECUTIONS_DATA_SAVE_ON_PROGRESS=false
+      - EXECUTIONS_DATA_SAVE_MANUAL_EXECUTIONS=true
+      - N8N_COMMUNITY_PACKAGES_ENABLED=true
+      - WEBHOOK_URL=${WEBHOOK_URL}
+      - N8N_EDITOR_BASE_URL=${WEBHOOK_URL}
+      - N8N_PAYLOAD_SIZE_MAX=${N8N_PAYLOAD_SIZE_MAX}
+      - N8N_FORMDATA_FILE_SIZE_MAX=${N8N_FORMDATA_FILE_SIZE_MAX}
+      - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
+      - N8N_PUBLIC_API_SWAGGERUI_DISABLED=true
+      - N8N_RUNNERS_ENABLED=true
+      - N8N_HIDE_USAGE_PAGE=true
+      - N8N_EMAIL_MODE=smtp
+      - N8N_SMTP_HOST=${N8N_SMTP_HOST}
+      - N8N_SMTP_PORT=${N8N_SMTP_PORT}
+      - N8N_SMTP_USER=${N8N_SMTP_USER}
+      - N8N_SMTP_PASS=${N8N_SMTP_PASS}
+      - N8N_SMTP_SENDER=${N8N_SMTP_USER}
+      - N8N_SMTP_SSL=false
+      - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
+      - GENERIC_TIMEZONE=${TIMEZONE}
+      - TZ=${TIMEZONE}
+    ports:
+      - ${N8N_PORT}:5678
+    volumes:
+      - ./n8n/storage:/home/node/.n8n
+      - ./n8n/backup:/backup
+      - ./n8n/shared:/data/shared
+      - ./n8n/mcp:/data/mcp
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     healthcheck:
@@ -434,6 +507,19 @@ services:
     n8n-all:
         <<: *n8n-base
         profiles: ["n8n"]
+        links:
+          - redis-all
+        depends_on:
+          postgres-all:
+            condition: service_healthy
+            restart: true
+          redis-all:
+            condition: service_healthy
+            restart: true
+
+    n8n-uv:
+        <<: *n8n-uv
+        profiles: ["n8n-uv"]
         links:
           - redis-all
         depends_on:

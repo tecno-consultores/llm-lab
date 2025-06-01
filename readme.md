@@ -29,6 +29,7 @@ Other profiles you can run:
 * [OpenHands](https://github.com/All-Hands-AI/OpenHands) on AMD64/ARM64 (--profile openhands)
 * [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) on AMD64/ARM64 (--profile proxy)
 * [Searxng](https://github.com/searxng/searxng) on AMD64/ARM64 (--profile searxng)
+* N8N-uv on AMD64 (--profile n8n-uv)
 
 Example:
 

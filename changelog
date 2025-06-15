@@ -1,4 +1,22 @@
-commit 51e1819a9d7a774f9d2b7a01d413808f1ab358af (HEAD -> develop, origin/develop)
+commit f78fad5b6aef14a45b19603c0f9638bf73371c53 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Jun 15 07:49:05 2025 -0400
+
+    * limpieza
+
+commit 7a624da4cc72fb7132e5585f3b15aeab2a0de2eb
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Jun 1 17:03:50 2025 -0400
+
+    * dockerfile
+
+commit a3be89da32e5f7421955ba7878d76e56badb0aca
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Jun 1 13:08:25 2025 -0400
+
+    * changelog
+
+commit 51e1819a9d7a774f9d2b7a01d413808f1ab358af
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Jun 1 13:08:18 2025 -0400
 

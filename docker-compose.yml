@@ -250,8 +250,43 @@ x-postgres-base: &postgres-base
       retries: 10
 
 
+x-mongodb-base: &mongodb-base
+    image: mongo:latest
+    hostname: ${mhostname}
+    container_name: ${mhostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - ./mongodb_data:/data/db
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: [ "CMD", "mongo", "--eval", "db.adminCommand('ping')" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+x-mongoexpress-base: &mongoexpress-base
+    image: mongo-express:latest
+    hostname: ${mehostname}
+    container_name: ${mehostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: ${mhostname}
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      ME_CONFIG_BASICAUTH_USERNAME: ${ME_CONFIG_BASICAUTH_USERNAME}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${ME_CONFIG_BASICAUTH_PASSWORD}
+
 x-pgadmin-base: &pgadmin-base
-    image: dpage/pgadmin4:8.6
+    image: dpage/pgadmin4:latest
     hostname: ${pghostname}
     container_name: ${pghostname}
     pull_policy: ${pull_policy}
@@ -459,11 +494,20 @@ services:
           pgadmin-all:
             condition: service_started
             restart: true
-
+          mongodb-all:
+            condition: service_started
+            restart: true
+          mongoexpress-all:
+            condition: service_started
+            restart: true
 
     postgres-all:
         <<: *postgres-base
         profiles: ["n8n","n8n-uv"]
+
+    mongodb-all:
+      <<: *mongodb-base
+      profiles: [ "n8n-uv" ]
 
     pgadmin-all:
       <<: *pgadmin-base
@@ -471,6 +515,14 @@ services:
       depends_on:
         postgres-all:
           condition: service_healthy
+          restart: true
+
+    mongoexpress-all:
+      <<: *mongoexpress-base
+      profiles: [ "n8n-uv" ]
+      depends_on:
+        mongodb-all:
+          condition: service_started
           restart: true
 
     redis-all:

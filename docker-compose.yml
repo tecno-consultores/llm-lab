@@ -162,7 +162,7 @@ x-n8n-uv: &n8n-uv
     build:
       context: .
       dockerfile: ./Dockerfile
-    hostname: ${nhostname}
+    hostname: ${nuvhostname}
     container_name: ${nhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
@@ -248,6 +248,59 @@ x-postgres-base: &postgres-base
       interval: 5s
       timeout: 5s
       retries: 10
+
+
+x-mongodb-base: &mongodb-base
+    image: mongo:latest
+    hostname: ${mhostname}
+    container_name: ${mhostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - ./mongodb_data:/data/db
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: [ "CMD", "mongo", "--eval", "db.adminCommand('ping')" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+x-mongoexpress-base: &mongoexpress-base
+    image: mongo-express:latest
+    hostname: ${mehostname}
+    container_name: ${mehostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: ${mhostname}
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      ME_CONFIG_BASICAUTH_USERNAME: ${ME_CONFIG_BASICAUTH_USERNAME}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${ME_CONFIG_BASICAUTH_PASSWORD}
+
+x-pgadmin-base: &pgadmin-base
+    image: dpage/pgadmin4:latest
+    hostname: ${pghostname}
+    container_name: ${pghostname}
+    pull_policy: ${pull_policy}
+    restart: unless-stopped
+    ports:
+      - "${PGADMIN_PORT}:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    volumes:
+      #- ./pgadmin_data:/var/lib/pgadmin
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
 
 x-redis-base: &redis-base
     #image: redislabs/redismod:latest
@@ -425,6 +478,7 @@ services:
             condition: service_healthy
             restart: true
 
+
     n8n-uv:
         <<: *n8n-uv
         profiles: ["n8n-uv"]
@@ -437,22 +491,51 @@ services:
           redis-all:
             condition: service_healthy
             restart: true
+          pgadmin-all:
+            condition: service_started
+            restart: true
+          mongodb-all:
+            condition: service_started
+            restart: true
+          mongoexpress-all:
+            condition: service_started
+            restart: true
 
     postgres-all:
         <<: *postgres-base
-        profiles: ["n8n"]
+        profiles: ["n8n","n8n-uv"]
+
+    mongodb-all:
+      <<: *mongodb-base
+      profiles: [ "n8n-uv" ]
+
+    pgadmin-all:
+      <<: *pgadmin-base
+      profiles: [ "n8n-uv" ]
+      depends_on:
+        postgres-all:
+          condition: service_healthy
+          restart: true
+
+    mongoexpress-all:
+      <<: *mongoexpress-base
+      profiles: [ "n8n-uv" ]
+      depends_on:
+        mongodb-all:
+          condition: service_started
+          restart: true
 
     redis-all:
         <<: *redis-base
-        profiles: ["n8n", "openwebui"]
+        profiles: ["n8n", "openwebui","n8n-uv"]
 
     qdrant-all:
         <<: *qdrant-base
-        profiles: ["qdrant"]
+        profiles: ["n8n","qdrant","n8n-uv"]
 
     openwebui-all:
         <<: *openwebui-base
-        profiles: ["openwebui"]
+        profiles: ["n8n","n8n-uv","openwebui"]
         links:
           - redis-all
         depends_on:

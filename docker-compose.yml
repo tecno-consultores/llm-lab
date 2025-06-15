@@ -22,41 +22,6 @@ x-ollama-base: &ollama-base
       timeout: 5s
       retries: 10
 
-x-flowise-base: &flowise-base
-    image: flowiseai/flowise:latest
-    hostname: ${fhostname}
-    container_name: ${fhostname}
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    environment:
-      - DATABASE_PATH=/root/.flowise
-      - DATABASE_SSL=false
-      - APIKEY_PATH=/root/.flowise
-      - SECRETKEY_PATH=/root/.flowise
-      - LOG_PATH=/root/.flowise/logs
-      - REDIS_URL=${REDIS_URL}
-      - FLOWISE_USERNAME=${FLOWISE_USERNAME}
-      - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}
-      - DATABASE_TYPE=${DATABASE_TYPE}
-      - DATABASE_HOST=${DATABASE_HOST}
-      - DATABASE_PORT=${POSTGRESDB_PORT}
-      - DATABASE_USER=${POSTGRES_USER}
-      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
-      - DATABASE_NAME=${POSTGRES_DB}
-      - FLOWISE_FILE_SIZE_LIMIT=${FLOWISE_FILE_SIZE_LIMIT}
-      - CORS_ORIGINS=${CORS_ORIGINS}
-      - IFRAME_ORIGINS=${IFRAME_ORIGINS}
-      - LOG_LEVEL=${LOG_LEVEL}
-      - ENABLE_METRICS=${ENABLE_METRICS}
-      - METRICS_OPEN_TELEMETRY_DEBUG=${METRICS_OPEN_TELEMETRY_DEBUG}
-      - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
-    ports:
-      - ${FPORT}:3000
-    volumes:
-      - ./flowise:/root/.flowise
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-
 x-openwebui-base: &openwebui-base
     image: ghcr.io/open-webui/open-webui:main
     hostname: ${openhostname}
@@ -321,29 +286,6 @@ x-qdrant-base: &qdrant-base
     volumes:
       - ./qdrant:/qdrant/storage
 
-x-chroma-base: &chroma-base
-    image: chromadb/chroma:latest
-    hostname: ${chostname}
-    container_name: ${chostname}
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    environment:
-      - ANONYMIZED_TELEMETRY=FALSE
-      - IS_PERSISTENT=TRUE
-      - ALLOW_RESET=TRUE
-    ports:
-      - ${CPORT}:8000
-    volumes:
-      - ./chroma:/chroma/chroma
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://127.0.0.1:8000/api/v2/heartbeat" ]
-      start_period: 5s
-      interval: 30s
-      timeout: 10s
-      retries: 3
-
 x-kafka-base: &kafka-base
     image: apache/kafka:latest
     hostname: ${khostname}
@@ -419,27 +361,6 @@ x-nvidia-base: &nvidia-base
               count: all
               capabilities: [gpu]
 
-x-openhands-base: &openhands-base
-    image: docker.all-hands.dev/all-hands-ai/openhands:0.28
-    hostname: ${handhostname}
-    container_name: ${handhostname}
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    stdin_open: true
-    tty: true
-    network_mode: host
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./openhands-state:/.openhands-state
-    environment:
-      - SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.28-nikolaik
-      - LOG_ALL_EVENTS=true
-      #- WORKSPACE_BASE=${WORKSPACE_BASE}
-      #- LLM_PROVIDER=${LLM_PROVIDER}
-      #- LLM_MODEL=${LLM_MODEL}
-      #- LLM_API_KEY=${LLM_API_KEY}
-      - TARGET_BRANCH=main
-
 x-proxy-base: &proxy-base
     image: 'jc21/nginx-proxy-manager:latest'
     hostname: ${proxyhostname}
@@ -491,19 +412,6 @@ x-searxng-base: &searxng-base
 ################################################
 
 services:
-    flowise-all:
-        <<: *flowise-base
-        profiles: ["flowise"]
-        links:
-          - redis-all
-        depends_on:
-          postgres-all:
-            condition: service_healthy
-            restart: true
-          redis-all:
-            condition: service_healthy
-            restart: true
-
     n8n-all:
         <<: *n8n-base
         profiles: ["n8n"]
@@ -532,19 +440,15 @@ services:
 
     postgres-all:
         <<: *postgres-base
-        profiles: ["n8n", "flowise"]
+        profiles: ["n8n"]
 
     redis-all:
         <<: *redis-base
-        profiles: ["n8n", "flowise", "openwebui"]
+        profiles: ["n8n", "openwebui"]
 
     qdrant-all:
         <<: *qdrant-base
         profiles: ["qdrant"]
-
-    chroma-all:
-        <<: *chroma-base
-        profiles: ["chroma"]
 
     openwebui-all:
         <<: *openwebui-base
@@ -621,10 +525,6 @@ services:
         <<: *crawl4ai-base
         image: unclecode/crawl4ai:all-arm64
         profiles: ["crawl4ai-arm64"]
-
-    openhands:
-        <<: *openhands-base
-        profiles: ["openhands"]
 
     proxy:
         <<: *proxy-base

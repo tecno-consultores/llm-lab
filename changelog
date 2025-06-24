@@ -1,4 +1,16 @@
-commit 40a21c543bcb413298126a59e4fce88507a92f4a (HEAD -> develop, origin/develop)
+commit 8fd4b94d12025af88000538b1a0d76c1abc28827 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Jun 24 18:15:00 2025 -0400
+
+    * evolution api
+
+commit ffee89c459763716aa50bafc073ca327ac4bceca
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Jun 24 15:42:46 2025 -0400
+
+    * changelog
+
+commit 40a21c543bcb413298126a59e4fce88507a92f4a
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Tue Jun 24 15:42:37 2025 -0400
 

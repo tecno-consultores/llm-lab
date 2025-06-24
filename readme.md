@@ -22,6 +22,7 @@ Other profiles you can run:
 * [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) on AMD64/ARM64 (--profile proxy)
 * [Searxng](https://github.com/searxng/searxng) on AMD64/ARM64 (--profile searxng)
 * [MongoDB](https://www.mongodb.com) on AMD64 (--profile mongodb)
+* [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 (--profile evolutionapi)
 * N8N-uv on AMD64 (--profile n8n-uv)
 
 Example:

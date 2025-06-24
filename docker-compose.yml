@@ -409,6 +409,25 @@ x-searxng-base: &searxng-base
         max-size: "1m"
         max-file: "1"
 
+x-mongodb-base: &mongodb-base
+    image: mongo:latest
+    hostname: ${mhostname}
+    container_name: ${mhostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - ./mongodb_data:/data/db
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: [ "CMD", "mongo", "--eval", "db.adminCommand('ping')" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
 ################################################
 
 services:
@@ -533,3 +552,7 @@ services:
     searxng:
         <<: *searxng-base
         profiles: ["searxng"]
+
+    mongodb:
+      <<: *mongodb-base
+      profiles: [ "mongodb" ]

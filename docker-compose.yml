@@ -143,6 +143,13 @@ x-n8n-base: &n8n-base
       - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
+      - QUEUE_BULL_PREFIX=${N8N_QUEUE_NAME}
+      - QUEUE_BULL_REDIS_DB=1
+      - QUEUE_BULL_REDIS_HOST=${N8N_QUEUE_HOST}
+      - QUEUE_BULL_REDIS_PORT=6379
+      - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
+      - QUEUE_BULL_REDIS_TLS=false
+      - QUEUE_BULL_REDIS_DUALSTACK=false
     ports:
       - ${N8N_PORT}:5678
     volumes:
@@ -409,127 +416,228 @@ x-searxng-base: &searxng-base
         max-size: "1m"
         max-file: "1"
 
+x-mongodb-base: &mongodb-base
+    image: mongo:latest
+    hostname: ${mhostname}
+    container_name: ${mhostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+#    ports:
+#      - ${mongoport}:8081
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - ./mongodb_data:/data/db
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: [ "CMD", "mongo", "--eval", "db.adminCommand('ping')" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+x-evolution-base: &evolution-base
+    image: atendai/evolution-api:latest
+    hostname: ${evohostname}
+    container_name: ${evohostname}
+    restart: ${restart}
+    pull_policy: ${pull_policy}
+    environment:
+      - SERVER_TYPE=http
+      - SERVER_URL=${EVOLUTION_SERVER_URL}
+      - TELEMETRY=false
+      - CORS_ORIGIN=*
+      - DEL_INSTANCE=false
+      - WEBSOCKET_ENABLED=false
+      - WEBSOCKET_GLOBAL_EVENTS=false
+      - LANGUAGE=en
+      - AUTHENTICATION_API_KEY=${evoapikey}
+      - DATABASE_ENABLED=true
+      - DATABASE_PROVIDER=postgresql
+      - DATABASE_CONNECTION_URI=postgresql://${evouser}:${evopass}@${evodbhostname}:5432/${evodb}?schema=public
+      - DATABASE_CONNECTION_CLIENT_NAME=evolution_exchange
+      - DATABASE_SAVE_DATA_INSTANCE=true
+      - DATABASE_SAVE_DATA_NEW_MESSAGE=true
+      - DATABASE_SAVE_MESSAGE_UPDATE=true
+      - DATABASE_SAVE_DATA_CONTACTS=true
+      - DATABASE_SAVE_DATA_CHATS=true
+      - DATABASE_SAVE_DATA_LABELS=true
+      - DATABASE_SAVE_DATA_HISTORIC=true
+      - CACHE_REDIS_ENABLED=true
+      - CACHE_REDIS_URI=${UREDIS}
+      - CACHE_REDIS_PREFIX_KEY=evolution
+      - CACHE_REDIS_SAVE_INSTANCES=false
+      - CACHE_LOCAL_ENABLED=false
+      - CONFIG_SESSION_PHONE_VERSION=2.3000.1023204200
+    ports:
+      - ${evoport}:8080
+    volumes:
+      - ./evolution_instances:/evolution/instances
+
+x-evodb-base: &evodb-base
+    image: postgres:latest
+    hostname: ${evodbhostname}
+    container_name: ${evodbhostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    environment:
+      - POSTGRES_USER=${evouser}
+      - POSTGRES_PASSWORD=${evopass}
+      - POSTGRES_DB=${evodb}
+    volumes:
+      - ./evodb:/var/lib/postgresql/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -h localhost -U user -d ${evodb}']
+      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
 ################################################
 
 services:
     n8n-all:
-        <<: *n8n-base
-        profiles: ["n8n"]
-        links:
-          - redis-all
-        depends_on:
-          postgres-all:
-            condition: service_healthy
-            restart: true
-          redis-all:
-            condition: service_healthy
-            restart: true
+      <<: *n8n-base
+      profiles: ["n8n"]
+      links:
+        - redis-all
+      depends_on:
+        postgres-all:
+          condition: service_healthy
+          restart: true
+        redis-all:
+          condition: service_healthy
+          restart: true
 
     n8n-uv:
-        <<: *n8n-uv
-        profiles: ["n8n-uv"]
-        links:
-          - redis-all
-        depends_on:
-          postgres-all:
-            condition: service_healthy
-            restart: true
-          redis-all:
-            condition: service_healthy
-            restart: true
+      <<: *n8n-uv
+      profiles: ["n8n-uv"]
+      links:
+        - redis-all
+      depends_on:
+        postgres-all:
+          condition: service_healthy
+          restart: true
+        redis-all:
+          condition: service_healthy
+          restart: true
 
     postgres-all:
-        <<: *postgres-base
-        profiles: ["n8n"]
+      <<: *postgres-base
+      profiles: ["n8n"]
 
     redis-all:
-        <<: *redis-base
-        profiles: ["n8n", "openwebui"]
+      <<: *redis-base
+      profiles: ["n8n", "openwebui", "evolutionapi"]
 
     qdrant-all:
-        <<: *qdrant-base
-        profiles: ["qdrant"]
+      <<: *qdrant-base
+      profiles: ["qdrant"]
 
     openwebui-all:
-        <<: *openwebui-base
-        profiles: ["openwebui"]
-        links:
-          - redis-all
-        depends_on:
-          redis-all:
-            condition: service_healthy
-            restart: true
+      <<: *openwebui-base
+      profiles: ["openwebui"]
+      links:
+        - redis-all
+      depends_on:
+        redis-all:
+          condition: service_healthy
+          restart: true
 
     kafka-all:
-        <<: *kafka-base
-        profiles: ["kafka"]
+      <<: *kafka-base
+      profiles: ["kafka"]
 
     ollama-others:
-        <<: *ollama-base
-        profiles: ["ollama-cpu"]
-        environment:
-          - OLLAMA_DEBUG=${OLLAMA_DEBUG}
-          - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
-          - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}
-          - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
-          - OLLAMA_NUM_PARALLEL=${OLLAMA_NUM_PARALLEL}
-          - OLLAMA_NOPRUNE=${OLLAMA_NOPRUNE}
-          - OLLAMA_SCHED_SPREAD=${OLLAMA_SCHED_SPREAD}
-          - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
-          - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
-          - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
+      <<: *ollama-base
+      profiles: ["ollama-cpu"]
+      environment:
+        - OLLAMA_DEBUG=${OLLAMA_DEBUG}
+        - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
+        - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}
+        - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
+        - OLLAMA_NUM_PARALLEL=${OLLAMA_NUM_PARALLEL}
+        - OLLAMA_NOPRUNE=${OLLAMA_NOPRUNE}
+        - OLLAMA_SCHED_SPREAD=${OLLAMA_SCHED_SPREAD}
+        - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
+        - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
+        - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
 
     ollama-nvidia:
-        <<: [*ollama-base, *nvidia-base]
-        profiles: ["ollama-gpu"]
-        environment:
-          - NVIDIA_VISIBLE_DEVICES=all
-          - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
-          - OLLAMA_DEBUG=${OLLAMA_DEBUG}
-          - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
-          - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}
-          - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
-          - OLLAMA_NUM_PARALLEL=${OLLAMA_NUM_PARALLEL}
-          - OLLAMA_NOPRUNE=${OLLAMA_NOPRUNE}
-          - OLLAMA_SCHED_SPREAD=${OLLAMA_SCHED_SPREAD}
-          - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
-          - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
-          - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
+      <<: [*ollama-base, *nvidia-base]
+      profiles: ["ollama-gpu"]
+      environment:
+        - NVIDIA_VISIBLE_DEVICES=all
+        - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+        - OLLAMA_DEBUG=${OLLAMA_DEBUG}
+        - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
+        - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}
+        - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
+        - OLLAMA_NUM_PARALLEL=${OLLAMA_NUM_PARALLEL}
+        - OLLAMA_NOPRUNE=${OLLAMA_NOPRUNE}
+        - OLLAMA_SCHED_SPREAD=${OLLAMA_SCHED_SPREAD}
+        - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
+        - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
+        - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
 
     whisper-nvidia:
-        <<: [*whisper-base, *nvidia-base]
-        image: onerahmet/openai-whisper-asr-webservice:latest-gpu
-        profiles: ["whisper-gpu"]
-        environment:
-          - ASR_DEVICE=cuda
-          - ASR_MODEL=${ASR_MODEL}
-          - ASR_ENGINE=${ASR_ENGINE}
-          - MODEL_IDLE_TIMEOUT=300
+      <<: [*whisper-base, *nvidia-base]
+      image: onerahmet/openai-whisper-asr-webservice:latest-gpu
+      profiles: ["whisper-gpu"]
+      environment:
+        - ASR_DEVICE=cuda
+        - ASR_MODEL=${ASR_MODEL}
+        - ASR_ENGINE=${ASR_ENGINE}
+        - MODEL_IDLE_TIMEOUT=300
 
     whisper-cpu:
-        <<: *whisper-base
-        image: onerahmet/openai-whisper-asr-webservice:latest
-        profiles: ["whisper"]
-        environment:
-          - ASR_DEVICE=cpu
-          - ASR_MODEL=${ASR_MODEL}
-          - ASR_ENGINE=${ASR_ENGINE}
-          - MODEL_IDLE_TIMEOUT=300
+      <<: *whisper-base
+      image: onerahmet/openai-whisper-asr-webservice:latest
+      profiles: ["whisper"]
+      environment:
+        - ASR_DEVICE=cpu
+        - ASR_MODEL=${ASR_MODEL}
+        - ASR_ENGINE=${ASR_ENGINE}
+        - MODEL_IDLE_TIMEOUT=300
 
     crawl4ai-amd64:
-        <<: *crawl4ai-base
-        image: unclecode/crawl4ai:all-amd64
-        profiles: ["crawl4ai-amd64"]
+      <<: *crawl4ai-base
+      image: unclecode/crawl4ai:all-amd64
+      profiles: ["crawl4ai-amd64"]
 
     crawl4ai-arm:
-        <<: *crawl4ai-base
-        image: unclecode/crawl4ai:all-arm64
-        profiles: ["crawl4ai-arm64"]
+      <<: *crawl4ai-base
+      image: unclecode/crawl4ai:all-arm64
+      profiles: ["crawl4ai-arm64"]
 
     proxy:
-        <<: *proxy-base
-        profiles: ["proxy"]
+      <<: *proxy-base
+      profiles: ["proxy"]
 
     searxng:
-        <<: *searxng-base
-        profiles: ["searxng"]
+      <<: *searxng-base
+      profiles: ["searxng"]
+
+    mongodb:
+      <<: *mongodb-base
+      profiles: [ "mongodb" ]
+
+    evolutionapi:
+      <<: *evolution-base
+      profiles: [ "evolutionapi" ]
+      links:
+        - redis-all
+      depends_on:
+        postgres-evo:
+          condition: service_healthy
+          restart: true
+        redis-all:
+          condition: service_healthy
+          restart: true
+
+    postgres-evo:
+      <<: *evodb-base
+      profiles: ["evolutionapi"]

@@ -1,4 +1,16 @@
-commit 8fd4b94d12025af88000538b1a0d76c1abc28827 (HEAD -> develop, origin/develop)
+commit 11001d6058b408ee8cd4c7517b48500dc9fde5ff (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Jun 24 20:55:46 2025 -0400
+
+    * evolution api funcionando
+
+commit 23e5fadd1a938a9783e4f5f421ace31c1053c5cb
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Jun 24 18:15:10 2025 -0400
+
+    * changelog
+
+commit 8fd4b94d12025af88000538b1a0d76c1abc28827
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Tue Jun 24 18:15:00 2025 -0400
 

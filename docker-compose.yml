@@ -46,7 +46,6 @@ x-openwebui-base: &openwebui-base
       - OLLAMA_BASE_URL=${UOLLAMA}
       - ENABLE_OPENAI_API=${ENABLE_OPENAI_API}
       - OPENAI_API_BASE_URL=${OPENAI_API_BASE_URL}
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - ENABLE_AUTOCOMPLETE_GENERATION=true
       - AUTOCOMPLETE_GENERATION_INPUT_MAX_LENGTH=-1
       - ENABLE_EVALUATION_ARENA_MODELS=false
@@ -72,14 +71,11 @@ x-openwebui-base: &openwebui-base
       - IMAGE_GENERATION_MODEL=
       - IMAGE_SIZE=512x512
       - IMAGE_STEPS=50
-      - COMFYUI_BASE_URL=${COMFYUI_BASE_URL}
-      - COMFYUI_API_KEY=${COMFYUI_API_KEY}
       - ENABLE_WEBSOCKET_SUPPORT=true
       - WEBSOCKET_MANAGER=redis
       - WEBSOCKET_REDIS_URL=${UREDIS}
       - REDIS_URL=${UREDIS}
       - ENABLE_SEARCH_QUERY_GENERATION=true
-      - BRAVE_SEARCH_API_KEY=${BRAVE_SEARCH_API_KEY}
       #- http_proxy=${http_proxy}
       #- https_proxy=${https_proxy}
     ports:

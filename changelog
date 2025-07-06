@@ -1,4 +1,28 @@
-commit 11001d6058b408ee8cd4c7517b48500dc9fde5ff (HEAD -> develop, origin/develop)
+commit 3a236343138041ed218222296d32d2531b5423da (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Jul 6 10:22:55 2025 -0400
+
+    * variables
+
+commit 3c55c1455ffe04d005a3a1705c1cdfaf5472d4bf
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jun 28 10:01:15 2025 -0400
+
+    * changelog
+
+commit cf38f41cbcb024b1a8473fd448d4860c9e104fda
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jun 28 10:00:28 2025 -0400
+
+    * limpieza de variables
+
+commit fd26d61553424b08b010d40457a3d8f4c0e7949e
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Jun 24 20:55:58 2025 -0400
+
+    * changelog
+
+commit 11001d6058b408ee8cd4c7517b48500dc9fde5ff
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Tue Jun 24 20:55:46 2025 -0400
 

@@ -8,8 +8,9 @@ To run N8N with recommendations on AMD64/ARM64 (Postgres, Redis):
 docker compose -f docker-compose.yml --env-file env.example --profile n8n up -d
 ```
 
-Other profiles you can run:
+Profiles you can run:
 
+* [N8N](https://github.com/n8n-io/n8n) on AMD64/ARM64 (--profile n8n)
 * [Qdrant](https://github.com/qdrant/qdrant) on AMD64/ARM64 (--profile qdrant)
 * [OpenwebUI](https://github.com/open-webui/open-webui) on AMD64/ARM64 (--profile openwebui)
 * [Kafka](https://github.com/apache/kafka) on AMD64/ARM64 (--profile kafka)

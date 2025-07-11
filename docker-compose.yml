@@ -94,7 +94,7 @@ x-n8n-base: &n8n-base
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
-      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_DIAGNOSTICS_ENABLED=true
       - N8N_PERSONALIZATION_ENABLED=true
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
       - EXECUTIONS_DATA_PRUNE=true
@@ -128,7 +128,7 @@ x-n8n-base: &n8n-base
       - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
       - N8N_PUBLIC_API_SWAGGERUI_DISABLED=true
       - N8N_RUNNERS_ENABLED=true
-      - N8N_HIDE_USAGE_PAGE=true
+      - N8N_HIDE_USAGE_PAGE=false
       - N8N_EMAIL_MODE=smtp
       - N8N_SMTP_HOST=${N8N_SMTP_HOST}
       - N8N_SMTP_PORT=${N8N_SMTP_PORT}

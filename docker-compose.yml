@@ -115,7 +115,7 @@ x-n8n-base: &n8n-base
       - N8N_HIRING_BANNER_ENABLED=false
       - N8N_GRACEFUL_SHUTDOWN_TIMEOUT=30
       - N8N_REINSTALL_MISSING_PACKAGES=true
-      - N8N_METRICS=false
+      - N8N_METRICS=true
       - EXECUTIONS_DATA_SAVE_ON_ERROR=all
       - EXECUTIONS_DATA_SAVE_ON_SUCCESS=all
       - EXECUTIONS_DATA_SAVE_ON_PROGRESS=false
@@ -261,6 +261,7 @@ x-postgres-base: &postgres-base
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
     volumes:
+      - ./init:/docker-entrypoint-initdb.d:ro
       - ./postgres:/var/lib/postgresql/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
@@ -471,7 +472,7 @@ x-evolution-base: &evolution-base
       - AUTHENTICATION_API_KEY=${evoapikey}
       - DATABASE_ENABLED=true
       - DATABASE_PROVIDER=postgresql
-      - DATABASE_CONNECTION_URI=postgresql://${evouser}:${evopass}@${evodbhostname}:5432/${evodb}?schema=public
+      - DATABASE_CONNECTION_URI=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}:5432/${evodb}?schema=public
       - DATABASE_CONNECTION_CLIENT_NAME=evolution_exchange
       - DATABASE_SAVE_DATA_INSTANCE=true
       - DATABASE_SAVE_DATA_NEW_MESSAGE=true
@@ -491,27 +492,6 @@ x-evolution-base: &evolution-base
       - ${evoport}:8080
     volumes:
       - ./evolution_instances:/evolution/instances
-
-x-evodb-base: &evodb-base
-    image: postgres:latest
-    hostname: ${evodbhostname}
-    container_name: ${evodbhostname}
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    environment:
-      - POSTGRES_USER=${evouser}
-      - POSTGRES_PASSWORD=${evopass}
-      - POSTGRES_DB=${evodb}
-    volumes:
-      - ./evodb:/var/lib/postgresql/data
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -h localhost -U user -d ${evodb}']
-      start_period: 5s
-      interval: 5s
-      timeout: 5s
-      retries: 10
 
 ################################################
 
@@ -544,7 +524,7 @@ services:
 
     postgres-all:
       <<: *postgres-base
-      profiles: ["n8n"]
+      profiles: ["n8n", "evolutionapi"]
 
     redis-all:
       <<: *redis-base
@@ -648,13 +628,9 @@ services:
       links:
         - redis-all
       depends_on:
-        postgres-evo:
+        postgres-all:
           condition: service_healthy
           restart: true
         redis-all:
           condition: service_healthy
           restart: true
-
-    postgres-evo:
-      <<: *evodb-base
-      profiles: ["evolutionapi"]

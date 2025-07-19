@@ -1,5 +1,9 @@
-fecha y hora generica:
+fecha y hora generica UTC:
 {{ new Date().toISOString() }}
+
+fecha y hora VE
+
+{{ new Date().toLocaleString('es-VE') }}
 
 fecha y hora ubicacion:
 {{ $now }}

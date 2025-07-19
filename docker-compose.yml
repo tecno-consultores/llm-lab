@@ -94,7 +94,7 @@ x-n8n-base: &n8n-base
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
-      - N8N_DIAGNOSTICS_ENABLED=true
+      - N8N_DIAGNOSTICS_ENABLED=false
       - N8N_PERSONALIZATION_ENABLED=true
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
       - EXECUTIONS_DATA_PRUNE=true
@@ -146,6 +146,12 @@ x-n8n-base: &n8n-base
       - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
       - QUEUE_BULL_REDIS_TLS=false
       - QUEUE_BULL_REDIS_DUALSTACK=false
+      - LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
+      - LANGCHAIN_TRACING_V2=true
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
+      - LANGSMITH_PROJECT=N8N
+      - N8N_VERSION_NOTIFICATIONS_ENABLED=false
+      - N8N_MFA_ENABLED=true
     ports:
       - ${N8N_PORT}:5678
     volumes:
@@ -191,7 +197,7 @@ x-n8n-uv: &n8n-uv
       - N8N_HIRING_BANNER_ENABLED=false
       - N8N_GRACEFUL_SHUTDOWN_TIMEOUT=30
       - N8N_REINSTALL_MISSING_PACKAGES=true
-      - N8N_METRICS=false
+      - N8N_METRICS=true
       - EXECUTIONS_DATA_SAVE_ON_ERROR=all
       - EXECUTIONS_DATA_SAVE_ON_SUCCESS=all
       - EXECUTIONS_DATA_SAVE_ON_PROGRESS=false
@@ -204,7 +210,7 @@ x-n8n-uv: &n8n-uv
       - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
       - N8N_PUBLIC_API_SWAGGERUI_DISABLED=true
       - N8N_RUNNERS_ENABLED=true
-      - N8N_HIDE_USAGE_PAGE=true
+      - N8N_HIDE_USAGE_PAGE=false
       - N8N_EMAIL_MODE=smtp
       - N8N_SMTP_HOST=${N8N_SMTP_HOST}
       - N8N_SMTP_PORT=${N8N_SMTP_PORT}
@@ -222,6 +228,12 @@ x-n8n-uv: &n8n-uv
       - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
       - QUEUE_BULL_REDIS_TLS=false
       - QUEUE_BULL_REDIS_DUALSTACK=false
+      - LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
+      - LANGCHAIN_TRACING_V2=true
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
+      - LANGSMITH_PROJECT=N8N
+      - N8N_VERSION_NOTIFICATIONS_ENABLED=false
+      - N8N_MFA_ENABLED=true
     ports:
       - ${N8N_PORT}:5678
     volumes:

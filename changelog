@@ -1,4 +1,34 @@
-commit 3a236343138041ed218222296d32d2531b5423da (HEAD -> develop, origin/develop)
+commit 08f965411a44eb5fceaf2f6e3fcf5a9e91171070 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 10:20:04 2025 -0400
+
+    * langsmith
+
+commit ab15f780cd7a7ad059c1d23787995523fb961fbc
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jul 17 09:27:38 2025 -0400
+
+    Update docker-compose.yml
+
+commit b0549fd6a80e4dc1faa7f887a28baa4722fd595b
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Jul 11 10:10:37 2025 -0400
+
+    Update docker-compose.yml
+
+commit 079b7aebf848fd3fa9239fe240ff574f9cf57471
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Fri Jul 11 08:24:08 2025 -0400
+
+    * bugfix
+
+commit 1107d7b90e0a8626d210f8d42ca7fafe8ed6bf81
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Jul 6 10:23:04 2025 -0400
+
+    * changelog
+
+commit 3a236343138041ed218222296d32d2531b5423da
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Jul 6 10:22:55 2025 -0400
 

@@ -89,7 +89,7 @@ x-openwebui-base: &openwebui-base
     deploy:
       mode: global
       restart_policy:
-        condition: any
+        condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
@@ -170,7 +170,7 @@ x-n8n-base: &n8n-base
     deploy:
       mode: global
       restart_policy:
-        condition: any
+        condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
@@ -260,7 +260,7 @@ x-n8n-uv: &n8n-uv
     deploy:
       mode: global
       restart_policy:
-        condition: any
+        condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
@@ -513,7 +513,7 @@ x-evolution-base: &evolution-base
     deploy:
       mode: global
       restart_policy:
-        condition: any
+        condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s

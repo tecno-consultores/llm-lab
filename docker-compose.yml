@@ -86,6 +86,13 @@ x-openwebui-base: &openwebui-base
       - ./openwebui:/app/backend/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    deploy:
+      mode: global
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
 
 x-n8n-base: &n8n-base
     image: n8nio/n8n:latest
@@ -160,6 +167,13 @@ x-n8n-base: &n8n-base
       - ./n8n/shared:/data/shared
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    deploy:
+      mode: global
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     healthcheck:
       test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
       start_period: 1m00s
@@ -243,6 +257,13 @@ x-n8n-uv: &n8n-uv
       - ./n8n/mcp:/data/mcp
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    deploy:
+      mode: global
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     healthcheck:
       test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
       start_period: 1m00s
@@ -489,6 +510,13 @@ x-evolution-base: &evolution-base
       - ${evoport}:8080
     volumes:
       - ./evolution_instances:/evolution/instances
+    deploy:
+      mode: global
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
 
 ################################################
 

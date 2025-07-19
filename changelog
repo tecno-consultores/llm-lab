@@ -1,4 +1,22 @@
-commit a7e04f528d90c6a47707898d4b214269956df405 (HEAD -> develop, origin/develop)
+commit 415e862349cff3f0311ffc48089c7ca8f6e9a0c6 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 13:29:56 2025 -0400
+
+    * bugfix
+
+commit 6253667072725c766fbe2abf9193d07faa304425
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 13:23:08 2025 -0400
+
+    * postgres init script
+
+commit 42f0a48c10ecfff9337f691ad061e1eec29527c4
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 13:12:11 2025 -0400
+
+    * changelog
+
+commit a7e04f528d90c6a47707898d4b214269956df405
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Jul 19 13:11:51 2025 -0400
 

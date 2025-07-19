@@ -273,7 +273,6 @@ x-postgres-base: &postgres-base
       retries: 10
 
 x-redis-base: &redis-base
-    #image: redislabs/redismod:latest
     image: redis:latest
     hostname: ${rhostname}
     container_name: ${rhostname}
@@ -282,7 +281,6 @@ x-redis-base: &redis-base
     environment:
       - REDIS_PORT=${REDIS_PORT}
       - REDIS_DATABASES=16
-      #- REDIS_ARGS=--save 20 1
     volumes:
       - ./redis:/data
       - /etc/timezone:/etc/timezone:ro
@@ -305,7 +303,6 @@ x-qdrant-base: &qdrant-base
       - QDRANT__LOG_LEVEL=INFO
     ports:
       - ${qdrant}:6333
-      #- ${qdrant2}:6334
     volumes:
       - ./qdrant:/qdrant/storage
 

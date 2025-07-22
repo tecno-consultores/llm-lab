@@ -32,3 +32,6 @@ Example:
 docker compose -f docker-compose.yml --env-file env.example --profile openwebui --profile ollama-gpu up -d
 ```
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=tecno-consultores/llm-lab&type=Date)](https://www.star-history.com/#tecno-consultores/llm-lab&Date)

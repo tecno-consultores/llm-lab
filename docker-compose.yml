@@ -505,7 +505,7 @@ x-evolution-base: &evolution-base
       - CACHE_REDIS_TTL=604800
       - CACHE_REDIS_SAVE_INSTANCES=false
       - CACHE_LOCAL_ENABLED=false
-      - CONFIG_SESSION_PHONE_VERSION=2.3000.1023204200
+#      - CONFIG_SESSION_PHONE_VERSION=2.3000.1023204200
     ports:
       - ${evoport}:8080
     volumes:

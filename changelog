@@ -1,4 +1,22 @@
-commit 4b5127a25beb7b890755cb1b11f1caa1b6a4878d (HEAD -> develop, origin/develop)
+commit bd3369e6f715da4bf5011061c17e47d321a58906 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Aug 2 15:23:33 2025 -0400
+
+    * se comenta la variable porque no es necesaria en las versiones mas recientes
+
+commit 46bcd3a54f766b7aeae5a530a0c6631cd37c1a9c
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 21:22:00 2025 -0400
+
+    * variables
+
+commit 96bc17ac20fa5a235a28a35c253f5e91f00239f3
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 20:56:16 2025 -0400
+
+    * changelog
+
+commit 4b5127a25beb7b890755cb1b11f1caa1b6a4878d
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Jul 19 20:55:35 2025 -0400
 

@@ -95,7 +95,7 @@ x-openwebui-base: &openwebui-base
         window: 120s
 
 x-n8n-base: &n8n-base
-    image: n8nio/n8n:latest
+    image: docker.n8n.io/n8nio/n8n:latest
     hostname: ${nhostname}
     container_name: ${nhostname}
     pull_policy: ${pull_policy}
@@ -146,10 +146,11 @@ x-n8n-base: &n8n-base
       - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
+      - EXECUTIONS_MODE=queue
       - QUEUE_BULL_PREFIX=${N8N_QUEUE_NAME}
       - QUEUE_BULL_REDIS_DB=1
       - QUEUE_BULL_REDIS_HOST=${N8N_QUEUE_HOST}
-      - QUEUE_BULL_REDIS_PORT=6379
+      - QUEUE_BULL_REDIS_PORT=${REDIS_PORT}
       - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
       - QUEUE_BULL_REDIS_TLS=false
       - QUEUE_BULL_REDIS_DUALSTACK=false
@@ -271,6 +272,40 @@ x-n8n-uv: &n8n-uv
       timeout: 10s
       retries: 10
 
+x-n8n-worker: &n8n-worker
+    image: docker.n8n.io/n8nio/n8n:latest
+    hostname: n8n-worker
+    container_name: n8n-worker
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    environment:
+      - EXECUTIONS_MODE=queue
+      - QUEUE_BULL_PREFIX=${N8N_QUEUE_NAME}
+      - QUEUE_BULL_REDIS_DB=1
+      - QUEUE_BULL_REDIS_HOST=${N8N_QUEUE_HOST}
+      - QUEUE_BULL_REDIS_PORT=${REDIS_PORT}
+      - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
+      - QUEUE_BULL_REDIS_TLS=false
+      - QUEUE_BULL_REDIS_DUALSTACK=false
+      - DB_TYPE=${DB_TYPE}
+      - DB_POSTGRESDB_HOST=${DATABASE_HOST}
+      - DB_POSTGRESDB_PORT=${POSTGRESDB_PORT}
+      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
+      - DB_POSTGRESDB_USER=${POSTGRES_USER}
+      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_POSTGRESDB_POOL_SIZE=2
+      - DB_POSTGRESDB_SSL_ENABLED=false
+      - WEBHOOK_URL=${WEBHOOK_URL}
+      - N8N_EDITOR_BASE_URL=${WEBHOOK_URL}
+      - GENERIC_TIMEZONE=${TIMEZONE}
+      - TZ=${TIMEZONE}
+    healthcheck:
+      test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
+      start_period: 1m00s
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
 x-postgres-base: &postgres-base
     image: postgres:latest
     hostname: ${phostname}
@@ -281,6 +316,8 @@ x-postgres-base: &postgres-base
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
+    ports:
+      - ${POSTGRESDB_PORT}:5432
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
       - ./postgres:/var/lib/postgresql/data
@@ -302,6 +339,8 @@ x-redis-base: &redis-base
     environment:
       - REDIS_PORT=${REDIS_PORT}
       - REDIS_DATABASES=16
+    ports:
+      - ${REDIS_PORT}:6379
     volumes:
       - ./redis:/data
       - /etc/timezone:/etc/timezone:ro
@@ -537,6 +576,19 @@ services:
     n8n-uv:
       <<: *n8n-uv
       profiles: ["n8n-uv"]
+      links:
+        - redis-all
+      depends_on:
+        postgres-all:
+          condition: service_healthy
+          restart: true
+        redis-all:
+          condition: service_healthy
+          restart: true
+
+    n8n-worker:
+      <<: *n8n-worker
+      profiles: ["n8n-worker"]
       links:
         - redis-all
       depends_on:

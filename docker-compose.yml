@@ -161,8 +161,8 @@ x-n8n-base: &n8n-base
       - N8N_VERSION_NOTIFICATIONS_ENABLED=false
       - N8N_MFA_ENABLED=true
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
-
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
+      - EXECUTIONS_MODE=queue
     ports:
       - ${N8N_PORT}:5678
     volumes:
@@ -254,6 +254,7 @@ x-n8n-uv: &n8n-uv
       - N8N_MFA_ENABLED=true
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
+      - EXECUTIONS_MODE=queue
     ports:
       - ${N8N_PORT}:5678
     volumes:
@@ -314,6 +315,7 @@ x-n8n-worker: &n8n-worker
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
       - N8N_RUNNERS_ENABLED=true
+      - QUEUE_HEALTH_CHECK_ACTIVE=true
     healthcheck:
       test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
       start_period: 1m00s

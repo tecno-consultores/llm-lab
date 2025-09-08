@@ -73,8 +73,8 @@ x-openwebui-base: &openwebui-base
       - IMAGE_STEPS=50
       - ENABLE_WEBSOCKET_SUPPORT=true
       - WEBSOCKET_MANAGER=redis
-      - WEBSOCKET_REDIS_URL=${UREDIS}
-      - REDIS_URL=${UREDIS}
+      - WEBSOCKET_REDIS_URL=redis://${rhostname}:${REDIS_PORT}/1
+      - REDIS_URL=redis://${rhostname}:${REDIS_PORT}/1
       - ENABLE_SEARCH_QUERY_GENERATION=true
       #- http_proxy=${http_proxy}
       #- https_proxy=${https_proxy}
@@ -151,9 +151,9 @@ x-n8n-base: &n8n-base
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
       - EXECUTIONS_MODE=queue
-      - QUEUE_BULL_PREFIX=${N8N_QUEUE_NAME}
+      - QUEUE_BULL_PREFIX=${nhostname}
       - QUEUE_BULL_REDIS_DB=1
-      - QUEUE_BULL_REDIS_HOST=${N8N_QUEUE_HOST}
+      - QUEUE_BULL_REDIS_HOST=${rhostname}
       - QUEUE_BULL_REDIS_PORT=${REDIS_PORT}
       - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
       - QUEUE_BULL_REDIS_TLS=false
@@ -162,13 +162,13 @@ x-n8n-base: &n8n-base
       - LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
       - LANGCHAIN_TRACING_V2=true
       - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
-      - LANGSMITH_PROJECT=N8N
+      - LANGSMITH_PROJECT=${nhostname}
       - N8N_VERSION_NOTIFICATIONS_ENABLED=false
       - N8N_MFA_ENABLED=true
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
       - EXECUTIONS_MODE=queue
-      - N8N_WORKER_SERVICE_NAME=n8n-worker
+      - N8N_WORKER_SERVICE_NAME=${workername}
       - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_TASK_BROKER_PORT=${N8N_PORT2}
@@ -250,10 +250,10 @@ x-n8n-uv: &n8n-uv
       - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
-      - QUEUE_BULL_PREFIX=${N8N_QUEUE_NAME}
+      - QUEUE_BULL_PREFIX=${nhostname}
       - QUEUE_BULL_REDIS_DB=1
       - QUEUE_BULL_REDIS_HOST=${N8N_QUEUE_HOST}
-      - QUEUE_BULL_REDIS_PORT=6379
+      - QUEUE_BULL_REDIS_PORT=${REDIS_PORT}
       - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
       - QUEUE_BULL_REDIS_TLS=false
       - QUEUE_BULL_REDIS_DUALSTACK=false
@@ -267,7 +267,7 @@ x-n8n-uv: &n8n-uv
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
       - EXECUTIONS_MODE=queue
-      - N8N_WORKER_SERVICE_NAME=n8n-worker
+      - N8N_WORKER_SERVICE_NAME=${workername}
       - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_TASK_BROKER_PORT=${N8N_PORT2}
@@ -294,8 +294,8 @@ x-n8n-uv: &n8n-uv
 
 x-n8n-worker: &n8n-worker
     image: docker.n8n.io/n8nio/n8n:latest
-    hostname: n8n-worker
-    container_name: n8n-worker
+    hostname: ${workername}
+    container_name: ${workername}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -304,7 +304,7 @@ x-n8n-worker: &n8n-worker
       - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
       - NODE_ENV=production
       - EXECUTIONS_MODE=queue
-      - QUEUE_BULL_PREFIX=${N8N_QUEUE_NAME}
+      - QUEUE_BULL_PREFIX=${nhostname}
       - QUEUE_BULL_REDIS_DB=1
       - QUEUE_BULL_REDIS_HOST=${N8N_QUEUE_HOST}
       - QUEUE_BULL_REDIS_PORT=${REDIS_PORT}
@@ -334,7 +334,7 @@ x-n8n-worker: &n8n-worker
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
       - N8N_RUNNERS_ENABLED=true
-      - N8N_WORKER_SERVICE_NAME=n8n-worker
+      - N8N_WORKER_SERVICE_NAME=${workername}
       - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_TASK_BROKER_PORT=${N8N_PORT2}
@@ -379,7 +379,7 @@ x-redis-base: &redis-base
       - REDIS_PORT=${REDIS_PORT}
       - REDIS_DATABASES=16
     ports:
-      - ${REDIS_PORT}:6379
+      - ${REDIS_PORT}:${REDIS_PORT}
     volumes:
       - ./redis:/data
       - /etc/timezone:/etc/timezone:ro
@@ -578,7 +578,7 @@ x-evolution-base: &evolution-base
       - DATABASE_SAVE_DATA_LABELS=true
       - DATABASE_SAVE_DATA_HISTORIC=true
       - CACHE_REDIS_ENABLED=true
-      - CACHE_REDIS_URI=${eredis}
+      - CACHE_REDIS_URI=redis://${rhostname}:${REDIS_PORT}/2
       - CACHE_REDIS_PREFIX_KEY=evolution
       - CACHE_REDIS_TTL=604800
       - CACHE_REDIS_SAVE_INSTANCES=false
@@ -646,11 +646,11 @@ services:
 
     postgres-all:
       <<: *postgres-base
-      profiles: ["n8n", "evolutionapi"]
+      profiles: ["n8n", "evolutionapi", "n8n-worker"]
 
     redis-all:
       <<: *redis-base
-      profiles: ["n8n", "openwebui", "evolutionapi"]
+      profiles: ["n8n", "openwebui", "evolutionapi", "n8n-worker"]
 
     qdrant-all:
       <<: *qdrant-base

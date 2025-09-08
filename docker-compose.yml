@@ -252,7 +252,7 @@ x-n8n-uv: &n8n-uv
       - TZ=${TIMEZONE}
       - QUEUE_BULL_PREFIX=${nhostname}
       - QUEUE_BULL_REDIS_DB=1
-      - QUEUE_BULL_REDIS_HOST=${N8N_QUEUE_HOST}
+      - QUEUE_BULL_REDIS_HOST=${rhostname}
       - QUEUE_BULL_REDIS_PORT=${REDIS_PORT}
       - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
       - QUEUE_BULL_REDIS_TLS=false
@@ -306,7 +306,7 @@ x-n8n-worker: &n8n-worker
       - EXECUTIONS_MODE=queue
       - QUEUE_BULL_PREFIX=${nhostname}
       - QUEUE_BULL_REDIS_DB=1
-      - QUEUE_BULL_REDIS_HOST=${N8N_QUEUE_HOST}
+      - QUEUE_BULL_REDIS_HOST=${rhostname}
       - QUEUE_BULL_REDIS_PORT=${REDIS_PORT}
       - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
       - QUEUE_BULL_REDIS_TLS=false

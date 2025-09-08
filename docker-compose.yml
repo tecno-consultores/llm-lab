@@ -646,11 +646,11 @@ services:
 
     postgres-all:
       <<: *postgres-base
-      profiles: ["n8n", "evolutionapi"]
+      profiles: ["n8n", "evolutionapi", "n8n-worker"]
 
     redis-all:
       <<: *redis-base
-      profiles: ["n8n", "openwebui", "evolutionapi"]
+      profiles: ["n8n", "openwebui", "evolutionapi", "n8n-worker"]
 
     qdrant-all:
       <<: *qdrant-base

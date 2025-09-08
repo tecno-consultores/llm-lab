@@ -5,12 +5,14 @@ Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
 To run N8N with recommendations on AMD64/ARM64 (Postgres, Redis):
 
 ```bash
-docker compose -f docker-compose.yml --env-file env.example --profile n8n up -d
+docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker up -d
 ```
 
 Profiles you can run:
 
 * [N8N](https://github.com/n8n-io/n8n) on AMD64/ARM64 (--profile n8n)
+    + N8N-worker on AMD64/ARM64 (--profile n8n-worker)
+    + N8N-uv on AMD64 (--profile n8n-uv)
 * [Qdrant](https://github.com/qdrant/qdrant) on AMD64/ARM64 (--profile qdrant)
 * [OpenwebUI](https://github.com/open-webui/open-webui) on AMD64/ARM64 (--profile openwebui)
 * [Kafka](https://github.com/apache/kafka) on AMD64/ARM64 (--profile kafka)
@@ -24,11 +26,10 @@ Profiles you can run:
 * [Searxng](https://github.com/searxng/searxng) on AMD64/ARM64 (--profile searxng)
 * [MongoDB](https://www.mongodb.com) on AMD64 (--profile mongodb)
 * [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 (--profile evolutionapi)
-* N8N-uv on AMD64 (--profile n8n-uv)
 
 Example:
 
 ```bash
-docker compose -f docker-compose.yml --env-file env.example --profile openwebui --profile ollama-gpu up -d
+docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile openwebui up -d
 ```
 

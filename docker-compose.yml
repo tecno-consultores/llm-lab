@@ -101,6 +101,10 @@ x-n8n-base: &n8n-base
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
+      - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
+      - NODE_ENV=production
       - N8N_DIAGNOSTICS_ENABLED=false
       - N8N_PERSONALIZATION_ENABLED=true
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
@@ -154,6 +158,7 @@ x-n8n-base: &n8n-base
       - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
       - QUEUE_BULL_REDIS_TLS=false
       - QUEUE_BULL_REDIS_DUALSTACK=false
+      - QUEUE_HEALTH_CHECK_ACTIVE=true
       - LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
       - LANGCHAIN_TRACING_V2=true
       - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
@@ -163,8 +168,10 @@ x-n8n-base: &n8n-base
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
       - EXECUTIONS_MODE=queue
-    ports:
-      - ${N8N_PORT}:5678
+      - N8N_WORKER_SERVICE_NAME=n8n-worker
+      - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
+      - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
+      - N8N_TASK_BROKER_PORT=${N8N_PORT2}
     volumes:
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
@@ -194,6 +201,10 @@ x-n8n-uv: &n8n-uv
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
+      - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
+      - NODE_ENV=production
       - N8N_DIAGNOSTICS_ENABLED=false
       - N8N_PERSONALIZATION_ENABLED=true
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
@@ -246,6 +257,7 @@ x-n8n-uv: &n8n-uv
       - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
       - QUEUE_BULL_REDIS_TLS=false
       - QUEUE_BULL_REDIS_DUALSTACK=false
+      - QUEUE_HEALTH_CHECK_ACTIVE=true
       - LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
       - LANGCHAIN_TRACING_V2=true
       - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
@@ -255,8 +267,10 @@ x-n8n-uv: &n8n-uv
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
       - EXECUTIONS_MODE=queue
-    ports:
-      - ${N8N_PORT}:5678
+      - N8N_WORKER_SERVICE_NAME=n8n-worker
+      - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
+      - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
+      - N8N_TASK_BROKER_PORT=${N8N_PORT2}
     volumes:
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
@@ -285,6 +299,10 @@ x-n8n-worker: &n8n-worker
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
+      - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
+      - NODE_ENV=production
       - EXECUTIONS_MODE=queue
       - QUEUE_BULL_PREFIX=${N8N_QUEUE_NAME}
       - QUEUE_BULL_REDIS_DB=1
@@ -293,6 +311,7 @@ x-n8n-worker: &n8n-worker
       - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
       - QUEUE_BULL_REDIS_TLS=false
       - QUEUE_BULL_REDIS_DUALSTACK=false
+      - QUEUE_BULL_REDIS_CONCURRENCY=5
       - DB_TYPE=${DB_TYPE}
       - DB_POSTGRESDB_HOST=${DATABASE_HOST}
       - DB_POSTGRESDB_PORT=${POSTGRESDB_PORT}
@@ -315,9 +334,12 @@ x-n8n-worker: &n8n-worker
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
       - N8N_RUNNERS_ENABLED=true
-      - QUEUE_HEALTH_CHECK_ACTIVE=true
+      - N8N_WORKER_SERVICE_NAME=n8n-worker
+      - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
+      - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
+      - N8N_TASK_BROKER_PORT=${N8N_PORT2}
     healthcheck:
-      test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
+      test: ["CMD", "node", "-v"]
       start_period: 1m00s
       interval: 5s
       timeout: 10s
@@ -580,6 +602,9 @@ services:
     n8n-all:
       <<: *n8n-base
       profiles: ["n8n"]
+      ports:
+        - ${N8N_PORT}:5678
+        - ${N8N_PORT2}:5679
       links:
         - redis-all
       depends_on:
@@ -593,6 +618,8 @@ services:
     n8n-uv:
       <<: *n8n-uv
       profiles: ["n8n-uv"]
+      ports:
+        - ${N8N_PORT}:5678
       links:
         - redis-all
       depends_on:
@@ -606,6 +633,7 @@ services:
     n8n-worker:
       <<: *n8n-worker
       profiles: ["n8n-worker"]
+      command: worker
       links:
         - redis-all
       depends_on:

@@ -568,7 +568,7 @@ x-evolution-base: &evolution-base
       - AUTHENTICATION_API_KEY=${evoapikey}
       - DATABASE_ENABLED=true
       - DATABASE_PROVIDER=postgresql
-      - DATABASE_CONNECTION_URI=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}:5432/${evodb}?schema=public
+      - DATABASE_CONNECTION_URI=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}:${POSTGRESDB_PORT}/${evodb}?schema=public
       - DATABASE_CONNECTION_CLIENT_NAME=evolution_exchange
       - DATABASE_SAVE_DATA_INSTANCE=true
       - DATABASE_SAVE_DATA_NEW_MESSAGE=true
@@ -579,7 +579,7 @@ x-evolution-base: &evolution-base
       - DATABASE_SAVE_DATA_HISTORIC=true
       - CACHE_REDIS_ENABLED=true
       - CACHE_REDIS_URI=redis://${rhostname}:${REDIS_PORT}/2
-      - CACHE_REDIS_PREFIX_KEY=evolution
+      - CACHE_REDIS_PREFIX_KEY=${evohostname}
       - CACHE_REDIS_TTL=604800
       - CACHE_REDIS_SAVE_INSTANCES=false
       - CACHE_LOCAL_ENABLED=false

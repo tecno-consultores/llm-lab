@@ -30,6 +30,7 @@ x-openwebui-base: &openwebui-base
     restart: ${restart}
     environment:
       - ENV=prod
+      - WEBUI_URL=${WEBUI_URL}
       - CUSTOM_NAME=${CUSTOM_NAME}
       - WEBUI_NAME=${CUSTOM_NAME}
       - ENABLE_SIGNUP=true

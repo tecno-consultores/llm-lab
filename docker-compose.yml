@@ -99,8 +99,6 @@ x-openwebui-base: &openwebui-base
 
 x-n8n-base: &n8n-base
     image: docker.n8n.io/n8nio/n8n:latest
-    hostname: ${nhostname}
-    container_name: ${nhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -162,6 +160,7 @@ x-n8n-base: &n8n-base
       - QUEUE_BULL_REDIS_TLS=false
       - QUEUE_BULL_REDIS_DUALSTACK=false
       - QUEUE_HEALTH_CHECK_ACTIVE=true
+      - QUEUE_BULL_REDIS_CONCURRENCY=5
       - LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
       - LANGCHAIN_TRACING_V2=true
       - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
@@ -170,17 +169,10 @@ x-n8n-base: &n8n-base
       - N8N_MFA_ENABLED=true
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
-      - EXECUTIONS_MODE=queue
       - N8N_WORKER_SERVICE_NAME=${workername}
       - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_TASK_BROKER_PORT=${N8N_PORT2}
-    volumes:
-      - ./n8n/storage:/home/node/.n8n
-      - ./n8n/backup:/backup
-      - ./n8n/shared:/data/shared
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
     deploy:
       mode: global
       restart_policy:
@@ -188,12 +180,6 @@ x-n8n-base: &n8n-base
         delay: 5s
         max_attempts: 3
         window: 120s
-    healthcheck:
-      test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
-      start_period: 1m00s
-      interval: 5s
-      timeout: 10s
-      retries: 10
 
 x-n8n-uv: &n8n-uv
     build:
@@ -261,6 +247,7 @@ x-n8n-uv: &n8n-uv
       - QUEUE_BULL_REDIS_TLS=false
       - QUEUE_BULL_REDIS_DUALSTACK=false
       - QUEUE_HEALTH_CHECK_ACTIVE=true
+      - QUEUE_BULL_REDIS_CONCURRENCY=5
       - LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
       - LANGCHAIN_TRACING_V2=true
       - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
@@ -290,59 +277,6 @@ x-n8n-uv: &n8n-uv
         window: 120s
     healthcheck:
       test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
-      start_period: 1m00s
-      interval: 5s
-      timeout: 10s
-      retries: 10
-
-x-n8n-worker: &n8n-worker
-    image: docker.n8n.io/n8nio/n8n:latest
-    hostname: ${workername}
-    container_name: ${workername}
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    environment:
-      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
-      - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
-      - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
-      - NODE_ENV=production
-      - EXECUTIONS_MODE=queue
-      - QUEUE_BULL_PREFIX=${nhostname}
-      - QUEUE_BULL_REDIS_DB=1
-      - QUEUE_BULL_REDIS_HOST=${rhostname}
-      - QUEUE_BULL_REDIS_PORT=${REDIS_PORT}
-      - QUEUE_BULL_REDIS_TIMEOUT_THRESHOLD=10000
-      - QUEUE_BULL_REDIS_TLS=false
-      - QUEUE_BULL_REDIS_DUALSTACK=false
-      - QUEUE_BULL_REDIS_CONCURRENCY=5
-      - DB_TYPE=${DB_TYPE}
-      - DB_POSTGRESDB_HOST=${DATABASE_HOST}
-      - DB_POSTGRESDB_PORT=${POSTGRESDB_PORT}
-      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
-      - DB_POSTGRESDB_USER=${POSTGRES_USER}
-      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
-      - DB_POSTGRESDB_POOL_SIZE=2
-      - DB_POSTGRESDB_SSL_ENABLED=false
-      - WEBHOOK_URL=${WEBHOOK_URL}
-      - N8N_EDITOR_BASE_URL=${WEBHOOK_URL}
-      - GENERIC_TIMEZONE=${TIMEZONE}
-      - TZ=${TIMEZONE}
-      - N8N_TEMPLATES_ENABLED=true
-      - NODE_FUNCTION_ALLOW_EXTERNAL=*
-      - NODE_FUNCTION_ALLOW_BUILTIN=*
-      - N8N_REINSTALL_MISSING_PACKAGES=true
-      - N8N_COMMUNITY_PACKAGES_ENABLED=true
-      - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
-      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
-      - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
-      - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
-      - N8N_RUNNERS_ENABLED=true
-      - N8N_WORKER_SERVICE_NAME=${workername}
-      - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
-      - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
-      - N8N_TASK_BROKER_PORT=${N8N_PORT2}
-    healthcheck:
-      test: ["CMD", "node", "-v"]
       start_period: 1m00s
       interval: 5s
       timeout: 10s
@@ -604,10 +538,24 @@ x-evolution-base: &evolution-base
 services:
     n8n-all:
       <<: *n8n-base
+      hostname: ${nhostname}
+      container_name: ${nhostname}
       profiles: ["n8n"]
       ports:
         - ${N8N_PORT}:5678
         - ${N8N_PORT2}:5679
+      volumes:
+        - ./n8n/storage:/home/node/.n8n
+        - ./n8n/backup:/backup
+        - ./n8n/shared:/data/shared
+        - /etc/timezone:/etc/timezone:ro
+        - /etc/localtime:/etc/localtime:ro
+      healthcheck:
+        test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
+        start_period: 1m00s
+        interval: 5s
+        timeout: 10s
+        retries: 10
       links:
         - redis-all
       depends_on:
@@ -634,9 +582,17 @@ services:
           restart: true
 
     n8n-worker:
-      <<: *n8n-worker
+      <<: *n8n-base
+      hostname: ${workername}
+      container_name: ${workername}
       profiles: ["n8n-worker"]
       command: worker
+      healthcheck:
+        test: ["CMD", "node", "-v"]
+        start_period: 1m00s
+        interval: 5s
+        timeout: 10s
+        retries: 10
       links:
         - redis-all
       depends_on:

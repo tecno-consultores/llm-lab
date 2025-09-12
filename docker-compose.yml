@@ -75,6 +75,7 @@ x-openwebui-base: &openwebui-base
       - WEBSOCKET_MANAGER=redis
       - WEBSOCKET_REDIS_URL=redis://${rhostname}:${REDIS_PORT}/1
       - REDIS_URL=redis://${rhostname}:${REDIS_PORT}/1
+      - REDIS_KEY_PREFIX=${openhostname}
       - ENABLE_SEARCH_QUERY_GENERATION=true
       #- http_proxy=${http_proxy}
       #- https_proxy=${https_proxy}

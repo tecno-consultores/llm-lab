@@ -30,6 +30,7 @@ x-openwebui-base: &openwebui-base
     restart: ${restart}
     environment:
       - ENV=prod
+      - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}
       - WEBUI_URL=${WEBUI_URL}
       - CUSTOM_NAME=${CUSTOM_NAME}
       - WEBUI_NAME=${CUSTOM_NAME}
@@ -76,6 +77,7 @@ x-openwebui-base: &openwebui-base
       - WEBSOCKET_MANAGER=redis
       - WEBSOCKET_REDIS_URL=redis://${rhostname}:${REDIS_PORT}/1
       - REDIS_URL=redis://${rhostname}:${REDIS_PORT}/1
+      - REDIS_KEY_PREFIX=${openhostname}
       - ENABLE_SEARCH_QUERY_GENERATION=true
       #- http_proxy=${http_proxy}
       #- https_proxy=${https_proxy}

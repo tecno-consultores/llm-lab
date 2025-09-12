@@ -33,3 +33,6 @@ Example:
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile openwebui up -d
 ```
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=tecno-consultores/llm-lab&type=Date)](https://www.star-history.com/#tecno-consultores/llm-lab&Date)

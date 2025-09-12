@@ -1,4 +1,84 @@
-commit b00a709514b9490ea65a8b3166c3ce1082e787c3 (HEAD -> develop, origin/develop)
+commit e171b71b4bd1e22000c5b318613bd2a08e47a0c5 (HEAD -> main, origin/main, origin/HEAD)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Wed Sep 10 18:48:30 2025 -0400
+
+    * openwebui
+
+commit feb2285ab20d19d62ef42128a02777f69f2b0068
+Merge: 941b0f9 a81b0e0
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Sep 8 13:56:00 2025 -0400
+
+    Merge pull request #66 from tecno-consultores/develop
+    
+    Update docker-compose.yml
+
+commit a81b0e0639003d66c8b30e8b574da953ac6a044e (origin/develop)
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Sep 8 13:54:24 2025 -0400
+
+    Update docker-compose.yml
+
+commit 941b0f98e5590ea0d2e07ecad44a506129112222
+Merge: 418b3ab a3f5656
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Sep 8 13:50:17 2025 -0400
+
+    Merge pull request #65 from tecno-consultores/develop
+    
+    Update docker-compose.yml
+
+commit a3f5656d4d55d4e0dc02e0111acb48ef3ea5e9c6
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Sep 8 13:48:43 2025 -0400
+
+    Update docker-compose.yml
+
+commit 418b3abd40060c0dd6dde78009f7528906878a8e (tag: v1.9.1)
+Merge: 034bd5a 6c128cc
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Sep 8 13:41:47 2025 -0400
+
+    Merge pull request #64 from tecno-consultores/develop
+    
+    Develop
+
+commit 6c128ccde079f5c271dda37d42871219c0cac73a
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Sep 8 13:40:12 2025 -0400
+
+    Update env.example
+
+commit a2d3620f2a7a65d7b20fbbc702d29d4a3fd61cc2
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Sep 8 13:40:01 2025 -0400
+
+    Update docker-compose.yml
+
+commit 88ae9462f7de569c7e6f264e3431c2ba526ecfd5
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Sep 8 13:19:37 2025 -0400
+
+    Update docker-compose.yml
+    
+    * bugfix
+
+commit 034bd5a170084c40cf017c7c7246c4985deb0676 (tag: v1.9.0)
+Merge: b9aaa93 18674e1
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sun Sep 7 20:50:46 2025 -0400
+
+    Merge pull request #63 from tecno-consultores/develop
+    
+    Develop
+
+commit 18674e1af218e548ac3d13da76eb9d0445c49200
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Sep 7 20:49:58 2025 -0400
+
+    * changelog
+
+commit b00a709514b9490ea65a8b3166c3ce1082e787c3
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Sep 7 20:49:45 2025 -0400
 
@@ -28,6 +108,15 @@ Date:   Sun Sep 7 15:13:50 2025 -0400
 
     * worker profile
 
+commit b9aaa93d132eef180151b9e376cdd9619563dcae
+Merge: eac49c6 a3e83f9
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Mon Aug 11 17:15:49 2025 -0400
+
+    Merge pull request #62 from tecno-consultores/develop
+    
+    Develop
+
 commit a3e83f98aa1bb6477cf4863371301ff719b854db
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Aug 2 15:24:05 2025 -0400
@@ -40,11 +129,35 @@ Date:   Sat Aug 2 15:23:33 2025 -0400
 
     * se comenta la variable porque no es necesaria en las versiones mas recientes
 
+commit eac49c60fe73958ef993df10b4e2e79543b23ea3
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Jul 22 15:43:42 2025 -0400
+
+    Update readme.md
+
+commit a8c3051baff369be286b5e927bf53e7df2504057 (tag: v1.8.5)
+Merge: bf171bd 46bcd3a
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 21:25:48 2025 -0400
+
+    Merge pull request #61 from tecno-consultores/develop
+    
+    * variables
+
 commit 46bcd3a54f766b7aeae5a530a0c6631cd37c1a9c
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Jul 19 21:22:00 2025 -0400
 
     * variables
+
+commit bf171bdfe67605188d15e55f2d443949aa83ae1b (tag: v1.8.4)
+Merge: 6050fc5 96bc17a
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 21:01:42 2025 -0400
+
+    Merge pull request #60 from tecno-consultores/develop
+    
+    Develop
 
 commit 96bc17ac20fa5a235a28a35c253f5e91f00239f3
 Author: Jesus Palencia <sinfallas@gmail.com>
@@ -64,17 +177,44 @@ Date:   Sat Jul 19 19:05:47 2025 -0400
 
     * bugfix
 
+commit 6050fc562c4236193df670d29c4ae333bebcab1d
+Merge: 09bef47 9202952
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 16:41:00 2025 -0400
+
+    Merge pull request #59 from tecno-consultores/develop
+    
+    * deploy
+
 commit 920295235a2fcdc42f0e2b86f092a0513d572810
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Jul 19 16:39:33 2025 -0400
 
     * deploy
 
+commit 09bef474497474d36e31ef39651b63a17252cf6f (tag: v1.8.3)
+Merge: 73206aa 46fdb4c
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 13:49:33 2025 -0400
+
+    Merge pull request #58 from tecno-consultores/develop
+    
+    * bugfix
+
 commit 46fdb4c67dd4a0030865caa839c0eba837d82735
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Jul 19 13:43:09 2025 -0400
 
     * bugfix
+
+commit 73206aaf3a066dfbe378d4218636db4d262508c4
+Merge: a2f56de 3686ee6
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 13:32:35 2025 -0400
+
+    Merge pull request #57 from tecno-consultores/develop
+    
+    Develop
 
 commit 3686ee634d416bba0c272e52f908f0ddc1c86235
 Author: Jesus Palencia <sinfallas@gmail.com>
@@ -106,6 +246,15 @@ Date:   Sat Jul 19 13:11:51 2025 -0400
 
     * init
 
+commit a2f56ded796b53340dd22a5b6f869c17ed37335e
+Merge: 12b9dfb c58606e
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sat Jul 19 10:22:57 2025 -0400
+
+    Merge pull request #56 from tecno-consultores/develop
+    
+    Develop
+
 commit c58606e3418640728ec2091057c998a8d4737ea5
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Jul 19 10:20:41 2025 -0400
@@ -118,10 +267,28 @@ Date:   Sat Jul 19 10:20:04 2025 -0400
 
     * langsmith
 
+commit 12b9dfbf0aa32eff6651e389581f131b3eb8e8e5
+Merge: 46dac9d ab15f78
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Jul 17 09:28:20 2025 -0400
+
+    Merge pull request #55 from tecno-consultores/develop
+    
+    Update docker-compose.yml
+
 commit ab15f780cd7a7ad059c1d23787995523fb961fbc
 Author: Jesús Palencia <sinfallas@gmail.com>
 Date:   Thu Jul 17 09:27:38 2025 -0400
 
+    Update docker-compose.yml
+
+commit 46dac9d1caa849d9eece8f18ab60b291930f3b44 (tag: v1.8.2)
+Merge: 864f924 b0549fd
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Jul 11 10:10:54 2025 -0400
+
+    Merge pull request #54 from tecno-consultores/develop
+    
     Update docker-compose.yml
 
 commit b0549fd6a80e4dc1faa7f887a28baa4722fd595b
@@ -130,11 +297,29 @@ Date:   Fri Jul 11 10:10:37 2025 -0400
 
     Update docker-compose.yml
 
+commit 864f9243316a856cc0fa2c44f728814590487675
+Merge: fb7a702 079b7ae
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Jul 11 08:25:21 2025 -0400
+
+    Merge pull request #53 from tecno-consultores/develop
+    
+    * bugfix
+
 commit 079b7aebf848fd3fa9239fe240ff574f9cf57471
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Fri Jul 11 08:24:08 2025 -0400
 
     * bugfix
+
+commit fb7a7025fbdb26ac50414d1d189956e7c67267ef (tag: v1.8.1)
+Merge: bf74e50 1107d7b
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sun Jul 6 10:26:29 2025 -0400
+
+    Merge pull request #52 from tecno-consultores/develop
+    
+    Develop
 
 commit 1107d7b90e0a8626d210f8d42ca7fafe8ed6bf81
 Author: Jesus Palencia <sinfallas@gmail.com>
@@ -159,6 +344,15 @@ Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Jun 28 10:00:28 2025 -0400
 
     * limpieza de variables
+
+commit bf74e507f1de536ecd7a4efdd914120cdcdf8bf0 (tag: v1.8.0)
+Merge: 0bbbe54 fd26d61
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Jun 24 20:57:02 2025 -0400
+
+    Merge pull request #49 from tecno-consultores/develop
+    
+    Develop
 
 commit fd26d61553424b08b010d40457a3d8f4c0e7949e
 Author: Jesus Palencia <sinfallas@gmail.com>
@@ -202,6 +396,15 @@ Date:   Tue Jun 24 15:34:51 2025 -0400
 
     * ignore
 
+commit 0bbbe54f75da550b9670debf0c321467e82330bd
+Merge: 56f56ce b8c84d1
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sun Jun 15 07:50:08 2025 -0400
+
+    Merge pull request #46 from tecno-consultores/develop
+    
+    Develop
+
 commit b8c84d1c123f3829a91178ed5183676029a21e94
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Jun 15 07:49:13 2025 -0400
@@ -214,11 +417,29 @@ Date:   Sun Jun 15 07:49:05 2025 -0400
 
     * limpieza
 
+commit 56f56cee0b9fd58fd48d59b524210081cba8b4fa (tag: v1.7.1, origin/legacy)
+Merge: 4c28a1f 7a624da
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sun Jun 1 17:04:52 2025 -0400
+
+    Merge pull request #45 from tecno-consultores/develop
+    
+    * dockerfile
+
 commit 7a624da4cc72fb7132e5585f3b15aeab2a0de2eb
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Jun 1 17:03:50 2025 -0400
 
     * dockerfile
+
+commit 4c28a1f61e868ce35477d7f7ff2963ac33b08acb (tag: v1.7.0)
+Merge: 6778291 a3be89d
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Sun Jun 1 13:09:36 2025 -0400
+
+    Merge pull request #44 from tecno-consultores/develop
+    
+    Develop
 
 commit a3be89da32e5f7421955ba7878d76e56badb0aca
 Author: Jesus Palencia <sinfallas@gmail.com>
@@ -256,6 +477,15 @@ Date:   Wed May 7 10:05:03 2025 -0400
 
     Update docker-compose.yml
 
+commit 6778291d88e22b484d7e2dc2104e44e8b59e0da4
+Merge: 0314acf fe3d905
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Apr 22 19:30:19 2025 -0400
+
+    Merge pull request #41 from tecno-consultores/develop
+    
+    Develop
+
 commit fe3d9052108ac633927d896992c91afeaaf9f325
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Tue Apr 22 19:29:24 2025 -0400
@@ -292,6 +522,15 @@ Date:   Thu Apr 17 07:14:12 2025 -0400
 
     Added file .env to gitignore
 
+commit 0314acfdc37034b16810f6d875832d6bba0fe212
+Merge: 8560d9a cb1601c
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed Apr 16 18:10:10 2025 -0400
+
+    Merge pull request #40 from tecno-consultores/develop
+    
+    Develop
+
 commit cb1601cf8b1137f747aeb891dc6a5bf0d22f019f
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Wed Apr 16 18:08:58 2025 -0400
@@ -315,6 +554,15 @@ Author: Jesús Palencia <sinfallas@gmail.com>
 Date:   Wed Apr 16 15:34:31 2025 -0400
 
     Update agente.sh
+
+commit 8560d9ad122f22da470cad44caea0e861ee4ed0d
+Merge: dfce7a0 cdd064f
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed Apr 16 10:28:56 2025 -0400
+
+    Merge pull request #39 from tecno-consultores/develop
+    
+    Develop
 
 commit cdd064f114db2fd3b5568db984215a7f39816d6c
 Author: Jesús Palencia <sinfallas@gmail.com>
@@ -345,6 +593,15 @@ Author: Jesús Palencia <sinfallas@gmail.com>
 Date:   Tue Apr 8 13:59:33 2025 -0400
 
     Update n8n Pipe Function.txt
+
+commit dfce7a080575b91069e35919d8f0c5ed7735b818
+Merge: 0145911 2cb2a44
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Wed Apr 2 21:07:12 2025 -0400
+
+    Merge pull request #38 from tecno-consultores/develop
+    
+    multiples cambios
 
 commit 2cb2a446a5e850363ef37298e1bba222aa9baadb
 Merge: 16c4ff7 0145911

@@ -1,4 +1,53 @@
-commit e171b71b4bd1e22000c5b318613bd2a08e47a0c5 (HEAD -> main, origin/main, origin/HEAD)
+commit 30d4ebe17c495b6ccf310b9ffedf1b6d60a93650 (HEAD -> develop, origin/develop)
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Sep 12 13:57:23 2025 -0400
+
+    Update docker-compose.yml
+
+commit eaeade7a1ea4f537cafc28d56e3df1cb497d6723
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Sep 12 10:23:27 2025 -0400
+
+    Update docker-compose.yml
+
+commit 58632c2acf30f169d2ba374ae1fda388c8c5d98c
+Merge: 4539ecc b530be2
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Sep 12 09:55:14 2025 -0400
+
+    Merge branch 'main' into develop
+
+commit 4539ecc6117fd93bc1f22f490bbef02911433ce2
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Sep 12 09:53:17 2025 -0400
+
+    Update docker-compose.yml
+
+commit 15659bd3834f75b7bad06aaf0e8e530dd070c99b
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Sep 12 09:40:58 2025 -0400
+
+    Update env.example
+
+commit 59afbda00298c2912a71ab6db33e74e24b31bbc0
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Sep 12 09:40:54 2025 -0400
+
+    Update docker-compose.yml
+
+commit 0a3da7cc6d756e7cda326114b9e401a80e74bfb9
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Sep 12 09:36:32 2025 -0400
+
+    Update docker-compose.yml
+
+commit b530be2abcbf00f4ecd081749cd39dc895ad527d
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Wed Sep 10 18:49:15 2025 -0400
+
+    * changelog
+
+commit e171b71b4bd1e22000c5b318613bd2a08e47a0c5
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Wed Sep 10 18:48:30 2025 -0400
 
@@ -13,7 +62,7 @@ Date:   Mon Sep 8 13:56:00 2025 -0400
     
     Update docker-compose.yml
 
-commit a81b0e0639003d66c8b30e8b574da953ac6a044e (origin/develop)
+commit a81b0e0639003d66c8b30e8b574da953ac6a044e
 Author: Jesús Palencia <sinfallas@gmail.com>
 Date:   Mon Sep 8 13:54:24 2025 -0400
 

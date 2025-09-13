@@ -1,4 +1,16 @@
-commit 30d4ebe17c495b6ccf310b9ffedf1b6d60a93650 (HEAD -> develop, origin/develop)
+commit fe991e4658635950ad9171990727feefc497b420 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Sep 13 18:52:07 2025 -0400
+
+    * cambios en el env.example
+
+commit 7d51cdbb28a86b0f6f374d396a396d9ce8546636
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Sep 13 18:41:59 2025 -0400
+
+    * changelog
+
+commit 30d4ebe17c495b6ccf310b9ffedf1b6d60a93650
 Author: Jesús Palencia <sinfallas@gmail.com>
 Date:   Fri Sep 12 13:57:23 2025 -0400
 

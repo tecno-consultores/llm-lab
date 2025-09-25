@@ -173,6 +173,9 @@ x-n8n-base: &n8n-base
       - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_TASK_BROKER_PORT=${N8N_PORT2}
+      #- N8N_MULTI_MAIN_SETUP_ENABLED=true
+      #- N8N_MULTI_MAIN_SETUP_KEY_TTL=10
+      #- N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL=3
     volumes:
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
@@ -605,11 +608,11 @@ services:
 
     postgres-all:
       <<: *postgres-base
-      profiles: ["n8n", "evolutionapi", "n8n-worker"]
+      profiles: ["n8n", "evolutionapi", "n8n-worker", "postgres-all"]
 
     redis-all:
       <<: *redis-base
-      profiles: ["n8n", "openwebui", "evolutionapi", "n8n-worker"]
+      profiles: ["n8n", "openwebui", "evolutionapi", "n8n-worker", "redis-all"]
 
     qdrant-all:
       <<: *qdrant-base

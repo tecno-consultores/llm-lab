@@ -173,6 +173,9 @@ x-n8n-base: &n8n-base
       - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_TASK_BROKER_PORT=${N8N_PORT2}
+      #- N8N_MULTI_MAIN_SETUP_ENABLED=true # enterprise only
+      #- N8N_MULTI_MAIN_SETUP_KEY_TTL=10 # enterprise only
+      #- N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL=3 # enterprise only
     volumes:
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
@@ -267,6 +270,9 @@ x-n8n-uv: &n8n-uv
       - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
       - N8N_TASK_BROKER_PORT=${N8N_PORT2}
+      #- N8N_MULTI_MAIN_SETUP_ENABLED=true # enterprise only
+      #- N8N_MULTI_MAIN_SETUP_KEY_TTL=10 # enterprise only
+      #- N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL=3 # enterprise only
     volumes:
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
@@ -289,7 +295,7 @@ x-n8n-uv: &n8n-uv
       retries: 10
 
 x-postgres-base: &postgres-base
-    image: postgres:latest
+    image: postgres:17.6
     hostname: ${phostname}
     container_name: ${phostname}
     pull_policy: ${pull_policy}
@@ -313,7 +319,7 @@ x-postgres-base: &postgres-base
       retries: 10
 
 x-redis-base: &redis-base
-    image: redis:latest
+    image: redis:8.2.1
     hostname: ${rhostname}
     container_name: ${rhostname}
     pull_policy: ${pull_policy}
@@ -605,11 +611,11 @@ services:
 
     postgres-all:
       <<: *postgres-base
-      profiles: ["n8n", "evolutionapi", "n8n-worker"]
+      profiles: ["n8n", "evolutionapi", "n8n-worker", "postgres-all"]
 
     redis-all:
       <<: *redis-base
-      profiles: ["n8n", "openwebui", "evolutionapi", "n8n-worker"]
+      profiles: ["n8n", "openwebui", "evolutionapi", "n8n-worker", "redis-all"]
 
     qdrant-all:
       <<: *qdrant-base

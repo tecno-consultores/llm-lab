@@ -319,7 +319,7 @@ x-postgres-base: &postgres-base
       retries: 10
 
 x-redis-base: &redis-base
-    image: redis:8.2.1
+    image: redis:8.2
     hostname: ${rhostname}
     container_name: ${rhostname}
     pull_policy: ${pull_policy}

@@ -75,8 +75,8 @@ x-openwebui-base: &openwebui-base
       - IMAGE_STEPS=50
       - ENABLE_WEBSOCKET_SUPPORT=true
       - WEBSOCKET_MANAGER=redis
-      - WEBSOCKET_REDIS_URL=redis://${rhostname}:${REDIS_PORT}/1
-      - REDIS_URL=redis://${rhostname}:${REDIS_PORT}/1
+      - WEBSOCKET_REDIS_URL=redis://${rhostname}:${REDIS_PORT}/2
+      - REDIS_URL=redis://${rhostname}:${REDIS_PORT}/2
       - REDIS_KEY_PREFIX=${openhostname}
       - ENABLE_SEARCH_QUERY_GENERATION=true
       #- http_proxy=${http_proxy}
@@ -319,16 +319,16 @@ x-postgres-base: &postgres-base
       retries: 10
 
 x-redis-base: &redis-base
-    image: redis:8.2.1
+    image: redis/redis-stack:latest
     hostname: ${rhostname}
     container_name: ${rhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
-      - REDIS_PORT=${REDIS_PORT}
-      - REDIS_DATABASES=16
+      - REDIS_ARGS=--save 20 3
     ports:
-      - ${REDIS_PORT}:${REDIS_PORT}
+      - ${REDIS_PORT}:6379
+      - ${INSIGHT_PORT}:8001
     volumes:
       - ./redis:/data
       - /etc/timezone:/etc/timezone:ro
@@ -527,7 +527,7 @@ x-evolution-base: &evolution-base
       - DATABASE_SAVE_DATA_LABELS=true
       - DATABASE_SAVE_DATA_HISTORIC=true
       - CACHE_REDIS_ENABLED=true
-      - CACHE_REDIS_URI=redis://${rhostname}:${REDIS_PORT}/2
+      - CACHE_REDIS_URI=redis://${rhostname}:${REDIS_PORT}/3
       - CACHE_REDIS_PREFIX_KEY=${evohostname}
       - CACHE_REDIS_TTL=604800
       - CACHE_REDIS_SAVE_INSTANCES=false

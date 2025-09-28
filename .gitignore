@@ -4,13 +4,11 @@ n8n/
 openwebui/
 pgadmin_data/
 postgres/
-init/
 qdrant/
 redis/
 n8n/
 evolution_instances/
 ollama/
-misc/
 broker/
 whisper/
 cache-whisper/

@@ -1,4 +1,46 @@
-commit fe991e4658635950ad9171990727feefc497b420 (HEAD -> develop, origin/develop)
+commit 8f2fdf23a1307fea0834643a121b9d2fbda5f520 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Sep 28 10:31:21 2025 -0400
+
+    * nueva imagen de redis
+
+commit 61451010636f6712f7fd21c13e7b0be136a3000a
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Sep 27 14:29:38 2025 -0400
+
+    * redis version
+
+commit 31b258ffeabd41f588fb84dd9aa48c17b3fbf37f
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Sep 26 10:31:52 2025 -0400
+
+    Update docker-compose.yml
+
+commit 1cce9648b8babaa3785c08c72254b988279c2e16
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Sep 25 14:05:30 2025 -0400
+
+    Update docker-compose.yml
+
+commit 61cd90e34831ecbffe227691025c5d0819177e1e
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Sep 21 13:49:51 2025 -0400
+
+    * instalador
+
+commit ff65fe83a95269489c3b81bd5850a26c22bee4c3
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Sep 14 11:43:11 2025 -0400
+
+    * volumenes para el worker
+
+commit 4c4c733c59bde7ca8e37f08fd6b8e60953926fd8
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Sep 13 18:52:22 2025 -0400
+
+    * changelog
+
+commit fe991e4658635950ad9171990727feefc497b420
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Sep 13 18:52:07 2025 -0400
 

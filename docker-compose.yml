@@ -319,16 +319,16 @@ x-postgres-base: &postgres-base
       retries: 10
 
 x-redis-base: &redis-base
-    image: redis:8.2
+    image: redis/redis-stack:latest
     hostname: ${rhostname}
     container_name: ${rhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
-      - REDIS_PORT=${REDIS_PORT}
-      - REDIS_DATABASES=16
+      - REDIS_ARGS=--save 20 3
     ports:
-      - ${REDIS_PORT}:${REDIS_PORT}
+      - ${REDIS_PORT}:6379
+      - ${INSIGHT_PORT}:8001
     volumes:
       - ./redis:/data
       - /etc/timezone:/etc/timezone:ro

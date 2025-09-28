@@ -1,4 +1,16 @@
-commit 48678a4ae5918cc6833f5ab1423f266507eea015 (HEAD -> develop, origin/develop)
+commit 156b55631b5855e52785b07c8425ec44e258b3d5 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Sep 28 11:11:34 2025 -0400
+
+    * archivos ignore
+
+commit ea86a2e2e98aee6627888af3d70b6e4011568c59
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Sep 28 11:00:30 2025 -0400
+
+    * changelog
+
+commit 48678a4ae5918cc6833f5ab1423f266507eea015
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Sep 28 11:00:10 2025 -0400
 

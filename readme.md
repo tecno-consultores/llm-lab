@@ -2,7 +2,7 @@
 
 Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
 
-To run N8N with recommendations on AMD64/ARM64 (Postgres, Redis):
+To run N8N on AMD64/ARM64 (with Postgres and Redis):
 
 ```bash
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker up -d

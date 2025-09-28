@@ -1,4 +1,16 @@
-commit 8f2fdf23a1307fea0834643a121b9d2fbda5f520 (HEAD -> develop, origin/develop)
+commit 48678a4ae5918cc6833f5ab1423f266507eea015 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Sep 28 11:00:10 2025 -0400
+
+    * se separan los servicios en varias db de redis
+
+commit e173a9350c399fc83f25791e122db3b6bf3cf81d
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Sep 28 10:31:57 2025 -0400
+
+    * changelog
+
+commit 8f2fdf23a1307fea0834643a121b9d2fbda5f520
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Sep 28 10:31:21 2025 -0400
 

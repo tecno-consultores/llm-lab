@@ -608,6 +608,9 @@ services:
         redis-all:
           condition: service_healthy
           restart: true
+        n8n-all:
+          condition: service_healthy
+          restart: true
 
     postgres-all:
       <<: *postgres-base

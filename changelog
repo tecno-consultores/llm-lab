@@ -1,4 +1,22 @@
-commit f8e7b658facd565e9785cac42b5f583921a65b1d (HEAD -> develop, origin/develop)
+commit 3739247f558b72a5d3d748c8aea68ca2cfbfdf24 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Oct 12 10:44:25 2025 -0400
+
+    * recomendacion de n8n
+
+commit 6cbc0d2568ebe4dfd700055232077126ea137567
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Oct 11 18:46:26 2025 -0400
+
+    * se agrega dependencia del worker a n8n
+
+commit 3c8d3acec950b7c4de99878ef5d9ba0c46293ac3
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Sep 28 11:32:34 2025 -0400
+
+    * changelog
+
+commit f8e7b658facd565e9785cac42b5f583921a65b1d
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Sep 28 11:32:26 2025 -0400
 

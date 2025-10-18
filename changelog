@@ -1,4 +1,16 @@
-commit 762b15c745415132b92a013bea65bb37a92c23cc (HEAD -> develop, origin/develop)
+commit a208d7962309fef9ba6569a016c0e576522307ba (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Oct 18 17:59:58 2025 -0400
+
+    * bugfix
+
+commit bad39d4d73e5f429b11d2e142ca711ad887715f6
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Oct 18 17:47:56 2025 -0400
+
+    * changelog
+
+commit 762b15c745415132b92a013bea65bb37a92c23cc
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sat Oct 18 17:47:40 2025 -0400
 

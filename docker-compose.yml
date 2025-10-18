@@ -80,7 +80,7 @@ x-openwebui-base: &openwebui-base
       - WEBSOCKET_REDIS_URL=redis://${rhostname}:${REDIS_PORT}/2
       - REDIS_URL=redis://${rhostname}:${REDIS_PORT}/2
       - REDIS_KEY_PREFIX=${openhostname}
-      - ENABLE_SEARCH_QUERY_GENERATION=true
+      - ENABLE_SEARCH_QUERY_GENERATION=false
       - ENABLE_CODE_EXECUTION=false
       - ENABLE_CODE_INTERPRETER=false
       - RAG_EMBEDDING_MODEL_AUTO_UPDATE=false

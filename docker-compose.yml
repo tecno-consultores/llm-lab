@@ -32,14 +32,16 @@ x-openwebui-base: &openwebui-base
       - ENV=prod
       - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}
       - WEBUI_URL=${WEBUI_URL}
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}:${POSTGRESDB_PORT}/oui
       - CUSTOM_NAME=${CUSTOM_NAME}
       - WEBUI_NAME=${CUSTOM_NAME}
       - ENABLE_SIGNUP=true
       - ENABLE_LOGIN_FORM=true
       - ENABLE_REALTIME_CHAT_SAVE=false
-      - ENABLE_ADMIN_EXPORT=true
+      - ENABLE_ADMIN_EXPORT=false
       - ENABLE_ADMIN_CHAT_ACCESS=true
-      - ENABLE_CHANNELS=true
+      - MODELS_CACHE_TTL=300
+      - ENABLE_CHANNELS=false
       - SHOW_ADMIN_DETAILS=true
       - DEFAULT_USER_ROLE=pending
       - DEFAULT_LOCALE=es
@@ -78,7 +80,12 @@ x-openwebui-base: &openwebui-base
       - WEBSOCKET_REDIS_URL=redis://${rhostname}:${REDIS_PORT}/2
       - REDIS_URL=redis://${rhostname}:${REDIS_PORT}/2
       - REDIS_KEY_PREFIX=${openhostname}
-      - ENABLE_SEARCH_QUERY_GENERATION=true
+      - ENABLE_SEARCH_QUERY_GENERATION=false
+      - ENABLE_CODE_EXECUTION=false
+      - ENABLE_CODE_INTERPRETER=false
+      - RAG_EMBEDDING_MODEL_AUTO_UPDATE=false
+      - RAG_RERANKING_MODEL_AUTO_UPDATE=false
+      - ENABLE_WEB_SEARCH=false
       #- http_proxy=${http_proxy}
       #- https_proxy=${https_proxy}
     ports:
@@ -633,6 +640,9 @@ services:
         - redis-all
       depends_on:
         redis-all:
+          condition: service_healthy
+          restart: true
+        postgres-all:
           condition: service_healthy
           restart: true
 

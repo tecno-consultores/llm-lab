@@ -32,6 +32,7 @@ x-openwebui-base: &openwebui-base
       - ENV=prod
       - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}
       - WEBUI_URL=${WEBUI_URL}
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}:${POSTGRESDB_PORT}/oui
       - CUSTOM_NAME=${CUSTOM_NAME}
       - WEBUI_NAME=${CUSTOM_NAME}
       - ENABLE_SIGNUP=true
@@ -639,6 +640,9 @@ services:
         - redis-all
       depends_on:
         redis-all:
+          condition: service_healthy
+          restart: true
+        postgres-all:
           condition: service_healthy
           restart: true
 

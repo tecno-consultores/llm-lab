@@ -1,4 +1,22 @@
-commit 3739247f558b72a5d3d748c8aea68ca2cfbfdf24 (HEAD -> develop, origin/develop)
+commit 762b15c745415132b92a013bea65bb37a92c23cc (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Oct 18 17:47:40 2025 -0400
+
+    * openwebui postgres
+
+commit cc86a94c7bcf68da9ac756a28589a8ceb7ed8100
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sat Oct 18 17:25:47 2025 -0400
+
+    * variables de openwebui
+
+commit 6eccaaf9c3712b32b95bf98360527b0aab5cbc01
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Oct 12 10:44:39 2025 -0400
+
+    * changelog
+
+commit 3739247f558b72a5d3d748c8aea68ca2cfbfdf24
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Oct 12 10:44:25 2025 -0400
 

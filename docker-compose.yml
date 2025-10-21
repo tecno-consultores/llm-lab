@@ -305,8 +305,8 @@ x-n8n-uv: &n8n-uv
 
 x-postgres-base: &postgres-base
     image: postgres:17.6
-    hostname: ${phostname}
-    container_name: ${phostname}
+    hostname: ${DATABASE_HOST}
+    container_name: ${DATABASE_HOST}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:

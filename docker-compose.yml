@@ -179,6 +179,8 @@ x-n8n-base: &n8n-base
       - N8N_GIT_NODE_DISABLE_BARE_REPOS=true
       - N8N_PROXY_HOPS=1
       - NODES_EXCLUDE="[]"
+      - N8N_SKIP_AUTH_ON_OAUTH_CALLBACK=false
+      - N8N_RESTRICT_FILE_ACCESS_TO="[/tmp/]"
       #- N8N_MULTI_MAIN_SETUP_ENABLED=true # enterprise only
       #- N8N_MULTI_MAIN_SETUP_KEY_TTL=10 # enterprise only
       #- N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL=3 # enterprise only
@@ -277,6 +279,8 @@ x-n8n-uv: &n8n-uv
       - N8N_GIT_NODE_DISABLE_BARE_REPOS=true
       - N8N_PROXY_HOPS=1
       - NODES_EXCLUDE="[]"
+      - N8N_SKIP_AUTH_ON_OAUTH_CALLBACK=false
+      - N8N_RESTRICT_FILE_ACCESS_TO="[/tmp/]"
       #- N8N_MULTI_MAIN_SETUP_ENABLED=true # enterprise only
       #- N8N_MULTI_MAIN_SETUP_KEY_TTL=10 # enterprise only
       #- N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL=3 # enterprise only

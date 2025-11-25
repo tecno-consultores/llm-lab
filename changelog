@@ -1,4 +1,56 @@
-commit 316e675bd7cbea7d12821d4e78090f0192f0ebd5 (HEAD -> develop, origin/develop)
+commit cbb17ef2954b05e6a5f8f2030b3e3528753a78ba (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Tue Nov 25 17:54:34 2025 -0400
+
+    * worker + runner
+
+commit 6c10dd3c5a49e72ad6abe2b486b504b25aefe813
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Nov 25 16:01:30 2025 -0400
+
+    Update n8n image and modify worker configuration
+
+commit b330d5ae55d614723776458e7b3feeef85f965b5
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Nov 25 11:15:10 2025 -0400
+
+    Update readme to remove N8N-uv profile
+    
+    Removed N8N-uv profile from the list of profiles.
+
+commit 4f2993e8f2be002b2971604861243befb02e62ae
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Nov 25 11:14:38 2025 -0400
+
+    Remove n8n-uv service from docker-compose
+
+commit df427c85f00bac7bd843e0e727c1ed5e367ff1ab
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Nov 25 11:09:55 2025 -0400
+
+    Update docker-compose.yml
+
+commit 96fdf781202d927761949e851d86aa6f944302b4
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Tue Nov 25 10:38:01 2025 -0400
+
+    Add NODES_EXCLUDE environment variable to services
+
+commit d935a0cae44aca033cd42367d3701b6d332487b1
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Fri Nov 21 10:09:01 2025 -0400
+
+    Add N8N_PROXY_HOPS to docker-compose.yml
+    
+    Added N8N_PROXY_HOPS environment variable to configurations.
+
+commit 9375964daafbf32ba5d9a0d81c94fc6d153f0995
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Nov 16 12:38:50 2025 -0400
+
+    * changelog
+
+commit 316e675bd7cbea7d12821d4e78090f0192f0ebd5
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Nov 16 12:38:10 2025 -0400
 

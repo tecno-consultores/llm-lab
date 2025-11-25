@@ -12,7 +12,6 @@ Profiles you can run:
 
 * [N8N](https://github.com/n8n-io/n8n) on AMD64/ARM64 (--profile n8n)
     + N8N-worker on AMD64/ARM64 (--profile n8n-worker)
-    + N8N-uv on AMD64 (--profile n8n-uv)
 * [Qdrant](https://github.com/qdrant/qdrant) on AMD64/ARM64 (--profile qdrant)
 * [OpenwebUI](https://github.com/open-webui/open-webui) on AMD64/ARM64 (--profile openwebui)
 * [Kafka](https://github.com/apache/kafka) on AMD64/ARM64 (--profile kafka)

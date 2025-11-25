@@ -108,13 +108,14 @@ x-n8n-base: &n8n-base
       - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
       - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
       - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
+      - N8N_RUNNERS_GRANT_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
       - NODE_ENV=production
       - N8N_DIAGNOSTICS_ENABLED=false
       - N8N_PERSONALIZATION_ENABLED=true
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
       - EXECUTIONS_DATA_PRUNE=true
-      - EXECUTIONS_DATA_MAX_AGE=168
-      - EXECUTIONS_DATA_PRUNE_MAX_COUNT=10000
+      - EXECUTIONS_DATA_MAX_AGE=24
+      - EXECUTIONS_DATA_PRUNE_MAX_COUNT=100
       - N8N_SECURE_COOKIE=false
       - DB_TYPE=${DB_TYPE}
       - DB_POSTGRESDB_HOST=${DATABASE_HOST}
@@ -130,7 +131,7 @@ x-n8n-base: &n8n-base
       - N8N_HIRING_BANNER_ENABLED=false
       - N8N_GRACEFUL_SHUTDOWN_TIMEOUT=30
       - N8N_REINSTALL_MISSING_PACKAGES=true
-      - N8N_METRICS=true
+      - N8N_METRICS=false
       - EXECUTIONS_DATA_SAVE_ON_ERROR=all
       - EXECUTIONS_DATA_SAVE_ON_SUCCESS=all
       - EXECUTIONS_DATA_SAVE_ON_PROGRESS=false
@@ -143,8 +144,8 @@ x-n8n-base: &n8n-base
       - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
       - N8N_PUBLIC_API_SWAGGERUI_DISABLED=true
       - N8N_RUNNERS_ENABLED=true
-      - N8N_RUNNERS_MODE=internal
-      #- N8N_RUNNERS_BROKER_LISTEN_ADDRESS=0.0.0.0
+      - N8N_RUNNERS_MODE=external
+      - N8N_RUNNERS_BROKER_LISTEN_ADDRESS=0.0.0.0
       - N8N_HIDE_USAGE_PAGE=false
       - N8N_EMAIL_MODE=smtp
       - N8N_SMTP_HOST=${N8N_SMTP_HOST}
@@ -156,7 +157,7 @@ x-n8n-base: &n8n-base
       - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
-      #- EXECUTIONS_MODE=queue
+      - EXECUTIONS_MODE=queue
       - QUEUE_BULL_PREFIX=${nhostname}
       - QUEUE_BULL_REDIS_DB=1
       - QUEUE_BULL_REDIS_HOST=${rhostname}
@@ -175,7 +176,10 @@ x-n8n-base: &n8n-base
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
       - N8N_WORKER_SERVICE_NAME=${workername}
-      - N8N_RUNNERS_BROKER_PORT=5679
+      - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
+      - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
+      - N8N_TASK_BROKER_PORT=${N8N_PORT2}
+      - N8N_RUNNERS_BROKER_PORT=${N8N_PORT2}
       - N8N_GIT_NODE_DISABLE_BARE_REPOS=true
       - N8N_PROXY_HOPS=1
       - NODES_EXCLUDE="[]"
@@ -196,7 +200,7 @@ x-n8n-base: &n8n-base
         max_attempts: 3
         window: 120s
 
-x-n8n-worker: &n8n-worker
+x-n8n-runner: &n8n-runner
     image: n8nio/runners:latest
     pull_policy: ${pull_policy}
     restart: ${restart}
@@ -206,13 +210,14 @@ x-n8n-worker: &n8n-worker
       - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
       - N8N_RUNNERS_GRANT_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
       - NODE_ENV=production
-      - N8N_RUNNERS_TASK_BROKER_URI=http://${nhostname}:${N8N_PORT2}
+      - N8N_RUNNERS_TASK_BROKER_URI=http://${workername}:${N8N_PORT2}
       - N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT=15
+      - N8N_RUNNERS_LAUNCHER_HEALTH_CHECK_PORT=5680
       #- N8N_NATIVE_PYTHON_RUNNER=true
     volumes:
-      - ./n8n/storage:/home/node/.n8n
-      - ./n8n/backup:/backup
-      - ./n8n/shared:/tmp/shared
+#      - ./n8n/storage:/home/node/.n8n
+#      - ./n8n/backup:/backup
+#      - ./n8n/shared:/tmp/shared
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     deploy:
@@ -500,12 +505,36 @@ services:
           condition: service_healthy
           restart: true
 
+    n8n-runner:
+      <<: *n8n-runner
+      hostname: ${runnername}
+      container_name: ${runnername}
+      profiles: ["n8n-runner"]
+      healthcheck:
+        test: ["CMD", "node", "-v"]
+        start_period: 1m00s
+        interval: 5s
+        timeout: 10s
+        retries: 10
+      links:
+        - redis-all
+      depends_on:
+        postgres-all:
+          condition: service_healthy
+          restart: true
+        redis-all:
+          condition: service_healthy
+          restart: true
+        n8n-all:
+          condition: service_healthy
+          restart: true
+
     n8n-worker:
-      <<: *n8n-worker
+      <<: *n8n-base
       hostname: ${workername}
       container_name: ${workername}
       profiles: ["n8n-worker"]
-      #command: worker
+      command: worker
       healthcheck:
         test: ["CMD", "node", "-v"]
         start_period: 1m00s

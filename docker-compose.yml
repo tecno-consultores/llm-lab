@@ -101,7 +101,7 @@ x-openwebui-base: &openwebui-base
         window: 120s
 
 x-n8n-base: &n8n-base
-    image: docker.n8n.io/n8nio/n8n:latest
+    image: n8nio/n8n:latest
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -143,6 +143,8 @@ x-n8n-base: &n8n-base
       - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
       - N8N_PUBLIC_API_SWAGGERUI_DISABLED=true
       - N8N_RUNNERS_ENABLED=true
+      - N8N_RUNNERS_MODE=internal
+      #- N8N_RUNNERS_BROKER_LISTEN_ADDRESS=0.0.0.0
       - N8N_HIDE_USAGE_PAGE=false
       - N8N_EMAIL_MODE=smtp
       - N8N_SMTP_HOST=${N8N_SMTP_HOST}
@@ -154,7 +156,7 @@ x-n8n-base: &n8n-base
       - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
-      - EXECUTIONS_MODE=queue
+      #- EXECUTIONS_MODE=queue
       - QUEUE_BULL_PREFIX=${nhostname}
       - QUEUE_BULL_REDIS_DB=1
       - QUEUE_BULL_REDIS_HOST=${rhostname}
@@ -173,9 +175,7 @@ x-n8n-base: &n8n-base
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
       - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
       - N8N_WORKER_SERVICE_NAME=${workername}
-      - N8N_TASK_BROKER_URL=http://${nhostname}:${N8N_PORT2}
-      - N8N_COMMAND_RESPONSE_URL=http://${nhostname}:${N8N_PORT2}
-      - N8N_TASK_BROKER_PORT=${N8N_PORT2}
+      - N8N_RUNNERS_BROKER_PORT=5679
       - N8N_GIT_NODE_DISABLE_BARE_REPOS=true
       - N8N_PROXY_HOPS=1
       - NODES_EXCLUDE="[]"
@@ -188,6 +188,33 @@ x-n8n-base: &n8n-base
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
       - ./n8n/shared:/data/shared
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+
+x-n8n-worker: &n8n-worker
+    image: n8nio/runners:latest
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    environment:
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
+      - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
+      - N8N_RUNNERS_GRANT_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
+      - NODE_ENV=production
+      - N8N_RUNNERS_TASK_BROKER_URI=http://${nhostname}:${N8N_PORT2}
+      - N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT=15
+      #- N8N_NATIVE_PYTHON_RUNNER=true
+    volumes:
+      - ./n8n/storage:/home/node/.n8n
+      - ./n8n/backup:/backup
+      - ./n8n/shared:/tmp/shared
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     deploy:
       mode: global
       restart_policy:
@@ -474,11 +501,11 @@ services:
           restart: true
 
     n8n-worker:
-      <<: *n8n-base
+      <<: *n8n-worker
       hostname: ${workername}
       container_name: ${workername}
       profiles: ["n8n-worker"]
-      command: worker
+      #command: worker
       healthcheck:
         test: ["CMD", "node", "-v"]
         start_period: 1m00s

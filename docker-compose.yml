@@ -216,7 +216,7 @@ x-n8n-runner: &n8n-runner
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
       #- N8N_NATIVE_PYTHON_RUNNER=true
-    volumes:
+#    volumes:
 #      - ./n8n/storage:/home/node/.n8n
 #      - ./n8n/backup:/backup
 #      - ./n8n/shared:/tmp/shared

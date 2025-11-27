@@ -213,13 +213,13 @@ x-n8n-runner: &n8n-runner
       - N8N_RUNNERS_TASK_BROKER_URI=http://${workername}:${N8N_PORT2}
       - N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT=15
       - N8N_RUNNERS_LAUNCHER_HEALTH_CHECK_PORT=5680
+      - GENERIC_TIMEZONE=${TIMEZONE}
+      - TZ=${TIMEZONE}
       #- N8N_NATIVE_PYTHON_RUNNER=true
     volumes:
 #      - ./n8n/storage:/home/node/.n8n
 #      - ./n8n/backup:/backup
 #      - ./n8n/shared:/tmp/shared
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
     deploy:
       mode: global
       restart_policy:

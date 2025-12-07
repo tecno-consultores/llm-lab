@@ -1,4 +1,22 @@
-commit 8de4dbc76a426718b365241d18fb2fea1906cee9 (HEAD -> develop, origin/develop)
+commit e6efeab6b7eee25b8105c0c416da115b86f576ab (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 7 16:24:04 2025 -0400
+
+    * openwebui full offline mode
+
+commit caa87675876b4eba9443821d45ac29fbc9e9b602
+Author: Jesús Palencia <sinfallas@gmail.com>
+Date:   Thu Nov 27 09:23:24 2025 -0400
+
+    Update docker-compose.yml
+
+commit 8f0dabaef70a5d796d8cfce26f823544382fa7fa
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Wed Nov 26 20:48:19 2025 -0400
+
+    * changelog
+
+commit 8de4dbc76a426718b365241d18fb2fea1906cee9
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Wed Nov 26 20:47:41 2025 -0400
 

@@ -60,11 +60,14 @@ x-openwebui-base: &openwebui-base
       - WEBUI_AUTH_COOKIE_SAME_SITE=strict
       - WEBUI_AUTH_COOKIE_SECURE=true
       - WEBUI_AUTH=true
-      - OFFLINE_MODE=false
+      - OFFLINE_MODE=true
+      - HF_HUB_OFFLINE=1
+      - RAG_EMBEDDING_MODEL_AUTO_UPDATE=false
+      - RAG_RERANKING_MODEL_AUTO_UPDATE=false
+      - WHISPER_MODEL_AUTO_UPDATE=false
       - RESET_CONFIG_ON_START=false
       - SAFE_MODE=false
       - CORS_ALLOW_ORIGIN=*
-      - WHISPER_MODEL_AUTO_UPDATE=true
       - ENABLE_GOOGLE_DRIVE_INTEGRATION=false
       - GOOGLE_DRIVE_CLIENT_ID=
       - GOOGLE_DRIVE_API_KEY=
@@ -81,8 +84,6 @@ x-openwebui-base: &openwebui-base
       - ENABLE_SEARCH_QUERY_GENERATION=false
       - ENABLE_CODE_EXECUTION=false
       - ENABLE_CODE_INTERPRETER=false
-      - RAG_EMBEDDING_MODEL_AUTO_UPDATE=false
-      - RAG_RERANKING_MODEL_AUTO_UPDATE=false
       - ENABLE_WEB_SEARCH=false
       #- http_proxy=${http_proxy}
       #- https_proxy=${https_proxy}

@@ -14,6 +14,7 @@ Profiles you can run:
     + N8N-worker on AMD64/ARM64 (--profile n8n-worker)
     + N8N-runner (code sandbox) on AMD64/ARM64 (--profile n8n-runner)
 * [Qdrant](https://github.com/qdrant/qdrant) on AMD64/ARM64 (--profile qdrant)
+* [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) on AMD64 (--profile openaibridge)
 * [OpenwebUI](https://github.com/open-webui/open-webui) on AMD64/ARM64 (--profile openwebui)
 * [Kafka](https://github.com/apache/kafka) on AMD64/ARM64 (--profile kafka)
 * [Ollama](https://github.com/ollama/ollama) on Nvidia (--profile ollama-gpu)

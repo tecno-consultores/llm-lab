@@ -10,7 +10,7 @@ fi
 if [[ $(dpkg --get-selections | grep -w "docker-compose-plugin" | awk '{print $1}' | head -1) = docker-compose-plugin ]]; then
 	docker system prune -af
 	chmod -R 777 init
-	docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile openwebui up -d
+	docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
 	chmod -R 777 n8n
 	echo "Finalizado."
 else

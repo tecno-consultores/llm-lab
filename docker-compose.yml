@@ -54,17 +54,20 @@ x-openwebui-base: &openwebui-base
       - ENABLE_MESSAGE_RATING=true
       - ENABLE_COMMUNITY_SHARING=false
       - ENABLE_TAGS_GENERATION=true
-      - ENABLE_FORWARD_USER_INFO_HEADERS=false
+      - ENABLE_FORWARD_USER_INFO_HEADERS=true #set to true for openai-bridge
       - WEBUI_SESSION_COOKIE_SAME_SITE=strict
       - WEBUI_SESSION_COOKIE_SECURE=true
       - WEBUI_AUTH_COOKIE_SAME_SITE=strict
       - WEBUI_AUTH_COOKIE_SECURE=true
       - WEBUI_AUTH=true
-      - OFFLINE_MODE=false
+      - OFFLINE_MODE=true
+      - HF_HUB_OFFLINE=1
+      - RAG_EMBEDDING_MODEL_AUTO_UPDATE=false
+      - RAG_RERANKING_MODEL_AUTO_UPDATE=false
+      - WHISPER_MODEL_AUTO_UPDATE=false
       - RESET_CONFIG_ON_START=false
       - SAFE_MODE=false
       - CORS_ALLOW_ORIGIN=*
-      - WHISPER_MODEL_AUTO_UPDATE=true
       - ENABLE_GOOGLE_DRIVE_INTEGRATION=false
       - GOOGLE_DRIVE_CLIENT_ID=
       - GOOGLE_DRIVE_API_KEY=
@@ -81,8 +84,6 @@ x-openwebui-base: &openwebui-base
       - ENABLE_SEARCH_QUERY_GENERATION=false
       - ENABLE_CODE_EXECUTION=false
       - ENABLE_CODE_INTERPRETER=false
-      - RAG_EMBEDDING_MODEL_AUTO_UPDATE=false
-      - RAG_RERANKING_MODEL_AUTO_UPDATE=false
       - ENABLE_WEB_SEARCH=false
       #- http_proxy=${http_proxy}
       #- https_proxy=${https_proxy}
@@ -99,6 +100,43 @@ x-openwebui-base: &openwebui-base
         delay: 5s
         max_attempts: 3
         window: 120s
+
+x-openai-bridge: &openai-bridge
+    image: ghcr.io/sveneisenschmidt/n8n-openai-bridge:latest
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    hostname: ${obridge}
+    container_name: ${obridge}
+    ports:
+      - ${obridgep}:3333
+    environment:
+      - BEARER_TOKEN=${obearer} #Required Auth token for API requests TO this bridge
+      - N8N_WEBHOOK_BEARER_TOKEN=${wtoken}
+      - LOG_REQUESTS=false
+      - SESSION_ID_HEADERS=X-Session-Id,X-Chat-Id,X-OpenWebUI-Chat-Id
+      - USER_ID_HEADERS=X-User-Id,X-OpenWebUI-User-Id
+      - USER_EMAIL_HEADERS=X-User-Email,X-OpenWebUI-User-Email
+      - USER_NAME_HEADERS=X-User-Name,X-OpenWebUI-User-Name
+      - USER_ROLE_HEADERS=X-User-Role,X-OpenWebUI-User-Role
+      - REQUEST_BODY_LIMIT=50mb
+      - MODELS_POLL_INTERVAL=3 #File polling interval in seconds (default 1)
+      - N8N_BASE_URL=http://n8n:5678/
+      - N8N_API_BEARER_TOKEN=${napi}
+      - MODEL_LOADER_TYPE=n8n-api
+      - AUTO_DISCOVERY_TAG=n8n-openai-bridge
+      - AUTO_DISCOVERY_POLL_INTERVAL=300
+      - ENABLE_TASK_DETECTION=false #Set to 'true' to enable (default false)
+      - N8N_TIMEOUT=300000 # n8n webhook request timeout (default 5 minutes)
+      - SERVER_TIMEOUT=300000 # HTTP server request timeout (default 5 minutes)
+      - SERVER_KEEP_ALIVE_TIMEOUT=120000 # Keep-alive connection timeout (default 2 minutes)
+      - SERVER_HEADERS_TIMEOUT=121000 # Headers timeout (default 121 seconds)
+      - FILE_UPLOAD_MODE=passthrough # Options passthrough, extract-json, extract-multipart, disabled
+      - RATE_LIMIT_WINDOW_MS=60000 # Time window in milliseconds (default 1 minute)
+      - RATE_LIMIT_MAX_REQUESTS=100 # Max requests per window for general endpoints (default 100)
+      - RATE_LIMIT_CHAT_COMPLETIONS=30 # Max chat completion requests per window (default 30)
+      - DISABLE_RATE_LIMIT=false # Set to 'true' to disable rate limiting entirely
+    volumes:
+      - ./models.json:/app/models.json:ro
 
 x-n8n-base: &n8n-base
     image: n8nio/n8n:latest
@@ -184,7 +222,8 @@ x-n8n-base: &n8n-base
       - N8N_PROXY_HOPS=1
       - NODES_EXCLUDE="[]"
       - N8N_SKIP_AUTH_ON_OAUTH_CALLBACK=false
-      - N8N_RESTRICT_FILE_ACCESS_TO="[/tmp/]"
+      - N8N_DEFAULT_LOCALE=es
+      - N8N_RESTRICT_FILE_ACCESS_TO="/tmp/"
       #- N8N_MULTI_MAIN_SETUP_ENABLED=true # enterprise only
       #- N8N_MULTI_MAIN_SETUP_KEY_TTL=10 # enterprise only
       #- N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL=3 # enterprise only
@@ -505,30 +544,6 @@ services:
           condition: service_healthy
           restart: true
 
-    n8n-runner:
-      <<: *n8n-runner
-      hostname: ${runnername}
-      container_name: ${runnername}
-      profiles: ["n8n-runner"]
-      healthcheck:
-        test: ["CMD", "node", "-v"]
-        start_period: 1m00s
-        interval: 5s
-        timeout: 10s
-        retries: 10
-      links:
-        - redis-all
-      depends_on:
-        postgres-all:
-          condition: service_healthy
-          restart: true
-        redis-all:
-          condition: service_healthy
-          restart: true
-        n8n-all:
-          condition: service_healthy
-          restart: true
-
     n8n-worker:
       <<: *n8n-base
       hostname: ${workername}
@@ -554,6 +569,30 @@ services:
           condition: service_healthy
           restart: true
 
+    n8n-runner:
+      <<: *n8n-runner
+      hostname: ${runnername}
+      container_name: ${runnername}
+      profiles: ["n8n-runner"]
+      healthcheck:
+        test: ["CMD", "node", "-v"]
+        start_period: 1m00s
+        interval: 5s
+        timeout: 10s
+        retries: 10
+      links:
+        - redis-all
+      depends_on:
+        postgres-all:
+          condition: service_healthy
+          restart: true
+        redis-all:
+          condition: service_healthy
+          restart: true
+        n8n-worker:
+          condition: service_healthy
+          restart: true
+
     postgres-all:
       <<: *postgres-base
       profiles: ["n8n", "evolutionapi", "n8n-worker", "postgres-all"]
@@ -576,6 +615,17 @@ services:
           condition: service_healthy
           restart: true
         postgres-all:
+          condition: service_healthy
+          restart: true
+
+    n8n-openai-bridge-all:
+      <<: *openai-bridge
+      profiles: ["openaibridge"]
+      depends_on:
+        openwebui-all:
+          condition: service_healthy
+          restart: true
+        n8n-all:
           condition: service_healthy
           restart: true
 

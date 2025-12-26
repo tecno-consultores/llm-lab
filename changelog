@@ -1,4 +1,16 @@
-commit e6efeab6b7eee25b8105c0c416da115b86f576ab (HEAD -> develop, origin/develop)
+commit 53c4c63b4147922b36702af1e162198e4fd68fca (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Dec 25 22:24:51 2025 -0400
+
+    * openai-bridge
+
+commit 19b44f2189bac1e1b5964b23a3353e04d4cef89b
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 7 16:24:19 2025 -0400
+
+    * changelog
+
+commit e6efeab6b7eee25b8105c0c416da115b86f576ab
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Sun Dec 7 16:24:04 2025 -0400
 

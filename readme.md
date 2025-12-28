@@ -2,6 +2,8 @@
 
 Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tecno-consultores/llm-lab)
+
 To run N8N on AMD64/ARM64 (with Postgres and Redis):
 
 ```bash

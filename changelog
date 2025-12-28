@@ -1,4 +1,16 @@
-commit 49e808c6d8e1f4e51ec535c3c36c1dac8e5aa7f6 (HEAD -> develop, origin/develop)
+commit 660de23317b326b16f7156bbec129b944bf8d358 (HEAD -> develop, origin/develop)
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Sun Dec 28 15:44:36 2025 -0400
+
+    * badge
+
+commit bb4895835d3b154c4c96e536596b78bf0e48834a
+Author: Jesus Palencia <sinfallas@gmail.com>
+Date:   Thu Dec 25 22:32:03 2025 -0400
+
+    * changelog
+
+commit 49e808c6d8e1f4e51ec535c3c36c1dac8e5aa7f6
 Author: Jesus Palencia <sinfallas@gmail.com>
 Date:   Thu Dec 25 22:31:53 2025 -0400
 

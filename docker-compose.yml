@@ -28,6 +28,7 @@ x-openwebui-base: &openwebui-base
     restart: ${restart}
     environment:
       - ENV=prod
+      - DOCKER=true
       - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}
       - WEBUI_URL=${WEBUI_URL}
       - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATABASE_HOST}:${POSTGRESDB_PORT}/oui
@@ -40,6 +41,9 @@ x-openwebui-base: &openwebui-base
       - ENABLE_ADMIN_CHAT_ACCESS=true
       - MODELS_CACHE_TTL=300
       - ENABLE_CHANNELS=false
+      - ENABLE_FOLDERS=false
+      - ENABLE_NOTES=false
+      - ENABLE_MEMORIES=false
       - SHOW_ADMIN_DETAILS=true
       - DEFAULT_USER_ROLE=pending
       - DEFAULT_LOCALE=es
@@ -48,7 +52,7 @@ x-openwebui-base: &openwebui-base
       - OLLAMA_BASE_URL=${UOLLAMA}
       - ENABLE_OPENAI_API=${ENABLE_OPENAI_API}
       - OPENAI_API_BASE_URL=${OPENAI_API_BASE_URL}
-      - ENABLE_AUTOCOMPLETE_GENERATION=true
+      - ENABLE_AUTOCOMPLETE_GENERATION=false
       - AUTOCOMPLETE_GENERATION_INPUT_MAX_LENGTH=-1
       - ENABLE_EVALUATION_ARENA_MODELS=false
       - ENABLE_MESSAGE_RATING=true

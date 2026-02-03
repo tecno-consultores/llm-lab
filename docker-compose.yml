@@ -228,6 +228,7 @@ x-n8n-base: &n8n-base
       - N8N_SKIP_AUTH_ON_OAUTH_CALLBACK=false
       - N8N_DEFAULT_LOCALE=es
       - N8N_RESTRICT_FILE_ACCESS_TO="/tmp/"
+      - NODE_OPTIONS="--dns-result-order=ipv4first"
       #- N8N_MULTI_MAIN_SETUP_ENABLED=true # enterprise only
       #- N8N_MULTI_MAIN_SETUP_KEY_TTL=10 # enterprise only
       #- N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL=3 # enterprise only
@@ -258,6 +259,7 @@ x-n8n-runner: &n8n-runner
       - N8N_RUNNERS_LAUNCHER_HEALTH_CHECK_PORT=5680
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
+      - NODE_OPTIONS="--dns-result-order=ipv4first"
       #- N8N_NATIVE_PYTHON_RUNNER=true
 #    volumes:
 #      - ./n8n/storage:/home/node/.n8n

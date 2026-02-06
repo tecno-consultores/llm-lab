@@ -158,7 +158,7 @@ x-n8n-base: &n8n-base
       - EXECUTIONS_DATA_PRUNE=true
       - EXECUTIONS_DATA_MAX_AGE=24
       - EXECUTIONS_DATA_PRUNE_MAX_COUNT=100
-      - EXECUTIONS_DATA_SAVE_ON_SUCCESS=none #no grabar las ejecuciones exitosas para mejorar el rendimiento
+      - EXECUTIONS_DATA_SAVE_ON_SUCCESS=all #cambiar a: none para no grabar las ejecuciones exitosas y mejorar el rendimiento
       - EXECUTIONS_DATA_SAVE_ON_ERROR=all
       - EXECUTIONS_DATA_SAVE_MANUAL_EXECUTIONS=true
       - EXECUTIONS_DATA_SAVE_ON_PROGRESS=false

@@ -1,0 +1,14 @@
+instacia:
+- Nombre
+- Baileys
+
+Configurations:
+- reject calls
+- ignore groups
+- always online
+- read messages
+
+Events/webhook:
+- enable
+- webhook base64 (images)
+- message upsert

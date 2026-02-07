@@ -476,7 +476,7 @@ x-mongodb-base: &mongodb-base
       retries: 5
 
 x-evolution-base: &evolution-base
-    image: atendai/evolution-api:latest
+    image: evoapicloud/evolution-api:latest
     hostname: ${evohostname}
     container_name: ${evohostname}
     restart: ${restart}
@@ -510,7 +510,7 @@ x-evolution-base: &evolution-base
       - CACHE_REDIS_SAVE_INSTANCES=false
       - CACHE_LOCAL_ENABLED=false
       - TZ=America/Caracas
-#      - CONFIG_SESSION_PHONE_VERSION=2.3000.1023204200
+#      - CONFIG_SESSION_PHONE_VERSION=2.3000.1033096875
     ports:
       - ${evoport}:8080
     volumes:

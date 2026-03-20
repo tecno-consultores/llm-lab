@@ -31,11 +31,15 @@ Profiles you can run:
 * [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 (--profile evolutionapi)
 * [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 (--profile flowise)
 
-Example:
+
+To run N8N with OpenwebUI: 
 
 ```bash
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
 ```
+
+To access **Redis Insight**, go to http://x.x.x.x:port where x.x.x.x is the IP address of the instance and port is the number set in the environment variables file. The default is 8001.
+
 
 ## Star History
 

@@ -523,6 +523,41 @@ x-evolution-base: &evolution-base
         max_attempts: 3
         window: 120s
 
+x-flowise-base: &flowise-base
+    image: flowiseai/flowise:latest
+    hostname: ${fhostname}
+    container_name: ${fhostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    environment:
+      - DATABASE_PATH=/root/.flowise
+      - DATABASE_SSL=false
+      - APIKEY_PATH=/root/.flowise
+      - SECRETKEY_PATH=/root/.flowise
+      - LOG_PATH=/root/.flowise/logs
+      - REDIS_URL=${REDIS_URL}
+      - FLOWISE_USERNAME=${FLOWISE_USERNAME}
+      - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}
+      - DATABASE_TYPE=${DATABASE_TYPE}
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_PORT=${POSTGRESDB_PORT}
+      - DATABASE_USER=${POSTGRES_USER}
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
+      - DATABASE_NAME=${POSTGRES_DB}
+      - FLOWISE_FILE_SIZE_LIMIT=${FLOWISE_FILE_SIZE_LIMIT}
+      - CORS_ORIGINS=${CORS_ORIGINS}
+      - IFRAME_ORIGINS=${IFRAME_ORIGINS}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - ENABLE_METRICS=${ENABLE_METRICS}
+      - METRICS_OPEN_TELEMETRY_DEBUG=${METRICS_OPEN_TELEMETRY_DEBUG}
+      - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
+    ports:
+      - ${FPORT}:3000
+    volumes:
+      - ./flowise:/root/.flowise
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
 ################################################
 
 services:
@@ -725,3 +760,16 @@ services:
         redis-all:
           condition: service_healthy
           restart: true
+
+    flowise-all:
+        <<: *flowise-base
+        profiles: ["flowise"]
+        links:
+          - redis-all
+        depends_on:
+          postgres-all:
+            condition: service_healthy
+            restart: true
+          redis-all:
+            condition: service_healthy
+            restart: true

@@ -535,7 +535,7 @@ x-flowise-base: &flowise-base
       - APIKEY_PATH=/root/.flowise
       - SECRETKEY_PATH=/root/.flowise
       - LOG_PATH=/root/.flowise/logs
-      - REDIS_URL=${REDIS_URL}
+      - REDIS_URL=redis://${rhostname}:${REDIS_PORT}
       - FLOWISE_USERNAME=${FLOWISE_USERNAME}
       - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}
       - DATABASE_TYPE=${DATABASE_TYPE}

@@ -29,6 +29,7 @@ Profiles you can run:
 * [Searxng](https://github.com/searxng/searxng) on AMD64/ARM64 (--profile searxng)
 * [MongoDB](https://www.mongodb.com) on AMD64 (--profile mongodb)
 * [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 (--profile evolutionapi)
+* [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 (--profile flowise)
 
 Example:
 

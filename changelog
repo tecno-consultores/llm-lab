@@ -1,2211 +1,2564 @@
-commit 660de23317b326b16f7156bbec129b944bf8d358 (HEAD -> develop, origin/develop)
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 28 15:44:36 2025 -0400
-
-    * badge
-
-commit bb4895835d3b154c4c96e536596b78bf0e48834a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Dec 25 22:32:03 2025 -0400
-
-    * changelog
-
-commit 49e808c6d8e1f4e51ec535c3c36c1dac8e5aa7f6
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Dec 25 22:31:53 2025 -0400
-
-    * readme
-
-commit 31f908a10b2a5e0d5ad072cae27f0d5586c9db16
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Dec 25 22:25:04 2025 -0400
-
-    * changelog
-
-commit 53c4c63b4147922b36702af1e162198e4fd68fca
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Dec 25 22:24:51 2025 -0400
-
-    * openai-bridge
-
-commit 19b44f2189bac1e1b5964b23a3353e04d4cef89b
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 7 16:24:19 2025 -0400
-
-    * changelog
-
-commit e6efeab6b7eee25b8105c0c416da115b86f576ab
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 7 16:24:04 2025 -0400
-
-    * openwebui full offline mode
-
-commit caa87675876b4eba9443821d45ac29fbc9e9b602
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Nov 27 09:23:24 2025 -0400
-
-    Update docker-compose.yml
-
-commit 8f0dabaef70a5d796d8cfce26f823544382fa7fa
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Nov 26 20:48:19 2025 -0400
-
-    * changelog
-
-commit 8de4dbc76a426718b365241d18fb2fea1906cee9
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Nov 26 20:47:41 2025 -0400
-
-    * bugfix
-
-commit 559cb73c06e0163ac55f3566ba2f64e975e912a5
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Nov 26 20:44:46 2025 -0400
-
-    * bugfix
-
-commit d7c40fbee0450bf03fe63577052be00d80de21c3
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Nov 25 17:54:50 2025 -0400
-
-    * changelog
-
-commit cbb17ef2954b05e6a5f8f2030b3e3528753a78ba
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Nov 25 17:54:34 2025 -0400
-
-    * worker + runner
-
-commit 6c10dd3c5a49e72ad6abe2b486b504b25aefe813
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Nov 25 16:01:30 2025 -0400
-
-    Update n8n image and modify worker configuration
-
-commit b330d5ae55d614723776458e7b3feeef85f965b5
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Nov 25 11:15:10 2025 -0400
-
-    Update readme to remove N8N-uv profile
-    
-    Removed N8N-uv profile from the list of profiles.
-
-commit 4f2993e8f2be002b2971604861243befb02e62ae
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Nov 25 11:14:38 2025 -0400
-
-    Remove n8n-uv service from docker-compose
-
-commit df427c85f00bac7bd843e0e727c1ed5e367ff1ab
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Nov 25 11:09:55 2025 -0400
-
-    Update docker-compose.yml
-
-commit 96fdf781202d927761949e851d86aa6f944302b4
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Nov 25 10:38:01 2025 -0400
-
-    Add NODES_EXCLUDE environment variable to services
-
-commit d935a0cae44aca033cd42367d3701b6d332487b1
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Nov 21 10:09:01 2025 -0400
-
-    Add N8N_PROXY_HOPS to docker-compose.yml
-    
-    Added N8N_PROXY_HOPS environment variable to configurations.
-
-commit 9375964daafbf32ba5d9a0d81c94fc6d153f0995
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Nov 16 12:38:50 2025 -0400
-
-    * changelog
-
-commit 316e675bd7cbea7d12821d4e78090f0192f0ebd5
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Nov 16 12:38:10 2025 -0400
-
-    * timezone
-
-commit 574590906595cf3f3af520e9821902328ea9e3f9
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Nov 1 07:37:33 2025 -0400
-
-    * changelog
-
-commit fef7867635c297046f5386d03e52e6dc1b49ef04
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Nov 1 07:37:13 2025 -0400
-
-    * bugfix
-
-commit c0451ffcfe62ac66899ab947531f6783594221e4
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Oct 21 07:59:24 2025 -0400
-
-    * bugfix
-
-commit 897f89dd9e9adb23210f80672e0d258e99b01674
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Oct 18 18:00:08 2025 -0400
-
-    * changelog
-
-commit a208d7962309fef9ba6569a016c0e576522307ba
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Oct 18 17:59:58 2025 -0400
-
-    * bugfix
-
-commit bad39d4d73e5f429b11d2e142ca711ad887715f6
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Oct 18 17:47:56 2025 -0400
-
-    * changelog
-
-commit 762b15c745415132b92a013bea65bb37a92c23cc
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Oct 18 17:47:40 2025 -0400
-
-    * openwebui postgres
-
-commit cc86a94c7bcf68da9ac756a28589a8ceb7ed8100
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Oct 18 17:25:47 2025 -0400
-
-    * variables de openwebui
-
-commit 6eccaaf9c3712b32b95bf98360527b0aab5cbc01
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Oct 12 10:44:39 2025 -0400
-
-    * changelog
-
-commit 3739247f558b72a5d3d748c8aea68ca2cfbfdf24
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Oct 12 10:44:25 2025 -0400
-
-    * recomendacion de n8n
-
-commit 6cbc0d2568ebe4dfd700055232077126ea137567
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Oct 11 18:46:26 2025 -0400
-
-    * se agrega dependencia del worker a n8n
-
-commit 3c8d3acec950b7c4de99878ef5d9ba0c46293ac3
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 28 11:32:34 2025 -0400
-
-    * changelog
-
-commit f8e7b658facd565e9785cac42b5f583921a65b1d
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 28 11:32:26 2025 -0400
-
-    * readme
-
-commit 0c0eb528f23d9c024d257dc76a9238be566d2aa2
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 28 11:18:49 2025 -0400
-
-    * changelog
-
-commit 85a78b1b26402bf9676d18a43f6ab9a3bb3193fe
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 28 11:18:41 2025 -0400
-
-    * bugfix
-
-commit 374e2ded05ee83248fc38fe94ea925be63136e98
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 28 11:11:45 2025 -0400
-
-    * changelog
-
-commit 156b55631b5855e52785b07c8425ec44e258b3d5
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 28 11:11:34 2025 -0400
-
-    * archivos ignore
-
-commit ea86a2e2e98aee6627888af3d70b6e4011568c59
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 28 11:00:30 2025 -0400
-
-    * changelog
-
-commit 48678a4ae5918cc6833f5ab1423f266507eea015
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 28 11:00:10 2025 -0400
-
-    * se separan los servicios en varias db de redis
-
-commit e173a9350c399fc83f25791e122db3b6bf3cf81d
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 28 10:31:57 2025 -0400
-
-    * changelog
-
-commit 8f2fdf23a1307fea0834643a121b9d2fbda5f520
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 28 10:31:21 2025 -0400
-
-    * nueva imagen de redis
-
-commit 61451010636f6712f7fd21c13e7b0be136a3000a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Sep 27 14:29:38 2025 -0400
-
-    * redis version
-
-commit 31b258ffeabd41f588fb84dd9aa48c17b3fbf37f
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Sep 26 10:31:52 2025 -0400
-
-    Update docker-compose.yml
-
-commit 1cce9648b8babaa3785c08c72254b988279c2e16
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Sep 25 14:05:30 2025 -0400
-
-    Update docker-compose.yml
-
-commit 61cd90e34831ecbffe227691025c5d0819177e1e
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 21 13:49:51 2025 -0400
-
-    * instalador
-
-commit ff65fe83a95269489c3b81bd5850a26c22bee4c3
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 14 11:43:11 2025 -0400
-
-    * volumenes para el worker
-
-commit 4c4c733c59bde7ca8e37f08fd6b8e60953926fd8
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Sep 13 18:52:22 2025 -0400
-
-    * changelog
-
-commit fe991e4658635950ad9171990727feefc497b420
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Sep 13 18:52:07 2025 -0400
-
-    * cambios en el env.example
-
-commit 7d51cdbb28a86b0f6f374d396a396d9ce8546636
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Sep 13 18:41:59 2025 -0400
-
-    * changelog
-
-commit 30d4ebe17c495b6ccf310b9ffedf1b6d60a93650
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Sep 12 13:57:23 2025 -0400
-
-    Update docker-compose.yml
-
-commit eaeade7a1ea4f537cafc28d56e3df1cb497d6723
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Sep 12 10:23:27 2025 -0400
-
-    Update docker-compose.yml
-
-commit 58632c2acf30f169d2ba374ae1fda388c8c5d98c
-Merge: 4539ecc b530be2
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Sep 12 09:55:14 2025 -0400
-
-    Merge branch 'main' into develop
-
-commit 4539ecc6117fd93bc1f22f490bbef02911433ce2
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Sep 12 09:53:17 2025 -0400
-
-    Update docker-compose.yml
-
-commit 15659bd3834f75b7bad06aaf0e8e530dd070c99b
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Sep 12 09:40:58 2025 -0400
-
-    Update env.example
-
-commit 59afbda00298c2912a71ab6db33e74e24b31bbc0
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Sep 12 09:40:54 2025 -0400
-
-    Update docker-compose.yml
-
-commit 0a3da7cc6d756e7cda326114b9e401a80e74bfb9
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Sep 12 09:36:32 2025 -0400
-
-    Update docker-compose.yml
-
-commit b530be2abcbf00f4ecd081749cd39dc895ad527d
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Sep 10 18:49:15 2025 -0400
-
-    * changelog
-
-commit e171b71b4bd1e22000c5b318613bd2a08e47a0c5
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Sep 10 18:48:30 2025 -0400
-
-    * openwebui
-
-commit feb2285ab20d19d62ef42128a02777f69f2b0068
-Merge: 941b0f9 a81b0e0
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Sep 8 13:56:00 2025 -0400
-
-    Merge pull request #66 from tecno-consultores/develop
-    
-    Update docker-compose.yml
-
-commit a81b0e0639003d66c8b30e8b574da953ac6a044e
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Sep 8 13:54:24 2025 -0400
-
-    Update docker-compose.yml
-
-commit 941b0f98e5590ea0d2e07ecad44a506129112222
-Merge: 418b3ab a3f5656
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Sep 8 13:50:17 2025 -0400
-
-    Merge pull request #65 from tecno-consultores/develop
-    
-    Update docker-compose.yml
-
-commit a3f5656d4d55d4e0dc02e0111acb48ef3ea5e9c6
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Sep 8 13:48:43 2025 -0400
-
-    Update docker-compose.yml
-
-commit 418b3abd40060c0dd6dde78009f7528906878a8e (tag: v1.9.1)
-Merge: 034bd5a 6c128cc
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Sep 8 13:41:47 2025 -0400
-
-    Merge pull request #64 from tecno-consultores/develop
-    
-    Develop
-
-commit 6c128ccde079f5c271dda37d42871219c0cac73a
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Sep 8 13:40:12 2025 -0400
-
-    Update env.example
-
-commit a2d3620f2a7a65d7b20fbbc702d29d4a3fd61cc2
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Sep 8 13:40:01 2025 -0400
-
-    Update docker-compose.yml
-
-commit 88ae9462f7de569c7e6f264e3431c2ba526ecfd5
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Sep 8 13:19:37 2025 -0400
-
-    Update docker-compose.yml
-    
-    * bugfix
-
-commit 034bd5a170084c40cf017c7c7246c4985deb0676 (tag: v1.9.0)
-Merge: b9aaa93 18674e1
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 7 20:50:46 2025 -0400
-
-    Merge pull request #63 from tecno-consultores/develop
-    
-    Develop
-
-commit 18674e1af218e548ac3d13da76eb9d0445c49200
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 7 20:49:58 2025 -0400
-
-    * changelog
-
-commit b00a709514b9490ea65a8b3166c3ce1082e787c3
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 7 20:49:45 2025 -0400
-
-    * worker
-
-commit 0497f75cc3977f9727894f98d3fcce84d306059f
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 7 16:23:10 2025 -0400
-
-    * variables
-
-commit b3b3e329bed1c914312f1d9b9189d77e851c259f
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 7 16:11:32 2025 -0400
-
-    * variables
-
-commit 2241fa68a8ddf7e51999625e77af0fcf318727a7
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 7 15:14:06 2025 -0400
-
-    * changelog
-
-commit 6f86f4cfb562dabe7c2caf9b6f31bd0edd7da108
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Sep 7 15:13:50 2025 -0400
-
-    * worker profile
-
-commit b9aaa93d132eef180151b9e376cdd9619563dcae
-Merge: eac49c6 a3e83f9
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Aug 11 17:15:49 2025 -0400
-
-    Merge pull request #62 from tecno-consultores/develop
-    
-    Develop
-
-commit a3e83f98aa1bb6477cf4863371301ff719b854db
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Aug 2 15:24:05 2025 -0400
-
-    * changelog
-
-commit bd3369e6f715da4bf5011061c17e47d321a58906
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Aug 2 15:23:33 2025 -0400
-
-    * se comenta la variable porque no es necesaria en las versiones mas recientes
-
-commit eac49c60fe73958ef993df10b4e2e79543b23ea3
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Jul 22 15:43:42 2025 -0400
-
-    Update readme.md
-
-commit a8c3051baff369be286b5e927bf53e7df2504057 (tag: v1.8.5)
-Merge: bf171bd 46bcd3a
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 21:25:48 2025 -0400
-
-    Merge pull request #61 from tecno-consultores/develop
-    
-    * variables
-
-commit 46bcd3a54f766b7aeae5a530a0c6631cd37c1a9c
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 21:22:00 2025 -0400
-
-    * variables
-
-commit bf171bdfe67605188d15e55f2d443949aa83ae1b (tag: v1.8.4)
-Merge: 6050fc5 96bc17a
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 21:01:42 2025 -0400
-
-    Merge pull request #60 from tecno-consultores/develop
-    
-    Develop
-
-commit 96bc17ac20fa5a235a28a35c253f5e91f00239f3
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 20:56:16 2025 -0400
-
-    * changelog
-
-commit 4b5127a25beb7b890755cb1b11f1caa1b6a4878d
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 20:55:35 2025 -0400
-
-    * cambios en las variables
-
-commit a0358ef6639dedcaa124a3d3f87713027d532227
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 19:05:47 2025 -0400
-
-    * bugfix
-
-commit 6050fc562c4236193df670d29c4ae333bebcab1d
-Merge: 09bef47 9202952
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 16:41:00 2025 -0400
-
-    Merge pull request #59 from tecno-consultores/develop
-    
-    * deploy
-
-commit 920295235a2fcdc42f0e2b86f092a0513d572810
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 16:39:33 2025 -0400
-
-    * deploy
-
-commit 09bef474497474d36e31ef39651b63a17252cf6f (tag: v1.8.3)
-Merge: 73206aa 46fdb4c
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 13:49:33 2025 -0400
-
-    Merge pull request #58 from tecno-consultores/develop
-    
-    * bugfix
-
-commit 46fdb4c67dd4a0030865caa839c0eba837d82735
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 13:43:09 2025 -0400
-
-    * bugfix
-
-commit 73206aaf3a066dfbe378d4218636db4d262508c4
-Merge: a2f56de 3686ee6
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 13:32:35 2025 -0400
-
-    Merge pull request #57 from tecno-consultores/develop
-    
-    Develop
-
-commit 3686ee634d416bba0c272e52f908f0ddc1c86235
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 13:30:11 2025 -0400
-
-    * changelog
-
-commit 415e862349cff3f0311ffc48089c7ca8f6e9a0c6
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 13:29:56 2025 -0400
-
-    * bugfix
-
-commit 6253667072725c766fbe2abf9193d07faa304425
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 13:23:08 2025 -0400
-
-    * postgres init script
-
-commit 42f0a48c10ecfff9337f691ad061e1eec29527c4
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 13:12:11 2025 -0400
-
-    * changelog
-
-commit a7e04f528d90c6a47707898d4b214269956df405
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 13:11:51 2025 -0400
-
-    * init
-
-commit a2f56ded796b53340dd22a5b6f869c17ed37335e
-Merge: 12b9dfb c58606e
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 10:22:57 2025 -0400
-
-    Merge pull request #56 from tecno-consultores/develop
-    
-    Develop
-
-commit c58606e3418640728ec2091057c998a8d4737ea5
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 10:20:41 2025 -0400
-
-    * changelog
-
-commit 08f965411a44eb5fceaf2f6e3fcf5a9e91171070
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jul 19 10:20:04 2025 -0400
-
-    * langsmith
-
-commit 12b9dfbf0aa32eff6651e389581f131b3eb8e8e5
-Merge: 46dac9d ab15f78
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jul 17 09:28:20 2025 -0400
-
-    Merge pull request #55 from tecno-consultores/develop
-    
-    Update docker-compose.yml
-
-commit ab15f780cd7a7ad059c1d23787995523fb961fbc
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jul 17 09:27:38 2025 -0400
-
-    Update docker-compose.yml
-
-commit 46dac9d1caa849d9eece8f18ab60b291930f3b44 (tag: v1.8.2)
-Merge: 864f924 b0549fd
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Jul 11 10:10:54 2025 -0400
-
-    Merge pull request #54 from tecno-consultores/develop
-    
-    Update docker-compose.yml
-
-commit b0549fd6a80e4dc1faa7f887a28baa4722fd595b
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Jul 11 10:10:37 2025 -0400
-
-    Update docker-compose.yml
-
-commit 864f9243316a856cc0fa2c44f728814590487675
-Merge: fb7a702 079b7ae
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Jul 11 08:25:21 2025 -0400
-
-    Merge pull request #53 from tecno-consultores/develop
-    
-    * bugfix
-
-commit 079b7aebf848fd3fa9239fe240ff574f9cf57471
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Fri Jul 11 08:24:08 2025 -0400
-
-    * bugfix
-
-commit fb7a7025fbdb26ac50414d1d189956e7c67267ef (tag: v1.8.1)
-Merge: bf74e50 1107d7b
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Jul 6 10:26:29 2025 -0400
-
-    Merge pull request #52 from tecno-consultores/develop
-    
-    Develop
-
-commit 1107d7b90e0a8626d210f8d42ca7fafe8ed6bf81
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Jul 6 10:23:04 2025 -0400
-
-    * changelog
-
-commit 3a236343138041ed218222296d32d2531b5423da
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Jul 6 10:22:55 2025 -0400
-
-    * variables
-
-commit 3c55c1455ffe04d005a3a1705c1cdfaf5472d4bf
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jun 28 10:01:15 2025 -0400
-
-    * changelog
-
-commit cf38f41cbcb024b1a8473fd448d4860c9e104fda
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jun 28 10:00:28 2025 -0400
-
-    * limpieza de variables
-
-commit bf74e507f1de536ecd7a4efdd914120cdcdf8bf0 (tag: v1.8.0)
-Merge: 0bbbe54 fd26d61
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Jun 24 20:57:02 2025 -0400
-
-    Merge pull request #49 from tecno-consultores/develop
-    
-    Develop
-
-commit fd26d61553424b08b010d40457a3d8f4c0e7949e
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Jun 24 20:55:58 2025 -0400
-
-    * changelog
-
-commit 11001d6058b408ee8cd4c7517b48500dc9fde5ff
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Jun 24 20:55:46 2025 -0400
-
-    * evolution api funcionando
-
-commit 23e5fadd1a938a9783e4f5f421ace31c1053c5cb
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Jun 24 18:15:10 2025 -0400
-
-    * changelog
-
-commit 8fd4b94d12025af88000538b1a0d76c1abc28827
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Jun 24 18:15:00 2025 -0400
-
-    * evolution api
-
-commit ffee89c459763716aa50bafc073ca327ac4bceca
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Jun 24 15:42:46 2025 -0400
-
-    * changelog
-
-commit 40a21c543bcb413298126a59e4fce88507a92f4a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Jun 24 15:42:37 2025 -0400
-
-    * mongodb
-
-commit c09258737642517d3034eead0f6ad41e402cf98a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Jun 24 15:34:51 2025 -0400
-
-    * ignore
-
-commit 0bbbe54f75da550b9670debf0c321467e82330bd
-Merge: 56f56ce b8c84d1
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Jun 15 07:50:08 2025 -0400
-
-    Merge pull request #46 from tecno-consultores/develop
-    
-    Develop
-
-commit b8c84d1c123f3829a91178ed5183676029a21e94
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Jun 15 07:49:13 2025 -0400
-
-    * changelog
-
-commit f78fad5b6aef14a45b19603c0f9638bf73371c53
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Jun 15 07:49:05 2025 -0400
-
-    * limpieza
-
-commit 56f56cee0b9fd58fd48d59b524210081cba8b4fa (tag: v1.7.1, origin/legacy)
-Merge: 4c28a1f 7a624da
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Jun 1 17:04:52 2025 -0400
-
-    Merge pull request #45 from tecno-consultores/develop
-    
-    * dockerfile
-
-commit 7a624da4cc72fb7132e5585f3b15aeab2a0de2eb
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Jun 1 17:03:50 2025 -0400
-
-    * dockerfile
-
-commit 4c28a1f61e868ce35477d7f7ff2963ac33b08acb (tag: v1.7.0)
-Merge: 6778291 a3be89d
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Jun 1 13:09:36 2025 -0400
-
-    Merge pull request #44 from tecno-consultores/develop
-    
-    Develop
-
-commit a3be89da32e5f7421955ba7878d76e56badb0aca
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Jun 1 13:08:25 2025 -0400
-
-    * changelog
-
-commit 51e1819a9d7a774f9d2b7a01d413808f1ab358af
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Jun 1 13:08:18 2025 -0400
-
-    * readme
-
-commit 98ff6eba85ddd9e215380fcea674bedcfbc90a1f
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Jun 1 13:06:23 2025 -0400
-
-    * changelog
-
-commit 594c3cc893eff1b5bf566fedb10082d7da7425f7
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Jun 1 13:06:09 2025 -0400
-
-    * n8n-uv y su perfil
-
-commit 05476a4dd5254741426a5506d28e170756218dca
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun May 11 21:06:35 2025 -0400
-
-    * prompt para documentacion
-
-commit 07cacad540d4af2b05149e7ad93e941ba37abb62
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed May 7 10:05:03 2025 -0400
-
-    Update docker-compose.yml
-
-commit 6778291d88e22b484d7e2dc2104e44e8b59e0da4
-Merge: 0314acf fe3d905
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Apr 22 19:30:19 2025 -0400
-
-    Merge pull request #41 from tecno-consultores/develop
-    
-    Develop
-
-commit fe3d9052108ac633927d896992c91afeaaf9f325
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Apr 22 19:29:24 2025 -0400
-
-    * changelog
-
-commit 04910d230dc0efd3a0549d1fcf21d72f3f19840c
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Apr 22 19:29:15 2025 -0400
-
-    * smtp bugfix
-
-commit c9d064e6b13fe6aea9d2dec05acfe46bef4c072a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Apr 22 19:11:48 2025 -0400
-
-    * changelog
-
-commit 329db84102f395f70352c537a289a086753d19d2
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Apr 22 19:11:36 2025 -0400
-
-    * smtp para las invitaciones
-
-commit e59aa0e19228a28e4f9c26de7ca223051ce20b41
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Fri Apr 18 12:03:54 2025 -0400
-
-    * se sustituye agente.sh por una version optimizada y con el nombre final del script
-
-commit 4db1f39264cd295d0c42ebc31390fdb31325292f
-Author: Ernesto Crespo <ecrespo@protonmail.com>
-Date:   Thu Apr 17 07:14:12 2025 -0400
-
-    Added file .env to gitignore
-
-commit 0314acfdc37034b16810f6d875832d6bba0fe212
-Merge: 8560d9a cb1601c
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 16 18:10:10 2025 -0400
-
-    Merge pull request #40 from tecno-consultores/develop
-    
-    Develop
-
-commit cb1601cf8b1137f747aeb891dc6a5bf0d22f019f
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 16 18:08:58 2025 -0400
-
-    * changelog
-
-commit 22fb71fade5b7795af3285ccf598bad3ffb72bc9
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 16 18:08:50 2025 -0400
-
-    * bugfix
-
-commit 6cf2d9637bdaf7dba945850001459e92d69d2b3c
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 16 17:35:31 2025 -0400
-
-    * variables
-
-commit fe62b66f667cc0482c6325a011adce67c74507d2
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 16 15:34:31 2025 -0400
-
-    Update agente.sh
-
-commit 8560d9ad122f22da470cad44caea0e861ee4ed0d
-Merge: dfce7a0 cdd064f
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 16 10:28:56 2025 -0400
-
-    Merge pull request #39 from tecno-consultores/develop
-    
-    Develop
-
-commit cdd064f114db2fd3b5568db984215a7f39816d6c
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 16 10:27:23 2025 -0400
-
-    Update agente.sh
-
-commit abf9e6445b562211e84898383459a8ac27181dc3
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 16 09:40:43 2025 -0400
-
-    Update agente.sh
-
-commit 4ef2a0df84c1946405fb66215af37243c3d454ca
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Apr 15 19:16:45 2025 -0400
-
-    * bugfix
-
-commit 91684c5cae069e84f0d9baa4a6cf4cb0f2d654cc
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Apr 15 19:15:46 2025 -0400
-
-    * agente en terminal
-
-commit cfe02105dde4d2933f095bd29723e14dfb164ba2
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Apr 8 13:59:33 2025 -0400
-
-    Update n8n Pipe Function.txt
-
-commit dfce7a080575b91069e35919d8f0c5ed7735b818
-Merge: 0145911 2cb2a44
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 2 21:07:12 2025 -0400
-
-    Merge pull request #38 from tecno-consultores/develop
-    
-    multiples cambios
-
-commit 2cb2a446a5e850363ef37298e1bba222aa9baadb
-Merge: 16c4ff7 0145911
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 2 21:06:48 2025 -0400
-
-    Merge branch 'main' into develop
-
-commit 16c4ff714f1490e77a287e5e302ab493343dfeef
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 2 20:19:36 2025 -0400
-
-    * changelog
-
-commit 196d3010222862872b2ec7d42730aa354c6ef705
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Apr 2 20:19:29 2025 -0400
-
-    * fromai
-
-commit 4438f4e8cf3061ff5f126ec911c5b75eeae383f8
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Apr 1 11:26:44 2025 -0400
-
-    Update funciones-n8n.txt
-
-commit efd6cb5f053606d4a2254bbb7acde366b699de3f
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 27 21:27:18 2025 -0400
-
-    * changelog
-
-commit 26ebe3afc533a4602945f94ee772b9f095f8f249
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 27 21:27:08 2025 -0400
-
-    * limpieza
-
-commit 0145911dd77e60215e83f7b2192205bc0f6fb65d
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 27 21:24:02 2025 -0400
-
-    * changelog
-
-commit 6adef58e9448bf996ec207318b32296a6fcd5c39
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 27 21:23:55 2025 -0400
-
-    * cleaning
-
-commit 4dadca38d75c3ec5fa00f96a8073e539df119e6e
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 23 10:38:54 2025 -0400
-
-    * changelog
-
-commit 30b0713e9b7e86e9a01466a4e88ac960b4aacabb
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 23 10:38:34 2025 -0400
-
-    * funcion para conectar n8n con openweb ui
-
-commit f70971d54008a3fd32201c174adabbda8fd228f8
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 18 22:53:05 2025 -0400
-
-    * se agrega la variable N8N_RUNNERS_ENABLED=true por recomendacion del programa
-
-commit b99553acf5608cc442bc6c68c2d87c0d3e593442 (tag: v1.6.1)
-Merge: f11b3ab c138fac
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 17 15:14:29 2025 -0400
-
-    Merge pull request #37 from tecno-consultores/develop
-    
-    Develop
-
-commit c138faca3733c3b87a2ceb5e4b93151fe07915a8
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 17 15:09:18 2025 -0400
-
-    Update docker-compose.yml
-
-commit 608424a32069909f27d63929532ad0f2f1ccc1d2
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 17 15:08:17 2025 -0400
-
-    Update env.example
-
-commit 5da9015a6283232240c1b94e076bc6a192d18263
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 17 15:06:32 2025 -0400
-
-    Update docker-compose.yml
-
-commit 8d6934f82edb9e695b3408f609f1c4754937fac1
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 17 14:31:49 2025 -0400
-
-    Update docker-compose.yml
-
-commit f11b3abf72d78c0db501c22fbb3d4ad0ccace2e9
-Merge: 30a1877 5a5491f
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 16 17:12:18 2025 -0400
-
-    Merge pull request #36 from tecno-consultores/develop
-    
-    Develop
-
-commit 5a5491f153de3c0e122fe89ca011e34b1f8362da
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 16 16:46:24 2025 -0400
-
-    * memory
-
-commit 67078e36610692d4a3f9d8333ed0ad5757311a41
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 16 16:17:04 2025 -0400
-
-    * funciones
-
-commit d6e707267517b1b9b188bc3e2ebb8332046716e4
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 16 12:20:29 2025 -0400
-
-    * openwebui variables
-    * dependencias
-
-commit 30a18778378241a9225bc725e7fe3ab0693364d7 (tag: v1.6.0)
-Merge: a45bdd5 eba20dc
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 13 19:47:12 2025 -0400
-
-    Merge pull request #35 from tecno-consultores/develop
-    
-    Develop
-
-commit eba20dc157f7f020d32c7f0ff5053025cd1a87de
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 13 19:46:06 2025 -0400
-
-    * changelog
-
-commit 9f6b77e5266a4dc8cd71435a43d6c784cfb046c6
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 13 19:45:49 2025 -0400
-
-    * variables del proxy
-
-commit 5f00c6430636dd789da6f766c961805008fc5e52
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 13 19:36:46 2025 -0400
-
-    * readme
-
-commit f1867dd07ffc6b35c1f81109d71e330167f78e20
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 13 19:34:57 2025 -0400
-
-    * changelog
-
-commit 9097e9c2003928a4f717b6a31b92111445e65f2b
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 13 19:34:36 2025 -0400
-
-    * searxng
-
-commit 49231430858c326ba34e29aa5f83f2b21b7c7234
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 13 19:15:40 2025 -0400
-
-    * readme
-
-commit 42d963e4f8c87df1075b21ba69e22d951427e30d
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 13 19:13:33 2025 -0400
-
-    * nginx reverse proxy
-
-commit 75ae45f34af765567d48472bd111c689199dc192
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Mar 13 09:39:15 2025 -0400
-
-    Create funciones-n8n.txt
-
-commit a45bdd5b90941f33eafc08502f4ec0ff13aefeaa (tag: v1.5.4)
-Merge: 8892424 ffcea63
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Mar 12 12:02:55 2025 -0400
-
-    Merge pull request #34 from tecno-consultores/develop
-    
-    Develop
-
-commit ffcea63b83b2279ab22c7b335bfb2ea982e9e0d3
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Mar 12 12:02:14 2025 -0400
-
-    Update env.example
-
-commit 1b982455960c669ae2d597221934baa902139f81
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Mar 12 12:01:38 2025 -0400
-
-    Update docker-compose.yml
-
-commit 8892424c24cdebb3ff4afe8b55bcda3d954ece36
-Merge: 4448e29 1baf197
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Mar 12 10:30:44 2025 -0400
-
-    Merge pull request #33 from tecno-consultores/develop
-    
-    Update docker-compose.yml
-
-commit 1baf197bc643ed41ccde9b4e326d941d4ddea58d
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Mar 12 10:30:11 2025 -0400
-
-    Update docker-compose.yml
-
-commit 4448e29ac98e8cd8638112f30055efb1c46f2b26
-Merge: b21d931 395e950
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Mar 12 09:56:34 2025 -0400
-
-    Merge pull request #32 from tecno-consultores/develop
-    
-    Update docker-compose.yml
-
-commit 395e950e676d7807e13ec06dc4d90f3f970230bc
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Mar 12 09:56:16 2025 -0400
-
-    Update docker-compose.yml
-
-commit b21d9313ff1086033ff79a10ead4289c53561ade (tag: v1.5.3)
-Merge: f5f9e32 52ca71b
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 11 10:38:16 2025 -0400
-
-    Merge pull request #31 from tecno-consultores/develop
-    
-    Develop
-
-commit 52ca71b180bbf034a691b6251a4b532434eef096
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 11 10:37:10 2025 -0400
-
-    Update docker-compose.yml
-
-commit 6a9e15a2a5185d2d4a67809c8011bd7e382d6dd2
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 11 10:36:28 2025 -0400
-
-    Update readme.md
-
-commit 6ae9431e973bc73a72fbca1406e365acc07c5661
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 10 20:25:26 2025 -0400
-
-    * se cambia el nombre del archivo de variables
-
-commit f252253b16a4249baffed8a7cc46ea67bb3241d2
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 10 09:38:16 2025 -0400
-
-    Update .env-example
-
-commit b86397cfeb99c42f44561dd7f96c3b101d97f2f6
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 21:37:19 2025 -0400
-
-    * prompt data
-
-commit f5f9e329b0df6bc12fb9c2dd44bd4567e133b9d0
-Merge: 57e0e8a 832b0c1
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 21:34:04 2025 -0400
-
-    Merge pull request #30 from tecno-consultores/develop
-    
-    Develop
-
-commit 832b0c14e87a9f4203b2692cbfbf0821f589cf78
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 21:30:08 2025 -0400
-
-    * changelog
-
-commit 01fd759f551711a0003ff84b6844fc5f857da50e
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 21:29:52 2025 -0400
-
-    * readme
-
-commit ba220f0a0502577b67ca18a084fc17e7c681bdcc
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 18:45:42 2025 -0400
-
-    * changelog
-
-commit c95d484e100ae814936a5ce595c6e04084877b97
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 18:45:35 2025 -0400
-
-    * ignore
-
-commit 57e0e8ac738069f31f3ffb3e7cf0bac68fa2d017
-Merge: 9ff594a cf8a136
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 18:42:34 2025 -0400
-
-    Merge pull request #29 from tecno-consultores/develop
-    
-    Develop
-
-commit cf8a1364599276355e54744f56ba5ddce2bc2b7b
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 18:38:24 2025 -0400
-
-    * changelog
-
-commit 70065dcedf93f22df1bf94ef9ff8f48ac649c3bf
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 18:38:17 2025 -0400
-
-    * readme
-
-commit b82068f8de1d5b53b4ca9834ac1a56498bd28c93
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 18:26:15 2025 -0400
-
-    * changelog
-
-commit 20282c597848aae5954af690c31c6f614e931743
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 18:26:08 2025 -0400
-
-    * env bugfix
-
-commit a2a266798bded3797abe88f4e7a1cf7a7295e94a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 18:23:00 2025 -0400
-
-    * env
-
-commit 9ff594a8214ccec9d7861a5611091649a5cd978f (tag: v1.5.2)
-Merge: de51c5a 44c0fbb
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 18:19:51 2025 -0400
-
-    Merge pull request #27 from tecno-consultores/develop
-    
-    * bugfix
-
-commit 44c0fbbdac06873393b66d0be5eaaf3122dfdb37
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 18:17:50 2025 -0400
-
-    * bugfix
-
-commit de51c5ac64618b41412e25fcff3de39d087cb5f5
-Merge: 5c4240c f9133dd
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 15:05:01 2025 -0400
-
-    Merge pull request #26 from tecno-consultores/develop
-    
-    * openhands
-
-commit f9133dd370b1596b99aaa35cfae47f64e7d16e04
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 15:02:00 2025 -0400
-
-    * openhands
-
-commit 5c4240c5e4fa033063eb384add19f37a88d3732a (tag: v1.5.1)
-Merge: 333da72 682ddb9
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 14:23:55 2025 -0400
-
-    Merge pull request #25 from tecno-consultores/develop
-    
-    Develop
-
-commit 682ddb93f41f171090ed6829c18e890cdb4f0a77
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 13:52:40 2025 -0400
-
-    * changelog
-
-commit 4ed476b09c15613d534d3572ec52b9f7b23ffdee
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 13:52:34 2025 -0400
-
-    * readme
-
-commit b0ae2d424d13f1be5cbf6cb6465450ee37f1a9f8
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 13:38:59 2025 -0400
-
-    * changelog
-
-commit 7f32068d97a1bdccbb6ff03d89184a905f754c95
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 13:38:49 2025 -0400
-
-    * bugfix
-
-commit 21cb2c344bf91970a66901d3caea1715ba8f4239
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 12:37:39 2025 -0400
-
-    * changelog
-
-commit ee690ed3253bdd257c31511edeca354e3d97747b
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 12:37:28 2025 -0400
-
-    * readme bugfix
-
-commit 87933714e9bff9d9b49d7ce1e77f7532fe1d4a33
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 12:35:53 2025 -0400
-
-    * changelog
-
-commit 4579515821817a6d0838110392bcc3f7e833eba6
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 9 12:35:36 2025 -0400
-
-    * perfiles
-    * hostname
-    * puertos
-
-commit 333da727790f38966fcf756e34849331ea27e012
-Merge: a7159b3 83975ef
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 4 13:14:39 2025 -0400
-
-    Merge pull request #24 from tecno-consultores/develop
-    
-    Develop
-
-commit 83975ef0fb48415dd1a6188a9e32ffd102d6f18f
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 4 12:50:42 2025 -0400
-
-    * correccion del mappeo de variables
-
-commit e7144b788b6f13e7cba57eed6fd8edd8ba8c722b
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 4 12:37:03 2025 -0400
-
-    * readme
-
-commit b74809229f0617e90d764e1d420e9c348180a5d7
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 4 12:33:06 2025 -0400
-
-    * se crea nvidia-base para acortar el codigo
-
-commit a007cae5e33e46f21d7e0c37c883d6d1931017c2
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 4 12:19:17 2025 -0400
-
-    * ignore
-
-commit a7159b3c26639ef4457eb9daf6e391450e7ad54e
-Merge: 7a7f5af 0a4492b
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 4 12:16:00 2025 -0400
-
-    Merge pull request #23 from tecno-consultores/develop
-    
-    Develop
-
-commit 0a4492b2e15a0760c9a532072e986f8f98982037
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 4 12:15:30 2025 -0400
-
-    * changelog
-
-commit 015c24546210b570e5ed6e25aa1aff5f0ca53085
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Mar 4 12:14:27 2025 -0400
-
-    * bugfix en openwebui
-    * nuevas variables de entorno para openwebui
-
-commit dff3b12f257f3c0ccefd3c21ef97c1528824d4f7
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 3 23:08:49 2025 -0400
-
-    * perfiles por servicio
-
-commit 7a7f5af31254b3b417f3a735034dbd657ca8defd
-Merge: 03478fd c7c6712
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 3 12:01:52 2025 -0400
-
-    Merge pull request #22 from tecno-consultores/develop
-    
-    Develop
-
-commit c7c67126553167bff4a8cb0bb2f013be85c9fe9b
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 3 12:00:36 2025 -0400
-
-    * enlaces
-
-commit d89ae5dea007344e7f18a1dd7557c73e9bc2846e
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 3 11:53:04 2025 -0400
-
-    * bugfix
-
-commit fd6bc29a14cf81237b244662fe8d9d3663d064a4
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Mon Mar 3 11:51:45 2025 -0400
-
-    * readme
-
-commit 03478fdd3fea82b51751e5d50ede67a22929d816 (tag: v1.5)
-Merge: 4738880 70d84fc
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 2 23:31:02 2025 -0400
-
-    Merge pull request #21 from tecno-consultores/develop
-    
-    Develop
-
-commit 70d84fc9d916df160f876c73d44fdfd8040faa82
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 2 23:20:50 2025 -0400
-
-    * variables
-
-commit 963df0eda6287fb632526a9fbd31bf157d96aaa8
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 2 23:10:18 2025 -0400
-
-    * nombres
-
-commit be5c50fa3205f3f4f047340939f52616c7433e10
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 2 22:56:44 2025 -0400
-
-    * changelog
-
-commit a20a92e56671ef09df596b9ab870ca2f8c2bb0c6
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Mar 2 22:56:16 2025 -0400
-
-    * se eliminan servicios innecesarios y se reordenan los perfiles
-
-commit 47388806a21f26078f6636d88f8999abd7af3a31
-Merge: 2e7a8e6 d2eafb9
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 19:55:58 2025 -0400
-
-    Merge pull request #20 from tecno-consultores/develop
-    
-    Develop
-
-commit d2eafb94ce12c069ffba4e8ca02217af0d307e81
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 19:53:43 2025 -0400
-
-    * changelog
-
-commit ce37be6e3ac88bebb90aea5e438dc58d344cc695
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 19:53:35 2025 -0400
-
-    * readme
-
-commit 968482d1a3eb6ccd559102f0fd17d6e909bfa84b
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 19:47:14 2025 -0400
-
-    * changelog
-
-commit 3ec77d0cfa183a07764cfb8726324b8062386d89
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 19:47:06 2025 -0400
-
-    * carpeta
-
-commit 873813065cb52edbcdf2d96e97fd0cfb0ac1a5d5
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 19:43:38 2025 -0400
-
-    * changelog
-
-commit 87d573fdda66a57af3a19188da0c52d056fabcaa
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 19:43:25 2025 -0400
-
-    * whisper cpu
-
-commit 2e7a8e66b552d975fd4b27dd99fe911f776c3860 (tag: v1.4.3)
-Merge: 5d5f9fe 4d8830e
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 14:15:59 2025 -0400
-
-    Merge pull request #19 from tecno-consultores/develop
-    
-    * redis for arm
-
-commit 4d8830e5263be6b728978699003fa2cfe7fc108a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 14:14:17 2025 -0400
-
-    * redis for arm
-
-commit 5d5f9fecd3d9958d5da4a79aac9392b9c8bd3240 (tag: v1.4.2)
-Merge: 287889c a813956
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 13:28:14 2025 -0400
-
-    Merge pull request #18 from tecno-consultores/develop
-    
-    Develop
-
-commit a81395693a46561932e7d8a112bab695e7f3f1c6
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 13:20:56 2025 -0400
-
-    * changelog
-
-commit c83af1087fbd030dc24ef9eb18583957a4fe0537
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 13:20:41 2025 -0400
-
-    * se eliminan variables que no se usan
-
-commit e134af919fb8d006a6204632ae8189fc215cf293
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 12:09:16 2025 -0400
-
-    * changelog
-
-commit ec09a77d102924624827f58f5b77093a2786e82a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 12:09:09 2025 -0400
-
-    * bugfix
-
-commit dd0909c11710cc33fd02a606d84dd67384d1d9a2
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 12:08:03 2025 -0400
-
-    * bugfix
-
-commit e002918c1b84d81cc98012fa07c72ca00063f6f1
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Mar 1 12:07:15 2025 -0400
-
-    * ignorados
-
-commit 4bf0e72c4cbae935a354b8619740db26dae9a42f
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Feb 28 15:35:46 2025 -0400
-
-    Update docker-compose.yml
-
-commit d13b0e3bb700a44096fdc72fb4c9272925cdffa5
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Feb 28 15:29:58 2025 -0400
-
-    Update .env-example
-
-commit 2385da69e82551554d2efc354a3f38ba57e8c4ff
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Feb 28 15:26:42 2025 -0400
-
-    Update .env-example
-
-commit d37a6645295a7377132b84d676e7e670fcdf10b4
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Feb 28 10:20:41 2025 -0400
-
-    Update docker-compose.yml
-    
-    whisper with GUI
-
-commit f908e4a38f55263cb1c1a8d364d8e85dfe6d4652
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Feb 28 10:19:01 2025 -0400
-
-    Update .env-example
-
-commit 1a9d8d68b5ab3df19ec21b16d5f44cd382c065f5
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Fri Feb 28 10:01:44 2025 -0400
-
-    Update docker-compose.yml
-    
-    openwebui como extra
-
-commit 287889cd759a00cd055d16a7612e039373b0da0f
-Merge: 93f8649 6299879
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 16:19:21 2025 -0400
-
-    Merge pull request #17 from tecno-consultores/develop
-    
-    Develop
-
-commit 62998797230cc8f6f057f33345ef4fdbf05b1525
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 16:19:01 2025 -0400
-
-    Update readme.md
-
-commit d38bb0a9633f411d9ef62c37b60073025369171b
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 16:16:26 2025 -0400
-
-    Update docker-compose.yml
-
-commit 93f8649e243c13f6111d4968befaf75bafb376c7
-Merge: 39703b9 327d486
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 15:52:15 2025 -0400
-
-    Merge pull request #16 from tecno-consultores/develop
-    
-    Develop
-
-commit 327d4861107c13c418e5e01f56576fc2745d45aa
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 15:50:45 2025 -0400
-
-    Update docker-compose.yml
-
-commit 9b52a9bd0c76261671a80d9e30daf0559c7110a6
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 15:43:09 2025 -0400
-
-    Update .env-example
-
-commit 39703b986fc88ae065c738e7061e043fe55803d2 (tag: v1.4.1)
-Merge: 58faf16 32e2ad1
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 14:07:25 2025 -0400
-
-    Merge pull request #15 from tecno-consultores/develop
-    
-    Develop
-
-commit 32e2ad10fc7977906905d38986574bcaa0008c4f
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 14:06:51 2025 -0400
-
-    Update docker-compose.yml
-
-commit 566bee00cc2aaaa3311192317a5077d6d793b7e1
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 14:04:45 2025 -0400
-
-    Update .env-example
-
-commit 58faf16df1e511baaff4f547c892da101f28605d (tag: v1.4)
-Merge: 7d5094d cec72a0
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 13:19:48 2025 -0400
-
-    Merge pull request #14 from tecno-consultores/develop
-    
-    Update readme.md
-
-commit cec72a02d699ddfd395ec630b766ba693f798571
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 13:17:54 2025 -0400
-
-    Update readme.md
-
-commit 7d5094df6f28e8ba19510a10d514a487d9dacae9
-Merge: 9aac51c d70d15c
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 13:15:49 2025 -0400
-
-    Merge pull request #13 from tecno-consultores/develop
-    
-    Update docker-compose.yml
-
-commit d70d15c3a95d7f3fd37ab09b7bcad4d9730cfbc8
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 13:14:50 2025 -0400
-
-    Update docker-compose.yml
-
-commit 9aac51c75989fb7386bf8f6d1c7dd65b8fb17c8e
-Merge: 9de1910 0f0a8da
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 11:59:58 2025 -0400
-
-    Merge pull request #12 from tecno-consultores/develop
-    
-    Update docker-compose.yml
-
-commit 0f0a8da6e468a1c42437ecf24a8dd6dfa4569984
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Feb 27 11:58:27 2025 -0400
-
-    Update docker-compose.yml
-
-commit 9de1910fa495caeee83aef3e83d9c7ffaeff432a
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Feb 3 13:26:59 2025 -0400
-
-    Update docker-compose.yml
-
-commit f53187fc3a30af76adb4a046c5d0883cac241b03
-Merge: d306ed9 9c9c394
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Sat Jan 4 10:58:51 2025 -0400
-
-    Merge pull request #11 from tecno-consultores/develop
-    
-    Develop
-
-commit 9c9c394a1b225df232a7d634aba02383f885f264
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jan 4 10:46:19 2025 -0400
-
-    * changelog
-
-commit 05a0f887c782eef60f0e816d6ad2476378e20949
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jan 4 10:46:11 2025 -0400
-
-    * variables
-
-commit 8456064f2afb5e2b073c3b4a7ba7a23f92155531
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jan 4 09:54:57 2025 -0400
-
-    * changelog
-
-commit 8acc9611cb9b219285b5ab868fdbe1a2b1df3587
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Jan 4 09:54:48 2025 -0400
-
-    * ports
-
-commit 6b00e0066466a02cdb26efb508d13de2f70d3e46
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Fri Jan 3 23:24:59 2025 -0400
-
-    * changelog
-
-commit 8eac8579fb08e78d7bc11979409871eaea077157
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Fri Jan 3 23:24:42 2025 -0400
-
-    * se elimina la dependencia
-
-commit 9233af1a8d838688f24269d499233a202133df4b
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Fri Jan 3 23:13:22 2025 -0400
-
-    * variables
-    * healthcheck
-
-commit d306ed976d81f06c5742d6d5bddc250569ec52ba
-Merge: ac403e5 15baa06
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 14:01:51 2025 -0400
-
-    Merge pull request #10 from tecno-consultores/develop
-    
-    Update docker-compose.yml
-
-commit 15baa0642987e3b58882cfccc94151df0f9f70fe
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 14:01:29 2025 -0400
-
-    Update docker-compose.yml
-
-commit ac403e5c423cceca51c3a5009eb096ffa7c7eb05
-Merge: 0f51188 9d76734
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 13:57:00 2025 -0400
-
-    Merge pull request #9 from tecno-consultores/develop
-    
-    Update docker-compose.yml
-
-commit 9d767345f7d46665bf01ba6a76167a73395055dc
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 13:56:33 2025 -0400
-
-    Update docker-compose.yml
-
-commit 0f51188c914cb419087402387c605bafe986a349
-Merge: e7af60e 7ed0a92
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 13:51:30 2025 -0400
-
-    Merge pull request #8 from tecno-consultores/develop
-    
-    Develop
-
-commit 7ed0a92258f39fa69c639c5461bc5cc988f6c9ae
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 13:51:06 2025 -0400
-
-    Update docker-compose.yml
-
-commit 503363d679654f5c834756126222f2a3b970dae8
-Merge: 19add56 e7af60e
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 13:48:30 2025 -0400
-
-    Merge pull request #7 from tecno-consultores/main
-    
-    variables
-
-commit e7af60ebd511ffa74d94b2f67592dfd86769d7ea
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 13:46:21 2025 -0400
-
-    Update docker-compose.yml
-
-commit 0dc7032bff8081005bef17b78b00fd4dbfc5b7e7
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 13:44:49 2025 -0400
-
-    Update .gitignore
-
-commit 0d4186dce9e4a9fd849c2a3f0577c4c2288e4e2c
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 13:44:16 2025 -0400
-
-    Update .env-example
-
-commit 612d537a934240ad00fee0a90c6ab58a058e7e5d
-Merge: 1b25527 19add56
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 13:07:53 2025 -0400
-
-    Merge pull request #6 from tecno-consultores/develop
-    
-    Develop
-
-commit 19add562e7409a0823c63c7f07f81c32c85caf4e
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 10:51:10 2025 -0400
-
-    Create reflection-prompt.txt
-
-commit af369476bccecbc62d581debe6beae3f37840171
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Thu Jan 2 10:31:03 2025 -0400
-
-    Update docker-compose.yml
-
-commit 1b25527444f4feba650e0e1738e4bf4b5c3160f1
-Merge: 1d2f82c cca6830
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Jan 1 22:25:08 2025 -0400
-
-    Merge pull request #5 from tecno-consultores/develop
-    
-    Develop
-
-commit cca6830a13ebf8b5e56db36067da4bc775ca5670
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Jan 1 22:24:25 2025 -0400
-
-    * changelog
-
-commit 8a670cf963251ce88e48bc20e5c21210d9b0d7f5
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Jan 1 22:22:26 2025 -0400
-
-    * se eliminan dependencias
-    * se corrigen permisos de n8n
-
-commit 1d2f82ca7cf08b8a723b5c4f7ebbd3a149fb5188
-Merge: 277ddf8 cde070f
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Jan 1 22:04:34 2025 -0400
-
-    Merge pull request #4 from tecno-consultores/develop
-    
-    Develop
-
-commit cde070f81a7847aa43f24bfb091e25169589c494
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Jan 1 22:02:50 2025 -0400
-
-    * changelog
-
-commit 6d43fccd7b84f43c19603fd5683a7edeed7883ce
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Jan 1 21:58:44 2025 -0400
-
-    * health
-
-commit 277ddf88824c8a4a5fd0f575e02f6155ebb81598
-Merge: e424b66 cdf08f6
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Wed Jan 1 11:38:55 2025 -0400
-
-    Merge pull request #3 from tecno-consultores/develop
-    
-    Develop
-
-commit cdf08f68590ef570471bd7f31b4ac7a67a4cfc3d
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Jan 1 11:37:58 2025 -0400
-
-    * changelog
-
-commit 0d379e3a605df5fb6fa9ec47768f648258a5ee71
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Wed Jan 1 11:37:48 2025 -0400
-
-    * open ollama port
-
-commit e424b66538fca664544d2e303ba0323c9246a8eb
-Merge: 91df997 b6db228
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Dec 31 18:18:01 2024 -0400
-
-    Merge pull request #2 from tecno-consultores/develop
-    
-    Develop
-
-commit b6db22868982e0c089e7ea3dfb73b1588d548b21
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Dec 31 18:17:13 2024 -0400
-
-    Update COPYING
-
-commit 1a6ac34991778a52e2f732a0915626992a3bc552
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Dec 31 18:16:18 2024 -0400
-
-    Update AUTHORS
-
-commit 91df9976d8c8ab31f06ce937a4434583241d2918 (tag: v1.3)
-Merge: 6f286b3 7fab89f
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Tue Dec 31 18:12:06 2024 -0400
-
-    Merge pull request #1 from tecno-consultores/develop
-    
-    Develop
-
-commit 7fab89f1b5b4e11cc1800dc47dc44202f528bec1
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Dec 31 10:45:26 2024 -0400
-
-    * changelog
-
-commit 801f530f5a2159db9eb34928bd81358490e623f3
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Dec 31 10:45:19 2024 -0400
-
-    * bugfix
-
-commit e50b618d0a5e946e975fb04945b4c632498a6c4a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Dec 31 10:42:16 2024 -0400
-
-    * changelog
-
-commit 293971bdf50bc22f87b2b4115cf0e7b470afe317
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Tue Dec 31 10:42:08 2024 -0400
-
-    * profile
-
-commit 9fd11f16217b40b4ce560ae665b3daa77eb47005
-Author: Ernesto Crespo <ecrespo@protonmail.com>
-Date:   Mon Dec 30 19:48:49 2024 -0400
-
-    Added anythingLLM.
-
-commit 08e22efc22027a7f8ed1a07b95c4dfe8a0354fab
-Author: Ernesto Crespo <ecrespo@protonmail.com>
-Date:   Mon Dec 30 19:48:26 2024 -0400
-
-    Updated gitignore file
-
-commit 6f286b3518ca61f31245cf988ed84328ccacb266
-Author: Jesús Palencia <sinfallas@gmail.com>
-Date:   Mon Dec 30 13:29:04 2024 -0400
-
-    Update docker-compose.yml
-
-commit c17cfd73d4a3ce50434c1368cadc72d837dee8fe
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 17:56:31 2024 -0400
-
-    * changelog
-
-commit 7f45cd57ef7bfb8efef67528e52287fcc9da61c7
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 17:56:22 2024 -0400
-
-    * salud ollama
-
-commit 168c7deb4c42dc09d9f4542e4349b0d3a6890d43 (tag: v1.2)
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 17:48:31 2024 -0400
-
-    * changelog
-
-commit b0d3589ce6e1df25427ca7378e49b6a3a2c93f0a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 17:48:22 2024 -0400
-
-    * ignore
-
-commit 9b39a0eb0d7279afff6a4d7695c3b7106353af74
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 17:44:52 2024 -0400
-
-    * changelog
-
-commit 17022cf1a44b50351dcb07f87ae134107c36fbff
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 17:44:41 2024 -0400
-
-    * hostname
-    * variables
-
-commit b80e0f8201abba9611a38ee02e0b4947600356bf (tag: v1.1)
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 13:08:25 2024 -0400
-
-    * changelog
-
-commit c35b3628f6b45eaaa60f4c012087595afd7545f5
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 13:08:18 2024 -0400
-
-    * bugfix
-
-commit f77c0c90e77679cf44043771ec48bca51b9a8e56
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 12:15:38 2024 -0400
-
-    * changelog
-
-commit 7e03f0d79486a673c419f86225b8bdf95f362177
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 12:15:19 2024 -0400
-
-    * se agrega langfuse como comentario por si es necesario
-
-commit 3d20d951205abd520d08385f0743f65d4c3a735c
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 12:07:04 2024 -0400
-
-    * changelog
-
-commit 9740f4016b685b3a324bbdac5c983a02b7e17146
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 12:06:56 2024 -0400
-
-    * redis
-
-commit 91f346c3a742a266e45ce727031d057645eea3f4 (tag: v1.0)
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 11:58:01 2024 -0400
-
-    * changelog
-
-commit d8cfd2e28ded128d63f86509fa474dd040d96425
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 11:57:52 2024 -0400
-
-    * lista de modelos
-
-commit e733a5517a087824b1cbda75ecc78aecebed89f8
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 11:56:36 2024 -0400
-
-    * changelog
-
-commit 0076aa49764fdc5143c37d4e14c34de62b8a934a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 11:56:27 2024 -0400
-
-    * ya funciona todo
-
-commit ba470e58d2d84afcc9e5117a82ee3e4916e958d2
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 11:41:48 2024 -0400
-
-    * changelog
-
-commit b258b8d6c6b16ac3fb6d935d8f54119b89ef845a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 11:41:34 2024 -0400
-
-    * se elimina qdrant y se utilizara redir en su lugar
-
-commit 916acb220b244c3f7dbc3429f3d19e044bf5e865
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 11:03:43 2024 -0400
-
-    * changelog
-
-commit 53b01d4c7dfd4a589ba24a48d39ec714209373fd
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sun Dec 29 11:03:26 2024 -0400
-
-    * flowise ya funciona
-
-commit fb7cc47bc0e7c0624a822a28b13346ab4ec0925e
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Dec 28 23:58:25 2024 -0400
-
-    * changelog
-
-commit fc5746ef42fc0f8b087a7cce3051626de443657a
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Dec 28 23:58:18 2024 -0400
-
-    * redis
-
-commit c703a223758ffe9a3dc8f209439c8bcd13a5cc40
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Dec 28 22:54:53 2024 -0400
-
-    * changelog
-
-commit b51ce743f69b7fef0aea08e141466aa091e6e4f5
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Dec 28 22:54:39 2024 -0400
-
-    * se elimina la opcion de usar intel
-
-commit 6b4f3dd1f43c8af546154c3e4946413e25540c49
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Dec 28 21:31:21 2024 -0400
-
-    * changelog
-
-commit 330e3657ed8a89732acbdb3e30d02b75fccd9ce3
-Author: Jesus Palencia <sinfallas@gmail.com>
-Date:   Sat Dec 28 21:31:11 2024 -0400
-
-    * primer commit
+* commit 6973cb320491957e10298b5a0d1e41c4a1f96da5 (HEAD -> develop, origin/develop)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Wed Apr 1 11:37:44 2026 -0400
+| 
+|     * update
+|     
+| *   commit 7b50be0da0f26fc5a999b257cfc7fa26dac4a31e (origin/main, origin/HEAD, main)
+| |\  Merge: 4244097 242eb94
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Fri Mar 20 10:20:17 2026 -0400
+| |   
+| |       Merge pull request #93 from tecno-consultores/develop
+| |       
+| |       Update REDIS_URL to use hostname and port
+| | 
+* | commit 242eb94fe667251814469432c8eb53ef87f04ccd
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Mar 20 10:17:49 2026 -0400
+| | 
+| |     Update REDIS_URL to use hostname and port
+| |   
+| *   commit 4244097404d7e454031c9eaf583139135d28fa05 (tag: v1.14.0)
+| |\  Merge: 2c7dd6b f06932c
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Fri Mar 20 10:08:12 2026 -0400
+| |   
+| |       Merge pull request #92 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit f06932cc7f6ae443acb4c17527bdab8c5072d4ae
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Mar 20 10:06:43 2026 -0400
+| | 
+| |     Enhance Redis Insight access instructions
+| |     
+| |     Updated Redis Insight access instructions with default port.
+| | 
+* | commit 1e3ba1a83fda5e5fb9950f86c04518f7f3eb4719
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Mar 20 10:04:56 2026 -0400
+| | 
+| |     Clarify Redis Insight access instructions
+| | 
+* | commit 6df96e3936b174a3ee45476c03ab3dc1a3f4e063
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Mar 20 10:03:55 2026 -0400
+| | 
+| |     Update readme.md
+| |   
+| *   commit 2c7dd6b0e466f095915e44d95db04ee72f5456d3
+| |\  Merge: 2e18e42 9646412
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Fri Mar 20 09:47:50 2026 -0400
+| |   
+| |       Merge pull request #91 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 96464124cfce8b71e1dd233691ed8b2443bc36b5
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Mar 20 09:05:57 2026 -0400
+| | 
+| |     Add Flowise to the list of applications
+| | 
+* | commit 72443f05354f507edd9b40344e3e40b2205d108f
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Mar 20 09:04:52 2026 -0400
+| | 
+| |     Add Flowise configuration to env.example
+| | 
+* | commit 12e64f67658d98903fd505e31aa499bfbbb290be
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Mar 20 09:03:11 2026 -0400
+| | 
+| |     Add flowise service configuration to docker-compose
+| |   
+| *   commit 2e18e421215dfb5943226824da3462a37febc665 (tag: v1.13.2)
+| |\  Merge: 052ad8c 2f900b1
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Feb 7 07:36:26 2026 -0400
+| |   
+| |       Merge pull request #90 from tecno-consultores/develop
+| |       
+| |       * evolution api bugfix
+| | 
+* | commit 2f900b177fe86c03ab2083ec39e89719e37f885c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Feb 7 07:34:58 2026 -0400
+| | 
+| |     * evolution api bugfix
+| |   
+| *   commit 052ad8c39d3cb5a7bc4db74027473674c11ecb09 (tag: v1.13.1)
+| |\  Merge: a71c23c 460a70b
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Fri Feb 6 13:05:03 2026 -0400
+| |   
+| |       Merge pull request #89 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 460a70bf31911e4c0274622b40acb9e40265c9be
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Feb 6 13:04:43 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit f41cdd036ef29e5523cf5937d59a0d690e8fa22f
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Feb 3 11:21:52 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit a71c23cab3de704d31d9564ab4cd837bd7d33959
+| |\  Merge: 611d0d3 38e5835
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Fri Jan 16 11:53:39 2026 -0400
+| |   
+| |       Merge pull request #88 from tecno-consultores/develop
+| |       
+| |       Update docker-compose.yml
+| | 
+* | commit 38e5835bb29881a9c4dffa8e6998e495cd8bc0ba
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Jan 16 11:52:30 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit 611d0d3f117c5eba944e4a762c1a159133912769
+| |\  Merge: 0d69625 3f3f7ad
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Fri Jan 16 11:20:36 2026 -0400
+| |   
+| |       Merge pull request #87 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 3f3f7ada441cc87883ff6d5343ce13ffbe725288
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Jan 16 11:18:37 2026 -0400
+| | 
+| |     Refactor environment variables in docker-compose
+| |     
+| |     Removed duplicate environment variables related to execution data saving.
+| | 
+* | commit 4f4d36563e163f6fb7b1efdef08de59665cd324b
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Jan 16 11:10:33 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit 0d696251fa62ac084144afddca87a9311462d2f3
+| |\  Merge: 8ecbf25 673295e
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sun Dec 28 15:45:07 2025 -0400
+| |   
+| |       Merge pull request #86 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 673295e084ee279515e97c00a9f1b3718860f3f5
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Dec 28 15:44:44 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 660de23317b326b16f7156bbec129b944bf8d358
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Dec 28 15:44:36 2025 -0400
+| | 
+| |     * badge
+| |   
+| *   commit 8ecbf253ebee6c19008b7a42cb3f3e9bf51e6826 (tag: v1.13.0)
+| |\  Merge: dd5ab7f bb48958
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Thu Dec 25 22:33:15 2025 -0400
+| |   
+| |       Merge pull request #85 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit bb4895835d3b154c4c96e536596b78bf0e48834a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Dec 25 22:32:03 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 49e808c6d8e1f4e51ec535c3c36c1dac8e5aa7f6
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Dec 25 22:31:53 2025 -0400
+| | 
+| |     * readme
+| | 
+* | commit 31f908a10b2a5e0d5ad072cae27f0d5586c9db16
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Dec 25 22:25:04 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 53c4c63b4147922b36702af1e162198e4fd68fca
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Dec 25 22:24:51 2025 -0400
+| | 
+| |     * openai-bridge
+| | 
+* | commit 19b44f2189bac1e1b5964b23a3353e04d4cef89b
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Dec 7 16:24:19 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit e6efeab6b7eee25b8105c0c416da115b86f576ab
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Dec 7 16:24:04 2025 -0400
+| | 
+| |     * openwebui full offline mode
+| | 
+* | commit caa87675876b4eba9443821d45ac29fbc9e9b602
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Nov 27 09:23:24 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit dd5ab7fc04e71a80e81956c1baa78bd2bb1707fd
+| |\  Merge: e53516e 8f0daba
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Wed Nov 26 20:49:20 2025 -0400
+| |   
+| |       Merge pull request #84 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 8f0dabaef70a5d796d8cfce26f823544382fa7fa
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Nov 26 20:48:19 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 8de4dbc76a426718b365241d18fb2fea1906cee9
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Nov 26 20:47:41 2025 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit 559cb73c06e0163ac55f3566ba2f64e975e912a5
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Nov 26 20:44:46 2025 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit e53516e259120c1fb5afda5847071c4129c178e4 (tag: v1.12.0)
+| |\  Merge: 9b673b3 d7c40fb
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Tue Nov 25 17:56:36 2025 -0400
+| |   
+| |       Merge pull request #83 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit d7c40fbee0450bf03fe63577052be00d80de21c3
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue Nov 25 17:54:50 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit cbb17ef2954b05e6a5f8f2030b3e3528753a78ba
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue Nov 25 17:54:34 2025 -0400
+| | 
+| |     * worker + runner
+| | 
+* | commit 6c10dd3c5a49e72ad6abe2b486b504b25aefe813
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Tue Nov 25 16:01:30 2025 -0400
+| | 
+| |     Update n8n image and modify worker configuration
+| | 
+* | commit b330d5ae55d614723776458e7b3feeef85f965b5
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Tue Nov 25 11:15:10 2025 -0400
+| | 
+| |     Update readme to remove N8N-uv profile
+| |     
+| |     Removed N8N-uv profile from the list of profiles.
+| | 
+* | commit 4f2993e8f2be002b2971604861243befb02e62ae
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Tue Nov 25 11:14:38 2025 -0400
+| | 
+| |     Remove n8n-uv service from docker-compose
+| | 
+* | commit df427c85f00bac7bd843e0e727c1ed5e367ff1ab
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Tue Nov 25 11:09:55 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit 96fdf781202d927761949e851d86aa6f944302b4
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Tue Nov 25 10:38:01 2025 -0400
+| | 
+| |     Add NODES_EXCLUDE environment variable to services
+| |   
+| *   commit 9b673b3efab2350368e3b66ef5ad632b81fc257b
+| |\  Merge: 5c768b3 d935a0c
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Fri Nov 21 10:09:51 2025 -0400
+| |   
+| |       Merge pull request #82 from tecno-consultores/develop
+| |       
+| |       Add N8N_PROXY_HOPS to docker-compose.yml
+| | 
+* | commit d935a0cae44aca033cd42367d3701b6d332487b1
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Fri Nov 21 10:09:01 2025 -0400
+| | 
+| |     Add N8N_PROXY_HOPS to docker-compose.yml
+| |     
+| |     Added N8N_PROXY_HOPS environment variable to configurations.
+| |   
+| *   commit 5c768b3583dc7581b9d4470632fbc65c60f40126
+| |\  Merge: e9f88f4 9375964
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Sun Nov 16 12:39:37 2025 -0400
+| |   
+| |       Merge pull request #81 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 9375964daafbf32ba5d9a0d81c94fc6d153f0995
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Nov 16 12:38:50 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 316e675bd7cbea7d12821d4e78090f0192f0ebd5
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Nov 16 12:38:10 2025 -0400
+| | 
+| |     * timezone
+| |   
+| *   commit e9f88f4fb681951582ad68e2a2ff59882473d38a
+| |\  Merge: 215ef68 5745909
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Tue Nov 4 19:52:40 2025 -0400
+| |   
+| |       Merge pull request #80 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 574590906595cf3f3af520e9821902328ea9e3f9
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Nov 1 07:37:33 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit fef7867635c297046f5386d03e52e6dc1b49ef04
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Nov 1 07:37:13 2025 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit 215ef683ae19e21236ec5a6b29ff9795111e1ade
+| |\  Merge: 8bdf481 c0451ff
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Tue Oct 21 08:01:08 2025 -0400
+| |   
+| |       Merge pull request #79 from tecno-consultores/develop
+| |       
+| |       * bugfix
+| | 
+* | commit c0451ffcfe62ac66899ab947531f6783594221e4
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue Oct 21 07:59:24 2025 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit 8bdf4811de949d4c714fc779f41db9b33eb97b3f (tag: v1.11.1)
+| |\  Merge: 9216ec8 897f89d
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Sat Oct 18 18:02:10 2025 -0400
+| |   
+| |       Merge pull request #78 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 897f89dd9e9adb23210f80672e0d258e99b01674
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Oct 18 18:00:08 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit a208d7962309fef9ba6569a016c0e576522307ba
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Oct 18 17:59:58 2025 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit bad39d4d73e5f429b11d2e142ca711ad887715f6
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Oct 18 17:47:56 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 762b15c745415132b92a013bea65bb37a92c23cc
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Oct 18 17:47:40 2025 -0400
+| | 
+| |     * openwebui postgres
+| | 
+* | commit cc86a94c7bcf68da9ac756a28589a8ceb7ed8100
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Oct 18 17:25:47 2025 -0400
+| | 
+| |     * variables de openwebui
+| |   
+| *   commit 9216ec8b57f8ccdaa1c8535b510bf3726e3c507c (tag: v1.10.4)
+| |\  Merge: bce73e9 6eccaaf
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Sun Oct 12 10:45:34 2025 -0400
+| |   
+| |       Merge pull request #77 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 6eccaaf9c3712b32b95bf98360527b0aab5cbc01
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Oct 12 10:44:39 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 3739247f558b72a5d3d748c8aea68ca2cfbfdf24
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Oct 12 10:44:25 2025 -0400
+| | 
+| |     * recomendacion de n8n
+| |   
+| *   commit bce73e9270b8c6235ddb717ee039a2a6a5395fd3 (tag: v1.10.3)
+| |\  Merge: 881f068 6cbc0d2
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Sat Oct 11 18:47:51 2025 -0400
+| |   
+| |       Merge pull request #76 from tecno-consultores/develop
+| |       
+| |       * se agrega dependencia del worker a n8n
+| | 
+* | commit 6cbc0d2568ebe4dfd700055232077126ea137567
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Oct 11 18:46:26 2025 -0400
+| | 
+| |     * se agrega dependencia del worker a n8n
+| |   
+| *   commit 881f0686068127858d383cdec5ee09b83ac2b6a8 (tag: v1.10.2)
+| |\  Merge: 50d534e 3c8d3ac
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Sun Sep 28 11:32:53 2025 -0400
+| |   
+| |       Merge pull request #75 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 3c8d3acec950b7c4de99878ef5d9ba0c46293ac3
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 28 11:32:34 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit f8e7b658facd565e9785cac42b5f583921a65b1d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 28 11:32:26 2025 -0400
+| | 
+| |     * readme
+| |   
+| *   commit 50d534e5e202c94d8255e04338e8f032755482d1
+| |\  Merge: e6d1392 0c0eb52
+| |/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/|   Date:   Sun Sep 28 11:21:28 2025 -0400
+| |   
+| |       Merge branch 'develop'
+| | 
+* | commit 0c0eb528f23d9c024d257dc76a9238be566d2aa2
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 28 11:18:49 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 85a78b1b26402bf9676d18a43f6ab9a3bb3193fe
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 28 11:18:41 2025 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit 374e2ded05ee83248fc38fe94ea925be63136e98
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 28 11:11:45 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 156b55631b5855e52785b07c8425ec44e258b3d5
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 28 11:11:34 2025 -0400
+| | 
+| |     * archivos ignore
+| | 
+* | commit ea86a2e2e98aee6627888af3d70b6e4011568c59
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 28 11:00:30 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 48678a4ae5918cc6833f5ab1423f266507eea015
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 28 11:00:10 2025 -0400
+| | 
+| |     * se separan los servicios en varias db de redis
+| | 
+* | commit e173a9350c399fc83f25791e122db3b6bf3cf81d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 28 10:31:57 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 8f2fdf23a1307fea0834643a121b9d2fbda5f520
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 28 10:31:21 2025 -0400
+| | 
+| |     * nueva imagen de redis
+| | 
+* | commit 61451010636f6712f7fd21c13e7b0be136a3000a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 27 14:29:38 2025 -0400
+| | 
+| |     * redis version
+| |   
+| *   commit e6d1392a004046618536df69ebf7e870795843e5 (tag: v1.10.1)
+| |\  Merge: 3d2d1dc 31b258f
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Fri Sep 26 10:37:47 2025 -0400
+| |   
+| |       Merge pull request #74 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 31b258ffeabd41f588fb84dd9aa48c17b3fbf37f
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Fri Sep 26 10:31:52 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit 1cce9648b8babaa3785c08c72254b988279c2e16
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Sep 25 14:05:30 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit 3d2d1dc2cc03a42aaaffecb3891ea8f5adb748b7 (tag: v1.10.0)
+| |\  Merge: d1fc0f0 61cd90e
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Sun Sep 21 13:51:52 2025 -0400
+| |   
+| |       Merge pull request #73 from tecno-consultores/develop
+| |       
+| |       * instalador
+| | 
+* | commit 61cd90e34831ecbffe227691025c5d0819177e1e
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 21 13:49:51 2025 -0400
+| | 
+| |     * instalador
+| |   
+| *   commit d1fc0f080110ff6599128da8fa1e84e705f19dbb (tag: v1.9.4)
+| |\  Merge: 1eeadf9 ff65fe8
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Sun Sep 14 11:45:47 2025 -0400
+| |   
+| |       Merge pull request #72 from tecno-consultores/develop
+| |       
+| |       * volumenes para el worker
+| | 
+* | commit ff65fe83a95269489c3b81bd5850a26c22bee4c3
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Sep 14 11:43:11 2025 -0400
+| | 
+| |     * volumenes para el worker
+| |   
+| *   commit 1eeadf92289a955e7a47ac6d6de68fa82fa54e2b
+| |\  Merge: 2571362 4c4c733
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Sat Sep 13 18:54:55 2025 -0400
+| |   
+| |       Merge pull request #71 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 4c4c733c59bde7ca8e37f08fd6b8e60953926fd8
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 13 18:52:22 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit fe991e4658635950ad9171990727feefc497b420
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 13 18:52:07 2025 -0400
+| | 
+| |     * cambios en el env.example
+| | 
+* | commit 7d51cdbb28a86b0f6f374d396a396d9ce8546636
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 13 18:41:59 2025 -0400
+| | 
+| |     * changelog
+| |   
+| *   commit 25713625aab26dfca85980ca00a907e55cf46714 (tag: v1.9.3)
+| |\  Merge: d2e6247 30d4ebe
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Fri Sep 12 14:08:56 2025 -0400
+| |   
+| |       Merge pull request #70 from tecno-consultores/develop
+| |       
+| |       Update docker-compose.yml
+| | 
+* | commit 30d4ebe17c495b6ccf310b9ffedf1b6d60a93650
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Fri Sep 12 13:57:23 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit d2e624751c9feba0fe97df1d8915c838ca9f7e2a
+| |\  Merge: 1503df1 eaeade7
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Fri Sep 12 10:24:14 2025 -0400
+| |   
+| |       Merge pull request #69 from tecno-consultores/develop
+| |       
+| |       Update docker-compose.yml
+| | 
+* | commit eaeade7a1ea4f537cafc28d56e3df1cb497d6723
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Fri Sep 12 10:23:27 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit 1503df15baea46d49ce3e452b3b27ac445c7b1cb (tag: v1.9.2)
+| |\  Merge: b530be2 58632c2
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Fri Sep 12 09:55:22 2025 -0400
+| |   
+| |       Merge pull request #68 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 58632c2acf30f169d2ba374ae1fda388c8c5d98c
+|\| Merge: 4539ecc b530be2
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Fri Sep 12 09:55:14 2025 -0400
+| | 
+| |     Merge branch 'main' into develop
+| | 
+| * commit b530be2abcbf00f4ecd081749cd39dc895ad527d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Sep 10 18:49:15 2025 -0400
+| | 
+| |     * changelog
+| | 
+| * commit e171b71b4bd1e22000c5b318613bd2a08e47a0c5
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Sep 10 18:48:30 2025 -0400
+| | 
+| |     * openwebui
+| |   
+| *   commit feb2285ab20d19d62ef42128a02777f69f2b0068
+| |\  Merge: 941b0f9 a81b0e0
+| | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | Date:   Mon Sep 8 13:56:00 2025 -0400
+| | | 
+| | |     Merge pull request #66 from tecno-consultores/develop
+| | |     
+| | |     Update docker-compose.yml
+| | |   
+| * |   commit 941b0f98e5590ea0d2e07ecad44a506129112222
+| |\ \  Merge: 418b3ab a3f5656
+| | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | Date:   Mon Sep 8 13:50:17 2025 -0400
+| | | | 
+| | | |     Merge pull request #65 from tecno-consultores/develop
+| | | |     
+| | | |     Update docker-compose.yml
+| | | |   
+| * | |   commit 418b3abd40060c0dd6dde78009f7528906878a8e (tag: v1.9.1)
+| |\ \ \  Merge: 034bd5a 6c128cc
+| | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | Date:   Mon Sep 8 13:41:47 2025 -0400
+| | | | | 
+| | | | |     Merge pull request #64 from tecno-consultores/develop
+| | | | |     
+| | | | |     Develop
+| | | | |   
+| * | | |   commit 034bd5a170084c40cf017c7c7246c4985deb0676 (tag: v1.9.0)
+| |\ \ \ \  Merge: b9aaa93 18674e1
+| | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | Date:   Sun Sep 7 20:50:46 2025 -0400
+| | | | | | 
+| | | | | |     Merge pull request #63 from tecno-consultores/develop
+| | | | | |     
+| | | | | |     Develop
+| | | | | |   
+| * | | | |   commit b9aaa93d132eef180151b9e376cdd9619563dcae
+| |\ \ \ \ \  Merge: eac49c6 a3e83f9
+| | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | Date:   Mon Aug 11 17:15:49 2025 -0400
+| | | | | | | 
+| | | | | | |     Merge pull request #62 from tecno-consultores/develop
+| | | | | | |     
+| | | | | | |     Develop
+| | | | | | | 
+| * | | | | | commit eac49c60fe73958ef993df10b4e2e79543b23ea3
+| | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | Date:   Tue Jul 22 15:43:42 2025 -0400
+| | | | | | | 
+| | | | | | |     Update readme.md
+| | | | | | |   
+| * | | | | |   commit a8c3051baff369be286b5e927bf53e7df2504057 (tag: v1.8.5)
+| |\ \ \ \ \ \  Merge: bf171bd 46bcd3a
+| | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Sat Jul 19 21:25:48 2025 -0400
+| | | | | | | | 
+| | | | | | | |     Merge pull request #61 from tecno-consultores/develop
+| | | | | | | |     
+| | | | | | | |     * variables
+| | | | | | | |   
+| * | | | | | |   commit bf171bdfe67605188d15e55f2d443949aa83ae1b (tag: v1.8.4)
+| |\ \ \ \ \ \ \  Merge: 6050fc5 96bc17a
+| | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | Date:   Sat Jul 19 21:01:42 2025 -0400
+| | | | | | | | | 
+| | | | | | | | |     Merge pull request #60 from tecno-consultores/develop
+| | | | | | | | |     
+| | | | | | | | |     Develop
+| | | | | | | | |   
+| * | | | | | | |   commit 6050fc562c4236193df670d29c4ae333bebcab1d
+| |\ \ \ \ \ \ \ \  Merge: 09bef47 9202952
+| | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | Date:   Sat Jul 19 16:41:00 2025 -0400
+| | | | | | | | | | 
+| | | | | | | | | |     Merge pull request #59 from tecno-consultores/develop
+| | | | | | | | | |     
+| | | | | | | | | |     * deploy
+| | | | | | | | | |   
+| * | | | | | | | |   commit 09bef474497474d36e31ef39651b63a17252cf6f (tag: v1.8.3)
+| |\ \ \ \ \ \ \ \ \  Merge: 73206aa 46fdb4c
+| | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | Date:   Sat Jul 19 13:49:33 2025 -0400
+| | | | | | | | | | | 
+| | | | | | | | | | |     Merge pull request #58 from tecno-consultores/develop
+| | | | | | | | | | |     
+| | | | | | | | | | |     * bugfix
+| | | | | | | | | | |   
+| * | | | | | | | | |   commit 73206aaf3a066dfbe378d4218636db4d262508c4
+| |\ \ \ \ \ \ \ \ \ \  Merge: a2f56de 3686ee6
+| | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | Date:   Sat Jul 19 13:32:35 2025 -0400
+| | | | | | | | | | | | 
+| | | | | | | | | | | |     Merge pull request #57 from tecno-consultores/develop
+| | | | | | | | | | | |     
+| | | | | | | | | | | |     Develop
+| | | | | | | | | | | |   
+| * | | | | | | | | | |   commit a2f56ded796b53340dd22a5b6f869c17ed37335e
+| |\ \ \ \ \ \ \ \ \ \ \  Merge: 12b9dfb c58606e
+| | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | Date:   Sat Jul 19 10:22:57 2025 -0400
+| | | | | | | | | | | | | 
+| | | | | | | | | | | | |     Merge pull request #56 from tecno-consultores/develop
+| | | | | | | | | | | | |     
+| | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | |   
+| * | | | | | | | | | | |   commit 12b9dfbf0aa32eff6651e389581f131b3eb8e8e5
+| |\ \ \ \ \ \ \ \ \ \ \ \  Merge: 46dac9d ab15f78
+| | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | Date:   Thu Jul 17 09:28:20 2025 -0400
+| | | | | | | | | | | | | | 
+| | | | | | | | | | | | | |     Merge pull request #55 from tecno-consultores/develop
+| | | | | | | | | | | | | |     
+| | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | |   
+| * | | | | | | | | | | | |   commit 46dac9d1caa849d9eece8f18ab60b291930f3b44 (tag: v1.8.2)
+| |\ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 864f924 b0549fd
+| | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Fri Jul 11 10:10:54 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     Merge pull request #54 from tecno-consultores/develop
+| | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | |   commit 864f9243316a856cc0fa2c44f728814590487675
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: fb7a702 079b7ae
+| | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | Date:   Fri Jul 11 08:25:21 2025 -0400
+| | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | |     Merge pull request #53 from tecno-consultores/develop
+| | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | |     * bugfix
+| | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | |   commit fb7a7025fbdb26ac50414d1d189956e7c67267ef (tag: v1.8.1)
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: bf74e50 1107d7b
+| | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | Date:   Sun Jul 6 10:26:29 2025 -0400
+| | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | |     Merge pull request #52 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | |   commit bf74e507f1de536ecd7a4efdd914120cdcdf8bf0 (tag: v1.8.0)
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 0bbbe54 fd26d61
+| | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | Date:   Tue Jun 24 20:57:02 2025 -0400
+| | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | |     Merge pull request #49 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | |   commit 0bbbe54f75da550b9670debf0c321467e82330bd
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 56f56ce b8c84d1
+| | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | Date:   Sun Jun 15 07:50:08 2025 -0400
+| | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | |     Merge pull request #46 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | |   commit 56f56cee0b9fd58fd48d59b524210081cba8b4fa (tag: v1.7.1, origin/legacy)
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 4c28a1f 7a624da
+| | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | Date:   Sun Jun 1 17:04:52 2025 -0400
+| | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | |     Merge pull request #45 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | |     * dockerfile
+| | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | |   commit 4c28a1f61e868ce35477d7f7ff2963ac33b08acb (tag: v1.7.0)
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 6778291 a3be89d
+| | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | Date:   Sun Jun 1 13:09:36 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | |     Merge pull request #44 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | | |   commit 6778291d88e22b484d7e2dc2104e44e8b59e0da4
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 0314acf fe3d905
+| | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | Date:   Tue Apr 22 19:30:19 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | |     Merge pull request #41 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | | | |   commit 0314acfdc37034b16810f6d875832d6bba0fe212
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 8560d9a cb1601c
+| | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | Date:   Wed Apr 16 18:10:10 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | |     Merge pull request #40 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | | | | |   commit 8560d9ad122f22da470cad44caea0e861ee4ed0d
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: dfce7a0 cdd064f
+| | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | Date:   Wed Apr 16 10:28:56 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | |     Merge pull request #39 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | | | | | |   commit dfce7a080575b91069e35919d8f0c5ed7735b818
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 0145911 2cb2a44
+| | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | Date:   Wed Apr 2 21:07:12 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | |     Merge pull request #38 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | | | | | |     multiples cambios
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | commit 4539ecc6117fd93bc1f22f490bbef02911433ce2
+| | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | Date:   Fri Sep 12 09:53:17 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | commit 15659bd3834f75b7bad06aaf0e8e530dd070c99b
+| | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | Date:   Fri Sep 12 09:40:58 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | |     Update env.example
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | commit 59afbda00298c2912a71ab6db33e74e24b31bbc0
+| | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | Date:   Fri Sep 12 09:40:54 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | commit 0a3da7cc6d756e7cda326114b9e401a80e74bfb9
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | | | | | |   Date:   Fri Sep 12 09:36:32 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | | | | | |       Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | commit a81b0e0639003d66c8b30e8b574da953ac6a044e
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | | | | |   Date:   Mon Sep 8 13:54:24 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | | | | |       Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | commit a3f5656d4d55d4e0dc02e0111acb48ef3ea5e9c6
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | | | |   Date:   Mon Sep 8 13:48:43 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | | | |       Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | commit 6c128ccde079f5c271dda37d42871219c0cac73a
+| | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | Date:   Mon Sep 8 13:40:12 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | |     Update env.example
+| | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | commit a2d3620f2a7a65d7b20fbbc702d29d4a3fd61cc2
+| | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | Date:   Mon Sep 8 13:40:01 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | commit 88ae9462f7de569c7e6f264e3431c2ba526ecfd5
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | | |   Date:   Mon Sep 8 13:19:37 2025 -0400
+| | | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | | |       Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | |       
+| | | | | | | | | | | | | | | | | | | | |       * bugfix
+| | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | commit 18674e1af218e548ac3d13da76eb9d0445c49200
+| | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | Date:   Sun Sep 7 20:49:58 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | commit b00a709514b9490ea65a8b3166c3ce1082e787c3
+| | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | Date:   Sun Sep 7 20:49:45 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | |     * worker
+| | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | commit 0497f75cc3977f9727894f98d3fcce84d306059f
+| | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | Date:   Sun Sep 7 16:23:10 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | |     * variables
+| | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | commit b3b3e329bed1c914312f1d9b9189d77e851c259f
+| | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | Date:   Sun Sep 7 16:11:32 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | |     * variables
+| | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | commit 2241fa68a8ddf7e51999625e77af0fcf318727a7
+| | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | Date:   Sun Sep 7 15:14:06 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | commit 6f86f4cfb562dabe7c2caf9b6f31bd0edd7da108
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | |   Date:   Sun Sep 7 15:13:50 2025 -0400
+| | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | |       * worker profile
+| | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | commit a3e83f98aa1bb6477cf4863371301ff719b854db
+| | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | Date:   Sat Aug 2 15:24:05 2025 -0400
+| | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | commit bd3369e6f715da4bf5011061c17e47d321a58906
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | |   Date:   Sat Aug 2 15:23:33 2025 -0400
+| | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | |       * se comenta la variable porque no es necesaria en las versiones mas recientes
+| | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | commit 46bcd3a54f766b7aeae5a530a0c6631cd37c1a9c
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | |   Date:   Sat Jul 19 21:22:00 2025 -0400
+| | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | |       * variables
+| | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | commit 96bc17ac20fa5a235a28a35c253f5e91f00239f3
+| | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | Date:   Sat Jul 19 20:56:16 2025 -0400
+| | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | commit 4b5127a25beb7b890755cb1b11f1caa1b6a4878d
+| | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | Date:   Sat Jul 19 20:55:35 2025 -0400
+| | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | |     * cambios en las variables
+| | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | commit a0358ef6639dedcaa124a3d3f87713027d532227
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | |   Date:   Sat Jul 19 19:05:47 2025 -0400
+| | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | |       * bugfix
+| | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | commit 920295235a2fcdc42f0e2b86f092a0513d572810
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | |   Date:   Sat Jul 19 16:39:33 2025 -0400
+| | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | |       * deploy
+| | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | commit 46fdb4c67dd4a0030865caa839c0eba837d82735
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | |   Date:   Sat Jul 19 13:43:09 2025 -0400
+| | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | |       * bugfix
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit 3686ee634d416bba0c272e52f908f0ddc1c86235
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sat Jul 19 13:30:11 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit 415e862349cff3f0311ffc48089c7ca8f6e9a0c6
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sat Jul 19 13:29:56 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * bugfix
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit 6253667072725c766fbe2abf9193d07faa304425
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sat Jul 19 13:23:08 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * postgres init script
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit 42f0a48c10ecfff9337f691ad061e1eec29527c4
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sat Jul 19 13:12:11 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit a7e04f528d90c6a47707898d4b214269956df405
+| |_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | |   Date:   Sat Jul 19 13:11:51 2025 -0400
+| | | | | | | | | | | | | |   
+| | | | | | | | | | | | | |       * init
+| | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | commit c58606e3418640728ec2091057c998a8d4737ea5
+| | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | Date:   Sat Jul 19 10:20:41 2025 -0400
+| | | | | | | | | | | | | | 
+| | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | commit 08f965411a44eb5fceaf2f6e3fcf5a9e91171070
+| |_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | |   Date:   Sat Jul 19 10:20:04 2025 -0400
+| | | | | | | | | | | | |   
+| | | | | | | | | | | | |       * langsmith
+| | | | | | | | | | | | | 
+* | | | | | | | | | | | | commit ab15f780cd7a7ad059c1d23787995523fb961fbc
+| |_|_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | |   Date:   Thu Jul 17 09:27:38 2025 -0400
+| | | | | | | | | | | |   
+| | | | | | | | | | | |       Update docker-compose.yml
+| | | | | | | | | | | | 
+* | | | | | | | | | | | commit b0549fd6a80e4dc1faa7f887a28baa4722fd595b
+| |_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | |   Date:   Fri Jul 11 10:10:37 2025 -0400
+| | | | | | | | | | |   
+| | | | | | | | | | |       Update docker-compose.yml
+| | | | | | | | | | | 
+* | | | | | | | | | | commit 079b7aebf848fd3fa9239fe240ff574f9cf57471
+| |_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | |   Date:   Fri Jul 11 08:24:08 2025 -0400
+| | | | | | | | | |   
+| | | | | | | | | |       * bugfix
+| | | | | | | | | | 
+* | | | | | | | | | commit 1107d7b90e0a8626d210f8d42ca7fafe8ed6bf81
+| | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | Date:   Sun Jul 6 10:23:04 2025 -0400
+| | | | | | | | | | 
+| | | | | | | | | |     * changelog
+| | | | | | | | | | 
+* | | | | | | | | | commit 3a236343138041ed218222296d32d2531b5423da
+| | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | Date:   Sun Jul 6 10:22:55 2025 -0400
+| | | | | | | | | | 
+| | | | | | | | | |     * variables
+| | | | | | | | | |   
+| | | | | | | | | | * commit ebecedde16476c2d52d1a0ce47fe54b7a34e62d7 (origin/Fixed_n8n_uv)
+| |_|_|_|_|_|_|_|_|/  Author: Ernesto Crespo <ecrespo@protonmail.com>
+|/| | | | | | | | |   Date:   Sat Jul 5 15:47:43 2025 -0400
+| | | | | | | | | |   
+| | | | | | | | | |       Updated Dockerfile to include Python3, npm package installation, and virtual environment setup
+| | | | | | | | | | 
+* | | | | | | | | | commit 3c55c1455ffe04d005a3a1705c1cdfaf5472d4bf
+| | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | Date:   Sat Jun 28 10:01:15 2025 -0400
+| | | | | | | | | | 
+| | | | | | | | | |     * changelog
+| | | | | | | | | | 
+* | | | | | | | | | commit cf38f41cbcb024b1a8473fd448d4860c9e104fda
+| |_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | |   Date:   Sat Jun 28 10:00:28 2025 -0400
+| | | | | | | | |   
+| | | | | | | | |       * limpieza de variables
+| | | | | | | | | 
+* | | | | | | | | commit fd26d61553424b08b010d40457a3d8f4c0e7949e
+| | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | Date:   Tue Jun 24 20:55:58 2025 -0400
+| | | | | | | | | 
+| | | | | | | | |     * changelog
+| | | | | | | | | 
+* | | | | | | | | commit 11001d6058b408ee8cd4c7517b48500dc9fde5ff
+| | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | Date:   Tue Jun 24 20:55:46 2025 -0400
+| | | | | | | | | 
+| | | | | | | | |     * evolution api funcionando
+| | | | | | | | | 
+* | | | | | | | | commit 23e5fadd1a938a9783e4f5f421ace31c1053c5cb
+| | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | Date:   Tue Jun 24 18:15:10 2025 -0400
+| | | | | | | | | 
+| | | | | | | | |     * changelog
+| | | | | | | | | 
+* | | | | | | | | commit 8fd4b94d12025af88000538b1a0d76c1abc28827
+| | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | Date:   Tue Jun 24 18:15:00 2025 -0400
+| | | | | | | | | 
+| | | | | | | | |     * evolution api
+| | | | | | | | | 
+* | | | | | | | | commit ffee89c459763716aa50bafc073ca327ac4bceca
+| | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | Date:   Tue Jun 24 15:42:46 2025 -0400
+| | | | | | | | | 
+| | | | | | | | |     * changelog
+| | | | | | | | | 
+* | | | | | | | | commit 40a21c543bcb413298126a59e4fce88507a92f4a
+| | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | Date:   Tue Jun 24 15:42:37 2025 -0400
+| | | | | | | | | 
+| | | | | | | | |     * mongodb
+| | | | | | | | | 
+* | | | | | | | | commit c09258737642517d3034eead0f6ad41e402cf98a
+| |_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | |   Date:   Tue Jun 24 15:34:51 2025 -0400
+| | | | | | | |   
+| | | | | | | |       * ignore
+| | | | | | | | 
+* | | | | | | | commit b8c84d1c123f3829a91178ed5183676029a21e94
+| | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Sun Jun 15 07:49:13 2025 -0400
+| | | | | | | | 
+| | | | | | | |     * changelog
+| | | | | | | | 
+* | | | | | | | commit f78fad5b6aef14a45b19603c0f9638bf73371c53
+| |_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | |   Date:   Sun Jun 15 07:49:05 2025 -0400
+| | | | | | |   
+| | | | | | |       * limpieza
+| | | | | | | 
+* | | | | | | commit 7a624da4cc72fb7132e5585f3b15aeab2a0de2eb
+| |_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | |   Date:   Sun Jun 1 17:03:50 2025 -0400
+| | | | | |   
+| | | | | |       * dockerfile
+| | | | | | 
+* | | | | | commit a3be89da32e5f7421955ba7878d76e56badb0aca
+| | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | Date:   Sun Jun 1 13:08:25 2025 -0400
+| | | | | | 
+| | | | | |     * changelog
+| | | | | | 
+* | | | | | commit 51e1819a9d7a774f9d2b7a01d413808f1ab358af
+| | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | Date:   Sun Jun 1 13:08:18 2025 -0400
+| | | | | | 
+| | | | | |     * readme
+| | | | | | 
+* | | | | | commit 98ff6eba85ddd9e215380fcea674bedcfbc90a1f
+| | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | Date:   Sun Jun 1 13:06:23 2025 -0400
+| | | | | | 
+| | | | | |     * changelog
+| | | | | | 
+* | | | | | commit 594c3cc893eff1b5bf566fedb10082d7da7425f7
+| | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | Date:   Sun Jun 1 13:06:09 2025 -0400
+| | | | | | 
+| | | | | |     * n8n-uv y su perfil
+| | | | | | 
+* | | | | | commit 05476a4dd5254741426a5506d28e170756218dca
+| | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | Date:   Sun May 11 21:06:35 2025 -0400
+| | | | | | 
+| | | | | |     * prompt para documentacion
+| | | | | | 
+* | | | | | commit 07cacad540d4af2b05149e7ad93e941ba37abb62
+| |_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | |   Date:   Wed May 7 10:05:03 2025 -0400
+| | | | |   
+| | | | |       Update docker-compose.yml
+| | | | | 
+* | | | | commit fe3d9052108ac633927d896992c91afeaaf9f325
+| | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | Date:   Tue Apr 22 19:29:24 2025 -0400
+| | | | | 
+| | | | |     * changelog
+| | | | | 
+* | | | | commit 04910d230dc0efd3a0549d1fcf21d72f3f19840c
+| | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | Date:   Tue Apr 22 19:29:15 2025 -0400
+| | | | | 
+| | | | |     * smtp bugfix
+| | | | | 
+* | | | | commit c9d064e6b13fe6aea9d2dec05acfe46bef4c072a
+| | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | Date:   Tue Apr 22 19:11:48 2025 -0400
+| | | | | 
+| | | | |     * changelog
+| | | | | 
+* | | | | commit 329db84102f395f70352c537a289a086753d19d2
+| | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | Date:   Tue Apr 22 19:11:36 2025 -0400
+| | | | | 
+| | | | |     * smtp para las invitaciones
+| | | | | 
+* | | | | commit e59aa0e19228a28e4f9c26de7ca223051ce20b41
+| | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | Date:   Fri Apr 18 12:03:54 2025 -0400
+| | | | | 
+| | | | |     * se sustituye agente.sh por una version optimizada y con el nombre final del script
+| | | | | 
+* | | | | commit 4db1f39264cd295d0c42ebc31390fdb31325292f
+| |_|_|/  Author: Ernesto Crespo <ecrespo@protonmail.com>
+|/| | |   Date:   Thu Apr 17 07:14:12 2025 -0400
+| | | |   
+| | | |       Added file .env to gitignore
+| | | | 
+* | | | commit cb1601cf8b1137f747aeb891dc6a5bf0d22f019f
+| | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | Date:   Wed Apr 16 18:08:58 2025 -0400
+| | | | 
+| | | |     * changelog
+| | | | 
+* | | | commit 22fb71fade5b7795af3285ccf598bad3ffb72bc9
+| | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | Date:   Wed Apr 16 18:08:50 2025 -0400
+| | | | 
+| | | |     * bugfix
+| | | | 
+* | | | commit 6cf2d9637bdaf7dba945850001459e92d69d2b3c
+| | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | Date:   Wed Apr 16 17:35:31 2025 -0400
+| | | | 
+| | | |     * variables
+| | | | 
+* | | | commit fe62b66f667cc0482c6325a011adce67c74507d2
+| |_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| |   Date:   Wed Apr 16 15:34:31 2025 -0400
+| | |   
+| | |       Update agente.sh
+| | | 
+* | | commit cdd064f114db2fd3b5568db984215a7f39816d6c
+| | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | Date:   Wed Apr 16 10:27:23 2025 -0400
+| | | 
+| | |     Update agente.sh
+| | | 
+* | | commit abf9e6445b562211e84898383459a8ac27181dc3
+| | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | Date:   Wed Apr 16 09:40:43 2025 -0400
+| | | 
+| | |     Update agente.sh
+| | | 
+* | | commit 4ef2a0df84c1946405fb66215af37243c3d454ca
+| | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | Date:   Tue Apr 15 19:16:45 2025 -0400
+| | | 
+| | |     * bugfix
+| | | 
+* | | commit 91684c5cae069e84f0d9baa4a6cf4cb0f2d654cc
+| | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | Date:   Tue Apr 15 19:15:46 2025 -0400
+| | | 
+| | |     * agente en terminal
+| | | 
+* | | commit cfe02105dde4d2933f095bd29723e14dfb164ba2
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Tue Apr 8 13:59:33 2025 -0400
+| |   
+| |       Update n8n Pipe Function.txt
+| | 
+* | commit 2cb2a446a5e850363ef37298e1bba222aa9baadb
+|\| Merge: 16c4ff7 0145911
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Wed Apr 2 21:06:48 2025 -0400
+| | 
+| |     Merge branch 'main' into develop
+| | 
+| * commit 0145911dd77e60215e83f7b2192205bc0f6fb65d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Mar 27 21:24:02 2025 -0400
+| | 
+| |     * changelog
+| | 
+| * commit 6adef58e9448bf996ec207318b32296a6fcd5c39
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Mar 27 21:23:55 2025 -0400
+| | 
+| |     * cleaning
+| |   
+| *   commit b99553acf5608cc442bc6c68c2d87c0d3e593442 (tag: v1.6.1)
+| |\  Merge: f11b3ab c138fac
+| | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | Date:   Mon Mar 17 15:14:29 2025 -0400
+| | | 
+| | |     Merge pull request #37 from tecno-consultores/develop
+| | |     
+| | |     Develop
+| | |   
+| * |   commit f11b3abf72d78c0db501c22fbb3d4ad0ccace2e9
+| |\ \  Merge: 30a1877 5a5491f
+| | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | Date:   Sun Mar 16 17:12:18 2025 -0400
+| | | | 
+| | | |     Merge pull request #36 from tecno-consultores/develop
+| | | |     
+| | | |     Develop
+| | | |   
+| * | |   commit 30a18778378241a9225bc725e7fe3ab0693364d7 (tag: v1.6.0)
+| |\ \ \  Merge: a45bdd5 eba20dc
+| | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | Date:   Thu Mar 13 19:47:12 2025 -0400
+| | | | | 
+| | | | |     Merge pull request #35 from tecno-consultores/develop
+| | | | |     
+| | | | |     Develop
+| | | | |   
+| * | | |   commit a45bdd5b90941f33eafc08502f4ec0ff13aefeaa (tag: v1.5.4)
+| |\ \ \ \  Merge: 8892424 ffcea63
+| | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | Date:   Wed Mar 12 12:02:55 2025 -0400
+| | | | | | 
+| | | | | |     Merge pull request #34 from tecno-consultores/develop
+| | | | | |     
+| | | | | |     Develop
+| | | | | |   
+| * | | | |   commit 8892424c24cdebb3ff4afe8b55bcda3d954ece36
+| |\ \ \ \ \  Merge: 4448e29 1baf197
+| | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | Date:   Wed Mar 12 10:30:44 2025 -0400
+| | | | | | | 
+| | | | | | |     Merge pull request #33 from tecno-consultores/develop
+| | | | | | |     
+| | | | | | |     Update docker-compose.yml
+| | | | | | |   
+| * | | | | |   commit 4448e29ac98e8cd8638112f30055efb1c46f2b26
+| |\ \ \ \ \ \  Merge: b21d931 395e950
+| | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Wed Mar 12 09:56:34 2025 -0400
+| | | | | | | | 
+| | | | | | | |     Merge pull request #32 from tecno-consultores/develop
+| | | | | | | |     
+| | | | | | | |     Update docker-compose.yml
+| | | | | | | |   
+| * | | | | | |   commit b21d9313ff1086033ff79a10ead4289c53561ade (tag: v1.5.3)
+| |\ \ \ \ \ \ \  Merge: f5f9e32 52ca71b
+| | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | Date:   Tue Mar 11 10:38:16 2025 -0400
+| | | | | | | | | 
+| | | | | | | | |     Merge pull request #31 from tecno-consultores/develop
+| | | | | | | | |     
+| | | | | | | | |     Develop
+| | | | | | | | |   
+| * | | | | | | |   commit f5f9e329b0df6bc12fb9c2dd44bd4567e133b9d0
+| |\ \ \ \ \ \ \ \  Merge: 57e0e8a 832b0c1
+| | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | Date:   Sun Mar 9 21:34:04 2025 -0400
+| | | | | | | | | | 
+| | | | | | | | | |     Merge pull request #30 from tecno-consultores/develop
+| | | | | | | | | |     
+| | | | | | | | | |     Develop
+| | | | | | | | | |   
+| * | | | | | | | |   commit 57e0e8ac738069f31f3ffb3e7cf0bac68fa2d017
+| |\ \ \ \ \ \ \ \ \  Merge: 9ff594a cf8a136
+| | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | Date:   Sun Mar 9 18:42:34 2025 -0400
+| | | | | | | | | | | 
+| | | | | | | | | | |     Merge pull request #29 from tecno-consultores/develop
+| | | | | | | | | | |     
+| | | | | | | | | | |     Develop
+| | | | | | | | | | |   
+| * | | | | | | | | |   commit 9ff594a8214ccec9d7861a5611091649a5cd978f (tag: v1.5.2)
+| |\ \ \ \ \ \ \ \ \ \  Merge: de51c5a 44c0fbb
+| | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | Date:   Sun Mar 9 18:19:51 2025 -0400
+| | | | | | | | | | | | 
+| | | | | | | | | | | |     Merge pull request #27 from tecno-consultores/develop
+| | | | | | | | | | | |     
+| | | | | | | | | | | |     * bugfix
+| | | | | | | | | | | |   
+| * | | | | | | | | | |   commit de51c5ac64618b41412e25fcff3de39d087cb5f5
+| |\ \ \ \ \ \ \ \ \ \ \  Merge: 5c4240c f9133dd
+| | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | Date:   Sun Mar 9 15:05:01 2025 -0400
+| | | | | | | | | | | | | 
+| | | | | | | | | | | | |     Merge pull request #26 from tecno-consultores/develop
+| | | | | | | | | | | | |     
+| | | | | | | | | | | | |     * openhands
+| | | | | | | | | | | | |   
+| * | | | | | | | | | | |   commit 5c4240c5e4fa033063eb384add19f37a88d3732a (tag: v1.5.1)
+| |\ \ \ \ \ \ \ \ \ \ \ \  Merge: 333da72 682ddb9
+| | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | Date:   Sun Mar 9 14:23:55 2025 -0400
+| | | | | | | | | | | | | | 
+| | | | | | | | | | | | | |     Merge pull request #25 from tecno-consultores/develop
+| | | | | | | | | | | | | |     
+| | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | |   
+| * | | | | | | | | | | | |   commit 333da727790f38966fcf756e34849331ea27e012
+| |\ \ \ \ \ \ \ \ \ \ \ \ \  Merge: a7159b3 83975ef
+| | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Tue Mar 4 13:14:39 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     Merge pull request #24 from tecno-consultores/develop
+| | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | |   commit a7159b3c26639ef4457eb9daf6e391450e7ad54e
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 7a7f5af 0a4492b
+| | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | Date:   Tue Mar 4 12:16:00 2025 -0400
+| | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | |     Merge pull request #23 from tecno-consultores/develop
+| | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | |   commit 7a7f5af31254b3b417f3a735034dbd657ca8defd
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 03478fd c7c6712
+| | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | Date:   Mon Mar 3 12:01:52 2025 -0400
+| | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | |     Merge pull request #22 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | |   commit 03478fdd3fea82b51751e5d50ede67a22929d816 (tag: v1.5)
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 4738880 70d84fc
+| | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | Date:   Sun Mar 2 23:31:02 2025 -0400
+| | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | |     Merge pull request #21 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | |   commit 47388806a21f26078f6636d88f8999abd7af3a31
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 2e7a8e6 d2eafb9
+| | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | Date:   Sat Mar 1 19:55:58 2025 -0400
+| | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | |     Merge pull request #20 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | |   commit 2e7a8e66b552d975fd4b27dd99fe911f776c3860 (tag: v1.4.3)
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 5d5f9fe 4d8830e
+| | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | Date:   Sat Mar 1 14:15:59 2025 -0400
+| | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | |     Merge pull request #19 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | |     * redis for arm
+| | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | |   commit 5d5f9fecd3d9958d5da4a79aac9392b9c8bd3240 (tag: v1.4.2)
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 287889c a813956
+| | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | Date:   Sat Mar 1 13:28:14 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | |     Merge pull request #18 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | | |   commit 287889cd759a00cd055d16a7612e039373b0da0f
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 93f8649 6299879
+| | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | Date:   Thu Feb 27 16:19:21 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | |     Merge pull request #17 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | | | |   commit 93f8649e243c13f6111d4968befaf75bafb376c7
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 39703b9 327d486
+| | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Feb 27 15:52:15 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | |     Merge pull request #16 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | | | | |   commit 39703b986fc88ae065c738e7061e043fe55803d2 (tag: v1.4.1)
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 58faf16 32e2ad1
+| | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Feb 27 14:07:25 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | |     Merge pull request #15 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | | | | |     Develop
+| | | | | | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | | | | | |   commit 58faf16df1e511baaff4f547c892da101f28605d (tag: v1.4)
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 7d5094d cec72a0
+| | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Feb 27 13:19:48 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | |     Merge pull request #14 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | | | | | |     Update readme.md
+| | | | | | | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | | | | | | |   commit 7d5094df6f28e8ba19510a10d514a487d9dacae9
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 9aac51c d70d15c
+| | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Feb 27 13:15:49 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | |     Merge pull request #13 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | | | | |   
+| * | | | | | | | | | | | | | | | | | | | | | | | |   commit 9aac51c75989fb7386bf8f6d1c7dd65b8fb17c8e
+| |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  Merge: 9de1910 0f0a8da
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Feb 27 11:59:58 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     Merge pull request #12 from tecno-consultores/develop
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| * | | | | | | | | | | | | | | | | | | | | | | | | | commit 9de1910fa495caeee83aef3e83d9c7ffaeff432a
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Mon Feb 3 13:26:59 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | | commit 16c4ff714f1490e77a287e5e302ab493343dfeef
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Wed Apr 2 20:19:36 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | | commit 196d3010222862872b2ec7d42730aa354c6ef705
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Wed Apr 2 20:19:29 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     * fromai
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | | commit 4438f4e8cf3061ff5f126ec911c5b75eeae383f8
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Tue Apr 1 11:26:44 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     Update funciones-n8n.txt
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | | commit efd6cb5f053606d4a2254bbb7acde366b699de3f
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Mar 27 21:27:18 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | | commit 26ebe3afc533a4602945f94ee772b9f095f8f249
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Mar 27 21:27:08 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     * limpieza
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | | commit 4dadca38d75c3ec5fa00f96a8073e539df119e6e
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Sun Mar 23 10:38:54 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | | commit 30b0713e9b7e86e9a01466a4e88ac960b4aacabb
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Sun Mar 23 10:38:34 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | | |     * funcion para conectar n8n con openweb ui
+| | | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | | commit f70971d54008a3fd32201c174adabbda8fd228f8
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | | | | | | | |   Date:   Tue Mar 18 22:53:05 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | | | | | | | |       * se agrega la variable N8N_RUNNERS_ENABLED=true por recomendacion del programa
+| | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | commit c138faca3733c3b87a2ceb5e4b93151fe07915a8
+| | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Mon Mar 17 15:09:18 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | commit 608424a32069909f27d63929532ad0f2f1ccc1d2
+| | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Mon Mar 17 15:08:17 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | |     Update env.example
+| | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | commit 5da9015a6283232240c1b94e076bc6a192d18263
+| | | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | | Date:   Mon Mar 17 15:06:32 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | | commit 8d6934f82edb9e695b3408f609f1c4754937fac1
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | | | | | | |   Date:   Mon Mar 17 14:31:49 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | | | | | | |       Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | commit 5a5491f153de3c0e122fe89ca011e34b1f8362da
+| | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | Date:   Sun Mar 16 16:46:24 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | |     * memory
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | commit 67078e36610692d4a3f9d8333ed0ad5757311a41
+| | | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | | Date:   Sun Mar 16 16:17:04 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | | |     * funciones
+| | | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | | commit d6e707267517b1b9b188bc3e2ebb8332046716e4
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | | | | | |   Date:   Sun Mar 16 12:20:29 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | | | | | |       * openwebui variables
+| | | | | | | | | | | | | | | | | | | | | | | |       * dependencias
+| | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | commit eba20dc157f7f020d32c7f0ff5053025cd1a87de
+| | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Mar 13 19:46:06 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | commit 9f6b77e5266a4dc8cd71435a43d6c784cfb046c6
+| | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Mar 13 19:45:49 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | |     * variables del proxy
+| | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | commit 5f00c6430636dd789da6f766c961805008fc5e52
+| | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Mar 13 19:36:46 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | |     * readme
+| | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | commit f1867dd07ffc6b35c1f81109d71e330167f78e20
+| | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Mar 13 19:34:57 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | commit 9097e9c2003928a4f717b6a31b92111445e65f2b
+| | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Mar 13 19:34:36 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | |     * searxng
+| | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | commit 49231430858c326ba34e29aa5f83f2b21b7c7234
+| | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Mar 13 19:15:40 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | |     * readme
+| | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | commit 42d963e4f8c87df1075b21ba69e22d951427e30d
+| | | | | | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | | Date:   Thu Mar 13 19:13:33 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | | |     * nginx reverse proxy
+| | | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | | commit 75ae45f34af765567d48472bd111c689199dc192
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | | | | |   Date:   Thu Mar 13 09:39:15 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | | | | |       Create funciones-n8n.txt
+| | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | commit ffcea63b83b2279ab22c7b335bfb2ea982e9e0d3
+| | | | | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | | | | Date:   Wed Mar 12 12:02:14 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | | | | |     Update env.example
+| | | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | | commit 1b982455960c669ae2d597221934baa902139f81
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | | | |   Date:   Wed Mar 12 12:01:38 2025 -0400
+| | | | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | | | |       Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | | commit 1baf197bc643ed41ccde9b4e326d941d4ddea58d
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | | |   Date:   Wed Mar 12 10:30:11 2025 -0400
+| | | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | | |       Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | | commit 395e950e676d7807e13ec06dc4d90f3f970230bc
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | | |   Date:   Wed Mar 12 09:56:16 2025 -0400
+| | | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | | |       Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | commit 52ca71b180bbf034a691b6251a4b532434eef096
+| | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | Date:   Tue Mar 11 10:37:10 2025 -0400
+| | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | |     Update docker-compose.yml
+| | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | commit 6a9e15a2a5185d2d4a67809c8011bd7e382d6dd2
+| | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | Date:   Tue Mar 11 10:36:28 2025 -0400
+| | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | |     Update readme.md
+| | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | commit 6ae9431e973bc73a72fbca1406e365acc07c5661
+| | | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | Date:   Mon Mar 10 20:25:26 2025 -0400
+| | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | |     * se cambia el nombre del archivo de variables
+| | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | commit f252253b16a4249baffed8a7cc46ea67bb3241d2
+| | | | | | | | | | | | | | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | | Date:   Mon Mar 10 09:38:16 2025 -0400
+| | | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | | |     Update .env-example
+| | | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | | commit b86397cfeb99c42f44561dd7f96c3b101d97f2f6
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | | |   Date:   Sun Mar 9 21:37:19 2025 -0400
+| | | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | | |       * prompt data
+| | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | commit 832b0c14e87a9f4203b2692cbfbf0821f589cf78
+| | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | Date:   Sun Mar 9 21:30:08 2025 -0400
+| | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | commit 01fd759f551711a0003ff84b6844fc5f857da50e
+| | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | Date:   Sun Mar 9 21:29:52 2025 -0400
+| | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | |     * readme
+| | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | commit ba220f0a0502577b67ca18a084fc17e7c681bdcc
+| | | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | | Date:   Sun Mar 9 18:45:42 2025 -0400
+| | | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | | commit c95d484e100ae814936a5ce595c6e04084877b97
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | | |   Date:   Sun Mar 9 18:45:35 2025 -0400
+| | | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | | |       * ignore
+| | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | commit cf8a1364599276355e54744f56ba5ddce2bc2b7b
+| | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | Date:   Sun Mar 9 18:38:24 2025 -0400
+| | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | commit 70065dcedf93f22df1bf94ef9ff8f48ac649c3bf
+| | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | Date:   Sun Mar 9 18:38:17 2025 -0400
+| | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | |     * readme
+| | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | commit b82068f8de1d5b53b4ca9834ac1a56498bd28c93
+| | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | Date:   Sun Mar 9 18:26:15 2025 -0400
+| | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | commit 20282c597848aae5954af690c31c6f614e931743
+| | | | | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | | | | Date:   Sun Mar 9 18:26:08 2025 -0400
+| | | | | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | | | | |     * env bugfix
+| | | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | | commit a2a266798bded3797abe88f4e7a1cf7a7295e94a
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | | |   Date:   Sun Mar 9 18:23:00 2025 -0400
+| | | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | | |       * env
+| | | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | | commit 44c0fbbdac06873393b66d0be5eaaf3122dfdb37
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | | |   Date:   Sun Mar 9 18:17:50 2025 -0400
+| | | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | | |       * bugfix
+| | | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | | commit f9133dd370b1596b99aaa35cfae47f64e7d16e04
+| |_|_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | | |   Date:   Sun Mar 9 15:02:00 2025 -0400
+| | | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | |       * openhands
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit 682ddb93f41f171090ed6829c18e890cdb4f0a77
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sun Mar 9 13:52:40 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit 4ed476b09c15613d534d3572ec52b9f7b23ffdee
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sun Mar 9 13:52:34 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * readme
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit b0ae2d424d13f1be5cbf6cb6465450ee37f1a9f8
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sun Mar 9 13:38:59 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit 7f32068d97a1bdccbb6ff03d89184a905f754c95
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sun Mar 9 13:38:49 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * bugfix
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit 21cb2c344bf91970a66901d3caea1715ba8f4239
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sun Mar 9 12:37:39 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit ee690ed3253bdd257c31511edeca354e3d97747b
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sun Mar 9 12:37:28 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * readme bugfix
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit 87933714e9bff9d9b49d7ce1e77f7532fe1d4a33
+| | | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | | Date:   Sun Mar 9 12:35:53 2025 -0400
+| | | | | | | | | | | | | | | 
+| | | | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | | commit 4579515821817a6d0838110392bcc3f7e833eba6
+| |_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | | |   Date:   Sun Mar 9 12:35:36 2025 -0400
+| | | | | | | | | | | | | |   
+| | | | | | | | | | | | | |       * perfiles
+| | | | | | | | | | | | | |       * hostname
+| | | | | | | | | | | | | |       * puertos
+| | | | | | | | | | | | | |   
+| | | | | | | | | | | | | | * commit aef0bde80239ee397508a17ea1e54397765bdf53 (origin/update_variables_environment)
+| |_|_|_|_|_|_|_|_|_|_|_|_|/  Author: Ernesto Crespo <ecrespo@protonmail.com>
+|/| | | | | | | | | | | | |   Date:   Tue Mar 4 13:50:42 2025 -0400
+| | | | | | | | | | | | | |   
+| | | | | | | | | | | | | |       Added webhook_url and timezone to n8n
+| | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | commit 83975ef0fb48415dd1a6188a9e32ffd102d6f18f
+| | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | Date:   Tue Mar 4 12:50:42 2025 -0400
+| | | | | | | | | | | | | | 
+| | | | | | | | | | | | | |     * correccion del mappeo de variables
+| | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | commit e7144b788b6f13e7cba57eed6fd8edd8ba8c722b
+| | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | Date:   Tue Mar 4 12:37:03 2025 -0400
+| | | | | | | | | | | | | | 
+| | | | | | | | | | | | | |     * readme
+| | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | commit b74809229f0617e90d764e1d420e9c348180a5d7
+| | | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | | Date:   Tue Mar 4 12:33:06 2025 -0400
+| | | | | | | | | | | | | | 
+| | | | | | | | | | | | | |     * se crea nvidia-base para acortar el codigo
+| | | | | | | | | | | | | | 
+* | | | | | | | | | | | | | commit a007cae5e33e46f21d7e0c37c883d6d1931017c2
+| |_|_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | | |   Date:   Tue Mar 4 12:19:17 2025 -0400
+| | | | | | | | | | | | |   
+| | | | | | | | | | | | |       * ignore
+| | | | | | | | | | | | | 
+* | | | | | | | | | | | | commit 0a4492b2e15a0760c9a532072e986f8f98982037
+| | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | Date:   Tue Mar 4 12:15:30 2025 -0400
+| | | | | | | | | | | | | 
+| | | | | | | | | | | | |     * changelog
+| | | | | | | | | | | | | 
+* | | | | | | | | | | | | commit 015c24546210b570e5ed6e25aa1aff5f0ca53085
+| | | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | | Date:   Tue Mar 4 12:14:27 2025 -0400
+| | | | | | | | | | | | | 
+| | | | | | | | | | | | |     * bugfix en openwebui
+| | | | | | | | | | | | |     * nuevas variables de entorno para openwebui
+| | | | | | | | | | | | | 
+* | | | | | | | | | | | | commit dff3b12f257f3c0ccefd3c21ef97c1528824d4f7
+| |_|_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | | |   Date:   Mon Mar 3 23:08:49 2025 -0400
+| | | | | | | | | | | |   
+| | | | | | | | | | | |       * perfiles por servicio
+| | | | | | | | | | | | 
+* | | | | | | | | | | | commit c7c67126553167bff4a8cb0bb2f013be85c9fe9b
+| | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | Date:   Mon Mar 3 12:00:36 2025 -0400
+| | | | | | | | | | | | 
+| | | | | | | | | | | |     * enlaces
+| | | | | | | | | | | | 
+* | | | | | | | | | | | commit d89ae5dea007344e7f18a1dd7557c73e9bc2846e
+| | | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | | Date:   Mon Mar 3 11:53:04 2025 -0400
+| | | | | | | | | | | | 
+| | | | | | | | | | | |     * bugfix
+| | | | | | | | | | | | 
+* | | | | | | | | | | | commit fd6bc29a14cf81237b244662fe8d9d3663d064a4
+| |_|_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | | |   Date:   Mon Mar 3 11:51:45 2025 -0400
+| | | | | | | | | | |   
+| | | | | | | | | | |       * readme
+| | | | | | | | | | | 
+* | | | | | | | | | | commit 70d84fc9d916df160f876c73d44fdfd8040faa82
+| | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | Date:   Sun Mar 2 23:20:50 2025 -0400
+| | | | | | | | | | | 
+| | | | | | | | | | |     * variables
+| | | | | | | | | | | 
+* | | | | | | | | | | commit 963df0eda6287fb632526a9fbd31bf157d96aaa8
+| | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | Date:   Sun Mar 2 23:10:18 2025 -0400
+| | | | | | | | | | | 
+| | | | | | | | | | |     * nombres
+| | | | | | | | | | | 
+* | | | | | | | | | | commit be5c50fa3205f3f4f047340939f52616c7433e10
+| | | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | | Date:   Sun Mar 2 22:56:44 2025 -0400
+| | | | | | | | | | | 
+| | | | | | | | | | |     * changelog
+| | | | | | | | | | | 
+* | | | | | | | | | | commit a20a92e56671ef09df596b9ab870ca2f8c2bb0c6
+| |_|_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | | |   Date:   Sun Mar 2 22:56:16 2025 -0400
+| | | | | | | | | |   
+| | | | | | | | | |       * se eliminan servicios innecesarios y se reordenan los perfiles
+| | | | | | | | | | 
+* | | | | | | | | | commit d2eafb94ce12c069ffba4e8ca02217af0d307e81
+| | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | Date:   Sat Mar 1 19:53:43 2025 -0400
+| | | | | | | | | | 
+| | | | | | | | | |     * changelog
+| | | | | | | | | | 
+* | | | | | | | | | commit ce37be6e3ac88bebb90aea5e438dc58d344cc695
+| | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | Date:   Sat Mar 1 19:53:35 2025 -0400
+| | | | | | | | | | 
+| | | | | | | | | |     * readme
+| | | | | | | | | | 
+* | | | | | | | | | commit 968482d1a3eb6ccd559102f0fd17d6e909bfa84b
+| | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | Date:   Sat Mar 1 19:47:14 2025 -0400
+| | | | | | | | | | 
+| | | | | | | | | |     * changelog
+| | | | | | | | | | 
+* | | | | | | | | | commit 3ec77d0cfa183a07764cfb8726324b8062386d89
+| | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | Date:   Sat Mar 1 19:47:06 2025 -0400
+| | | | | | | | | | 
+| | | | | | | | | |     * carpeta
+| | | | | | | | | | 
+* | | | | | | | | | commit 873813065cb52edbcdf2d96e97fd0cfb0ac1a5d5
+| | | | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | | | Date:   Sat Mar 1 19:43:38 2025 -0400
+| | | | | | | | | | 
+| | | | | | | | | |     * changelog
+| | | | | | | | | | 
+* | | | | | | | | | commit 87d573fdda66a57af3a19188da0c52d056fabcaa
+| |_|_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | | |   Date:   Sat Mar 1 19:43:25 2025 -0400
+| | | | | | | | |   
+| | | | | | | | |       * whisper cpu
+| | | | | | | | | 
+* | | | | | | | | commit 4d8830e5263be6b728978699003fa2cfe7fc108a
+| |_|_|_|_|_|_|/  Author: Jesus Palencia <sinfallas@gmail.com>
+|/| | | | | | |   Date:   Sat Mar 1 14:14:17 2025 -0400
+| | | | | | | |   
+| | | | | | | |       * redis for arm
+| | | | | | | | 
+* | | | | | | | commit a81395693a46561932e7d8a112bab695e7f3f1c6
+| | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Sat Mar 1 13:20:56 2025 -0400
+| | | | | | | | 
+| | | | | | | |     * changelog
+| | | | | | | | 
+* | | | | | | | commit c83af1087fbd030dc24ef9eb18583957a4fe0537
+| | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Sat Mar 1 13:20:41 2025 -0400
+| | | | | | | | 
+| | | | | | | |     * se eliminan variables que no se usan
+| | | | | | | | 
+* | | | | | | | commit e134af919fb8d006a6204632ae8189fc215cf293
+| | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Sat Mar 1 12:09:16 2025 -0400
+| | | | | | | | 
+| | | | | | | |     * changelog
+| | | | | | | | 
+* | | | | | | | commit ec09a77d102924624827f58f5b77093a2786e82a
+| | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Sat Mar 1 12:09:09 2025 -0400
+| | | | | | | | 
+| | | | | | | |     * bugfix
+| | | | | | | | 
+* | | | | | | | commit dd0909c11710cc33fd02a606d84dd67384d1d9a2
+| | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Sat Mar 1 12:08:03 2025 -0400
+| | | | | | | | 
+| | | | | | | |     * bugfix
+| | | | | | | | 
+* | | | | | | | commit e002918c1b84d81cc98012fa07c72ca00063f6f1
+| | | | | | | | Author: Jesus Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Sat Mar 1 12:07:15 2025 -0400
+| | | | | | | | 
+| | | | | | | |     * ignorados
+| | | | | | | | 
+* | | | | | | | commit 4bf0e72c4cbae935a354b8619740db26dae9a42f
+| | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Fri Feb 28 15:35:46 2025 -0400
+| | | | | | | | 
+| | | | | | | |     Update docker-compose.yml
+| | | | | | | | 
+* | | | | | | | commit d13b0e3bb700a44096fdc72fb4c9272925cdffa5
+| | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Fri Feb 28 15:29:58 2025 -0400
+| | | | | | | | 
+| | | | | | | |     Update .env-example
+| | | | | | | | 
+* | | | | | | | commit 2385da69e82551554d2efc354a3f38ba57e8c4ff
+| | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Fri Feb 28 15:26:42 2025 -0400
+| | | | | | | | 
+| | | | | | | |     Update .env-example
+| | | | | | | | 
+* | | | | | | | commit d37a6645295a7377132b84d676e7e670fcdf10b4
+| | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Fri Feb 28 10:20:41 2025 -0400
+| | | | | | | | 
+| | | | | | | |     Update docker-compose.yml
+| | | | | | | |     
+| | | | | | | |     whisper with GUI
+| | | | | | | | 
+* | | | | | | | commit f908e4a38f55263cb1c1a8d364d8e85dfe6d4652
+| | | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | | Date:   Fri Feb 28 10:19:01 2025 -0400
+| | | | | | | | 
+| | | | | | | |     Update .env-example
+| | | | | | | | 
+* | | | | | | | commit 1a9d8d68b5ab3df19ec21b16d5f44cd382c065f5
+| |_|_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | | |   Date:   Fri Feb 28 10:01:44 2025 -0400
+| | | | | | |   
+| | | | | | |       Update docker-compose.yml
+| | | | | | |       
+| | | | | | |       openwebui como extra
+| | | | | | | 
+* | | | | | | commit 62998797230cc8f6f057f33345ef4fdbf05b1525
+| | | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | | Date:   Thu Feb 27 16:19:01 2025 -0400
+| | | | | | | 
+| | | | | | |     Update readme.md
+| | | | | | | 
+* | | | | | | commit d38bb0a9633f411d9ef62c37b60073025369171b
+| |_|_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | | |   Date:   Thu Feb 27 16:16:26 2025 -0400
+| | | | | |   
+| | | | | |       Update docker-compose.yml
+| | | | | | 
+* | | | | | commit 327d4861107c13c418e5e01f56576fc2745d45aa
+| | | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | | Date:   Thu Feb 27 15:50:45 2025 -0400
+| | | | | | 
+| | | | | |     Update docker-compose.yml
+| | | | | | 
+* | | | | | commit 9b52a9bd0c76261671a80d9e30daf0559c7110a6
+| |_|_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | | |   Date:   Thu Feb 27 15:43:09 2025 -0400
+| | | | |   
+| | | | |       Update .env-example
+| | | | | 
+* | | | | commit 32e2ad10fc7977906905d38986574bcaa0008c4f
+| | | | | Author: Jesús Palencia <sinfallas@gmail.com>
+| | | | | Date:   Thu Feb 27 14:06:51 2025 -0400
+| | | | | 
+| | | | |     Update docker-compose.yml
+| | | | | 
+* | | | | commit 566bee00cc2aaaa3311192317a5077d6d793b7e1
+| |_|_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| | |   Date:   Thu Feb 27 14:04:45 2025 -0400
+| | | |   
+| | | |       Update .env-example
+| | | | 
+* | | | commit cec72a02d699ddfd395ec630b766ba693f798571
+| |_|/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/| |   Date:   Thu Feb 27 13:17:54 2025 -0400
+| | |   
+| | |       Update readme.md
+| | | 
+* | | commit d70d15c3a95d7f3fd37ab09b7bcad4d9730cfbc8
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Thu Feb 27 13:14:50 2025 -0400
+| |   
+| |       Update docker-compose.yml
+| | 
+* | commit 0f0a8da6e468a1c42437ecf24a8dd6dfa4569984
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Feb 27 11:58:27 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| | * commit 8e5b247cc4c7d2242c6ba1f5f5f0d3e7b2002450 (origin/finetunning)
+| |/  Author: Ernesto Crespo <ecrespo@protonmail.com>
+| |   Date:   Fri Feb 28 17:33:25 2025 -0400
+| |   
+| |       WIP
+| |   
+| *   commit f53187fc3a30af76adb4a046c5d0883cac241b03
+| |\  Merge: d306ed9 9c9c394
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Sat Jan 4 10:58:51 2025 -0400
+| |   
+| |       Merge pull request #11 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 9c9c394a1b225df232a7d634aba02383f885f264
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jan 4 10:46:19 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 05a0f887c782eef60f0e816d6ad2476378e20949
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jan 4 10:46:11 2025 -0400
+| | 
+| |     * variables
+| | 
+* | commit 8456064f2afb5e2b073c3b4a7ba7a23f92155531
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jan 4 09:54:57 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 8acc9611cb9b219285b5ab868fdbe1a2b1df3587
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jan 4 09:54:48 2025 -0400
+| | 
+| |     * ports
+| | 
+* | commit 6b00e0066466a02cdb26efb508d13de2f70d3e46
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri Jan 3 23:24:59 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 8eac8579fb08e78d7bc11979409871eaea077157
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri Jan 3 23:24:42 2025 -0400
+| | 
+| |     * se elimina la dependencia
+| | 
+* | commit 9233af1a8d838688f24269d499233a202133df4b
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri Jan 3 23:13:22 2025 -0400
+| | 
+| |     * variables
+| |     * healthcheck
+| |   
+| *   commit d306ed976d81f06c5742d6d5bddc250569ec52ba
+| |\  Merge: ac403e5 15baa06
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Thu Jan 2 14:01:51 2025 -0400
+| |   
+| |       Merge pull request #10 from tecno-consultores/develop
+| |       
+| |       Update docker-compose.yml
+| | 
+* | commit 15baa0642987e3b58882cfccc94151df0f9f70fe
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jan 2 14:01:29 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit ac403e5c423cceca51c3a5009eb096ffa7c7eb05
+| |\  Merge: 0f51188 9d76734
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Thu Jan 2 13:57:00 2025 -0400
+| |   
+| |       Merge pull request #9 from tecno-consultores/develop
+| |       
+| |       Update docker-compose.yml
+| | 
+* | commit 9d767345f7d46665bf01ba6a76167a73395055dc
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jan 2 13:56:33 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit 0f51188c914cb419087402387c605bafe986a349
+| |\  Merge: e7af60e 7ed0a92
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Thu Jan 2 13:51:30 2025 -0400
+| |   
+| |       Merge pull request #8 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 7ed0a92258f39fa69c639c5461bc5cc988f6c9ae
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jan 2 13:51:06 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit 503363d679654f5c834756126222f2a3b970dae8
+|\| Merge: 19add56 e7af60e
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jan 2 13:48:30 2025 -0400
+| | 
+| |     Merge pull request #7 from tecno-consultores/main
+| |     
+| |     variables
+| | 
+| * commit e7af60ebd511ffa74d94b2f67592dfd86769d7ea
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jan 2 13:46:21 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+| * commit 0dc7032bff8081005bef17b78b00fd4dbfc5b7e7
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jan 2 13:44:49 2025 -0400
+| | 
+| |     Update .gitignore
+| | 
+| * commit 0d4186dce9e4a9fd849c2a3f0577c4c2288e4e2c
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jan 2 13:44:16 2025 -0400
+| | 
+| |     Update .env-example
+| |   
+| *   commit 612d537a934240ad00fee0a90c6ab58a058e7e5d
+| |\  Merge: 1b25527 19add56
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Thu Jan 2 13:07:53 2025 -0400
+| |   
+| |       Merge pull request #6 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 19add562e7409a0823c63c7f07f81c32c85caf4e
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jan 2 10:51:10 2025 -0400
+| | 
+| |     Create reflection-prompt.txt
+| | 
+* | commit af369476bccecbc62d581debe6beae3f37840171
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jan 2 10:31:03 2025 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit 1b25527444f4feba650e0e1738e4bf4b5c3160f1
+| |\  Merge: 1d2f82c cca6830
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Wed Jan 1 22:25:08 2025 -0400
+| |   
+| |       Merge pull request #5 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit cca6830a13ebf8b5e56db36067da4bc775ca5670
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jan 1 22:24:25 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 8a670cf963251ce88e48bc20e5c21210d9b0d7f5
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jan 1 22:22:26 2025 -0400
+| | 
+| |     * se eliminan dependencias
+| |     * se corrigen permisos de n8n
+| |   
+| *   commit 1d2f82ca7cf08b8a723b5c4f7ebbd3a149fb5188
+| |\  Merge: 277ddf8 cde070f
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Wed Jan 1 22:04:34 2025 -0400
+| |   
+| |       Merge pull request #4 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit cde070f81a7847aa43f24bfb091e25169589c494
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jan 1 22:02:50 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 6d43fccd7b84f43c19603fd5683a7edeed7883ce
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jan 1 21:58:44 2025 -0400
+| | 
+| |     * health
+| |   
+| *   commit 277ddf88824c8a4a5fd0f575e02f6155ebb81598
+| |\  Merge: e424b66 cdf08f6
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Wed Jan 1 11:38:55 2025 -0400
+| |   
+| |       Merge pull request #3 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit cdf08f68590ef570471bd7f31b4ac7a67a4cfc3d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jan 1 11:37:58 2025 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 0d379e3a605df5fb6fa9ec47768f648258a5ee71
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jan 1 11:37:48 2025 -0400
+| | 
+| |     * open ollama port
+| |   
+| *   commit e424b66538fca664544d2e303ba0323c9246a8eb
+| |\  Merge: 91df997 b6db228
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Tue Dec 31 18:18:01 2024 -0400
+| |   
+| |       Merge pull request #2 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit b6db22868982e0c089e7ea3dfb73b1588d548b21
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Tue Dec 31 18:17:13 2024 -0400
+| | 
+| |     Update COPYING
+| | 
+* | commit 1a6ac34991778a52e2f732a0915626992a3bc552
+| | Author: Jesús Palencia <sinfallas@gmail.com>
+| | Date:   Tue Dec 31 18:16:18 2024 -0400
+| | 
+| |     Update AUTHORS
+| |   
+| *   commit 91df9976d8c8ab31f06ce937a4434583241d2918 (tag: v1.3)
+| |\  Merge: 6f286b3 7fab89f
+| |/  Author: Jesús Palencia <sinfallas@gmail.com>
+|/|   Date:   Tue Dec 31 18:12:06 2024 -0400
+| |   
+| |       Merge pull request #1 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 7fab89f1b5b4e11cc1800dc47dc44202f528bec1
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue Dec 31 10:45:26 2024 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 801f530f5a2159db9eb34928bd81358490e623f3
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue Dec 31 10:45:19 2024 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit e50b618d0a5e946e975fb04945b4c632498a6c4a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue Dec 31 10:42:16 2024 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 293971bdf50bc22f87b2b4115cf0e7b470afe317
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue Dec 31 10:42:08 2024 -0400
+| | 
+| |     * profile
+| | 
+* | commit 9fd11f16217b40b4ce560ae665b3daa77eb47005
+| | Author: Ernesto Crespo <ecrespo@protonmail.com>
+| | Date:   Mon Dec 30 19:48:49 2024 -0400
+| | 
+| |     Added anythingLLM.
+| | 
+* | commit 08e22efc22027a7f8ed1a07b95c4dfe8a0354fab
+|/  Author: Ernesto Crespo <ecrespo@protonmail.com>
+|   Date:   Mon Dec 30 19:48:26 2024 -0400
+|   
+|       Updated gitignore file
+| 
+* commit 6f286b3518ca61f31245cf988ed84328ccacb266
+| Author: Jesús Palencia <sinfallas@gmail.com>
+| Date:   Mon Dec 30 13:29:04 2024 -0400
+| 
+|     Update docker-compose.yml
+| 
+* commit c17cfd73d4a3ce50434c1368cadc72d837dee8fe
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 17:56:31 2024 -0400
+| 
+|     * changelog
+| 
+* commit 7f45cd57ef7bfb8efef67528e52287fcc9da61c7
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 17:56:22 2024 -0400
+| 
+|     * salud ollama
+| 
+* commit 168c7deb4c42dc09d9f4542e4349b0d3a6890d43 (tag: v1.2)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 17:48:31 2024 -0400
+| 
+|     * changelog
+| 
+* commit b0d3589ce6e1df25427ca7378e49b6a3a2c93f0a
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 17:48:22 2024 -0400
+| 
+|     * ignore
+| 
+* commit 9b39a0eb0d7279afff6a4d7695c3b7106353af74
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 17:44:52 2024 -0400
+| 
+|     * changelog
+| 
+* commit 17022cf1a44b50351dcb07f87ae134107c36fbff
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 17:44:41 2024 -0400
+| 
+|     * hostname
+|     * variables
+| 
+* commit b80e0f8201abba9611a38ee02e0b4947600356bf (tag: v1.1)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 13:08:25 2024 -0400
+| 
+|     * changelog
+| 
+* commit c35b3628f6b45eaaa60f4c012087595afd7545f5
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 13:08:18 2024 -0400
+| 
+|     * bugfix
+| 
+* commit f77c0c90e77679cf44043771ec48bca51b9a8e56
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 12:15:38 2024 -0400
+| 
+|     * changelog
+| 
+* commit 7e03f0d79486a673c419f86225b8bdf95f362177
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 12:15:19 2024 -0400
+| 
+|     * se agrega langfuse como comentario por si es necesario
+| 
+* commit 3d20d951205abd520d08385f0743f65d4c3a735c
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 12:07:04 2024 -0400
+| 
+|     * changelog
+| 
+* commit 9740f4016b685b3a324bbdac5c983a02b7e17146
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 12:06:56 2024 -0400
+| 
+|     * redis
+| 
+* commit 91f346c3a742a266e45ce727031d057645eea3f4 (tag: v1.0)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 11:58:01 2024 -0400
+| 
+|     * changelog
+| 
+* commit d8cfd2e28ded128d63f86509fa474dd040d96425
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 11:57:52 2024 -0400
+| 
+|     * lista de modelos
+| 
+* commit e733a5517a087824b1cbda75ecc78aecebed89f8
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 11:56:36 2024 -0400
+| 
+|     * changelog
+| 
+* commit 0076aa49764fdc5143c37d4e14c34de62b8a934a
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 11:56:27 2024 -0400
+| 
+|     * ya funciona todo
+| 
+* commit ba470e58d2d84afcc9e5117a82ee3e4916e958d2
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 11:41:48 2024 -0400
+| 
+|     * changelog
+| 
+* commit b258b8d6c6b16ac3fb6d935d8f54119b89ef845a
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 11:41:34 2024 -0400
+| 
+|     * se elimina qdrant y se utilizara redir en su lugar
+| 
+* commit 916acb220b244c3f7dbc3429f3d19e044bf5e865
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 11:03:43 2024 -0400
+| 
+|     * changelog
+| 
+* commit 53b01d4c7dfd4a589ba24a48d39ec714209373fd
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Dec 29 11:03:26 2024 -0400
+| 
+|     * flowise ya funciona
+| 
+* commit fb7cc47bc0e7c0624a822a28b13346ab4ec0925e
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Dec 28 23:58:25 2024 -0400
+| 
+|     * changelog
+| 
+* commit fc5746ef42fc0f8b087a7cce3051626de443657a
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Dec 28 23:58:18 2024 -0400
+| 
+|     * redis
+| 
+* commit c703a223758ffe9a3dc8f209439c8bcd13a5cc40
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Dec 28 22:54:53 2024 -0400
+| 
+|     * changelog
+| 
+* commit b51ce743f69b7fef0aea08e141466aa091e6e4f5
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Dec 28 22:54:39 2024 -0400
+| 
+|     * se elimina la opcion de usar intel
+| 
+* commit 6b4f3dd1f43c8af546154c3e4946413e25540c49
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Dec 28 21:31:21 2024 -0400
+| 
+|     * changelog
+| 
+* commit 330e3657ed8a89732acbdb3e30d02b75fccd9ce3
+  Author: Jesus Palencia <sinfallas@gmail.com>
+  Date:   Sat Dec 28 21:31:11 2024 -0400
+  
+      * primer commit

@@ -30,6 +30,7 @@ Profiles you can run:
 * [MongoDB](https://www.mongodb.com) on AMD64 (--profile mongodb)
 * [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 (--profile evolutionapi)
 * [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 (--profile flowise)
+* [Opencode](https://github.com/anomalyco/opencode) on AMD64 (--profile opencode)
 
 
 To run N8N with OpenwebUI: 

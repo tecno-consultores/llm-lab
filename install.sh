@@ -20,7 +20,7 @@ else
 	echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8
 	apt update -qq
-	apt -y install docker-ce-rootless-extras docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-buildx-plugin
+	apt -y install docker-ce-rootless-extras docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-buildx-plugin docker-model-plugin
 	groupadd docker
 	for j in ${quienh[@]}; do
 		usermod -aG docker $j

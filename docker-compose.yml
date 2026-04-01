@@ -559,6 +559,27 @@ x-flowise-base: &flowise-base
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 
+x-opencode-base: &opencode-base
+    image: ghcr.io/anomalyco/opencode:latest
+    hostname: ${codehostname}
+    container_name: ${codehostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    stdin_open: true
+    tty: true
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD}
+    ports:
+      - ${OCPORT}:4096
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./opencode:/opencode
+    #entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"] # uncomment to enable web service
+
 ################################################
 
 services:
@@ -774,3 +795,7 @@ services:
           redis-all:
             condition: service_healthy
             restart: true
+
+    opencode-all:
+        <<: *opencode-base
+        profiles: ["opencode"]

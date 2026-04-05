@@ -1,4 +1,16 @@
-* commit f04f597a69ddf6cf4669a4a76f44b09c6db9704d (HEAD -> develop, origin/develop)
+* commit ca0439bff8526f36234ae1907beb47b46c9e579d (HEAD -> develop, origin/develop)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Apr 5 15:19:10 2026 -0400
+| 
+|     * docker compose
+| 
+* commit cb68ba094dfd7d712b40aa749cbfb5bab3fdd564
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Apr 5 13:08:31 2026 -0400
+| 
+|     * changelog
+| 
+* commit f04f597a69ddf6cf4669a4a76f44b09c6db9704d
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Sun Apr 5 13:08:20 2026 -0400
 | 

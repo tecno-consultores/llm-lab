@@ -589,7 +589,7 @@ x-opencode-base: &opencode-base
 
 x-openclaw-base: &openclaw-base
     image: ghcr.io/openclaw/openclaw:latest
-    user: 1000:1000 #change me (use 'id' on host)
+    #user: 1000:1000 #change me (use 'id' on host)
     hostname: ${clawhostname}
     container_name: ${clawhostname}
     pull_policy: ${pull_policy}

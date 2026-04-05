@@ -108,6 +108,7 @@ x-openwebui-base: &openwebui-base
 
 x-openai-bridge: &openai-bridge
     image: ghcr.io/sveneisenschmidt/n8n-openai-bridge:latest
+    init: true
     pull_policy: ${pull_policy}
     restart: ${restart}
     hostname: ${obridge}
@@ -147,6 +148,7 @@ x-n8n-base: &n8n-base
     image: n8nio/n8n:latest
     pull_policy: ${pull_policy}
     restart: ${restart}
+    init: true
     environment:
       - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
       - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
@@ -248,6 +250,7 @@ x-n8n-base: &n8n-base
 
 x-n8n-runner: &n8n-runner
     image: n8nio/runners:latest
+    init: true
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -411,6 +414,7 @@ x-nvidia-base: &nvidia-base
 
 x-proxy-base: &proxy-base
     image: jc21/nginx-proxy-manager:latest
+    init: true
     hostname: ${proxyhostname}
     container_name: ${proxyhostname}
     pull_policy: ${pull_policy}
@@ -479,6 +483,7 @@ x-mongodb-base: &mongodb-base
 
 x-evolution-base: &evolution-base
     image: evoapicloud/evolution-api:latest
+    init: true
     hostname: ${evohostname}
     container_name: ${evohostname}
     restart: ${restart}
@@ -527,6 +532,7 @@ x-evolution-base: &evolution-base
 
 x-flowise-base: &flowise-base
     image: flowiseai/flowise:latest
+    init: true
     hostname: ${fhostname}
     container_name: ${fhostname}
     pull_policy: ${pull_policy}
@@ -583,15 +589,18 @@ x-opencode-base: &opencode-base
 
 x-openclaw-base: &openclaw-base
     image: ghcr.io/openclaw/openclaw:latest
+    user: 1000:1000 #change me (use 'id' on host)
     hostname: ${clawhostname}
     container_name: ${clawhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     init: true
+    stdin_open: true
+    tty: true
     ports:
       - ${CLAWPORT}:${CLAWPORT}
       - ${CLAWBRIDGE}:${CLAWBRIDGE}
-#    command: [ "node", "dist/index.js", "gateway", "--bind", "${OPENCLAW_GATEWAY_BIND}", "--port", "${CLAWPORT}", ]
+#    command: [ "node", "dist/index.js", "gateway", "--bind", "${OPENCLAW_GATEWAY_BIND}", "--port", "${CLAWPORT}" ]
     environment:
       - HOME=/home/node
       #- OPENCLAW_GATEWAY_PASSWORD=${AUTH_PASSWORD}
@@ -660,7 +669,7 @@ x-openclaw-base: &openclaw-base
     group_add:
       - ${DOCKER_GID}
     healthcheck:
-      test: [ "CMD", "node", "-e", "fetch('http://127.0.0.1:18789/healthz').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))", ]
+      test: [ "CMD", "node", "-e", "fetch('http://127.0.0.1:18789/healthz').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))" ]
       start_period: 20s
       interval: 30s
       timeout: 5s

@@ -6,6 +6,7 @@ x-ollama-base: &ollama-base
     privileged: true
     pull_policy: ${pull_policy}
     restart: ${restart}
+    stdin_open: true
     tty: true
     ports:
       - ${OPORT}:11434
@@ -89,8 +90,8 @@ x-openwebui-base: &openwebui-base
       - ENABLE_CODE_EXECUTION=false
       - ENABLE_CODE_INTERPRETER=false
       - ENABLE_WEB_SEARCH=false
-      #- http_proxy=${http_proxy}
-      #- https_proxy=${https_proxy}
+#      - http_proxy=${http_proxy}
+#      - https_proxy=${https_proxy}
     ports:
       - ${PORT}:8080
     extra_hosts:
@@ -107,6 +108,7 @@ x-openwebui-base: &openwebui-base
 
 x-openai-bridge: &openai-bridge
     image: ghcr.io/sveneisenschmidt/n8n-openai-bridge:latest
+    init: true
     pull_policy: ${pull_policy}
     restart: ${restart}
     hostname: ${obridge}
@@ -146,6 +148,7 @@ x-n8n-base: &n8n-base
     image: n8nio/n8n:latest
     pull_policy: ${pull_policy}
     restart: ${restart}
+    init: true
     environment:
       - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
       - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
@@ -230,9 +233,9 @@ x-n8n-base: &n8n-base
       - N8N_RESTRICT_FILE_ACCESS_TO="/tmp/"
       - NODE_OPTIONS="--dns-result-order=ipv4first"
       - N8N_WORKFLOW_AUTODEACTIVATION_ENABLED=true
-      #- N8N_MULTI_MAIN_SETUP_ENABLED=true # enterprise only
-      #- N8N_MULTI_MAIN_SETUP_KEY_TTL=10 # enterprise only
-      #- N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL=3 # enterprise only
+#      - N8N_MULTI_MAIN_SETUP_ENABLED=true # enterprise only
+#      - N8N_MULTI_MAIN_SETUP_KEY_TTL=10 # enterprise only
+#      - N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL=3 # enterprise only
     volumes:
       - ./n8n/storage:/home/node/.n8n
       - ./n8n/backup:/backup
@@ -247,6 +250,7 @@ x-n8n-base: &n8n-base
 
 x-n8n-runner: &n8n-runner
     image: n8nio/runners:latest
+    init: true
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -261,7 +265,7 @@ x-n8n-runner: &n8n-runner
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
       - NODE_OPTIONS="--dns-result-order=ipv4first"
-      #- N8N_NATIVE_PYTHON_RUNNER=true
+#      - N8N_NATIVE_PYTHON_RUNNER=true
 #    volumes:
 #      - ./n8n/storage:/home/node/.n8n
 #      - ./n8n/backup:/backup
@@ -284,7 +288,7 @@ x-postgres-base: &postgres-base
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
-      - TZ=America/Caracas
+      - TZ=${TIMEZONE}
     ports:
       - ${POSTGRESDB_PORT}:5432
     volumes:
@@ -305,7 +309,7 @@ x-redis-base: &redis-base
     restart: ${restart}
     environment:
       - REDIS_ARGS=--save 20 3
-      - TZ=America/Caracas
+      - TZ=${TIMEZONE}
     ports:
       - ${REDIS_PORT}:6379
       - ${INSIGHT_PORT}:8001
@@ -319,7 +323,7 @@ x-redis-base: &redis-base
       retries: 5
 
 x-qdrant-base: &qdrant-base
-    image: qdrant/qdrant
+    image: qdrant/qdrant:latest
     hostname: ${qhostname}
     container_name: ${qhostname}
     pull_policy: ${pull_policy}
@@ -327,7 +331,7 @@ x-qdrant-base: &qdrant-base
     environment:
       - QDRANT__SERVICE__GRPC_PORT=6334
       - QDRANT__LOG_LEVEL=INFO
-      - TZ=America/Caracas
+      - TZ=${TIMEZONE}
     ports:
       - ${qdrant}:6333
     volumes:
@@ -383,8 +387,8 @@ x-crawl4ai-base: &crawl4ai-base
       - /dev/shm:/dev/shm
     environment:
       - CRAWL4AI_API_TOKEN=${CRAWL4AI_API_TOKEN}
-      #- OPENAI_API_KEY=${OPENAI_API_KEY}
-      #- CLAUDE_API_KEY=${CLAUDE_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - CLAUDE_API_KEY=${CLAUDE_API_KEY}
     deploy:
       resources:
         limits:
@@ -409,7 +413,8 @@ x-nvidia-base: &nvidia-base
               capabilities: [gpu]
 
 x-proxy-base: &proxy-base
-    image: 'jc21/nginx-proxy-manager:latest'
+    image: jc21/nginx-proxy-manager:latest
+    init: true
     hostname: ${proxyhostname}
     container_name: ${proxyhostname}
     pull_policy: ${pull_policy}
@@ -441,9 +446,9 @@ x-searxng-base: &searxng-base
     volumes:
       - ./searxng:/etc/searxng:rw
     environment:
-      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
-      - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS:-4}
-      - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS:-4}
+      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
+      - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
+      - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS}
     cap_drop:
       - ALL
     cap_add:
@@ -467,7 +472,7 @@ x-mongodb-base: &mongodb-base
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-      - TZ=America/Caracas
+      - TZ=${TIMEZONE}
     volumes:
       - ./mongodb_data:/data/db
     healthcheck:
@@ -478,6 +483,7 @@ x-mongodb-base: &mongodb-base
 
 x-evolution-base: &evolution-base
     image: evoapicloud/evolution-api:latest
+    init: true
     hostname: ${evohostname}
     container_name: ${evohostname}
     restart: ${restart}
@@ -510,7 +516,7 @@ x-evolution-base: &evolution-base
       - CACHE_REDIS_TTL=604800
       - CACHE_REDIS_SAVE_INSTANCES=false
       - CACHE_LOCAL_ENABLED=false
-      - TZ=America/Caracas
+      - TZ=${TIMEZONE}
 #      - CONFIG_SESSION_PHONE_VERSION=2.3000.1033096875
     ports:
       - ${evoport}:8080
@@ -526,6 +532,7 @@ x-evolution-base: &evolution-base
 
 x-flowise-base: &flowise-base
     image: flowiseai/flowise:latest
+    init: true
     hostname: ${fhostname}
     container_name: ${fhostname}
     pull_policy: ${pull_policy}
@@ -568,9 +575,9 @@ x-opencode-base: &opencode-base
     stdin_open: true
     tty: true
     environment:
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
-      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
-      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
       - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD}
     ports:
       - ${OCPORT}:4096
@@ -579,6 +586,94 @@ x-opencode-base: &opencode-base
       - /etc/localtime:/etc/localtime:ro
       - ./opencode:/opencode
     #entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"] # uncomment to enable web service
+
+x-openclaw-base: &openclaw-base
+    image: ghcr.io/openclaw/openclaw:latest
+    #user: 1000:1000 #change me (use 'id' on host)
+    hostname: ${clawhostname}
+    container_name: ${clawhostname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    init: true
+    stdin_open: true
+    tty: true
+    ports:
+      - ${CLAWPORT}:${CLAWPORT}
+      - ${CLAWBRIDGE}:${CLAWBRIDGE}
+#    command: [ "node", "dist/index.js", "gateway", "--bind", "${OPENCLAW_GATEWAY_BIND}", "--port", "${CLAWPORT}" ]
+    environment:
+      - HOME=/home/node
+      #- OPENCLAW_GATEWAY_PASSWORD=${AUTH_PASSWORD}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN}
+      - OPENCLAW_GATEWAY_PORT=${CLAWPORT}
+      - OPENCLAW_BRIDGE_PORT=${CLAWBRIDGE}
+      - OPENCLAW_INIT_GATEWAY_MODE=${OPENCLAW_INIT_GATEWAY_MODE}
+      - TERM=xterm-256color
+      - DOCKER_SOCKET_PATH=${DOCKER_SOCKET_PATH}
+      - OPENCLAW_DOCKER_SOCKET=${DOCKER_SOCKET_PATH}
+      - OPENCLAW_ALLOW_INSECURE_PRIVATE_WS=1
+      - TZ=${TIMEZONE}
+      - BROWSER=echo
+      - OPENCLAW_GATEWAY_BIND=${OPENCLAW_GATEWAY_BIND}
+      - OPENCLAW_LOG_LEVEL=info
+      - OPENCLAW_GATEWAY_CONTROL_UI_ALLOWED_ORIGINS='["http://localhost:${CLAWPORT}"]' #change me
+      - OPENCLAW_DANGEROUSLY_ALLOW_HOST_HEADER_ORIGIN_FALLBACK=true
+      - OPENCLAW_LOAD_SHELL_ENV=1
+      - OPENCLAW_SHELL_ENV_TIMEOUT_MS=15000
+      #- RAW_SANDBOX_SETTING=${OPENCLAW_SANDBOX}
+      #- SANDBOX_ENABLED=${OPENCLAW_SANDBOX}
+      #- OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX}
+      #- OLLAMA_BASE_URL=${UOLLAMA}
+      #- OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      #- OPENCLAW_PRIMARY_MODEL=${OPENCLAW_PRIMARY_MODEL}
+      #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      #- OPENAI_API_KEY=${OPENAI_API_KEY}
+      #- OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      #- GEMINI_API_KEY=${GEMINI_API_KEY}
+      #- XAI_API_KEY=${XAI_API_KEY}
+      #- GROQ_API_KEY=${GROQ_API_KEY}
+      #- MISTRAL_API_KEY=${MISTRAL_API_KEY}
+      #- CEREBRAS_API_KEY=${CEREBRAS_API_KEY}
+      #- VENICE_API_KEY=${VENICE_API_KEY}
+      #- MOONSHOT_API_KEY=${MOONSHOT_API_KEY}
+      #- KIMI_API_KEY=${KIMI_API_KEY}
+      #- MINIMAX_API_KEY=${MINIMAX_API_KEY}
+      #- ZAI_API_KEY=${ZAI_API_KEY}
+      #- AI_GATEWAY_API_KEY=${AI_GATEWAY_API_KEY}
+      #- OPENCODE_API_KEY=${OPENCODE_API_KEY}
+      #- SYNTHETIC_API_KEY=${SYNTHETIC_API_KEY}
+      #- COPILOT_GITHUB_TOKEN=${COPILOT_GITHUB_TOKEN}
+      #- XIAOMI_API_KEY=${XIAOMI_API_KEY}
+      #- DEEPGRAM_API_KEY=${DEEPGRAM_API_KEY}
+      #- AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      #- AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      #- AWS_REGION=${AWS_REGION}
+      #- AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+      #- BEDROCK_PROVIDER_FILTER=${BEDROCK_PROVIDER_FILTER}
+      #- TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      #- DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+      #- SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
+      #- SLACK_APP_TOKEN=${SLACK_APP_TOKEN}
+      #- ZALO_BOT_TOKEN=${ZALO_BOT_TOKEN}
+      #- OPENCLAW_TWITCH_ACCESS_TOKEN=${OPENCLAW_TWITCH_ACCESS_TOKEN}
+      #- BRAVE_API_KEY=${BRAVE_API_KEY}
+      #- PERPLEXITY_API_KEY=${PERPLEXITY_API_KEY}
+      #- FIRECRAWL_API_KEY=${FIRECRAWL_API_KEY}
+      #- ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
+      #- XI_API_KEY=${XI_API_KEY}
+      #- DEEPGRAM_API_KEY=${DEEPGRAM_API_KEY}
+    volumes:
+      - ./openclaw-data:/home/node/.openclaw
+      - ./openclaw-workspace:/home/node/.openclaw/workspace
+      - ${DOCKER_SOCKET_PATH}:/var/run/docker.sock
+    group_add:
+      - ${DOCKER_GID}
+    healthcheck:
+      test: [ "CMD", "node", "-e", "fetch('http://127.0.0.1:18789/healthz').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))" ]
+      start_period: 20s
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
 ################################################
 
@@ -799,3 +894,7 @@ services:
     opencode-all:
         <<: *opencode-base
         profiles: ["opencode"]
+
+    openclaw-all:
+        <<: *openclaw-base
+        profiles: ["openclaw"]

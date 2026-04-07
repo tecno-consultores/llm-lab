@@ -31,6 +31,7 @@ Profiles you can run:
 * [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 (--profile evolutionapi)
 * [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 (--profile flowise)
 * [Opencode](https://github.com/anomalyco/opencode) on AMD64 (--profile opencode)
+* [OpenClaw](https://github.com/openclaw/openclaw) on AMD64 (--profile openclaw)
 
 
 To run N8N with OpenwebUI: 

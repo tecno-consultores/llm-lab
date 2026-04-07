@@ -12,12 +12,12 @@ docker compose -f docker-compose.yml --env-file env.example --profile n8n --prof
 
 Profiles you can run:
 
-* [N8N](https://github.com/n8n-io/n8n) on AMD64/ARM64 (--profile n8n)
+* [N8N](https://github.com/n8n-io/n8n) on AMD64/ARM64 url example: http://127.0.0.1:5678 (--profile n8n)
     + N8N-worker on AMD64/ARM64 (--profile n8n-worker)
     + N8N-runner (code sandbox) on AMD64/ARM64 (--profile n8n-runner)
-* [Qdrant](https://github.com/qdrant/qdrant) on AMD64/ARM64 (--profile qdrant)
+* [Qdrant](https://github.com/qdrant/qdrant) on AMD64/ARM64 url example: http://127.0.0.1:6333/dashboard (--profile qdrant)
 * [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) on AMD64 (--profile openaibridge)
-* [OpenwebUI](https://github.com/open-webui/open-webui) on AMD64/ARM64 (--profile openwebui)
+* [OpenwebUI](https://github.com/open-webui/open-webui) on AMD64/ARM64 url example: http://127.0.0.1:8383 (--profile openwebui)
 * [Kafka](https://github.com/apache/kafka) on AMD64/ARM64 (--profile kafka)
 * [Ollama](https://github.com/ollama/ollama) on Nvidia (--profile ollama-gpu)
     + Ollama on AMD64/ARM64 or AMD GPU (--profile ollama-cpu)
@@ -25,13 +25,13 @@ Profiles you can run:
     + Whisper on CPU (--profile whisper)
 * [Crawl4ai](https://github.com/unclecode/crawl4ai) on AMD64 (--profile crawl4ai-amd64)
     + Crawl4ai on ARM64 (--profile crawl4ai-arm64)
-* [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) on AMD64/ARM64 (--profile proxy)
-* [Searxng](https://github.com/searxng/searxng) on AMD64/ARM64 (--profile searxng)
+* [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) on AMD64/ARM64 url example: http://127.0.0.1:81 (--profile proxy)
+* [Searxng](https://github.com/searxng/searxng) on AMD64/ARM64 url example: http://127.0.0.1:8181 (--profile searxng)
 * [MongoDB](https://www.mongodb.com) on AMD64 (--profile mongodb)
-* [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 (--profile evolutionapi)
-* [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 (--profile flowise)
-* [Opencode](https://github.com/anomalyco/opencode) on AMD64 (--profile opencode)
-* [OpenClaw](https://github.com/openclaw/openclaw) on AMD64 (--profile openclaw)
+* [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 url example: http://127.0.0.1:9191 (--profile evolutionapi)
+* [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 url example: http://127.0.0.1:3001 (--profile flowise)
+* [Opencode](https://github.com/anomalyco/opencode) on AMD64 url example: http://127.0.0.1:4096 (--profile opencode)
+* [OpenClaw](https://github.com/openclaw/openclaw) on AMD64 url example: http://127.0.0.1:18789 (--profile openclaw)
 
 
 To run N8N with OpenwebUI: 

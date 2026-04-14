@@ -1,0 +1,4 @@
+search:
+  formats:
+    - html
+    - json  # Add this line

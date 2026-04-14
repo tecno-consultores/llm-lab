@@ -13,7 +13,7 @@ x-ollama-base: &ollama-base
     ulimits:
       memlock: -1
     volumes:
-      - ./ollama:/root/.ollama
+      - ollama:/root/.ollama
     healthcheck:
       test: ['CMD-SHELL', 'ollama --version && ollama ps || exit 1']
       start_period: 5s
@@ -97,7 +97,7 @@ x-openwebui-base: &openwebui-base
     extra_hosts:
       - host.docker.internal:host-gateway
     volumes:
-      - ./openwebui:/app/backend/data
+      - openwebui:/app/backend/data
     deploy:
       mode: global
       restart_policy:
@@ -237,9 +237,9 @@ x-n8n-base: &n8n-base
 #      - N8N_MULTI_MAIN_SETUP_KEY_TTL=10 # enterprise only
 #      - N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL=3 # enterprise only
     volumes:
-      - ./n8n/storage:/home/node/.n8n
-      - ./n8n/backup:/backup
-      - ./n8n/shared:/data/shared
+      - n8n_storage:/home/node/.n8n
+      - n8n_backup:/backup
+      - n8n_shared:/data/shared
     deploy:
       mode: global
       restart_policy:
@@ -267,9 +267,9 @@ x-n8n-runner: &n8n-runner
       - NODE_OPTIONS="--dns-result-order=ipv4first"
 #      - N8N_NATIVE_PYTHON_RUNNER=true
 #    volumes:
-#      - ./n8n/storage:/home/node/.n8n
-#      - ./n8n/backup:/backup
-#      - ./n8n/shared:/tmp/shared
+#      - n8n_storage:/home/node/.n8n
+#      - n8n_backup:/backup
+#      - n8n_shared:/data/shared
     deploy:
       mode: global
       restart_policy:
@@ -293,7 +293,7 @@ x-postgres-base: &postgres-base
       - ${POSTGRESDB_PORT}:5432
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
-      - ./postgres:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
       start_period: 5s
@@ -314,7 +314,7 @@ x-redis-base: &redis-base
       - ${REDIS_PORT}:6379
       - ${INSIGHT_PORT}:8001
     volumes:
-      - ./redis:/data
+      - redis:/data
     healthcheck:
       test: ["CMD", "redis-cli","ping"]
       start_period: 5s
@@ -335,7 +335,7 @@ x-qdrant-base: &qdrant-base
     ports:
       - ${qdrant}:6333
     volumes:
-      - ./qdrant:/qdrant/storage
+      - qdrant:/qdrant/storage
 
 x-kafka-base: &kafka-base
     image: apache/kafka:latest
@@ -360,7 +360,7 @@ x-kafka-base: &kafka-base
       - KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS=0
       - KAFKA_NUM_PARTITIONS=3
     volumes:
-      - ./broker/data:/var/lib/kafka/data
+      - kafka:/var/lib/kafka/data
 
 x-whisper-base: &whisper-base
     hostname: ${whostname}
@@ -370,8 +370,8 @@ x-whisper-base: &whisper-base
     ports:
       - ${wport}:${wport}
     volumes:
-      - ./whisper:/app/app
-      - ./cache-whisper:/root/.cache
+      - whisper:/app/app
+      - cache-whisper:/root/.cache
 
 x-crawl4ai-base: &crawl4ai-base
     hostname: ${crawhostname}
@@ -428,8 +428,8 @@ x-proxy-base: &proxy-base
       - 443:443
       - ${pproxy}:81
     volumes:
-      - ./proxy/data:/data
-      - ./proxy/letsencrypt:/etc/letsencrypt
+      - proxy_data:/data
+      - letsencrypt:/etc/letsencrypt
     healthcheck:
       test: ["CMD", "/usr/bin/check-health"]
       interval: 10s
@@ -444,7 +444,7 @@ x-searxng-base: &searxng-base
     ports:
       - ${psearch}:8080
     volumes:
-      - ./searxng:/etc/searxng:rw
+      - searxng:/etc/searxng:rw
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
@@ -474,7 +474,7 @@ x-mongodb-base: &mongodb-base
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
       - TZ=${TIMEZONE}
     volumes:
-      - ./mongodb_data:/data/db
+      - mongodb:/data/db
     healthcheck:
       test: [ "CMD", "mongo", "--eval", "db.adminCommand('ping')" ]
       interval: 10s
@@ -521,7 +521,7 @@ x-evolution-base: &evolution-base
     ports:
       - ${evoport}:8080
     volumes:
-      - ./evolution_instances:/evolution/instances
+      - evolution:/evolution/instances
     deploy:
       mode: global
       restart_policy:
@@ -562,7 +562,7 @@ x-flowise-base: &flowise-base
     ports:
       - ${FPORT}:3000
     volumes:
-      - ./flowise:/root/.flowise
+      - flowise:/root/.flowise
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 
@@ -663,7 +663,7 @@ x-openclaw-base: &openclaw-base
       #- XI_API_KEY=${XI_API_KEY}
       #- DEEPGRAM_API_KEY=${DEEPGRAM_API_KEY}
     volumes:
-      - ./openclaw-data:/home/node/.openclaw
+      - openclaw-data:/home/node/.openclaw
       - ./openclaw-workspace:/home/node/.openclaw/workspace
       - ${DOCKER_SOCKET_PATH}:/var/run/docker.sock
     group_add:
@@ -674,6 +674,26 @@ x-openclaw-base: &openclaw-base
       interval: 30s
       timeout: 5s
       retries: 5
+
+volumes:
+  ollama:
+  openwebui:
+  n8n_storage:
+  n8n_backup:
+  n8n_shared:
+  postgres:
+  redis:
+  qdrant:
+  kafka:
+  whisper:
+  cache-whisper:
+  proxy_data:
+  letsencrypt:
+  searxng:
+  mongodb:
+  evolution:
+  flowise:
+  openclaw-data:
 
 ################################################
 

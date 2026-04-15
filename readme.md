@@ -40,8 +40,6 @@ To run N8N with OpenwebUI:
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
 ```
 
-To access **Redis Insight**, go to http://x.x.x.x:port where x.x.x.x is the IP address of the instance and port is the number set in the environment variables file. The default is 8001.
-
 
 | Name | Port | Example |
 | -------- | ------- | ------- |
@@ -54,6 +52,7 @@ To access **Redis Insight**, go to http://x.x.x.x:port where x.x.x.x is the IP a
 | Flowise | 3001 | http://127.0.0.1:3001 |
 | Opencode | 4096 | http://127.0.0.1:4096 |
 | OpenClaw | 18789 | http://127.0.0.1:18789 |
+| Redis Insight | 8001 | http://127.0.0.1:8001 |
 
 
 ## Star History

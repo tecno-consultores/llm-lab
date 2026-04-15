@@ -1,82 +1,168 @@
-* commit 7d636cf483c7094efe0988a12ce4e59e67719112 (HEAD -> develop, origin/develop)
+* commit 7a037db36e5f696f67b9444fccfe0ab3cf700620 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Apr 5 17:29:57 2026 -0400
+| Date:   Wed Apr 15 18:04:09 2026 -0400
 | 
-|     * variables
-| 
-* commit 3e002d81cef7de2655adfab736640aa4da6b32bd
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Apr 5 15:19:32 2026 -0400
-| 
-|     * changelog
-| 
-* commit ca0439bff8526f36234ae1907beb47b46c9e579d
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Apr 5 15:19:10 2026 -0400
-| 
-|     * docker compose
-| 
-* commit cb68ba094dfd7d712b40aa749cbfb5bab3fdd564
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Apr 5 13:08:31 2026 -0400
-| 
-|     * changelog
-| 
-* commit f04f597a69ddf6cf4669a4a76f44b09c6db9704d
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Apr 5 13:08:20 2026 -0400
-| 
-|     * variables
-| 
-* commit 4d24f843b1d5d5685018b1ee850ae044d1b89fc1
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Apr 5 12:32:13 2026 -0400
-| 
-|     * changelog
-| 
-* commit 0620ef8f8e77c879e69c92c054ff54a007640691
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Apr 5 12:31:54 2026 -0400
-| 
-|     * variables
-| 
-* commit 1ea355ff253cbe86ca7542c2c89d79b6235c0412
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Apr 4 21:14:47 2026 -0400
-| 
-|     * changelog
-| 
-* commit c3aca7818c8cf88c33e4a1e212669eb98ad010ec
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Apr 4 21:14:20 2026 -0400
-| 
-|     * variablles
-| 
-* commit c7b236b582e895046e5c4fd57be769a405057262
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Apr 2 22:03:26 2026 -0400
-| 
-|     * changelog
-| 
-* commit 262df6d14e0e12437d620a26181e3070cf33b2f9
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Apr 2 22:03:18 2026 -0400
-| 
-|     * update
-| 
-* commit dbfdc8f03cd9196d0ea968ed287986eef933c093
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Apr 2 18:33:03 2026 -0400
-| 
-|     * changelog
-| 
-* commit f3f553e3530db0493b98f02d2c0e74565a0f98be
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Apr 2 18:32:53 2026 -0400
-| 
-|     * openclaw
-|     
-| *   commit 1767f2b06adacd8ea075cd40ae405aa84921838a (origin/main, origin/HEAD, main)
+|     * readme
+|   
+| * commit 907a8e80543f6ad2e604270d6232b929030cefde (origin/main, origin/HEAD, main)
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Apr 15 09:10:45 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+| * commit 0de95ea8e7ee99223221fcec9e6ae1d410b7fcf2
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Apr 15 09:06:45 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+| * commit a567cc6eda849c53ffbd65c7fa9aa05387213d0b
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Apr 14 16:01:45 2026 -0400
+| | 
+| |     Update readme.md
+| |   
+| *   commit ce3ff854e89f672f7f16f2b87980e6dfbe4d64a5
+| |\  Merge: e78444a 08c708b
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon Apr 13 21:12:08 2026 -0400
+| |   
+| |       Merge pull request #96 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 08c708b4c9a0bf53a67c1ba3db0402c3d2e04cb8
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Apr 13 20:43:32 2026 -0400
+| | 
+| |     * volumes
+| | 
+* | commit 145ad4d6772a2aced30641e3073fee8c1030d787
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Apr 13 20:09:42 2026 -0400
+| | 
+| |     * searxng setting
+| | 
+* | commit eda3564da53334c81a43c781bb0105e38bc9437a
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Apr 7 10:39:58 2026 -0400
+| | 
+| |     Translate error messages and completion prompts to English
+| | 
+* | commit a021a5addbee06ec416978460ced51d111321d4f
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Apr 7 10:38:14 2026 -0400
+| | 
+| |     Update comment for password generation instructions
+| |   
+| *   commit e78444a2ed3b8089523a780534f4792ce1278723
+| |\  Merge: 1767f2b 3ebb92c
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Tue Apr 7 10:30:59 2026 -0400
+| |   
+| |       Merge pull request #95 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 3ebb92ca4bf2ce84c7857cb3f36b55cfbfce3973
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Apr 7 10:29:11 2026 -0400
+| | 
+| |     Enhance readme with URL examples for profiles
+| |     
+| |     Added URL examples for various profiles in the readme.
+| | 
+* | commit 035063af0cab0be538115582b8f7026b9d3378b5
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Apr 7 10:23:59 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 351b0d3dcabc5dce1bf69e6e14507739d798489a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Apr 5 17:30:11 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 7d636cf483c7094efe0988a12ce4e59e67719112
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Apr 5 17:29:57 2026 -0400
+| | 
+| |     * variables
+| | 
+* | commit 3e002d81cef7de2655adfab736640aa4da6b32bd
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Apr 5 15:19:32 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit ca0439bff8526f36234ae1907beb47b46c9e579d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Apr 5 15:19:10 2026 -0400
+| | 
+| |     * docker compose
+| | 
+* | commit cb68ba094dfd7d712b40aa749cbfb5bab3fdd564
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Apr 5 13:08:31 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit f04f597a69ddf6cf4669a4a76f44b09c6db9704d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Apr 5 13:08:20 2026 -0400
+| | 
+| |     * variables
+| | 
+* | commit 4d24f843b1d5d5685018b1ee850ae044d1b89fc1
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Apr 5 12:32:13 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 0620ef8f8e77c879e69c92c054ff54a007640691
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Apr 5 12:31:54 2026 -0400
+| | 
+| |     * variables
+| | 
+* | commit 1ea355ff253cbe86ca7542c2c89d79b6235c0412
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Apr 4 21:14:47 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit c3aca7818c8cf88c33e4a1e212669eb98ad010ec
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Apr 4 21:14:20 2026 -0400
+| | 
+| |     * variablles
+| | 
+* | commit c7b236b582e895046e5c4fd57be769a405057262
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Apr 2 22:03:26 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 262df6d14e0e12437d620a26181e3070cf33b2f9
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Apr 2 22:03:18 2026 -0400
+| | 
+| |     * update
+| | 
+* | commit dbfdc8f03cd9196d0ea968ed287986eef933c093
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Apr 2 18:33:03 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit f3f553e3530db0493b98f02d2c0e74565a0f98be
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Apr 2 18:32:53 2026 -0400
+| | 
+| |     * openclaw
+| |   
+| *   commit 1767f2b06adacd8ea075cd40ae405aa84921838a
 | |\  Merge: 7b50be0 55d8ecf
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Wed Apr 1 12:55:50 2026 -0400

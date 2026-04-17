@@ -98,6 +98,8 @@ x-openwebui-base: &openwebui-base
       - host.docker.internal:host-gateway
     volumes:
       - openwebui:/app/backend/data
+#    extra_hosts: #uncomment for docker model
+#      - host.docker.internal:host-gateway #uncomment for docker model
     deploy:
       mode: global
       restart_policy:

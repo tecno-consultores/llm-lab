@@ -98,8 +98,8 @@ x-openwebui-base: &openwebui-base
       - host.docker.internal:host-gateway
     volumes:
       - openwebui:/app/backend/data
-#    extra_hosts: #uncomment for docker model
-#      - host.docker.internal:host-gateway #uncomment for docker model
+#    extra_hosts: #uncomment for docker model or ollama
+#      - "host.docker.internal:host-gateway"
     deploy:
       mode: global
       restart_policy:
@@ -242,6 +242,8 @@ x-n8n-base: &n8n-base
       - n8n_storage:/home/node/.n8n
       - n8n_backup:/backup
       - n8n_shared:/data/shared
+#    extra_hosts: #uncomment for docker model or ollama
+#      - "host.docker.internal:host-gateway"
     deploy:
       mode: global
       restart_policy:
@@ -563,6 +565,8 @@ x-flowise-base: &flowise-base
       - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
     ports:
       - ${FPORT}:3000
+#    extra_hosts: #uncomment for docker model or ollama
+#      - "host.docker.internal:host-gateway"
     volumes:
       - flowise:/root/.flowise
       - /etc/timezone:/etc/timezone:ro
@@ -827,6 +831,7 @@ services:
         - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
         - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
         - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
+        - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
 
     ollama-nvidia:
       <<: [*ollama-base, *nvidia-base]
@@ -844,6 +849,7 @@ services:
         - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
         - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
         - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
+        - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
 
     whisper-nvidia:
       <<: [*whisper-base, *nvidia-base]

@@ -1,4 +1,4 @@
-instacia:
+instancia:
 - Nombre
 - Baileys
 

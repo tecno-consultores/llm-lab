@@ -1,22 +1,72 @@
-* commit fb31d3e82cd357991e31adbf1bad725f83abf3d4 (HEAD -> develop, origin/develop)
+* commit cd41c36920b9f7d08abe7febf0da1a925ff8a19a (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Apr 16 21:55:21 2026 -0400
+| Date:   Sat Apr 18 19:06:29 2026 -0400
 | 
-|     * docker model
-| 
-* commit 4abccd0f01d9d94add9a31f2053ab2d8887845db
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Wed Apr 15 18:04:17 2026 -0400
-| 
-|     * changelog
-| 
-* commit 7a037db36e5f696f67b9444fccfe0ab3cf700620
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Wed Apr 15 18:04:09 2026 -0400
-| 
-|     * readme
-|   
-| * commit 907a8e80543f6ad2e604270d6232b929030cefde (origin/main, origin/HEAD, main)
+|     * bugfix
+|     
+| *   commit e1558631cd14ce51b60830f3c36099610133cd41 (origin/main, origin/HEAD)
+| |\  Merge: a4258b7 699aa0b
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Fri Apr 17 10:45:43 2026 -0400
+| |   
+| |       Merge pull request #98 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 699aa0ba337d80becd640f5da4529ce15c5b8ca0
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Apr 17 10:43:36 2026 -0400
+| | 
+| |     Update extra_hosts comments in docker-compose.yml
+| |     
+| |     Uncomment extra_hosts lines for docker model or ollama.
+| | 
+* | commit d27070b3adacc8e686d7674870e8fced0aecbb39
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Apr 17 10:38:06 2026 -0400
+| | 
+| |     Update env.example
+| | 
+* | commit 55df248d911372b745b0073258e1bef084b1a725
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Apr 17 10:37:55 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit a4258b78a51837f30651179048eee3475a8cfd43 (tag: v1.15.0)
+| |\  Merge: 907a8e8 258246c
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Thu Apr 16 21:58:23 2026 -0400
+| |   
+| |       Merge pull request #97 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 258246c0c67a6f78b968c45eaf9b3a7525d7b67a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Apr 16 21:55:45 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit fb31d3e82cd357991e31adbf1bad725f83abf3d4
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Apr 16 21:55:21 2026 -0400
+| | 
+| |     * docker model
+| | 
+* | commit 4abccd0f01d9d94add9a31f2053ab2d8887845db
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Apr 15 18:04:17 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 7a037db36e5f696f67b9444fccfe0ab3cf700620
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Apr 15 18:04:09 2026 -0400
+| | 
+| |     * readme
+| | 
+| * commit 907a8e80543f6ad2e604270d6232b929030cefde (main)
 | | Author: Sinfallas <sinfallas@gmail.com>
 | | Date:   Wed Apr 15 09:10:45 2026 -0400
 | | 

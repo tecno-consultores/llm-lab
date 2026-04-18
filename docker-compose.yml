@@ -830,6 +830,7 @@ services:
         - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
         - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
         - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
+        - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
 
     ollama-nvidia:
       <<: [*ollama-base, *nvidia-base]
@@ -848,6 +849,7 @@ services:
         - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
         - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
         - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
+        - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
 
     whisper-nvidia:
       <<: [*whisper-base, *nvidia-base]

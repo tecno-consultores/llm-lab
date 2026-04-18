@@ -150,7 +150,6 @@ x-n8n-base: &n8n-base
     image: n8nio/n8n:latest
     pull_policy: ${pull_policy}
     restart: ${restart}
-    init: true
     environment:
       - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
       - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
@@ -171,7 +170,7 @@ x-n8n-base: &n8n-base
       - DB_TYPE=${DB_TYPE}
       - DB_POSTGRESDB_HOST=${DATABASE_HOST}
       - DB_POSTGRESDB_PORT=${POSTGRESDB_PORT}
-      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
+      - DB_POSTGRESDB_DATABASE=${n8n_db_name}
       - DB_POSTGRESDB_USER=${POSTGRES_USER}
       - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
       - DB_POSTGRESDB_POOL_SIZE=2
@@ -190,7 +189,6 @@ x-n8n-base: &n8n-base
       - N8N_FORMDATA_FILE_SIZE_MAX=${N8N_FORMDATA_FILE_SIZE_MAX}
       - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
       - N8N_PUBLIC_API_SWAGGERUI_DISABLED=true
-      - N8N_RUNNERS_ENABLED=true
       - N8N_RUNNERS_MODE=external
       - N8N_RUNNERS_BROKER_LISTEN_ADDRESS=0.0.0.0
       - N8N_HIDE_USAGE_PAGE=false
@@ -244,6 +242,10 @@ x-n8n-base: &n8n-base
       - n8n_shared:/data/shared
 #    extra_hosts: #uncomment for docker model or ollama
 #      - "host.docker.internal:host-gateway"
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
     deploy:
       mode: global
       restart_policy:
@@ -254,7 +256,6 @@ x-n8n-base: &n8n-base
 
 x-n8n-runner: &n8n-runner
     image: n8nio/runners:latest
-    init: true
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -274,6 +275,10 @@ x-n8n-runner: &n8n-runner
 #      - n8n_storage:/home/node/.n8n
 #      - n8n_backup:/backup
 #      - n8n_shared:/data/shared
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
     deploy:
       mode: global
       restart_policy:
@@ -293,8 +298,8 @@ x-postgres-base: &postgres-base
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
       - TZ=${TIMEZONE}
-    ports:
-      - ${POSTGRESDB_PORT}:5432
+#    ports: #uncomment to expose port
+#      - ${POSTGRESDB_PORT}:5432
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
       - postgres:/var/lib/postgresql/data
@@ -315,7 +320,7 @@ x-redis-base: &redis-base
       - REDIS_ARGS=--save 20 3
       - TZ=${TIMEZONE}
     ports:
-      - ${REDIS_PORT}:6379
+#      - ${REDIS_PORT}:6379 #uncomment to expose port
       - ${INSIGHT_PORT}:8001
     volumes:
       - redis:/data
@@ -336,8 +341,8 @@ x-qdrant-base: &qdrant-base
       - QDRANT__SERVICE__GRPC_PORT=6334
       - QDRANT__LOG_LEVEL=INFO
       - TZ=${TIMEZONE}
-    ports:
-      - ${qdrant}:6333
+#    ports: #uncomment to expose port
+#      - ${qdrant}:6333
     volumes:
       - qdrant:/qdrant/storage
 
@@ -418,7 +423,6 @@ x-nvidia-base: &nvidia-base
 
 x-proxy-base: &proxy-base
     image: jc21/nginx-proxy-manager:latest
-    init: true
     hostname: ${proxyhostname}
     container_name: ${proxyhostname}
     pull_policy: ${pull_policy}
@@ -448,7 +452,7 @@ x-searxng-base: &searxng-base
     ports:
       - ${psearch}:8080
     volumes:
-      - searxng:/etc/searxng:rw
+      - ./searxng:/etc/searxng
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
@@ -471,7 +475,7 @@ x-mongodb-base: &mongodb-base
     container_name: ${mhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-#    ports:
+#    ports: #uncomment to expose port
 #      - ${mongoport}:8081
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
@@ -695,7 +699,6 @@ volumes:
   cache-whisper:
   proxy_data:
   letsencrypt:
-  searxng:
   mongodb:
   evolution:
   flowise:

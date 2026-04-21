@@ -10,6 +10,12 @@ To run N8N on AMD64/ARM64 (with Postgres and Redis):
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner up -d
 ```
 
+To run N8N with OpenwebUI: 
+
+```bash
+docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
+```
+
 Profiles you can run:
 
 * [N8N](https://github.com/n8n-io/n8n) on AMD64/ARM64 (--profile n8n)
@@ -32,13 +38,6 @@ Profiles you can run:
 * [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 (--profile flowise)
 * [Opencode](https://github.com/anomalyco/opencode) on AMD64 (--profile opencode)
 * [OpenClaw](https://github.com/openclaw/openclaw) on AMD64 (--profile openclaw)
-
-
-To run N8N with OpenwebUI: 
-
-```bash
-docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
-```
 
 
 | Name | Port | Example |

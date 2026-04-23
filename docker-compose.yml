@@ -147,7 +147,7 @@ x-openai-bridge: &openai-bridge
       - ./models.json:/app/models.json:ro
 
 x-n8n-base: &n8n-base
-    image: n8nio/n8n:latest
+    image: n8nio/n8n:stable
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
@@ -253,7 +253,7 @@ x-n8n-base: &n8n-base
         window: 120s
 
 x-n8n-runner: &n8n-runner
-    image: n8nio/runners:latest
+    image: n8nio/runners:stable
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:

@@ -228,6 +228,8 @@ x-n8n-base: &n8n-base
       - N8N_RUNNERS_BROKER_PORT=${N8N_PORT2}
       - N8N_GIT_NODE_DISABLE_BARE_REPOS=true
       - N8N_PROXY_HOPS=1
+      - N8N_PUSH_BACKEND="websocket"
+      - N8N_TRUST_PROXY=true
       - NODES_EXCLUDE="[]"
       - N8N_SKIP_AUTH_ON_OAUTH_CALLBACK=false
       - N8N_DEFAULT_LOCALE=es

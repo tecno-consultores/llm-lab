@@ -1,10 +1,88 @@
-* commit c1a71363e96e9ca042e9366ce8add12a61605233 (HEAD -> develop, origin/develop)
+* commit b03c118077cc37dc7024b33574d2963bb8044112 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Apr 18 19:50:43 2026 -0400
+| Date:   Sun Apr 26 14:29:53 2026 -0400
 | 
-|     * bugfix
+|     * video
 |     
-| *   commit 6ad91f5e4c4e1e49ecaac298291348a5f130d710 (origin/main, origin/HEAD, main)
+| *   commit 186c58b860aa1b63bfc8737c9c3a497ebbb029c1 (origin/main, origin/HEAD, main)
+| |\  Merge: 69168cf 7a36cc9
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Thu Apr 23 11:14:57 2026 -0400
+| |   
+| |       Merge pull request #103 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 7a36cc976087525f7940f90aab8277a03b06c9f5
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Thu Apr 23 11:14:01 2026 -0400
+| | 
+| |     Update ttyia
+| | 
+* | commit 93acaff409e0962bca4e3e76081031b1c40cf8ca
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Thu Apr 23 09:35:00 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit 69168cfe1d9efe1075571a156f47cfa35d55b51a
+| |\  Merge: cb73af8 952a831
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Thu Apr 23 09:04:44 2026 -0400
+| |   
+| |       Merge pull request #102 from tecno-consultores/develop
+| |       
+| |       Update docker-compose.yml
+| | 
+* | commit 952a831190c5df58f056f9c6682ce98a6545dd14
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Thu Apr 23 09:03:45 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit cb73af8fd0192b08aa56159eb1805761b2d4096b
+| |\  Merge: 6d5a701 1d59ad6
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Tue Apr 21 13:33:55 2026 -0400
+| |   
+| |       Merge pull request #101 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 1d59ad65d55786913a0d4afb742cd123c6195f26
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Apr 21 13:32:30 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 8c708512fb12fdeb48bbd99dfc1d02cfd023a1ad
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Apr 20 19:34:14 2026 -0400
+| | 
+| |     * ollama misc
+| |   
+| *   commit 6d5a7014c264cd0a6ba8e84413a001c5a9cb24d8 (tag: v1.15.1)
+| |\  Merge: 6ad91f5 3d12afe
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Apr 18 19:54:58 2026 -0400
+| |   
+| |       Merge pull request #100 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 3d12afe7b7d18218d558defa8b6f8fb7c11cbcb8
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Apr 18 19:50:52 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit c1a71363e96e9ca042e9366ce8add12a61605233
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Apr 18 19:50:43 2026 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit 6ad91f5e4c4e1e49ecaac298291348a5f130d710
 | |\  Merge: e155863 761a20d
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sat Apr 18 19:38:26 2026 -0400

@@ -2,11 +2,13 @@ fecha y hora generica UTC:
 {{ new Date().toISOString() }}
 
 fecha y hora VE
-
 {{ new Date().toLocaleString('es-VE') }}
 
 fecha y hora ubicacion:
 {{ $now }}
+
+fecha y hora en formato EPOCH
+{{ Date.now(); }}
 
 query a multiagente
 {{ $json.query }}
@@ -16,6 +18,9 @@ from-ai
 
 webhook openwebui chat input
 {{ $json.body.chatInput }}
+
+numero aleatorio
+{{parseInt(Math.random()*10000000000000000)}}
 
 -----------------------------------------
 

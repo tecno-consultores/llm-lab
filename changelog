@@ -1,4 +1,17 @@
-* commit eaa0f93340a3f68b955f90235d3af166d64f79f8 (HEAD -> develop, origin/develop)
+* commit 7e8b4e9b5770e6a783e3fbb0d6a0b409bbc7d63d (HEAD -> develop, origin/develop)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 16 16:04:34 2026 -0400
+| 
+|     * limpieza
+|     * se agrega un modelfile de ejemplo
+| 
+* commit 06012b2b6ce664d999b2878a94ac47106b90cc61
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Tue May 12 19:42:01 2026 -0400
+| 
+|     * changelog
+| 
+* commit eaa0f93340a3f68b955f90235d3af166d64f79f8
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Tue May 12 19:41:50 2026 -0400
 | 

@@ -1,0 +1,5 @@
+para crear modelo: ollama create prueba -f Modelfile
+
+
+
+/set nothink #Establecer el modo 'nothink'.

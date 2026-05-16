@@ -1,0 +1,5 @@
+inferencia:
+qwen3.5:9b
+
+embed:
+nomic-embed-text:latest

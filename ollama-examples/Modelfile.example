@@ -1,0 +1,8 @@
+FROM qwen3.5:9b
+
+PARAMETER num_gpu 32
+PARAMETER num_thread 1
+PARAMETER num_ctx 8192
+PARAMETER temperature 0.6
+PARAMETER top_p 0.5
+PARAMETER top_k 50

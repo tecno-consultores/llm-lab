@@ -1,10 +1,80 @@
-* commit b03c118077cc37dc7024b33574d2963bb8044112 (HEAD -> develop, origin/develop)
+* commit ec83bb84027b692c4633cd04b4cfeb69c5802f46 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Apr 26 14:29:53 2026 -0400
+| Date:   Sun May 17 11:22:40 2026 -0400
 | 
-|     * video
+|     * backup
+| 
+* commit f0748cf46336797808920af8206d91dd5de3a6cc
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 16 17:26:16 2026 -0400
+| 
+|     * changelog
+| 
+* commit 00df75dc7e62aeb75114d808aa1498ba677d7929
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 16 17:26:05 2026 -0400
+| 
+|     * ollama examples
+| 
+* commit a5fb717915240a569cf5e7ecebc164e0cc46b2fe
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 16 16:04:55 2026 -0400
+| 
+|     * changelog
+| 
+* commit 7e8b4e9b5770e6a783e3fbb0d6a0b409bbc7d63d
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 16 16:04:34 2026 -0400
+| 
+|     * limpieza
+|     * se agrega un modelfile de ejemplo
+| 
+* commit 06012b2b6ce664d999b2878a94ac47106b90cc61
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Tue May 12 19:42:01 2026 -0400
+| 
+|     * changelog
+| 
+* commit eaa0f93340a3f68b955f90235d3af166d64f79f8
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Tue May 12 19:41:50 2026 -0400
+| 
+|     * bugfix
+| 
+* commit cf0d275318ce0c0cd0fb7bec8f11387cf9486b74
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Fri May 1 15:08:49 2026 -0400
+| 
+|     * changelog
+| 
+* commit d1c0b5f50ebdc7eaa4ea272b5cc9e58781194c6d
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Fri May 1 15:08:39 2026 -0400
+| 
+|     * misc
 |     
-| *   commit 186c58b860aa1b63bfc8737c9c3a497ebbb029c1 (origin/main, origin/HEAD, main)
+| *   commit be8ce4c212ff2efa0b4bfdd36e2bfc7d5c54dac4 (origin/main, origin/HEAD, main)
+| |\  Merge: 186c58b fde6b01
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon Apr 27 11:01:27 2026 -0400
+| |   
+| |       Merge pull request #104 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit fde6b015285c43caa728a165d621f009c1e64c30
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Apr 26 14:29:59 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit b03c118077cc37dc7024b33574d2963bb8044112
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Apr 26 14:29:53 2026 -0400
+| | 
+| |     * video
+| |   
+| *   commit 186c58b860aa1b63bfc8737c9c3a497ebbb029c1
 | |\  Merge: 69168cf 7a36cc9
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Thu Apr 23 11:14:57 2026 -0400

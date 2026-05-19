@@ -22,7 +22,7 @@ x-ollama-base: &ollama-base
       retries: 10
 
 x-openwebui-base: &openwebui-base
-    image: ghcr.io/open-webui/open-webui:main
+    image: ghcr.io/open-webui/open-webui:latest
     hostname: ${openhostname}
     container_name: ${openhostname}
     pull_policy: ${pull_policy}

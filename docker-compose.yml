@@ -594,6 +594,34 @@ x-opencode-base: &opencode-base
       - ./opencode:/opencode
     #entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"] # uncomment to enable web service
 
+x-hermes-base: &hermes-base
+    image: nousresearch/hermes-agent:latest
+    hostname: ${hname}
+    container_name: ${hname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    shm_size: '1gb'
+    command: gateway run
+    environment:
+      - HERMES_DASHBOARD=1
+      - HERMES_DASHBOARD_HOST=0.0.0.0
+      - HERMES_DASHBOARD_PORT=${hdport}
+      #- HERMES_DASHBOARD_TUI=1
+      #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      #- OPENAI_API_KEY=${OPENAI_API_KEY}
+      #- TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+    ports:
+      - 8642:8642   # gateway API
+      - ${hdport}:${hdport}
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./hermes:/opt/data
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+
 x-openclaw-base: &openclaw-base
     image: ghcr.io/openclaw/openclaw:latest
     #user: 1000:1000 #change me (use 'id' on host)
@@ -924,6 +952,10 @@ services:
     opencode-all:
         <<: *opencode-base
         profiles: ["opencode"]
+
+    hermes-all:
+        <<: *hermes-base
+        profiles: ["hermes"]
 
     openclaw-all:
         <<: *openclaw-base

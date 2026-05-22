@@ -55,6 +55,16 @@ Profiles you can run:
 | Redis Insight | 8001 | http://127.0.0.1:8001 |
 | Hermes Agent | 9119 | http://127.0.0.1:9119 |
 
+To run Hermes from the terminal inside the container, run
+
+```bash
+docker exec -it hermes /opt/hermes/.venv/bin/hermes
+```
+And to run Hermes with the dashboard for terminal
+
+```bash
+docker exec -it hermes /opt/hermes/.venv/bin/hermes --tui
+```
 
 ## Star History
 

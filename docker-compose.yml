@@ -601,7 +601,7 @@ x-hermes-base: &hermes-base
     pull_policy: ${pull_policy}
     restart: ${restart}
     shm_size: '1gb'
-    command: gateway run
+    command: gateway run # ejecute el siguiente comando para hermes cli /opt/hermes/.venv/bin/hermes
     environment:
       - HERMES_DASHBOARD=1
       - HERMES_DASHBOARD_HOST=0.0.0.0

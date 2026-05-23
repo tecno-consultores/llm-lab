@@ -606,6 +606,7 @@ x-hermes-base: &hermes-base
       - HERMES_DASHBOARD=1
       - HERMES_DASHBOARD_HOST=0.0.0.0
       - HERMES_DASHBOARD_PORT=${hdport}
+      - TZ=${TIMEZONE}
       #- HERMES_DASHBOARD_TUI=1
       #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       #- OPENAI_API_KEY=${OPENAI_API_KEY}

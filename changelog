@@ -1,59 +1,116 @@
-* commit ec83bb84027b692c4633cd04b4cfeb69c5802f46 (HEAD -> develop, origin/develop)
+* commit 0f1a89fe077b67aaf6c5a44507ef4588aed10d15 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun May 17 11:22:40 2026 -0400
+| Date:   Sat May 23 11:24:18 2026 -0400
 | 
-|     * backup
+|     * modelos de prueba
 | 
-* commit f0748cf46336797808920af8206d91dd5de3a6cc
+* commit 9579c2480a987fbb189bd1a2f995ccd3085f40ab
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 16 17:26:16 2026 -0400
+| Date:   Fri May 22 21:00:14 2026 -0400
 | 
-|     * changelog
+|     * timezone
 | 
-* commit 00df75dc7e62aeb75114d808aa1498ba677d7929
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 16 17:26:05 2026 -0400
+* commit a398f812f180bd3ae295d40a4e18865cb87217cd
+| Author: Sinfallas <sinfallas@gmail.com>
+| Date:   Fri May 22 10:57:03 2026 -0400
 | 
-|     * ollama examples
+|     Update readme.md
 | 
-* commit a5fb717915240a569cf5e7ecebc164e0cc46b2fe
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 16 16:04:55 2026 -0400
+* commit 2e6ee543bdbd2c00da34629253b7c4234171795f
+| Author: Sinfallas <sinfallas@gmail.com>
+| Date:   Fri May 22 10:51:09 2026 -0400
 | 
-|     * changelog
+|     Update docker-compose.yml
 | 
-* commit 7e8b4e9b5770e6a783e3fbb0d6a0b409bbc7d63d
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 16 16:04:34 2026 -0400
+* commit 311dd318239331e51b4658ef9479ad8995309300
+| Author: Sinfallas <sinfallas@gmail.com>
+| Date:   Thu May 21 14:13:59 2026 -0400
 | 
-|     * limpieza
-|     * se agrega un modelfile de ejemplo
+|     Update readme.md
 | 
-* commit 06012b2b6ce664d999b2878a94ac47106b90cc61
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Tue May 12 19:42:01 2026 -0400
+* commit 663bfa6e1048d852799ad8dca07ac0dd77e7cd06
+| Author: Sinfallas <sinfallas@gmail.com>
+| Date:   Thu May 21 11:59:35 2026 -0400
 | 
-|     * changelog
+|     Add hermes configuration to env.example
 | 
-* commit eaa0f93340a3f68b955f90235d3af166d64f79f8
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Tue May 12 19:41:50 2026 -0400
+* commit df79d95de8a6f6e5a0735eb219d0dede5ca246f3
+| Author: Sinfallas <sinfallas@gmail.com>
+| Date:   Thu May 21 11:59:17 2026 -0400
 | 
-|     * bugfix
-| 
-* commit cf0d275318ce0c0cd0fb7bec8f11387cf9486b74
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Fri May 1 15:08:49 2026 -0400
-| 
-|     * changelog
-| 
-* commit d1c0b5f50ebdc7eaa4ea272b5cc9e58781194c6d
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Fri May 1 15:08:39 2026 -0400
-| 
-|     * misc
+|     Update docker-compose with hermes configuration
 |     
-| *   commit be8ce4c212ff2efa0b4bfdd36e2bfc7d5c54dac4 (origin/main, origin/HEAD, main)
+| *   commit 01e8b93a2aee75c2815123cc80910aed9de2f8c0 (origin/main, origin/HEAD, main)
+| |\  Merge: be8ce4c d9ff1f7
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Tue May 19 18:45:08 2026 -0400
+| |   
+| |       Merge pull request #105 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit d9ff1f7c26e7621e9864970ed11ad5514cc214a4
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 17 11:22:47 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit ec83bb84027b692c4633cd04b4cfeb69c5802f46
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 17 11:22:40 2026 -0400
+| | 
+| |     * backup
+| | 
+* | commit f0748cf46336797808920af8206d91dd5de3a6cc
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 16 17:26:16 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 00df75dc7e62aeb75114d808aa1498ba677d7929
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 16 17:26:05 2026 -0400
+| | 
+| |     * ollama examples
+| | 
+* | commit a5fb717915240a569cf5e7ecebc164e0cc46b2fe
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 16 16:04:55 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 7e8b4e9b5770e6a783e3fbb0d6a0b409bbc7d63d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 16 16:04:34 2026 -0400
+| | 
+| |     * limpieza
+| |     * se agrega un modelfile de ejemplo
+| | 
+* | commit 06012b2b6ce664d999b2878a94ac47106b90cc61
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue May 12 19:42:01 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit eaa0f93340a3f68b955f90235d3af166d64f79f8
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue May 12 19:41:50 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit cf0d275318ce0c0cd0fb7bec8f11387cf9486b74
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri May 1 15:08:49 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit d1c0b5f50ebdc7eaa4ea272b5cc9e58781194c6d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri May 1 15:08:39 2026 -0400
+| | 
+| |     * misc
+| |   
+| *   commit be8ce4c212ff2efa0b4bfdd36e2bfc7d5c54dac4
 | |\  Merge: 186c58b fde6b01
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Mon Apr 27 11:01:27 2026 -0400

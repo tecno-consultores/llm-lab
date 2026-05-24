@@ -49,8 +49,8 @@ x-openwebui-base: &openwebui-base
       - DEFAULT_USER_ROLE=pending
       - DEFAULT_LOCALE=es
       - AIOHTTP_CLIENT_TIMEOUT=1000
-      - ENABLE_OLLAMA_API=true
-      - OLLAMA_BASE_URL=${UOLLAMA}
+      - ENABLE_OLLAMA_API=false #change to true to use directly with ollama
+      #- OLLAMA_BASE_URL=${UOLLAMA} uncomment to use with ollama
       - ENABLE_OPENAI_API=${ENABLE_OPENAI_API}
       - OPENAI_API_BASE_URL=${OPENAI_API_BASE_URL}
       - ENABLE_AUTOCOMPLETE_GENERATION=false
@@ -594,6 +594,47 @@ x-opencode-base: &opencode-base
       - ./opencode:/opencode
     #entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"] # uncomment to enable web service
 
+x-hermes-base: &hermes-base
+    image: nousresearch/hermes-agent:latest
+    hostname: ${hname}
+    container_name: ${hname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    shm_size: '1gb'
+    command: gateway run # ejecute el siguiente comando para hermes cli /opt/hermes/.venv/bin/hermes
+    environment:
+      - HERMES_DASHBOARD=1
+      - HERMES_DASHBOARD_HOST=0.0.0.0
+      - HERMES_DASHBOARD_PORT=${hdport}
+      - TZ=${TIMEZONE}
+      - HERMES_DASHBOARD_TUI=1
+      - API_SERVER_ENABLED=true
+      - API_SERVER_KEY=${hapikey}
+      - API_SERVER_PORT=${hapiport}
+      - API_SERVER_HOST=0.0.0.0
+      #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      #- OPENAI_API_KEY=${OPENAI_API_KEY}
+      #- TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+    ports:
+      - ${hapiport}:${hapiport} # gateway API
+      - ${hdport}:${hdport} # dashboard port
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./hermes:/opt/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8642/health"]
+      # Option 2: Using python (built-in fallback)
+      # test: ["CMD-SHELL", "python3 -c 'import urllib.request; urllib.request.urlopen(\"http://127.0.0.1:8642/health\", timeout=5)'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+
 x-openclaw-base: &openclaw-base
     image: ghcr.io/openclaw/openclaw:latest
     #user: 1000:1000 #change me (use 'id' on host)
@@ -704,11 +745,19 @@ volumes:
 ################################################
 
 services:
-    n8n-all:
+    postgres:
+      <<: *postgres-base
+      profiles: ["postgres", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise"]
+
+    redis:
+      <<: *redis-base
+      profiles: ["redis", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise"]
+
+    n8n:
       <<: *n8n-base
       hostname: ${nhostname}
       container_name: ${nhostname}
-      profiles: ["n8n"]
+      profiles: ["n8n", "n8n-worker", "openaibridge"]
       ports:
         - ${N8N_PORT}:5678
         - ${N8N_PORT2}:5679
@@ -719,12 +768,12 @@ services:
         timeout: 10s
         retries: 10
       links:
-        - redis-all
+        - redis
       depends_on:
-        postgres-all:
+        postgres:
           condition: service_healthy
           restart: true
-        redis-all:
+        redis:
           condition: service_healthy
           restart: true
 
@@ -732,7 +781,7 @@ services:
       <<: *n8n-base
       hostname: ${workername}
       container_name: ${workername}
-      profiles: ["n8n-worker"]
+      profiles: ["n8n-worker", "n8n-runner"]
       command: worker
       healthcheck:
         test: ["CMD", "node", "-v"]
@@ -741,15 +790,15 @@ services:
         timeout: 10s
         retries: 10
       links:
-        - redis-all
+        - redis
       depends_on:
-        postgres-all:
+        postgres:
           condition: service_healthy
           restart: true
-        redis-all:
+        redis:
           condition: service_healthy
           restart: true
-        n8n-all:
+        n8n:
           condition: service_healthy
           restart: true
 
@@ -765,59 +814,51 @@ services:
         timeout: 10s
         retries: 10
       links:
-        - redis-all
+        - redis
       depends_on:
-        postgres-all:
+        postgres:
           condition: service_healthy
           restart: true
-        redis-all:
+        redis:
           condition: service_healthy
           restart: true
         n8n-worker:
           condition: service_healthy
           restart: true
 
-    postgres-all:
-      <<: *postgres-base
-      profiles: ["n8n", "evolutionapi", "n8n-worker", "postgres-all"]
-
-    redis-all:
-      <<: *redis-base
-      profiles: ["n8n", "openwebui", "evolutionapi", "n8n-worker", "redis-all"]
-
-    qdrant-all:
+    qdrant:
       <<: *qdrant-base
       profiles: ["qdrant"]
 
-    openwebui-all:
+    openwebui:
       <<: *openwebui-base
-      profiles: ["openwebui"]
+      profiles: ["openwebui", "openaibridge"]
       links:
-        - redis-all
+        - redis
       depends_on:
-        redis-all:
+        postgres:
           condition: service_healthy
           restart: true
-        postgres-all:
+        redis:
           condition: service_healthy
           restart: true
 
-    n8n-openai-bridge-all:
+    openaibridge:
       <<: *openai-bridge
       profiles: ["openaibridge"]
       depends_on:
-        openwebui-all:
+        openwebui:
           condition: service_healthy
           restart: true
-        n8n-all:
+        n8n:
           condition: service_healthy
           restart: true
 
-    kafka-all:
+    kafka:
       <<: *kafka-base
       profiles: ["kafka"]
 
-    ollama-others:
+    ollama-cpu:
       <<: *ollama-base
       profiles: ["ollama-cpu"]
       environment:
@@ -834,7 +875,7 @@ services:
         - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
         - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
 
-    ollama-nvidia:
+    ollama-gpu:
       <<: [*ollama-base, *nvidia-base]
       profiles: ["ollama-gpu"]
       environment:
@@ -853,7 +894,7 @@ services:
         - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
         - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
 
-    whisper-nvidia:
+    whisper-gpu:
       <<: [*whisper-base, *nvidia-base]
       image: onerahmet/openai-whisper-asr-webservice:latest-gpu
       profiles: ["whisper-gpu"]
@@ -863,7 +904,7 @@ services:
         - ASR_ENGINE=${ASR_ENGINE}
         - MODEL_IDLE_TIMEOUT=300
 
-    whisper-cpu:
+    whisper:
       <<: *whisper-base
       image: onerahmet/openai-whisper-asr-webservice:latest
       profiles: ["whisper"]
@@ -878,7 +919,7 @@ services:
       image: unclecode/crawl4ai:all-amd64
       profiles: ["crawl4ai-amd64"]
 
-    crawl4ai-arm:
+    crawl4ai-arm64:
       <<: *crawl4ai-base
       image: unclecode/crawl4ai:all-arm64
       profiles: ["crawl4ai-arm64"]
@@ -899,32 +940,36 @@ services:
       <<: *evolution-base
       profiles: [ "evolutionapi" ]
       links:
-        - redis-all
+        - redis
       depends_on:
-        postgres-all:
+        postgres:
           condition: service_healthy
           restart: true
-        redis-all:
+        redis:
           condition: service_healthy
           restart: true
 
-    flowise-all:
+    flowise:
         <<: *flowise-base
         profiles: ["flowise"]
         links:
-          - redis-all
+          - redis
         depends_on:
-          postgres-all:
+          postgres:
             condition: service_healthy
             restart: true
-          redis-all:
+          redis:
             condition: service_healthy
             restart: true
 
-    opencode-all:
+    opencode:
         <<: *opencode-base
         profiles: ["opencode"]
 
-    openclaw-all:
+    hermes:
+        <<: *hermes-base
+        profiles: ["hermes"]
+
+    openclaw:
         <<: *openclaw-base
         profiles: ["openclaw"]

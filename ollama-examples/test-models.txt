@@ -1,5 +1,6 @@
 inferencia:
 qwen3.5:9b
+hermes3:8b
 
 embed:
 nomic-embed-text:latest

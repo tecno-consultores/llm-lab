@@ -10,12 +10,6 @@ To run N8N on AMD64/ARM64 (with Postgres and Redis):
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner up -d
 ```
 
-To run N8N with OpenwebUI: 
-
-```bash
-docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
-```
-
 Profiles you can run:
 
 * [N8N](https://github.com/n8n-io/n8n) on AMD64/ARM64 (--profile n8n)
@@ -38,6 +32,7 @@ Profiles you can run:
 * [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 (--profile flowise)
 * [Opencode](https://github.com/anomalyco/opencode) on AMD64 (--profile opencode)
 * [OpenClaw](https://github.com/openclaw/openclaw) on AMD64 (--profile openclaw)
+* [hermes-agent](https://github.com/nousresearch/hermes-agent) on AMD64 (--profile hermes)
 
 
 | Name | Port | Example |
@@ -52,7 +47,42 @@ Profiles you can run:
 | Opencode | 4096 | http://127.0.0.1:4096 |
 | OpenClaw | 18789 | http://127.0.0.1:18789 |
 | Redis Insight | 8001 | http://127.0.0.1:8001 |
+| Hermes Agent Dashboard | 9119 | http://127.0.0.1:9119 |
+| Hermes Agent API | 8642 | http://127.0.0.1:8642/v1 |
 
+To run N8N with OpenwebUI: 
+
+```bash
+docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
+```
+
+To run Hermes from the terminal inside the container, run
+
+```bash
+docker exec -it hermes /opt/hermes/.venv/bin/hermes
+```
+And to run Hermes with the dashboard for terminal
+
+```bash
+docker exec -it hermes /opt/hermes/.venv/bin/hermes --tui
+```
+
+to use OpenWebUI as UI for hermes:
+
+* Open Open WebUI in your browser.
+* Go to ⚙️ Admin Settings → Connections → OpenAI.
+* Click ➕ Add Connection.
+* Enter the following:
+  + URL	http://hermes-ip:8642/v1
+  + API Key: the apikey in the env.example file
+
+to connect hermes with ollama run:
+
+```bash
+docker exec -it hermes /opt/hermes/.venv/bin/hermes model
+```
+
+select **Custom endpoint** and put the following url: **http://ollama:11434/v1** When prompted for the apikey, leave it blank.
 
 ## Star History
 

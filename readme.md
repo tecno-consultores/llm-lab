@@ -47,7 +47,8 @@ Profiles you can run:
 | Opencode | 4096 | http://127.0.0.1:4096 |
 | OpenClaw | 18789 | http://127.0.0.1:18789 |
 | Redis Insight | 8001 | http://127.0.0.1:8001 |
-| Hermes Agent | 9119 | http://127.0.0.1:9119 |
+| Hermes Agent Dashboard | 9119 | http://127.0.0.1:9119 |
+| Hermes Agent API | 8642 | http://127.0.0.1:8642/v1 |
 
 To run N8N with OpenwebUI: 
 

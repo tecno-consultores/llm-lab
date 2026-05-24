@@ -59,12 +59,12 @@ docker compose -f docker-compose.yml --env-file env.example --profile n8n --prof
 To run Hermes from the terminal inside the container, run
 
 ```bash
-docker exec -it hermes /opt/hermes/.venv/bin/hermes
+docker exec -it hermes hermes
 ```
 And to run Hermes with the dashboard for terminal
 
 ```bash
-docker exec -it hermes /opt/hermes/.venv/bin/hermes --tui
+docker exec -it hermes hermes --tui
 ```
 
 to use OpenWebUI as UI for hermes:
@@ -79,7 +79,7 @@ to use OpenWebUI as UI for hermes:
 to connect hermes with ollama run:
 
 ```bash
-docker exec -it hermes /opt/hermes/.venv/bin/hermes model
+docker exec -it hermes hermes model
 ```
 
 select **Custom endpoint** and put the following url: **http://ollama:11434/v1** When prompted for the apikey, leave it blank.

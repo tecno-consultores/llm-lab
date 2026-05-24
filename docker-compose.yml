@@ -566,7 +566,7 @@ x-flowise-base: &flowise-base
       - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
     ports:
       - ${FPORT}:3000
-#    extra_hosts: #uncomment for docker model or ollama
+#    e	xtra_hosts: #uncomment for docker model or ollama
 #      - "host.docker.internal:host-gateway"
     volumes:
       - flowise:/root/.flowise
@@ -582,17 +582,20 @@ x-opencode-base: &opencode-base
     stdin_open: true
     tty: true
     environment:
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - GEMINI_API_KEY=${GEMINI_API_KEY}
-      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD}
+      - TZ=${TIMEZONE}
+      #- OPENAI_BASE_URL=https://openrouter.ai/api/v1 # for use with openrouter
+      #- OPENAI_API_KEY=${OPENROUTER_API_KEY} # for use with openrouter
+      #- OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
+      #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      #- GEMINI_API_KEY=${GEMINI_API_KEY}
+      #- OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # uncomment to enable web service password
     ports:
       - ${OCPORT}:4096
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - ./opencode:/opencode
-    #entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"] # uncomment to enable web service
+    entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"]
 
 x-hermes-base: &hermes-base
     image: nousresearch/hermes-agent:latest
@@ -613,6 +616,7 @@ x-hermes-base: &hermes-base
       - API_SERVER_KEY=${hapikey}
       - API_SERVER_PORT=${hapiport}
       - API_SERVER_HOST=0.0.0.0
+      - OPENCODE_URL=http://${codehostname}:${OCPORT}
       #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       #- OPENAI_API_KEY=${OPENAI_API_KEY}
       #- TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}

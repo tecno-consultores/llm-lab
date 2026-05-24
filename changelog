@@ -1,94 +1,115 @@
-* commit 219a5c2fe364d2bf7c2e8e321050b652e1219680 (HEAD -> develop, origin/develop)
+* commit 1d224a740e7cd11b03f9e1ba4586f3fc9ea51177 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun May 24 15:09:04 2026 -0400
+| Date:   Sun May 24 16:07:05 2026 -0400
 | 
-|     * ollama bugfix
-| 
-* commit 64a00211d147e48d117a5476cf5b40a73a659873
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun May 24 14:46:11 2026 -0400
-| 
-|     * changelog
-| 
-* commit 9c062ffa99d8a9622db2dc378a597d65c6bc700c
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun May 24 14:45:51 2026 -0400
-| 
-|     * hermes con ollama y openwebui
-| 
-* commit e0eecdd91e73e410439653224e939d3656560587
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun May 24 13:30:48 2026 -0400
-| 
-|     * changelog
-| 
-* commit ab7ca2b3da250eda3438bf9985c44f2af826217d
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun May 24 13:30:33 2026 -0400
-| 
-|     * multiple bugfixes
-| 
-* commit 1ae6d2780b2cf01c037bb68e562aad914f8f0f3c
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun May 24 11:30:36 2026 -0400
-| 
-|     * changelog
-| 
-* commit dc285921e0f0f8df515d0ff72d60a21b7dc8d8eb
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun May 24 11:30:22 2026 -0400
-| 
-|     * hermes + openwebui
-| 
-* commit ef639c05ed95caa35026dcdbe07f2c881c71b48b
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 23 11:24:31 2026 -0400
-| 
-|     * changelog
-| 
-* commit 0f1a89fe077b67aaf6c5a44507ef4588aed10d15
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 23 11:24:18 2026 -0400
-| 
-|     * modelos de prueba
-| 
-* commit 9579c2480a987fbb189bd1a2f995ccd3085f40ab
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Fri May 22 21:00:14 2026 -0400
-| 
-|     * timezone
-| 
-* commit a398f812f180bd3ae295d40a4e18865cb87217cd
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri May 22 10:57:03 2026 -0400
-| 
-|     Update readme.md
-| 
-* commit 2e6ee543bdbd2c00da34629253b7c4234171795f
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri May 22 10:51:09 2026 -0400
-| 
-|     Update docker-compose.yml
-| 
-* commit 311dd318239331e51b4658ef9479ad8995309300
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Thu May 21 14:13:59 2026 -0400
-| 
-|     Update readme.md
-| 
-* commit 663bfa6e1048d852799ad8dca07ac0dd77e7cd06
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Thu May 21 11:59:35 2026 -0400
-| 
-|     Add hermes configuration to env.example
-| 
-* commit df79d95de8a6f6e5a0735eb219d0dede5ca246f3
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Thu May 21 11:59:17 2026 -0400
-| 
-|     Update docker-compose with hermes configuration
+|     * se corrige el PATH para ejecutar hermes
 |     
-| *   commit 01e8b93a2aee75c2815123cc80910aed9de2f8c0 (origin/main, origin/HEAD, main)
+| *   commit debee592d7cb37bc52a9e9b584c4b8809953b69f (tag: v1.16.0, origin/main, origin/HEAD, main)
+| |\  Merge: 01e8b93 bf574bd
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sun May 24 15:09:49 2026 -0400
+| |   
+| |       Merge pull request #106 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit bf574bd3f0a9ac1701286a4b53d1caf7797b733c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 15:09:16 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 219a5c2fe364d2bf7c2e8e321050b652e1219680
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 15:09:04 2026 -0400
+| | 
+| |     * ollama bugfix
+| | 
+* | commit 64a00211d147e48d117a5476cf5b40a73a659873
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 14:46:11 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 9c062ffa99d8a9622db2dc378a597d65c6bc700c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 14:45:51 2026 -0400
+| | 
+| |     * hermes con ollama y openwebui
+| | 
+* | commit e0eecdd91e73e410439653224e939d3656560587
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 13:30:48 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit ab7ca2b3da250eda3438bf9985c44f2af826217d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 13:30:33 2026 -0400
+| | 
+| |     * multiple bugfixes
+| | 
+* | commit 1ae6d2780b2cf01c037bb68e562aad914f8f0f3c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 11:30:36 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit dc285921e0f0f8df515d0ff72d60a21b7dc8d8eb
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 11:30:22 2026 -0400
+| | 
+| |     * hermes + openwebui
+| | 
+* | commit ef639c05ed95caa35026dcdbe07f2c881c71b48b
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 23 11:24:31 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 0f1a89fe077b67aaf6c5a44507ef4588aed10d15
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 23 11:24:18 2026 -0400
+| | 
+| |     * modelos de prueba
+| | 
+* | commit 9579c2480a987fbb189bd1a2f995ccd3085f40ab
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri May 22 21:00:14 2026 -0400
+| | 
+| |     * timezone
+| | 
+* | commit a398f812f180bd3ae295d40a4e18865cb87217cd
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri May 22 10:57:03 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 2e6ee543bdbd2c00da34629253b7c4234171795f
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri May 22 10:51:09 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit 311dd318239331e51b4658ef9479ad8995309300
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Thu May 21 14:13:59 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 663bfa6e1048d852799ad8dca07ac0dd77e7cd06
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Thu May 21 11:59:35 2026 -0400
+| | 
+| |     Add hermes configuration to env.example
+| | 
+* | commit df79d95de8a6f6e5a0735eb219d0dede5ca246f3
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Thu May 21 11:59:17 2026 -0400
+| | 
+| |     Update docker-compose with hermes configuration
+| |   
+| *   commit 01e8b93a2aee75c2815123cc80910aed9de2f8c0
 | |\  Merge: be8ce4c d9ff1f7
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Tue May 19 18:45:08 2026 -0400

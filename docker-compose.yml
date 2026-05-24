@@ -601,8 +601,9 @@ x-hermes-base: &hermes-base
     pull_policy: ${pull_policy}
     restart: ${restart}
     shm_size: '1gb'
-    command: gateway run # ejecute el siguiente comando para hermes cli /opt/hermes/.venv/bin/hermes
+    command: gateway run # el siguiente comando para hermes cli por si cambian el path de la imagen /opt/hermes/.venv/bin/hermes
     environment:
+      - PATH=/opt/data/.local/bin:/opt/hermes/.venv/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       - HERMES_DASHBOARD=1
       - HERMES_DASHBOARD_HOST=0.0.0.0
       - HERMES_DASHBOARD_PORT=${hdport}
@@ -624,8 +625,6 @@ x-hermes-base: &hermes-base
       - ./hermes:/opt/data
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8642/health"]
-      # Option 2: Using python (built-in fallback)
-      # test: ["CMD-SHELL", "python3 -c 'import urllib.request; urllib.request.urlopen(\"http://127.0.0.1:8642/health\", timeout=5)'"]
       interval: 30s
       timeout: 10s
       retries: 5

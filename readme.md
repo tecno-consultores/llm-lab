@@ -73,8 +73,16 @@ to use OpenWebUI as UI for hermes:
 * Go to ⚙️ Admin Settings → Connections → OpenAI.
 * Click ➕ Add Connection.
 * Enter the following:
-  + URL	http://hermes:8642/v1
+  + URL	http://hermes-ip:8642/v1
   + API Key: the apikey in the env.example file
+
+to connect hermes with ollama run:
+
+```bash
+docker exec -it hermes /opt/hermes/.venv/bin/hermes model
+```
+
+select **Custom endpoint** and put the following url: **http://ollama:11434/v1** When prompted for the apikey, leave it blank.
 
 ## Star History
 

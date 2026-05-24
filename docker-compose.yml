@@ -49,8 +49,8 @@ x-openwebui-base: &openwebui-base
       - DEFAULT_USER_ROLE=pending
       - DEFAULT_LOCALE=es
       - AIOHTTP_CLIENT_TIMEOUT=1000
-      - ENABLE_OLLAMA_API=true
-      - OLLAMA_BASE_URL=${UOLLAMA}
+      - ENABLE_OLLAMA_API=false #change to true to use directly with ollama
+      #- OLLAMA_BASE_URL=${UOLLAMA} uncomment to use with ollama
       - ENABLE_OPENAI_API=${ENABLE_OPENAI_API}
       - OPENAI_API_BASE_URL=${OPENAI_API_BASE_URL}
       - ENABLE_AUTOCOMPLETE_GENERATION=false
@@ -612,7 +612,6 @@ x-hermes-base: &hermes-base
       - API_SERVER_KEY=${hapikey}
       - API_SERVER_PORT=${hapiport}
       - API_SERVER_HOST=0.0.0.0
-      #- OLLAMA_BASE_URL=${UOLLAMA}
       #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       #- OPENAI_API_KEY=${OPENAI_API_KEY}
       #- TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}

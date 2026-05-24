@@ -566,7 +566,7 @@ x-flowise-base: &flowise-base
       - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
     ports:
       - ${FPORT}:3000
-#    e	xtra_hosts: #uncomment for docker model or ollama
+#    extra_hosts: #uncomment for docker model or ollama
 #      - "host.docker.internal:host-gateway"
     volumes:
       - flowise:/root/.flowise

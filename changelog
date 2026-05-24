@@ -1,4 +1,16 @@
-* commit ab7ca2b3da250eda3438bf9985c44f2af826217d (HEAD -> develop, origin/develop)
+* commit 9c062ffa99d8a9622db2dc378a597d65c6bc700c (HEAD -> develop, origin/develop)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun May 24 14:45:51 2026 -0400
+| 
+|     * hermes con ollama y openwebui
+| 
+* commit e0eecdd91e73e410439653224e939d3656560587
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun May 24 13:30:48 2026 -0400
+| 
+|     * changelog
+| 
+* commit ab7ca2b3da250eda3438bf9985c44f2af826217d
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Sun May 24 13:30:33 2026 -0400
 | 

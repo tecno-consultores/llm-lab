@@ -607,13 +607,18 @@ x-hermes-base: &hermes-base
       - HERMES_DASHBOARD_HOST=0.0.0.0
       - HERMES_DASHBOARD_PORT=${hdport}
       - TZ=${TIMEZONE}
-      #- HERMES_DASHBOARD_TUI=1
+      - HERMES_DASHBOARD_TUI=1
+      - API_SERVER_ENABLED=true
+      - API_SERVER_KEY=${hapikey}
+      - API_SERVER_PORT=${hapiport}
+      - API_SERVER_HOST=0.0.0.0
+      #- OLLAMA_BASE_URL=${UOLLAMA}
       #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       #- OPENAI_API_KEY=${OPENAI_API_KEY}
       #- TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
     ports:
-      - 8642:8642   # gateway API
-      - ${hdport}:${hdport}
+      - ${hapiport}:${hapiport} # gateway API
+      - ${hdport}:${hdport} # dashboard port
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro

@@ -10,12 +10,6 @@ To run N8N on AMD64/ARM64 (with Postgres and Redis):
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner up -d
 ```
 
-To run N8N with OpenwebUI: 
-
-```bash
-docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
-```
-
 Profiles you can run:
 
 * [N8N](https://github.com/n8n-io/n8n) on AMD64/ARM64 (--profile n8n)
@@ -55,6 +49,12 @@ Profiles you can run:
 | Redis Insight | 8001 | http://127.0.0.1:8001 |
 | Hermes Agent | 9119 | http://127.0.0.1:9119 |
 
+To run N8N with OpenwebUI: 
+
+```bash
+docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
+```
+
 To run Hermes from the terminal inside the container, run
 
 ```bash
@@ -65,6 +65,15 @@ And to run Hermes with the dashboard for terminal
 ```bash
 docker exec -it hermes /opt/hermes/.venv/bin/hermes --tui
 ```
+
+to use OpenWebUI as UI for hermes:
+
+* Open Open WebUI in your browser.
+* Go to ⚙️ Admin Settings → Connections → OpenAI.
+* Click ➕ Add Connection.
+* Enter the following:
+  + URL	http://hermes:8642/v1
+  + API Key: the apikey in the env.example file
 
 ## Star History
 

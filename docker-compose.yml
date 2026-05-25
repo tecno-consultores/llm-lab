@@ -574,7 +574,7 @@ x-flowise-base: &flowise-base
       - /etc/localtime:/etc/localtime:ro
 
 x-opencode-base: &opencode-base
-    image: ghcr.io/anomalyco/opencode:latest
+    image: ghcr.io/anomalyco/opencode:1.14.48
     hostname: ${codehostname}
     container_name: ${codehostname}
     pull_policy: ${pull_policy}
@@ -588,13 +588,18 @@ x-opencode-base: &opencode-base
       #- OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
       #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       #- GEMINI_API_KEY=${GEMINI_API_KEY}
-      #- OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # uncomment to enable web service password
+      - OPENCODE_SERVER_USERNAME=master # comment to use in conjunction with Hermes
+      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # comment to use in conjunction with Hermes
     ports:
       - ${OCPORT}:4096
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - ./opencode:/opencode
+      - ./opencode-workspace:/workspace
+      - ./config-opencode:/root/.config/opencode
+      - ./state-opencode:/root/.local/state/opencode
+      - ./share-opencode:/root/.local/share/opencode
+    working_dir: /workspace
     entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"]
 
 x-hermes-base: &hermes-base

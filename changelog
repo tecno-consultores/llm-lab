@@ -1,10 +1,91 @@
-* commit 1d224a740e7cd11b03f9e1ba4586f3fc9ea51177 (HEAD -> develop, origin/develop)
+* commit 48ef37afec7a8023256ca1211984eb3a586d1b35 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun May 24 16:07:05 2026 -0400
+| Date:   Mon May 25 19:05:52 2026 -0400
 | 
-|     * se corrige el PATH para ejecutar hermes
+|     * volumenes
 |     
-| *   commit debee592d7cb37bc52a9e9b584c4b8809953b69f (tag: v1.16.0, origin/main, origin/HEAD, main)
+| *   commit 137b31a743ef8e3771651fbf12750b17156c6b32 (tag: v1.16.2, origin/main, origin/HEAD, main)
+| |\  Merge: 60f3b15 62a6247
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon May 25 14:41:53 2026 -0400
+| |   
+| |       Merge pull request #109 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 62a6247c899e51b5ca21fc8cd585525d445f68ea
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon May 25 14:39:22 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit aa86e5f8d172490dec2795a51cdf3fda246d668e
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon May 25 14:08:42 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit 68bea8c5818dfff5fb1de4983082d69274d53ce0
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon May 25 14:06:07 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit 8b570763d8c8a47b51f893ea31968de144486127
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon May 25 14:02:31 2026 -0400
+| | 
+| |     Set working directory for opencode service
+| | 
+* | commit 2274a31a10605be61926bd7380db3afddca034e4
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon May 25 14:01:36 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit 60f3b15e81d48de4f4693d749088e1eb8b837b3b (tag: v1.16.1)
+| |\  Merge: 3b3684d a1ca63a
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sun May 24 18:24:53 2026 -0400
+| |   
+| |       Merge pull request #108 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit a1ca63a4aa938426690e0467292ffc96ea3de90a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 18:23:53 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit cfedd61c642c8a17d4cea2b7a8611fb403502ada
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 18:21:58 2026 -0400
+| | 
+| |     * opencode
+| |   
+| *   commit 3b3684dd7de2e2ded3d1493cfcb21fce9e1d27b6
+| |\  Merge: debee59 4f4bf03
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sun May 24 16:09:27 2026 -0400
+| |   
+| |       Merge pull request #107 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 4f4bf0358f0ad6c93068c37c5724756f72b392fb
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 16:07:43 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 1d224a740e7cd11b03f9e1ba4586f3fc9ea51177
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun May 24 16:07:05 2026 -0400
+| | 
+| |     * se corrige el PATH para ejecutar hermes
+| |   
+| *   commit debee592d7cb37bc52a9e9b584c4b8809953b69f (tag: v1.16.0)
 | |\  Merge: 01e8b93 bf574bd
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sun May 24 15:09:49 2026 -0400

@@ -574,7 +574,7 @@ x-flowise-base: &flowise-base
       - /etc/localtime:/etc/localtime:ro
 
 x-opencode-base: &opencode-base
-    image: ghcr.io/anomalyco/opencode:latest
+    image: ghcr.io/anomalyco/opencode:1.14.48
     hostname: ${codehostname}
     container_name: ${codehostname}
     pull_policy: ${pull_policy}

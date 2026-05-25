@@ -56,11 +56,18 @@ To run N8N with OpenwebUI:
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
 ```
 
+To run the initial setup, run
+
+```bash
+docker exec -it hermes hermes setup
+```
+
 To run Hermes from the terminal inside the container, run
 
 ```bash
 docker exec -it hermes hermes
 ```
+
 And to run Hermes with the dashboard for terminal
 
 ```bash

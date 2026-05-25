@@ -597,6 +597,8 @@ x-opencode-base: &opencode-base
       - /etc/localtime:/etc/localtime:ro
       - ./opencode-workspace:/workspace
       - ./config-opencode:/root/.config/opencode
+      - ./state-opencode:/root/.local/state/opencode
+      - ./share-opencode:/root/.local/share/opencode
     working_dir: /workspace
     entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"]
 

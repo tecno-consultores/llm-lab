@@ -340,6 +340,7 @@ x-qdrant-base: &qdrant-base
       - TZ=${TIMEZONE}
 #    ports: #uncomment to expose port
 #      - ${qdrant}:6333
+#      - 6334:6334
     volumes:
       - qdrant:/qdrant/storage
 
@@ -583,22 +584,22 @@ x-opencode-base: &opencode-base
     tty: true
     environment:
       - TZ=${TIMEZONE}
+      - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME} # comment to use in conjunction with Hermes
+      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # comment to use in conjunction with Hermes
       #- OPENAI_BASE_URL=https://openrouter.ai/api/v1 # for use with openrouter
       #- OPENAI_API_KEY=${OPENROUTER_API_KEY} # for use with openrouter
       #- OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
       #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       #- GEMINI_API_KEY=${GEMINI_API_KEY}
-      - OPENCODE_SERVER_USERNAME=master # comment to use in conjunction with Hermes
-      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # comment to use in conjunction with Hermes
     ports:
       - ${OCPORT}:4096
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - ./opencode-workspace:/workspace
-      - ./config-opencode:/root/.config/opencode
-      - ./state-opencode:/root/.local/state/opencode
-      - ./share-opencode:/root/.local/share/opencode
+      - config-opencode:/root/.config/opencode
+      - state-opencode:/root/.local/state/opencode
+      - share-opencode:/root/.local/share/opencode
     working_dir: /workspace
     entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"]
 
@@ -749,6 +750,9 @@ volumes:
   evolution:
   flowise:
   openclaw-data:
+  config-opencode:
+  state-opencode:
+  share-opencode:
 
 ################################################
 

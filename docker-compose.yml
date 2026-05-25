@@ -594,7 +594,8 @@ x-opencode-base: &opencode-base
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - ./opencode:/opencode
+      - ./opencode-workspace:/workspace
+      - ./config-opencode:/root/.config/opencode
     entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"]
 
 x-hermes-base: &hermes-base

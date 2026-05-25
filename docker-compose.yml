@@ -632,7 +632,7 @@ x-hermes-base: &hermes-base
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - ./hermes:/opt/data
+      - hermes:/opt/data
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8642/health"]
       interval: 30s
@@ -753,6 +753,7 @@ volumes:
   config-opencode:
   state-opencode:
   share-opencode:
+  hermes:
 
 ################################################
 

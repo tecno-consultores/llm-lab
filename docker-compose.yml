@@ -588,7 +588,8 @@ x-opencode-base: &opencode-base
       #- OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
       #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       #- GEMINI_API_KEY=${GEMINI_API_KEY}
-      #- OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # uncomment to enable web service password
+      - OPENCODE_SERVER_USERNAME=master # comment to use in conjunction with Hermes
+      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # comment to use in conjunction with Hermes
     ports:
       - ${OCPORT}:4096
     volumes:

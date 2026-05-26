@@ -6,4 +6,4 @@ coding:
 qwen3.5:9b
 
 embed:
-nomic-embed-text:latest
+nomic-embed-text-v2-moe

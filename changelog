@@ -1,10 +1,55 @@
-* commit 3330052c4137c16bdb9400eb81998f2e2f931a01 (HEAD -> develop, origin/develop)
+* commit 9f3d00e2d09e64fbb2b720dc8f1764a66ce6433f (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Tue May 26 19:05:45 2026 -0400
+| Date:   Wed May 27 17:06:25 2026 -0400
 | 
-|     * bugfix
+|     * rabbitmq
+| 
+* commit 9d8ec32402d691d7061d70b580e01e1a89185141
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Wed May 27 16:50:39 2026 -0400
+| 
+|     * changelog
+| 
+* commit a21c45141a1ce2f3c0d05eb5435a884cc240436e
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Wed May 27 16:50:26 2026 -0400
+| 
+|     * openclaw removed
 |     
-| *   commit 3b3825d5a11ca771ab58530004992c2565a28f9d (tag: v1.16.3, origin/main, origin/HEAD, main)
+| *   commit 64f7001a33a6d21a3c43548137b481ec68e8390a (tag: v1.16.4, origin/main, origin/HEAD, main)
+| |\  Merge: 3b3825d 5344c69
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Wed May 27 15:11:07 2026 -0400
+| |   
+| |       Merge pull request #111 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 5344c69dd9313145589745a33ad8e79b34551b59
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed May 27 15:09:58 2026 -0400
+| | 
+| |     Update env.example
+| | 
+* | commit 7103ce342fbab7bf2a6c4c36326862407c4025aa
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed May 27 15:05:03 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 603603b057b69d14f876ea1a1158cf24863fa272
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue May 26 19:05:52 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 3330052c4137c16bdb9400eb81998f2e2f931a01
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue May 26 19:05:45 2026 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit 3b3825d5a11ca771ab58530004992c2565a28f9d (tag: v1.16.3)
 | |\  Merge: 137b31a 2ab5cdc
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Mon May 25 19:13:00 2026 -0400

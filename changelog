@@ -1,22 +1,43 @@
-* commit d46d73361970615052b5f3dc51abe7b27d7e506b (HEAD -> develop, origin/develop)
+* commit 3330052c4137c16bdb9400eb81998f2e2f931a01 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Mon May 25 19:11:02 2026 -0400
+| Date:   Tue May 26 19:05:45 2026 -0400
 | 
-|     * volumen paar hermes
-| 
-* commit b68904ce87c031e8cb9d8965f25cb312f29e68aa
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Mon May 25 19:06:05 2026 -0400
-| 
-|     * changelog
-| 
-* commit 48ef37afec7a8023256ca1211984eb3a586d1b35
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Mon May 25 19:05:52 2026 -0400
-| 
-|     * volumenes
+|     * bugfix
 |     
-| *   commit 137b31a743ef8e3771651fbf12750b17156c6b32 (tag: v1.16.2, origin/main, origin/HEAD, main)
+| *   commit 3b3825d5a11ca771ab58530004992c2565a28f9d (tag: v1.16.3, origin/main, origin/HEAD, main)
+| |\  Merge: 137b31a 2ab5cdc
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon May 25 19:13:00 2026 -0400
+| |   
+| |       Merge pull request #110 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 2ab5cdce584970ef98c2f5475005683002ff1002
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon May 25 19:11:15 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit d46d73361970615052b5f3dc51abe7b27d7e506b
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon May 25 19:11:02 2026 -0400
+| | 
+| |     * volumen paar hermes
+| | 
+* | commit b68904ce87c031e8cb9d8965f25cb312f29e68aa
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon May 25 19:06:05 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 48ef37afec7a8023256ca1211984eb3a586d1b35
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon May 25 19:05:52 2026 -0400
+| | 
+| |     * volumenes
+| |   
+| *   commit 137b31a743ef8e3771651fbf12750b17156c6b32 (tag: v1.16.2)
 | |\  Merge: 60f3b15 62a6247
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Mon May 25 14:41:53 2026 -0400

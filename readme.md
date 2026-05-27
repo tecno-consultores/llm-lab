@@ -18,7 +18,6 @@ Profiles you can run:
 * [Qdrant](https://github.com/qdrant/qdrant) on AMD64/ARM64 (--profile qdrant)
 * [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) on AMD64 (--profile openaibridge)
 * [OpenwebUI](https://github.com/open-webui/open-webui) on AMD64/ARM64 (--profile openwebui)
-* [Kafka](https://github.com/apache/kafka) on AMD64/ARM64 (--profile kafka)
 * [Ollama](https://github.com/ollama/ollama) on Nvidia (--profile ollama-gpu)
     + Ollama on AMD64/ARM64 or AMD GPU (--profile ollama-cpu)
 * [Whisper](https://github.com/openai/whisper) on Nvidia (--profile whisper-gpu)

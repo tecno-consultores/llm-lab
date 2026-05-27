@@ -31,7 +31,6 @@ Profiles you can run:
 * [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 (--profile evolutionapi)
 * [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 (--profile flowise)
 * [Opencode](https://github.com/anomalyco/opencode) on AMD64/ARM64 (--profile opencode)
-* [OpenClaw](https://github.com/openclaw/openclaw) on AMD64/ARM64 (--profile openclaw)
 * [hermes-agent](https://github.com/nousresearch/hermes-agent) on AMD64/ARM64 (--profile hermes)
 
 
@@ -45,7 +44,6 @@ Profiles you can run:
 | EvolutionAPI | 9191 | http://127.0.0.1:9191/manager |
 | Flowise | 3001 | http://127.0.0.1:3001 |
 | Opencode | 4096 | http://127.0.0.1:4096 |
-| OpenClaw | 18789 | http://127.0.0.1:18789 |
 | Redis Insight | 8001 | http://127.0.0.1:8001 |
 | Hermes Agent Dashboard | 9119 | http://127.0.0.1:9119 |
 | Hermes Agent API | 8642 | http://127.0.0.1:8642/v1 |

@@ -644,94 +644,6 @@ x-hermes-base: &hermes-base
         limits:
           memory: 4G
 
-x-openclaw-base: &openclaw-base
-    image: ghcr.io/openclaw/openclaw:latest
-    #user: 1000:1000 #change me (use 'id' on host)
-    hostname: ${clawhostname}
-    container_name: ${clawhostname}
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    init: true
-    stdin_open: true
-    tty: true
-    ports:
-      - ${CLAWPORT}:${CLAWPORT}
-      - ${CLAWBRIDGE}:${CLAWBRIDGE}
-#    command: [ "node", "dist/index.js", "gateway", "--bind", "${OPENCLAW_GATEWAY_BIND}", "--port", "${CLAWPORT}" ]
-    environment:
-      - HOME=/home/node
-      #- OPENCLAW_GATEWAY_PASSWORD=${AUTH_PASSWORD}
-      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN}
-      - OPENCLAW_GATEWAY_PORT=${CLAWPORT}
-      - OPENCLAW_BRIDGE_PORT=${CLAWBRIDGE}
-      - OPENCLAW_INIT_GATEWAY_MODE=${OPENCLAW_INIT_GATEWAY_MODE}
-      - TERM=xterm-256color
-      - DOCKER_SOCKET_PATH=${DOCKER_SOCKET_PATH}
-      - OPENCLAW_DOCKER_SOCKET=${DOCKER_SOCKET_PATH}
-      - OPENCLAW_ALLOW_INSECURE_PRIVATE_WS=1
-      - TZ=${TIMEZONE}
-      - BROWSER=echo
-      - OPENCLAW_GATEWAY_BIND=${OPENCLAW_GATEWAY_BIND}
-      - OPENCLAW_LOG_LEVEL=info
-      - OPENCLAW_GATEWAY_CONTROL_UI_ALLOWED_ORIGINS='["http://localhost:${CLAWPORT}"]' #change me
-      - OPENCLAW_DANGEROUSLY_ALLOW_HOST_HEADER_ORIGIN_FALLBACK=true
-      - OPENCLAW_LOAD_SHELL_ENV=1
-      - OPENCLAW_SHELL_ENV_TIMEOUT_MS=15000
-      #- RAW_SANDBOX_SETTING=${OPENCLAW_SANDBOX}
-      #- SANDBOX_ENABLED=${OPENCLAW_SANDBOX}
-      #- OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX}
-      #- OLLAMA_BASE_URL=${UOLLAMA}
-      #- OLLAMA_API_KEY=${OLLAMA_API_KEY}
-      #- OPENCLAW_PRIMARY_MODEL=${OPENCLAW_PRIMARY_MODEL}
-      #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-      #- OPENAI_API_KEY=${OPENAI_API_KEY}
-      #- OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
-      #- GEMINI_API_KEY=${GEMINI_API_KEY}
-      #- XAI_API_KEY=${XAI_API_KEY}
-      #- GROQ_API_KEY=${GROQ_API_KEY}
-      #- MISTRAL_API_KEY=${MISTRAL_API_KEY}
-      #- CEREBRAS_API_KEY=${CEREBRAS_API_KEY}
-      #- VENICE_API_KEY=${VENICE_API_KEY}
-      #- MOONSHOT_API_KEY=${MOONSHOT_API_KEY}
-      #- KIMI_API_KEY=${KIMI_API_KEY}
-      #- MINIMAX_API_KEY=${MINIMAX_API_KEY}
-      #- ZAI_API_KEY=${ZAI_API_KEY}
-      #- AI_GATEWAY_API_KEY=${AI_GATEWAY_API_KEY}
-      #- OPENCODE_API_KEY=${OPENCODE_API_KEY}
-      #- SYNTHETIC_API_KEY=${SYNTHETIC_API_KEY}
-      #- COPILOT_GITHUB_TOKEN=${COPILOT_GITHUB_TOKEN}
-      #- XIAOMI_API_KEY=${XIAOMI_API_KEY}
-      #- DEEPGRAM_API_KEY=${DEEPGRAM_API_KEY}
-      #- AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      #- AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      #- AWS_REGION=${AWS_REGION}
-      #- AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
-      #- BEDROCK_PROVIDER_FILTER=${BEDROCK_PROVIDER_FILTER}
-      #- TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
-      #- DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
-      #- SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
-      #- SLACK_APP_TOKEN=${SLACK_APP_TOKEN}
-      #- ZALO_BOT_TOKEN=${ZALO_BOT_TOKEN}
-      #- OPENCLAW_TWITCH_ACCESS_TOKEN=${OPENCLAW_TWITCH_ACCESS_TOKEN}
-      #- BRAVE_API_KEY=${BRAVE_API_KEY}
-      #- PERPLEXITY_API_KEY=${PERPLEXITY_API_KEY}
-      #- FIRECRAWL_API_KEY=${FIRECRAWL_API_KEY}
-      #- ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
-      #- XI_API_KEY=${XI_API_KEY}
-      #- DEEPGRAM_API_KEY=${DEEPGRAM_API_KEY}
-    volumes:
-      - openclaw-data:/home/node/.openclaw
-      - ./openclaw-workspace:/home/node/.openclaw/workspace
-      - ${DOCKER_SOCKET_PATH}:/var/run/docker.sock
-    group_add:
-      - ${DOCKER_GID}
-    healthcheck:
-      test: [ "CMD", "node", "-e", "fetch('http://127.0.0.1:18789/healthz').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))" ]
-      start_period: 20s
-      interval: 30s
-      timeout: 5s
-      retries: 5
-
 volumes:
   ollama:
   openwebui:
@@ -749,7 +661,6 @@ volumes:
   mongodb:
   evolution:
   flowise:
-  openclaw-data:
   config-opencode:
   state-opencode:
   share-opencode:
@@ -982,7 +893,3 @@ services:
     hermes:
         <<: *hermes-base
         profiles: ["hermes"]
-
-    openclaw:
-        <<: *openclaw-base
-        profiles: ["openclaw"]

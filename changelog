@@ -1,4 +1,16 @@
-* commit a21c45141a1ce2f3c0d05eb5435a884cc240436e (HEAD -> develop, origin/develop)
+* commit 9f3d00e2d09e64fbb2b720dc8f1764a66ce6433f (HEAD -> develop, origin/develop)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Wed May 27 17:06:25 2026 -0400
+| 
+|     * rabbitmq
+| 
+* commit 9d8ec32402d691d7061d70b580e01e1a89185141
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Wed May 27 16:50:39 2026 -0400
+| 
+|     * changelog
+| 
+* commit a21c45141a1ce2f3c0d05eb5435a884cc240436e
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Wed May 27 16:50:26 2026 -0400
 | 

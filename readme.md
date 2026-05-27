@@ -22,7 +22,7 @@ Profiles you can run:
 * [Ollama](https://github.com/ollama/ollama) on Nvidia (--profile ollama-gpu)
     + Ollama on AMD64/ARM64 or AMD GPU (--profile ollama-cpu)
 * [Whisper](https://github.com/openai/whisper) on Nvidia (--profile whisper-gpu)
-    + Whisper on CPU (--profile whisper)
+    + Whisper on CPU AMD64/ARM64 (--profile whisper)
 * [Crawl4ai](https://github.com/unclecode/crawl4ai) on AMD64 (--profile crawl4ai-amd64)
     + Crawl4ai on ARM64 (--profile crawl4ai-arm64)
 * [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) on AMD64/ARM64 (--profile proxy)
@@ -30,9 +30,9 @@ Profiles you can run:
 * [MongoDB](https://www.mongodb.com) on AMD64 (--profile mongodb)
 * [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 (--profile evolutionapi)
 * [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 (--profile flowise)
-* [Opencode](https://github.com/anomalyco/opencode) on AMD64 (--profile opencode)
-* [OpenClaw](https://github.com/openclaw/openclaw) on AMD64 (--profile openclaw)
-* [hermes-agent](https://github.com/nousresearch/hermes-agent) on AMD64 (--profile hermes)
+* [Opencode](https://github.com/anomalyco/opencode) on AMD64/ARM64 (--profile opencode)
+* [OpenClaw](https://github.com/openclaw/openclaw) on AMD64/ARM64 (--profile openclaw)
+* [hermes-agent](https://github.com/nousresearch/hermes-agent) on AMD64/ARM64 (--profile hermes)
 
 
 | Name | Port | Example |

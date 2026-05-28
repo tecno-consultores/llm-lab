@@ -408,7 +408,7 @@ x-nvidia-base: &nvidia-base
           devices:
             - driver: nvidia
               count: all
-              capabilities: [gpu]
+              capabilities: [gpu, utility, video]
 
 x-proxy-base: &proxy-base
     image: jc21/nginx-proxy-manager:latest
@@ -624,6 +624,9 @@ x-hermes-base: &hermes-base
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - hermes:/opt/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    group_add:
+      - ${DOCKER_GID}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8642/health"]
       interval: 30s
@@ -791,7 +794,7 @@ services:
       profiles: ["ollama-gpu"]
       environment:
         - NVIDIA_VISIBLE_DEVICES=all
-        - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+        - NVIDIA_DRIVER_CAPABILITIES=all
         - OLLAMA_DEBUG=${OLLAMA_DEBUG}
         - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
         - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}
@@ -814,6 +817,8 @@ services:
         - ASR_MODEL=${ASR_MODEL}
         - ASR_ENGINE=${ASR_ENGINE}
         - MODEL_IDLE_TIMEOUT=300
+        - NVIDIA_VISIBLE_DEVICES=all
+        - NVIDIA_DRIVER_CAPABILITIES=all
 
     whisper:
       <<: *whisper-base
@@ -882,5 +887,5 @@ services:
         profiles: ["hermes"]
 
     rabbit:
-        <<: &rabbit-base
+        <<: *rabbit-base
         profiles: ["rabbit"]

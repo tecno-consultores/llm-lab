@@ -32,6 +32,7 @@ Profiles you can run:
 * [Opencode](https://github.com/anomalyco/opencode) on AMD64/ARM64 (--profile opencode)
 * [hermes-agent](https://github.com/nousresearch/hermes-agent) on AMD64/ARM64 (--profile hermes)
 * [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) on AMD64/ARM64 (--profile rabbit)
+* [Browserless](https://github.com/browserless/browserless) on AMD64/ARM64 (--profile browserless)
 
 | Name | Port | Example |
 | -------- | ------- | ------- |
@@ -48,6 +49,7 @@ Profiles you can run:
 | Hermes Agent API | 8642 | http://127.0.0.1:8642/v1 |
 | Rabbitmq broker | 5672 | http://127.0.0.1:5672 |
 | Rabbitmq management | 15672 | http://127.0.0.1:15672 |
+| Browserless | 3000 | http://127.0.0.1:3000 |
 
 To run N8N with OpenwebUI: 
 
@@ -89,6 +91,12 @@ docker exec -it hermes hermes model
 ```
 
 select **Custom endpoint** and put the following url: **http://ollama:11434/v1** When prompted for the apikey, leave it blank.
+
+* To stop and remove all containers use:
+
+```bash
+docker compose -f docker-compose.yml --env-file env.example --profile "*" down
+```
 
 ## Star History
 

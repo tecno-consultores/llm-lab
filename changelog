@@ -1,22 +1,124 @@
-* commit 9f3d00e2d09e64fbb2b720dc8f1764a66ce6433f (HEAD -> develop, origin/develop)
+* commit 377e63851a509f2673ee08f62cd1e49d168fa77a (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Wed May 27 17:06:25 2026 -0400
+| Date:   Sat May 30 14:17:49 2026 -0400
 | 
-|     * rabbitmq
+|     * bugfix
 | 
-* commit 9d8ec32402d691d7061d70b580e01e1a89185141
+* commit 790315a443c0b84ffaecb58a694e8a8ebe8fbdf8
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Wed May 27 16:50:39 2026 -0400
+| Date:   Sat May 30 14:14:48 2026 -0400
 | 
 |     * changelog
 | 
-* commit a21c45141a1ce2f3c0d05eb5435a884cc240436e
+* commit 5dc66cd9537e2eefec07175a021704c3aa297936
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Wed May 27 16:50:26 2026 -0400
+| Date:   Sat May 30 14:14:36 2026 -0400
 | 
-|     * openclaw removed
+|     * browserless
+| 
+* commit 8c2756f1143a1e72d6916d9bb5ba9e47fb305698
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 30 12:55:45 2026 -0400
+| 
+|     * changelog
+| 
+* commit bba6a960237e22652e7d821c893300fe25e68b1c
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 30 12:55:14 2026 -0400
+| 
+|     * se agrega key a searxng
+| 
+* commit b63b49fdf400ae6f47492383ac8378d2ff83f0ee
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 30 12:43:12 2026 -0400
+| 
+|     * changelog
+| 
+* commit 928b894844c58f71e4eb8578678ef47f14f6730e
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 30 12:42:49 2026 -0400
+| 
+|     * documentacion sobre usar lm-studio como motor de inferencia
 |     
-| *   commit 64f7001a33a6d21a3c43548137b481ec68e8390a (tag: v1.16.4, origin/main, origin/HEAD, main)
+| *   commit d926994c3f05ca919e982f04f189c3129ed97bc4 (origin/main, origin/HEAD, main)
+| |\  Merge: da37804 efde69a
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Fri May 29 21:28:41 2026 -0400
+| |   
+| |       Merge pull request #115 from tecno-consultores/develop
+| |       
+| |       * nueva imagen de opencode
+| | 
+* | commit efde69ac82464033ead92e2076b3a2ea7ac4d0f2
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri May 29 21:23:06 2026 -0400
+| | 
+| |     * nueva imagen de opencode
+| |   
+| *   commit da3780469b9024fd49dbc239c932caf1e7189f30
+| |\  Merge: 82eca38 fdcd5b6
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Thu May 28 17:17:30 2026 -0400
+| |   
+| |       Merge pull request #114 from tecno-consultores/develop
+| |       
+| |       * nvidia y docker
+| | 
+* | commit fdcd5b60493cf11f2b531c86eceb1178f0c6f4bd
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu May 28 17:14:55 2026 -0400
+| | 
+| |     * nvidia y docker
+| |   
+| *   commit 82eca388a0e17f1182cfaa674c17cca18bf9535f
+| |\  Merge: 712012d c9527aa
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Wed May 27 17:14:59 2026 -0400
+| |   
+| |       Merge pull request #113 from tecno-consultores/develop
+| |       
+| |       * bugfix
+| | 
+* | commit c9527aaedadb6be318bdcaa00bf3f0d037618015
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed May 27 17:13:22 2026 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit 712012d7df1eecf9300747f3b90605e4d20224fd (tag: v1.17.0)
+| |\  Merge: 64f7001 67df98b
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Wed May 27 17:10:21 2026 -0400
+| |   
+| |       Merge pull request #112 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 67df98baf1c523062de71ea9a8bd1fa8f5b8dff6
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed May 27 17:06:33 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 9f3d00e2d09e64fbb2b720dc8f1764a66ce6433f
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed May 27 17:06:25 2026 -0400
+| | 
+| |     * rabbitmq
+| | 
+* | commit 9d8ec32402d691d7061d70b580e01e1a89185141
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed May 27 16:50:39 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit a21c45141a1ce2f3c0d05eb5435a884cc240436e
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed May 27 16:50:26 2026 -0400
+| | 
+| |     * openclaw removed
+| |   
+| *   commit 64f7001a33a6d21a3c43548137b481ec68e8390a (tag: v1.16.4)
 | |\  Merge: 3b3825d 5344c69
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Wed May 27 15:11:07 2026 -0400

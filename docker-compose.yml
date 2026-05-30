@@ -98,7 +98,7 @@ x-openwebui-base: &openwebui-base
       - host.docker.internal:host-gateway
     volumes:
       - openwebui:/app/backend/data
-#    extra_hosts: #uncomment for docker model or ollama
+#    extra_hosts: #uncomment for docker model
 #      - "host.docker.internal:host-gateway"
     deploy:
       mode: global
@@ -240,7 +240,7 @@ x-n8n-base: &n8n-base
       - n8n_storage:/home/node/.n8n
       - n8n_backup:/backup
       - n8n_shared:/data/shared
-#    extra_hosts: #uncomment for docker model or ollama
+#    extra_hosts: #uncomment for docker model
 #      - "host.docker.internal:host-gateway"
     ulimits:
       nofile:
@@ -444,6 +444,7 @@ x-searxng-base: &searxng-base
       - ./searxng:/etc/searxng
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
+      - SEARXNG_SECRET=${SEARXNG_SECRET}
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
       - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS}
     cap_drop:
@@ -558,7 +559,7 @@ x-flowise-base: &flowise-base
       - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
     ports:
       - ${FPORT}:3000
-#    extra_hosts: #uncomment for docker model or ollama
+#    extra_hosts: #uncomment for docker model
 #      - "host.docker.internal:host-gateway"
     volumes:
       - flowise:/root/.flowise
@@ -600,7 +601,7 @@ x-hermes-base: &hermes-base
     container_name: ${hname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-    shm_size: '1gb'
+    shm_size: "1gb"
     command: gateway run # el siguiente comando para hermes cli por si cambian el path de la imagen /opt/hermes/.venv/bin/hermes
     environment:
       - PATH=/opt/data/.local/bin:/opt/hermes/.venv/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -638,6 +639,41 @@ x-hermes-base: &hermes-base
         limits:
           memory: 4G
 
+x-browserless-base: &browserless-base
+    image: browserless/chrome:latest
+    hostname: ${broname}
+    container_name: ${broname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - 3000:3000
+    shm_size: "2gb"
+    environment:
+      - TOKEN=${BROTOKEN}
+      - MAX_CONCURRENT_SESSIONS=5
+      - QUEUE_LENGTH=10
+      - DATA_DIR=/user_data
+      - TIMEOUT=30000
+      - PORT=3000
+      - ENABLE_CORS=true
+      - CORS_ALLOW_ORIGIN=*
+      - CORS_ALLOW_METHODS=all
+      - HEALTH=true
+      - TZ=${TIMEZONE}
+      - ALLOW_GET=true
+      - MAX_CPU_PERCENT=85
+      - MAX_MEMORY_PERCENT=85
+      - LOG_LEVEL=info
+      - LOG_FORMAT=json
+    volumes:
+      - browser_data:/user_data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:3000/pressure || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
 volumes:
   ollama:
   openwebui:
@@ -659,6 +695,7 @@ volumes:
   share-opencode:
   hermes:
   rabbitmq-lib:
+  browser_data:
 
 ################################################
 
@@ -889,3 +926,8 @@ services:
     rabbit:
         <<: *rabbit-base
         profiles: ["rabbit"]
+
+    browserless:
+        <<: *browserless-base
+        profiles: ["browserless"]
+

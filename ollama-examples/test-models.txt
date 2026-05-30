@@ -1,9 +1,0 @@
-inferencia:
-qwen3.5:9b
-hermes3:8b
-
-coding:
-qwen3.5:9b
-
-embed:
-nomic-embed-text-v2-moe

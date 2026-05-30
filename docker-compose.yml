@@ -98,7 +98,7 @@ x-openwebui-base: &openwebui-base
       - host.docker.internal:host-gateway
     volumes:
       - openwebui:/app/backend/data
-#    extra_hosts: #uncomment for docker model or ollama
+#    extra_hosts: #uncomment for docker model
 #      - "host.docker.internal:host-gateway"
     deploy:
       mode: global
@@ -134,7 +134,6 @@ x-openai-bridge: &openai-bridge
       - AUTO_DISCOVERY_TAG=n8n-openai-bridge
       - AUTO_DISCOVERY_POLL_INTERVAL=300
       - ENABLE_TASK_DETECTION=false #Set to 'true' to enable (default false)
-      - N8N_TIMEOUT=300000 # n8n webhook request timeout (default 5 minutes)
       - SERVER_TIMEOUT=300000 # HTTP server request timeout (default 5 minutes)
       - SERVER_KEEP_ALIVE_TIMEOUT=120000 # Keep-alive connection timeout (default 2 minutes)
       - SERVER_HEADERS_TIMEOUT=121000 # Headers timeout (default 121 seconds)
@@ -240,7 +239,7 @@ x-n8n-base: &n8n-base
       - n8n_storage:/home/node/.n8n
       - n8n_backup:/backup
       - n8n_shared:/data/shared
-#    extra_hosts: #uncomment for docker model or ollama
+#    extra_hosts: #uncomment for docker model
 #      - "host.docker.internal:host-gateway"
     ulimits:
       nofile:
@@ -559,7 +558,7 @@ x-flowise-base: &flowise-base
       - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
     ports:
       - ${FPORT}:3000
-#    extra_hosts: #uncomment for docker model or ollama
+#    extra_hosts: #uncomment for docker model
 #      - "host.docker.internal:host-gateway"
     volumes:
       - flowise:/root/.flowise
@@ -601,7 +600,7 @@ x-hermes-base: &hermes-base
     container_name: ${hname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-    shm_size: '1gb'
+    shm_size: "1gb"
     command: gateway run # el siguiente comando para hermes cli por si cambian el path de la imagen /opt/hermes/.venv/bin/hermes
     environment:
       - PATH=/opt/data/.local/bin:/opt/hermes/.venv/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -639,6 +638,41 @@ x-hermes-base: &hermes-base
         limits:
           memory: 4G
 
+x-browserless-base: &browserless-base
+    image: browserless/chrome:latest
+    hostname: ${broname}
+    container_name: ${broname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - 3000:3000
+    shm_size: "2gb"
+    environment:
+      - TOKEN=${BROTOKEN}
+      - MAX_CONCURRENT_SESSIONS=5
+      - QUEUE_LENGTH=10
+      - DATA_DIR=/user_data
+      - TIMEOUT=30000
+      - PORT=3000
+      - ENABLE_CORS=true
+      - CORS_ALLOW_ORIGIN=*
+      - CORS_ALLOW_METHODS=all
+      - HEALTH=true
+      - TZ=${TIMEZONE}
+      - ALLOW_GET=true
+      - MAX_CPU_PERCENT=85
+      - MAX_MEMORY_PERCENT=85
+      - LOG_LEVEL=info
+      - LOG_FORMAT=json
+    volumes:
+      - browser_data:/user_data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:3000/pressure || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
 volumes:
   ollama:
   openwebui:
@@ -660,6 +694,7 @@ volumes:
   share-opencode:
   hermes:
   rabbitmq-lib:
+  browser_data:
 
 ################################################
 
@@ -890,3 +925,8 @@ services:
     rabbit:
         <<: *rabbit-base
         profiles: ["rabbit"]
+
+    browserless:
+        <<: *browserless-base
+        profiles: ["browserless"]
+

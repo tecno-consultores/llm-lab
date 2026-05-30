@@ -444,6 +444,7 @@ x-searxng-base: &searxng-base
       - ./searxng:/etc/searxng
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
+      - SEARXNG_SECRET=${SEARXNG_SECRET}
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
       - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS}
     cap_drop:

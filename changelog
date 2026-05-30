@@ -1,4 +1,16 @@
-* commit 928b894844c58f71e4eb8578678ef47f14f6730e (HEAD -> develop, origin/develop)
+* commit bba6a960237e22652e7d821c893300fe25e68b1c (HEAD -> develop, origin/develop)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 30 12:55:14 2026 -0400
+| 
+|     * se agrega key a searxng
+| 
+* commit b63b49fdf400ae6f47492383ac8378d2ff83f0ee
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat May 30 12:43:12 2026 -0400
+| 
+|     * changelog
+| 
+* commit 928b894844c58f71e4eb8578678ef47f14f6730e
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Sat May 30 12:42:49 2026 -0400
 | 

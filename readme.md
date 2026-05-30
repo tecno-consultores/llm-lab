@@ -60,7 +60,9 @@ To run N8N with OpenwebUI:
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
 ```
 
-To run the initial setup, run
+------
+
+To run hermes initial setup, run
 
 ```bash
 docker exec -it hermes hermes setup
@@ -78,7 +80,9 @@ And to run Hermes with the dashboard for terminal
 docker exec -it hermes hermes --tui
 ```
 
-to use OpenWebUI as UI for hermes:
+------
+
+To use OpenWebUI as UI for hermes:
 
 * Open Open WebUI in your browser.
 * Go to ⚙️ Admin Settings → Connections → OpenAI.
@@ -87,7 +91,9 @@ to use OpenWebUI as UI for hermes:
   + URL	http://hermes-ip:8642/v1
   + API Key: the apikey in the env.example file
 
-to connect hermes with ollama run:
+------
+
+To connect hermes with ollama run:
 
 ```bash
 docker exec -it hermes hermes model
@@ -95,7 +101,9 @@ docker exec -it hermes hermes model
 
 select **Custom endpoint** and put the following url: **http://ollama:11434/v1** When prompted for the apikey, leave it blank.
 
-* To stop and remove all containers use:
+------
+
+To stop and remove all containers use:
 
 ```bash
 docker compose -f docker-compose.yml --env-file env.example --profile "*" down

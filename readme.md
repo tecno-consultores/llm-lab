@@ -16,23 +16,26 @@ Profiles you can run:
     + N8N-worker on AMD64/ARM64 (--profile n8n-worker)
     + N8N-runner (code sandbox) on AMD64/ARM64 (--profile n8n-runner)
 * [Qdrant](https://github.com/qdrant/qdrant) on AMD64/ARM64 (--profile qdrant)
-* [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) on AMD64 (--profile openaibridge)
 * [OpenwebUI](https://github.com/open-webui/open-webui) on AMD64/ARM64 (--profile openwebui)
 * [Ollama](https://github.com/ollama/ollama) on Nvidia (--profile ollama-gpu)
     + Ollama on AMD64/ARM64 or AMD GPU (--profile ollama-cpu)
-* [Whisper](https://github.com/openai/whisper) on Nvidia (--profile whisper-gpu)
-    + Whisper on CPU AMD64/ARM64 (--profile whisper)
-* [Crawl4ai](https://github.com/unclecode/crawl4ai) on AMD64 (--profile crawl4ai-amd64)
-    + Crawl4ai on ARM64 (--profile crawl4ai-arm64)
-* [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) on AMD64/ARM64 (--profile proxy)
-* [Searxng](https://github.com/searxng/searxng) on AMD64/ARM64 (--profile searxng)
-* [MongoDB](https://www.mongodb.com) on AMD64 (--profile mongodb)
 * [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) on AMD64/ARM64 (--profile evolutionapi)
 * [Flowise](https://github.com/flowiseai/flowise) on AMD64/ARM64 (--profile flowise)
 * [Opencode](https://github.com/anomalyco/opencode) on AMD64/ARM64 (--profile opencode)
 * [hermes-agent](https://github.com/nousresearch/hermes-agent) on AMD64/ARM64 (--profile hermes)
-* [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) on AMD64/ARM64 (--profile rabbit)
+
+Complementary services:
+
+* [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) on AMD64 (--profile openaibridge)
+* [Whisper](https://github.com/openai/whisper) on Nvidia (--profile whisper-gpu)
+    + Whisper on CPU AMD64/ARM64 (--profile whisper)
+* [Crawl4ai](https://github.com/unclecode/crawl4ai) on AMD64 (--profile crawl4ai-amd64)
+    + Crawl4ai on ARM64 (--profile crawl4ai-arm64)
+* [Searxng](https://github.com/searxng/searxng) on AMD64/ARM64 (--profile searxng)
 * [Browserless](https://github.com/browserless/browserless) on AMD64/ARM64 (--profile browserless)
+* [MongoDB](https://www.mongodb.com) on AMD64 (--profile mongodb)
+* [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) on AMD64/ARM64 (--profile rabbit)
+* [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) on AMD64/ARM64 (--profile proxy)
 
 | Name | Port | Example |
 | -------- | ------- | ------- |

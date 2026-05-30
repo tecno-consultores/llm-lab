@@ -49,8 +49,8 @@ x-openwebui-base: &openwebui-base
       - DEFAULT_USER_ROLE=pending
       - DEFAULT_LOCALE=es
       - AIOHTTP_CLIENT_TIMEOUT=1000
-      - ENABLE_OLLAMA_API=false #change to true to use directly with ollama
-      #- OLLAMA_BASE_URL=${UOLLAMA} uncomment to use with ollama
+      - ENABLE_OLLAMA_API=false # change to true to use directly with ollama
+      #- OLLAMA_BASE_URL=${UOLLAMA} # uncomment to use with ollama
       - ENABLE_OPENAI_API=${ENABLE_OPENAI_API}
       - OPENAI_API_BASE_URL=${OPENAI_API_BASE_URL}
       - ENABLE_AUTOCOMPLETE_GENERATION=false
@@ -98,7 +98,7 @@ x-openwebui-base: &openwebui-base
       - host.docker.internal:host-gateway
     volumes:
       - openwebui:/app/backend/data
-#    extra_hosts: #uncomment for docker model
+#    extra_hosts: # uncomment for docker model
 #      - "host.docker.internal:host-gateway"
     deploy:
       mode: global
@@ -240,7 +240,7 @@ x-n8n-base: &n8n-base
       - n8n_storage:/home/node/.n8n
       - n8n_backup:/backup
       - n8n_shared:/data/shared
-#    extra_hosts: #uncomment for docker model
+#    extra_hosts: # uncomment for docker model
 #      - "host.docker.internal:host-gateway"
     ulimits:
       nofile:
@@ -295,7 +295,7 @@ x-postgres-base: &postgres-base
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
       - TZ=${TIMEZONE}
-#    ports: #uncomment to expose port
+#    ports: # uncomment to expose port
 #      - ${POSTGRESDB_PORT}:5432
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
@@ -317,7 +317,7 @@ x-redis-base: &redis-base
       - REDIS_ARGS=--save 20 3
       - TZ=${TIMEZONE}
     ports:
-#      - ${REDIS_PORT}:6379 #uncomment to expose port
+#      - ${REDIS_PORT}:6379 # uncomment to expose port
       - ${INSIGHT_PORT}:8001
     volumes:
       - redis:/data
@@ -338,7 +338,7 @@ x-qdrant-base: &qdrant-base
       - QDRANT__SERVICE__GRPC_PORT=6334
       - QDRANT__LOG_LEVEL=INFO
       - TZ=${TIMEZONE}
-#    ports: #uncomment to expose port
+#    ports: # uncomment to expose port
 #      - ${qdrant}:6333
 #      - 6334:6334
     volumes:
@@ -465,7 +465,7 @@ x-mongodb-base: &mongodb-base
     container_name: ${mhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-#    ports: #uncomment to expose port
+#    ports: # uncomment to expose port
 #      - ${mongoport}:8081
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
@@ -559,7 +559,7 @@ x-flowise-base: &flowise-base
       - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
     ports:
       - ${FPORT}:3000
-#    extra_hosts: #uncomment for docker model
+#    extra_hosts: # uncomment for docker model
 #      - "host.docker.internal:host-gateway"
     volumes:
       - flowise:/root/.flowise
@@ -645,11 +645,11 @@ x-browserless-base: &browserless-base
     container_name: ${broname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-    ports:
-      - 3000:3000
+#    ports: # uncomment to expose port
+#      - 3000:3000 # uncomment to expose port
     shm_size: "2gb"
     environment:
-      - TOKEN=${BROTOKEN}
+#      - TOKEN=${BROTOKEN} # uncomment to expose service
       - MAX_CONCURRENT_SESSIONS=5
       - QUEUE_LENGTH=10
       - DATA_DIR=/user_data

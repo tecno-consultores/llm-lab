@@ -134,6 +134,7 @@ x-openai-bridge: &openai-bridge
       - AUTO_DISCOVERY_TAG=n8n-openai-bridge
       - AUTO_DISCOVERY_POLL_INTERVAL=300
       - ENABLE_TASK_DETECTION=false #Set to 'true' to enable (default false)
+      - N8N_TIMEOUT=300000 # n8n webhook request timeout (default 5 minutes)
       - SERVER_TIMEOUT=300000 # HTTP server request timeout (default 5 minutes)
       - SERVER_KEEP_ALIVE_TIMEOUT=120000 # Keep-alive connection timeout (default 2 minutes)
       - SERVER_HEADERS_TIMEOUT=121000 # Headers timeout (default 121 seconds)

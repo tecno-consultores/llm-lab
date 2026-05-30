@@ -1,46 +1,79 @@
-* commit 377e63851a509f2673ee08f62cd1e49d168fa77a (HEAD -> develop, origin/develop)
+* commit ef90f1ec08174046aa8cd9348dd6c98e9a5feb5a (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 30 14:17:49 2026 -0400
+| Date:   Sat May 30 15:40:25 2026 -0400
 | 
-|     * bugfix
+|     * multiple readme
 | 
-* commit 790315a443c0b84ffaecb58a694e8a8ebe8fbdf8
+* commit 283a1922252b8a481cd3bb38898dfe9b24c3bc99
+| Author: Sinfallas <sinfallas@gmail.com>
+| Date:   Sat May 30 15:20:35 2026 -0400
+| 
+|     Update readme.md
+| 
+* commit c90d786c7e41464aed1263fbaf81ea1bfbbbe64b
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 30 14:14:48 2026 -0400
+| Date:   Sat May 30 15:08:01 2026 -0400
 | 
-|     * changelog
-| 
-* commit 5dc66cd9537e2eefec07175a021704c3aa297936
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 30 14:14:36 2026 -0400
-| 
-|     * browserless
-| 
-* commit 8c2756f1143a1e72d6916d9bb5ba9e47fb305698
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 30 12:55:45 2026 -0400
-| 
-|     * changelog
-| 
-* commit bba6a960237e22652e7d821c893300fe25e68b1c
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 30 12:55:14 2026 -0400
-| 
-|     * se agrega key a searxng
-| 
-* commit b63b49fdf400ae6f47492383ac8378d2ff83f0ee
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 30 12:43:12 2026 -0400
-| 
-|     * changelog
-| 
-* commit 928b894844c58f71e4eb8578678ef47f14f6730e
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 30 12:42:49 2026 -0400
-| 
-|     * documentacion sobre usar lm-studio como motor de inferencia
+|     * mejoras al readme
 |     
-| *   commit d926994c3f05ca919e982f04f189c3129ed97bc4 (origin/main, origin/HEAD, main)
+| *   commit bd0d604aeac649c93cf0886eec575334947a6f8f (origin/main, origin/HEAD, main)
+| |\  Merge: d926994 9c0075b
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat May 30 14:19:02 2026 -0400
+| |   
+| |       Merge pull request #116 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 9c0075b1b28a551d3a0cbdb398f3565f88e2c145
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 14:17:55 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 377e63851a509f2673ee08f62cd1e49d168fa77a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 14:17:49 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit 790315a443c0b84ffaecb58a694e8a8ebe8fbdf8
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 14:14:48 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 5dc66cd9537e2eefec07175a021704c3aa297936
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 14:14:36 2026 -0400
+| | 
+| |     * browserless
+| | 
+* | commit 8c2756f1143a1e72d6916d9bb5ba9e47fb305698
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 12:55:45 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit bba6a960237e22652e7d821c893300fe25e68b1c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 12:55:14 2026 -0400
+| | 
+| |     * se agrega key a searxng
+| | 
+* | commit b63b49fdf400ae6f47492383ac8378d2ff83f0ee
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 12:43:12 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 928b894844c58f71e4eb8578678ef47f14f6730e
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 12:42:49 2026 -0400
+| | 
+| |     * documentacion sobre usar lm-studio como motor de inferencia
+| |   
+| *   commit d926994c3f05ca919e982f04f189c3129ed97bc4
 | |\  Merge: da37804 efde69a
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Fri May 29 21:28:41 2026 -0400

@@ -50,7 +50,7 @@ x-openwebui-base: &openwebui-base
       - DEFAULT_LOCALE=es
       - AIOHTTP_CLIENT_TIMEOUT=1000
       - ENABLE_OLLAMA_API=false # change to true to use directly with ollama
-      #- OLLAMA_BASE_URL=${UOLLAMA} # uncomment to use with ollama
+#      - OLLAMA_BASE_URL=${UOLLAMA} # uncomment to use with ollama
       - ENABLE_OPENAI_API=${ENABLE_OPENAI_API}
       - OPENAI_API_BASE_URL=${OPENAI_API_BASE_URL}
       - ENABLE_AUTOCOMPLETE_GENERATION=false
@@ -128,12 +128,12 @@ x-openai-bridge: &openai-bridge
       - USER_ROLE_HEADERS=X-User-Role,X-OpenWebUI-User-Role
       - REQUEST_BODY_LIMIT=50mb
       - MODELS_POLL_INTERVAL=3 #File polling interval in seconds (default 1)
-      - N8N_BASE_URL=http://n8n:5678/
+      - N8N_BASE_URL=http://${nhostname}:${N8N_PORT}/
       - N8N_API_BEARER_TOKEN=${napi}
       - MODEL_LOADER_TYPE=n8n-api
       - AUTO_DISCOVERY_TAG=n8n-openai-bridge
       - AUTO_DISCOVERY_POLL_INTERVAL=300
-      - ENABLE_TASK_DETECTION=false #Set to 'true' to enable (default false)
+      - ENABLE_TASK_DETECTION=false # Set to 'true' to enable (default false)
       - N8N_TIMEOUT=300000 # n8n webhook request timeout (default 5 minutes)
       - SERVER_TIMEOUT=300000 # HTTP server request timeout (default 5 minutes)
       - SERVER_KEEP_ALIVE_TIMEOUT=120000 # Keep-alive connection timeout (default 2 minutes)
@@ -576,15 +576,15 @@ x-opencode-base: &opencode-base
     tty: true
     environment:
       - TZ=${TIMEZONE}
-      - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME} # comment to use in conjunction with Hermes
-      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # comment to use in conjunction with Hermes
-      #- OPENAI_BASE_URL=https://openrouter.ai/api/v1 # for use with openrouter
-      #- OPENAI_API_KEY=${OPENROUTER_API_KEY} # for use with openrouter
-      #- OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
-      #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-      #- GEMINI_API_KEY=${GEMINI_API_KEY}
-    ports:
-      - ${OCPORT}:4096
+#      - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME} # uncomment to enable user and password
+#      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # uncomment to enable user and password
+#      - OPENAI_BASE_URL=https://openrouter.ai/api/v1 # for use with openrouter
+#      - OPENAI_API_KEY=${OPENROUTER_API_KEY} # for use with openrouter
+#      - OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
+#      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+#      - GEMINI_API_KEY=${GEMINI_API_KEY}
+#    ports: # uncomment to expose port
+#      - ${OCPORT}:${OCPORT} # uncomment to expose port
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
@@ -593,7 +593,13 @@ x-opencode-base: &opencode-base
       - state-opencode:/root/.local/state/opencode
       - share-opencode:/root/.local/share/opencode
     working_dir: /workspace
-    entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0"]
+    entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0 --port ${OCPORT}"]
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:4096/global/health > /dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
 
 x-hermes-base: &hermes-base
     image: nousresearch/hermes-agent:latest
@@ -615,9 +621,9 @@ x-hermes-base: &hermes-base
       - API_SERVER_PORT=${hapiport}
       - API_SERVER_HOST=0.0.0.0
       - OPENCODE_URL=http://${codehostname}:${OCPORT}
-      #- ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-      #- OPENAI_API_KEY=${OPENAI_API_KEY}
-      #- TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+#      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+#      - OPENAI_API_KEY=${OPENAI_API_KEY}
+#      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
     ports:
       - ${hapiport}:${hapiport} # gateway API
       - ${hdport}:${hdport} # dashboard port
@@ -626,10 +632,11 @@ x-hermes-base: &hermes-base
       - /etc/localtime:/etc/localtime:ro
       - hermes:/opt/data
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./opencode-workspace:/workspace
     group_add:
       - ${DOCKER_GID}
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8642/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:${hapiport}/health"]
       interval: 30s
       timeout: 10s
       retries: 5

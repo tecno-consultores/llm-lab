@@ -567,6 +567,7 @@ x-flowise-base: &flowise-base
       - /etc/localtime:/etc/localtime:ro
 
 x-opencode-base: &opencode-base
+#    image: ghcr.io/anomalyco/opencode:latest
     image: sinfallas/opencode:latest
     hostname: ${codehostname}
     container_name: ${codehostname}

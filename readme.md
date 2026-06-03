@@ -37,22 +37,22 @@ Complementary services:
 * [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) on AMD64/ARM64 (--profile rabbit)
 * [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) on AMD64/ARM64 (--profile proxy)
 
-| Name | Port | Example |
-| -------- | ------- | ------- |
-| N8N | 5678 | http://127.0.0.1:5678 |
-| Qdrant | 6333 | http://127.0.0.1:6333/dashboard |
-| OpenwebUI | 8383 | http://127.0.0.1:8383 |
-| NGINX proxy manager | 81 | http://127.0.0.1:81 |
-| Searxng | 8181 | http://127.0.0.1:8181 |
-| EvolutionAPI | 9191 | http://127.0.0.1:9191/manager |
-| Flowise | 3001 | http://127.0.0.1:3001 |
-| Opencode | 4096 | http://127.0.0.1:4096 |
-| Redis Insight | 8001 | http://127.0.0.1:8001 |
-| Hermes Agent Dashboard | 9119 | http://127.0.0.1:9119 |
-| Hermes Agent API | 8642 | http://127.0.0.1:8642/v1 |
-| Rabbitmq broker | 5672 | http://127.0.0.1:5672 |
-| Rabbitmq management | 15672 | http://127.0.0.1:15672 |
-| Browserless | 3000 | http://127.0.0.1:3000 |
+| Name | healthcheck| Port | Example |
+| -------- | ------- | ------- | ------- |
+| N8N | yes | 5678 | http://127.0.0.1:5678 |
+| Qdrant | | 6333 | http://127.0.0.1:6333/dashboard |
+| OpenwebUI | yes | 8383 | http://127.0.0.1:8383 |
+| NGINX proxy manager | yes | 81 | http://127.0.0.1:81 |
+| Searxng | yes | 8181 | http://127.0.0.1:8181 |
+| EvolutionAPI | | 9191 | http://127.0.0.1:9191/manager |
+| Flowise | yes | 3001 | http://127.0.0.1:3001 |
+| Opencode | yes | 4096 | http://127.0.0.1:4096 |
+| Redis Insight | yes | 8001 | http://127.0.0.1:8001 |
+| Hermes Agent Dashboard | yes | 9119 | http://127.0.0.1:9119 |
+| Hermes Agent API | yes | 8642 | http://127.0.0.1:8642/v1 |
+| Rabbitmq broker | | 5672 | http://127.0.0.1:5672 |
+| Rabbitmq management | | 15672 | http://127.0.0.1:15672 |
+| Browserless | yes | 3000 | http://127.0.0.1:3000 |
 
 To run N8N with OpenwebUI: 
 

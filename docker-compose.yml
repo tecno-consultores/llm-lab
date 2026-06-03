@@ -447,7 +447,8 @@ x-searxng-base: &searxng-base
       - SEARXNG_SECRET=${SEARXNG_SECRET}
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
       - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS}
-      SEARXNG_SETTINGS: |
+      - |
+        SEARXNG_SETTINGS=
         search:
           formats:
             - html

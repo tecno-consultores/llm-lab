@@ -44,7 +44,7 @@ Complementary services:
 | OpenwebUI | yes | 8383 | http://127.0.0.1:8383 |
 | NGINX proxy manager | yes | 81 | http://127.0.0.1:81 |
 | Searxng | yes | 8181 | http://127.0.0.1:8181 |
-| EvolutionAPI | | 9191 | http://127.0.0.1:9191/manager |
+| EvolutionAPI | yes | 9191 | http://127.0.0.1:9191/manager |
 | Flowise | yes | 3001 | http://127.0.0.1:3001 |
 | Opencode | yes | 4096 | http://127.0.0.1:4096 |
 | Redis Insight | yes | 8001 | http://127.0.0.1:8001 |

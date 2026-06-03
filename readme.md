@@ -53,6 +53,8 @@ Complementary services:
 | Rabbitmq broker | | 5672 | http://127.0.0.1:5672 |
 | Rabbitmq management | | 15672 | http://127.0.0.1:15672 |
 | Browserless | yes | 3000 | http://127.0.0.1:3000 |
+| Whisper | | 9000 | http://127.0.0.1:9000 |
+| Crawl4ai | yes | 11235 | http://127.0.0.1:11235 |
 
 To run N8N with OpenwebUI: 
 

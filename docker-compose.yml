@@ -343,6 +343,12 @@ x-qdrant-base: &qdrant-base
 #      - 6334:6334
     volumes:
       - qdrant:/qdrant/storage
+    healthcheck:
+      test: ["CMD", "./qdrant", "-V"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
 
 x-rabbit-base: &rabbit-base
     image: rabbitmq:management

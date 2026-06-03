@@ -40,7 +40,7 @@ Complementary services:
 | Name | healthcheck| Port | Example |
 | -------- | ------- | ------- | ------- |
 | N8N | yes | 5678 | http://127.0.0.1:5678 |
-| Qdrant | | 6333 | http://127.0.0.1:6333/dashboard |
+| Qdrant | yes | 6333 | http://127.0.0.1:6333/dashboard |
 | OpenwebUI | yes | 8383 | http://127.0.0.1:8383 |
 | NGINX proxy manager | yes | 81 | http://127.0.0.1:81 |
 | Searxng | yes | 8181 | http://127.0.0.1:8181 |

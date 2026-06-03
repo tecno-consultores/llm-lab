@@ -538,6 +538,12 @@ x-evolution-base: &evolution-base
       - ${evoport}:8080
     volumes:
       - evolution:/evolution/instances
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:8080/"]
+      interval: 15s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
     deploy:
       mode: global
       restart_policy:

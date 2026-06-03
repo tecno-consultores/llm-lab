@@ -447,6 +447,11 @@ x-searxng-base: &searxng-base
       - SEARXNG_SECRET=${SEARXNG_SECRET}
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
       - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS}
+      SEARXNG_SETTINGS: |
+        search:
+          formats:
+            - html
+            - json
     cap_drop:
       - ALL
     cap_add:
@@ -458,6 +463,12 @@ x-searxng-base: &searxng-base
       options:
         max-size: "1m"
         max-file: "1"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://127.0.0.1:8080/healthz || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
 
 x-mongodb-base: &mongodb-base
     image: mongo:latest
@@ -565,6 +576,12 @@ x-flowise-base: &flowise-base
       - flowise:/root/.flowise
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/api/v1/ping || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
 x-opencode-base: &opencode-base
 #    image: ghcr.io/anomalyco/opencode:latest

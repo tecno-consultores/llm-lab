@@ -384,9 +384,6 @@ x-crawl4ai-base: &crawl4ai-base
     restart: ${restart}
     ports:
       - ${CRAW1}:11235
-      - ${CRAW2}:8000
-      - ${CRAW3}:9222
-      - ${CRAW4}:8080
     volumes:
       - /dev/shm:/dev/shm
     environment:

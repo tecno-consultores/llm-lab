@@ -594,8 +594,8 @@ x-flowise-base: &flowise-base
       start_period: 40s
 
 x-opencode-base: &opencode-base
-#    image: ghcr.io/anomalyco/opencode:latest
-    image: sinfallas/opencode:latest
+    image: ghcr.io/anomalyco/opencode:latest
+#    image: sinfallas/opencode:latest
     hostname: ${codehostname}
     container_name: ${codehostname}
     pull_policy: ${pull_policy}
@@ -611,8 +611,8 @@ x-opencode-base: &opencode-base
 #      - OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - GEMINI_API_KEY=${GEMINI_API_KEY}
-#    ports: # uncomment to expose port
-#      - ${OCPORT}:${OCPORT} # uncomment to expose port
+    ports: # comment to hide port
+      - ${OCPORT}:${OCPORT} # comment to hide port
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
@@ -642,16 +642,26 @@ x-hermes-base: &hermes-base
       - HERMES_DASHBOARD=1
       - HERMES_DASHBOARD_HOST=0.0.0.0
       - HERMES_DASHBOARD_PORT=${hdport}
+      - HERMES_LOCAL_STT_LANGUAGE=es
       - TZ=${TIMEZONE}
+      - HERMES_TIMEZONE=${TIMEZONE}
       - HERMES_DASHBOARD_TUI=1
       - API_SERVER_ENABLED=true
       - API_SERVER_KEY=${hapikey}
       - API_SERVER_PORT=${hapiport}
       - API_SERVER_HOST=0.0.0.0
       - OPENCODE_URL=http://${codehostname}:${OCPORT}
+      - SEARXNG_URL=http://searxng-ip:8189/
+      - TERMINAL_ENV=local
+      - HERMES_DASHBOARD_BASIC_AUTH_USERNAME=${huser}
+      - HERMES_DASHBOARD_BASIC_AUTH_PASSWORD=${hpass}
+      - HERMES_DASHBOARD_PUBLIC_URL=https://hermes.example.com #change me
+      - HERMES_QUIET=true
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - OPENAI_API_KEY=${OPENAI_API_KEY}
 #      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+#      - HERMES_OPENROUTER_CACHE=true
+#      - NVIDIA_API_KEY=jhvkjhvkjhvkj
     ports:
       - ${hapiport}:${hapiport} # gateway API
       - ${hdport}:${hdport} # dashboard port

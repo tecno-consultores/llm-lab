@@ -301,7 +301,7 @@ x-postgres-base: &postgres-base
       - ./init:/docker-entrypoint-initdb.d:ro
       - postgres:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
+      test: ['CMD-SHELL', 'pg_isready -h 127.0.0.1 -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
       start_period: 5s
       interval: 5s
       timeout: 5s
@@ -382,17 +382,14 @@ x-crawl4ai-base: &crawl4ai-base
     container_name: ${crawhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-    ports:
-      - ${CRAW1}:11235
-      - ${CRAW2}:8000
-      - ${CRAW3}:9222
-      - ${CRAW4}:8080
+#    ports: # uncomment to expose port
+#      - ${CRAW1}:11235 # uncomment to expose port
     volumes:
       - /dev/shm:/dev/shm
     environment:
       - CRAWL4AI_API_TOKEN=${CRAWL4AI_API_TOKEN}
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - CLAUDE_API_KEY=${CLAUDE_API_KEY}
+#      - OPENAI_API_KEY=${OPENAI_API_KEY}
+#      - CLAUDE_API_KEY=${CLAUDE_API_KEY}
     deploy:
       resources:
         limits:
@@ -400,7 +397,7 @@ x-crawl4ai-base: &crawl4ai-base
         reservations:
           memory: 1G
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:11235/health"]
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:11235/health"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -446,25 +443,15 @@ x-searxng-base: &searxng-base
     restart: ${restart}
     ports:
       - ${psearch}:8080
-    volumes:
-      - ./searxng:/etc/searxng
     environment:
-      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
+#      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/
+      - SEARXNG_LIMITER=false
       - SEARXNG_SECRET=${SEARXNG_SECRET}
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
       - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS}
-      - |
-        SEARXNG_SETTINGS=
-        search:
-          formats:
-            - html
-            - json
-    cap_drop:
-      - ALL
-    cap_add:
-      - CHOWN
-      - SETGID
-      - SETUID
+    configs:
+      - source: searxng_inline_settings
+        target: /etc/searxng/settings.yml
     logging:
       driver: "json-file"
       options:
@@ -590,15 +577,15 @@ x-flowise-base: &flowise-base
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/api/v1/ping || exit 1"]
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/api/v1/ping || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
 
 x-opencode-base: &opencode-base
-#    image: ghcr.io/anomalyco/opencode:latest
-    image: sinfallas/opencode:latest
+    image: ghcr.io/anomalyco/opencode:latest
+#    image: sinfallas/opencode:latest
     hostname: ${codehostname}
     container_name: ${codehostname}
     pull_policy: ${pull_policy}
@@ -614,8 +601,8 @@ x-opencode-base: &opencode-base
 #      - OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - GEMINI_API_KEY=${GEMINI_API_KEY}
-#    ports: # uncomment to expose port
-#      - ${OCPORT}:${OCPORT} # uncomment to expose port
+    ports: # comment to hide port
+      - ${OCPORT}:${OCPORT} # comment to hide port
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
@@ -645,16 +632,29 @@ x-hermes-base: &hermes-base
       - HERMES_DASHBOARD=1
       - HERMES_DASHBOARD_HOST=0.0.0.0
       - HERMES_DASHBOARD_PORT=${hdport}
+      - HERMES_LOCAL_STT_LANGUAGE=es
       - TZ=${TIMEZONE}
+      - HERMES_TIMEZONE=${TIMEZONE}
       - HERMES_DASHBOARD_TUI=1
       - API_SERVER_ENABLED=true
       - API_SERVER_KEY=${hapikey}
       - API_SERVER_PORT=${hapiport}
       - API_SERVER_HOST=0.0.0.0
-      - OPENCODE_URL=http://${codehostname}:${OCPORT}
+      - TERMINAL_ENV=local
+      - HERMES_DASHBOARD_BASIC_AUTH_USERNAME=${huser}
+      - HERMES_DASHBOARD_BASIC_AUTH_PASSWORD=${hpass}
+      - HERMES_DASHBOARD_PUBLIC_URL=https://hermes.example.com #change me
+      - HERMES_QUIET=true
+      - opencode_url=http://${codehostname}:${OCPORT}
+      - searxng_url=http://${searxnghostname}:8080/
+      - browserless_url=http://${broname}:3000
+      - browserless_token=${BROTOKEN}
+      - crawl4ai_url=http://${crawhostname}:${CRAW1}
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - OPENAI_API_KEY=${OPENAI_API_KEY}
 #      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+#      - HERMES_OPENROUTER_CACHE=true
+#      - NVIDIA_API_KEY=jhvkjhvkjhvkj
     ports:
       - ${hapiport}:${hapiport} # gateway API
       - ${hdport}:${hdport} # dashboard port
@@ -667,7 +667,7 @@ x-hermes-base: &hermes-base
     group_add:
       - ${DOCKER_GID}
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${hapiport}/health"]
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:${hapiport}/health"]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -687,7 +687,7 @@ x-browserless-base: &browserless-base
 #      - 3000:3000 # uncomment to expose port
     shm_size: "2gb"
     environment:
-#      - TOKEN=${BROTOKEN} # uncomment to expose service
+#      - TOKEN=${BROTOKEN}
       - MAX_CONCURRENT_SESSIONS=5
       - QUEUE_LENGTH=10
       - DATA_DIR=/user_data
@@ -706,7 +706,8 @@ x-browserless-base: &browserless-base
     volumes:
       - browser_data:/user_data
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:3000/pressure || exit 1"]
+      test: ["CMD-SHELL", "curl -sf http://127.0.0.1:3000/pressure || exit 1"]
+#      test: ["CMD-SHELL", "curl -sf http://127.0.0.1:3000/pressure?token=${BROTOKEN} || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -734,6 +735,15 @@ volumes:
   hermes:
   rabbitmq-lib:
   browser_data:
+
+configs:
+  searxng_inline_settings:
+    content: |
+      use_default_settings: true
+      search:
+        formats:
+          - html
+          - json
 
 ################################################
 

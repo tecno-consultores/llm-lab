@@ -1,22 +1,177 @@
-* commit ef90f1ec08174046aa8cd9348dd6c98e9a5feb5a (HEAD -> develop, origin/develop)
+* commit 888680e6376c86d0702b4aeff267267585a7205b (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 30 15:40:25 2026 -0400
+| Date:   Sun Jun 7 15:22:22 2026 -0400
 | 
-|     * multiple readme
+|     * multiple bugfixes
 | 
-* commit 283a1922252b8a481cd3bb38898dfe9b24c3bc99
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Sat May 30 15:20:35 2026 -0400
-| 
-|     Update readme.md
-| 
-* commit c90d786c7e41464aed1263fbaf81ea1bfbbbe64b
+* commit 86e49f9c505930e1ec4e3d3e7ce3a9f5d8cdc2e7
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat May 30 15:08:01 2026 -0400
+| Date:   Sat Jun 6 18:36:07 2026 -0400
 | 
-|     * mejoras al readme
+|     * changelog
+| 
+* commit 63db27a4e97e804c148994d681ce4ff900c84927
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Jun 6 18:35:52 2026 -0400
+| 
+|     * hermes tweaks
+| 
+* commit 30e8fa57250eabdcdc96395380cb56a41ab60136
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Wed Jun 3 20:08:25 2026 -0400
+| 
+|     * changelog
+| 
+* commit b4a6e732970404f052abbf54b0e96d728774da6a
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Wed Jun 3 20:08:16 2026 -0400
+| 
+|     * bugfix
 |     
-| *   commit bd0d604aeac649c93cf0886eec575334947a6f8f (origin/main, origin/HEAD, main)
+| *   commit c068bde8096df67d37c0daa9f401772bfd7ac723 (origin/main, origin/HEAD, main)
+| |\  Merge: 76576a4 a18cd6b
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Wed Jun 3 15:29:40 2026 -0400
+| |   
+| |       Merge pull request #121 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit a18cd6bdf539570467b11e726155d728a7ef687b
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 15:26:01 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 61283efb1d79c27feeaa9db9170f42002082dca9
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 15:14:27 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 247d6b19574edbce395a32650e36f9ed315583bf
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 15:13:23 2026 -0400
+| | 
+| |     Update env.example
+| |   
+| *   commit 76576a4df4a4c834a05e1972209aeb817545cbe8 (tag: v1.18.1)
+| |\  Merge: 519eb6f 3dfe400
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Wed Jun 3 14:33:24 2026 -0400
+| |   
+| |       Merge pull request #120 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 3dfe400a327e75edcea2cfab30923ffd9fe2e7f7
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 14:32:07 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 5c1df0c9d5a619e094aa4a372c76ec19508597f0
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 14:31:47 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit d5aa050725fd5cd1117550682dde61a32dc7caab
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 14:24:00 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 4216c19cd21ee7b7fa9891db97466b3a49bbd494
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 14:23:38 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit 0842db77bd207246c723d04a05faeb1e030e879d
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 14:11:56 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit 4a6ccdf78a7a0f4230c2d606a49b30aaf6dbd74c
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 14:11:12 2026 -0400
+| | 
+| |     Add healthcheck column to service table in README
+| | 
+* | commit ca36466bac1eeb2db5b9fa3e8a0542ed13ed0fac
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 11:32:07 2026 -0400
+| | 
+| |     Enhance SEARXNG configuration in docker-compose
+| |     
+| |     Added healthcheck and settings for SEARXNG service.
+| |   
+| *   commit 519eb6fe250945957ce3178304142e76ac23fe23
+| |\  Merge: 2cb469c 5541182
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Tue Jun 2 11:06:08 2026 -0400
+| |   
+| |       Merge pull request #119 from tecno-consultores/develop
+| |       
+| |       Update docker-compose.yml
+| | 
+* | commit 5541182621e484c63b4817726f7c2d115064a82e
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Jun 2 11:05:27 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit 2cb469cad8cab0482d203c9711712fb2f89b623e
+| |\  Merge: c658de4 b087614
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon Jun 1 16:42:39 2026 -0400
+| |   
+| |       Merge pull request #118 from tecno-consultores/develop
+| |       
+| |       Update docker-compose.yml
+| | 
+* | commit b087614fdb32152613b0d0606dd217de723d802d
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 1 16:41:09 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit c658de4557a9c46db014f80e175fc5d628ba27a8 (tag: v1.18.0)
+| |\  Merge: bd0d604 f83c9d8
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat May 30 15:42:52 2026 -0400
+| |   
+| |       Merge pull request #117 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit f83c9d86418124e82e6478c7bc1a6b101d23557a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 15:40:36 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit ef90f1ec08174046aa8cd9348dd6c98e9a5feb5a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 15:40:25 2026 -0400
+| | 
+| |     * multiple readme
+| | 
+* | commit 283a1922252b8a481cd3bb38898dfe9b24c3bc99
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Sat May 30 15:20:35 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit c90d786c7e41464aed1263fbaf81ea1bfbbbe64b
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat May 30 15:08:01 2026 -0400
+| | 
+| |     * mejoras al readme
+| |   
+| *   commit bd0d604aeac649c93cf0886eec575334947a6f8f
 | |\  Merge: d926994 9c0075b
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sat May 30 14:19:02 2026 -0400

@@ -19,7 +19,7 @@ Profiles you can run:
 | N8N-runner (code sandbox) | Y | Y | | N8N | --profile n8n-runner |
 | [Qdrant](https://github.com/qdrant/qdrant) | Y | Y | | | --profile qdrant |
 | [OpenwebUI](https://github.com/open-webui/open-webui) | Y | Y | | postgres / redis | --profile openwebui |
-| [Ollama](https://github.com/ollama/ollama) | Y | N | Nvidia-gpu | nvidia | --profile ollama-gpu |
+| [Ollama](https://github.com/ollama/ollama) | Y | N | Nvidia-gpu | | --profile ollama-gpu |
 | Ollama | Y | Y | AMD-gpu | | --profile ollama-cpu |
 | [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) | Y | Y | |  postgres / redis | --profile evolutionapi |
 | [Flowise](https://github.com/flowiseai/flowise) | Y | Y | |  postgres / redis | --profile flowise |
@@ -31,8 +31,8 @@ Complementary services:
 | Project | AMD64 | ARM64 | Other | Depends on | Profile |
 | -------- | ------- | ------- | ------- | ------- | ------- |
 | [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) | Y | N | | openwebui / n8n | --profile openaibridge |
-| [Whisper](https://github.com/openai/whisper) | Y | N | Nvidia-gpu | nvidia | --profile whisper-gpu |
-| Whisper | Y | Y | Nvidia-gpu | nvidia | --profile whisper |
+| [Whisper](https://github.com/openai/whisper) | Y | N | Nvidia-gpu | | --profile whisper-gpu |
+| Whisper | Y | Y | Nvidia-gpu | | --profile whisper |
 | [Crawl4ai](https://github.com/unclecode/crawl4ai) | Y | N | | | --profile crawl4ai-amd64 |
 | Crawl4ai | N | Y | | | --profile crawl4ai-arm64 |
 | [Searxng](https://github.com/searxng/searxng) | Y | Y | | | --profile searxng |

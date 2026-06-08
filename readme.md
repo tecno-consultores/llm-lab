@@ -28,18 +28,20 @@ Profiles you can run:
 
 Complementary services:
 
-| Project | AMD64 | ARM64 | Other | Profile |
-| -------- | ------- | ------- | ------- | ------- |
-| [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) | Y | N | | --profile openaibridge |
-| [Whisper](https://github.com/openai/whisper) | Y | N | Nvidia-gpu | --profile whisper-gpu |
-| Whisper | Y | Y | | --profile whisper |
-| [Crawl4ai](https://github.com/unclecode/crawl4ai) | Y | N | | --profile crawl4ai-amd64 |
-| Crawl4ai | N | Y | | --profile crawl4ai-arm64 |
-| [Searxng](https://github.com/searxng/searxng) | Y | Y | | --profile searxng |
-| [Browserless](https://github.com/browserless/browserless) | Y | Y | | --profile browserless |
-| [MongoDB](https://www.mongodb.com) | Y | N | | --profile mongodb |
-| [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | Y | Y | | --profile rabbit |
-| [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | Y | Y | | --profile proxy |
+| Project | AMD64 | ARM64 | Other | Depends on | Profile |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) | Y | N | | openwebui / n8n | --profile openaibridge |
+| [Whisper](https://github.com/openai/whisper) | Y | N | Nvidia-gpu | nvidia | --profile whisper-gpu |
+| Whisper | Y | Y | Nvidia-gpu | nvidia | --profile whisper |
+| [Crawl4ai](https://github.com/unclecode/crawl4ai) | Y | N | | | --profile crawl4ai-amd64 |
+| Crawl4ai | N | Y | | | --profile crawl4ai-arm64 |
+| [Searxng](https://github.com/searxng/searxng) | Y | Y | | | --profile searxng |
+| [Browserless](https://github.com/browserless/browserless) | Y | Y | | | --profile browserless |
+| [MongoDB](https://www.mongodb.com) | Y | N | | | --profile mongodb |
+| [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | Y | Y | | | --profile rabbit |
+| [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | Y | Y | | | --profile proxy |
+| Postgres | Y | Y | | | --profile postgres |
+| Redis | Y | Y | | | --profile redis |
 
 Healthcheck and URLs 
 

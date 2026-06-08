@@ -1,16 +1,91 @@
-* commit 27699f307e15553c52d2ef550858092bb1fe0655 (HEAD -> develop, origin/develop)
+* commit a1715e0bdb19092c0181b7faae714bab0645edd7 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Mon Jun 8 00:00:22 2026 -0400
+| Date:   Mon Jun 8 19:47:54 2026 -0400
 | 
-|     * browserless
-| 
-* commit a73a79c72d5bed74e9537d1bc358901d2f883702
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Jun 7 23:44:59 2026 -0400
-| 
-|     * documentacion de servicios para hermes
+|     * archivos md
 |     
-| *   commit fe093f4e3a3633161dd1cc70ed9badbadb2d2929 (origin/main, origin/HEAD, main)
+| *   commit 2bb0130a1b926eb3166706eb83e105512fc6940c (origin/main, origin/HEAD, main)
+| |\  Merge: fe093f4 d9d731a
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon Jun 8 14:18:28 2026 -0400
+| |   
+| |       Merge pull request #123 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit d9d731a6348c29b39d89d0cd277a8877d2342c5b
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 14:17:17 2026 -0400
+| | 
+| |     Delete COPYING
+| | 
+* | commit f05be4d2b9b512e3a1df100239df63a51c1b0003
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 14:16:28 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 67364b1d9b461f662bac51c7b9beeb9bd1cd0b9d
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 14:16:06 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit fad444717682966ad546711fd3dfbf4ec3e98797
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 14:15:08 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 78b44132e9b7a1f2ac54c5870d88978c07c174c0
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 14:14:42 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit a95fb135a9bdf86e4b152ad410ea32fc4da0b01d
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 14:14:05 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 2facf5a12ce9160a0c0b2e753ebe49a7a3ee8379
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 14:08:56 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 49b875c7500966036742517d8e639b042e4d9795
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 14:00:52 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 4e90d411a4ad6b837604d9e59bd5e63c669961b8
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 13:59:53 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 3087fc5a6c88b78c93bfea1f31ff0be13b3dbdd9
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 00:00:33 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 27699f307e15553c52d2ef550858092bb1fe0655
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 00:00:22 2026 -0400
+| | 
+| |     * browserless
+| | 
+* | commit a73a79c72d5bed74e9537d1bc358901d2f883702
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 7 23:44:59 2026 -0400
+| | 
+| |     * documentacion de servicios para hermes
+| |   
+| *   commit fe093f4e3a3633161dd1cc70ed9badbadb2d2929
 | |\  Merge: c068bde 41c5d6f
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sun Jun 7 15:23:37 2026 -0400

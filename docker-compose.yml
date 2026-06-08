@@ -650,6 +650,7 @@ x-hermes-base: &hermes-base
       - browserless_url=http://${broname}:3000
       - browserless_token=${BROTOKEN}
       - crawl4ai_url=http://${crawhostname}:${CRAW1}
+      - crawl4ai_token=${CRAWL4AI_API_TOKEN}
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - OPENAI_API_KEY=${OPENAI_API_KEY}
 #      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}

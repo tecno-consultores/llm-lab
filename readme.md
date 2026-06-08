@@ -4,7 +4,7 @@ Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tecno-consultores/llm-lab)
 
-To run N8N on AMD64/ARM64 (with Postgres and Redis):
+To run N8N (with Postgres and Redis):
 
 ```bash
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner up -d

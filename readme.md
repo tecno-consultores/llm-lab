@@ -43,7 +43,7 @@ Complementary services:
 | Postgres | Y | Y | | | --profile postgres |
 | Redis | Y | Y | | | --profile redis |
 
-Healthcheck and URLs 
+Healthcheck, ports and URLs 
 
 | Name | healthcheck| Port | Example |
 | -------- | ------- | ------- | ------- |

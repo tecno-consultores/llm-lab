@@ -20,7 +20,7 @@ Profiles you can run:
 | [Qdrant](https://github.com/qdrant/qdrant) | Y | Y | | --profile qdrant |
 | [OpenwebUI](https://github.com/open-webui/open-webui) | Y | Y | | --profile openwebui |
 | [Ollama](https://github.com/ollama/ollama) | Y | N | Nvidia-gpu | --profile ollama-gpu |
-| Ollama | Y | Y | | --profile ollama-cpu |
+| Ollama | Y | Y | AMD-gpu | --profile ollama-cpu |
 | [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) | Y | Y | | --profile evolutionapi |
 | [Flowise](https://github.com/flowiseai/flowise) | Y | Y |  | --profile flowise |
 | [Opencode](https://github.com/anomalyco/opencode) | Y | Y | | --profile opencode |

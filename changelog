@@ -1,34 +1,61 @@
-* commit 888680e6376c86d0702b4aeff267267585a7205b (HEAD -> develop, origin/develop)
+* commit 27699f307e15553c52d2ef550858092bb1fe0655 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Jun 7 15:22:22 2026 -0400
+| Date:   Mon Jun 8 00:00:22 2026 -0400
 | 
-|     * multiple bugfixes
+|     * browserless
 | 
-* commit 86e49f9c505930e1ec4e3d3e7ce3a9f5d8cdc2e7
+* commit a73a79c72d5bed74e9537d1bc358901d2f883702
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 6 18:36:07 2026 -0400
+| Date:   Sun Jun 7 23:44:59 2026 -0400
 | 
-|     * changelog
-| 
-* commit 63db27a4e97e804c148994d681ce4ff900c84927
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 6 18:35:52 2026 -0400
-| 
-|     * hermes tweaks
-| 
-* commit 30e8fa57250eabdcdc96395380cb56a41ab60136
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Wed Jun 3 20:08:25 2026 -0400
-| 
-|     * changelog
-| 
-* commit b4a6e732970404f052abbf54b0e96d728774da6a
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Wed Jun 3 20:08:16 2026 -0400
-| 
-|     * bugfix
+|     * documentacion de servicios para hermes
 |     
-| *   commit c068bde8096df67d37c0daa9f401772bfd7ac723 (origin/main, origin/HEAD, main)
+| *   commit fe093f4e3a3633161dd1cc70ed9badbadb2d2929 (origin/main, origin/HEAD, main)
+| |\  Merge: c068bde 41c5d6f
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sun Jun 7 15:23:37 2026 -0400
+| |   
+| |       Merge pull request #122 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 41c5d6ff57aff9d947e16aba160dc82d1f49d5ac
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 7 15:22:39 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 888680e6376c86d0702b4aeff267267585a7205b
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 7 15:22:22 2026 -0400
+| | 
+| |     * multiple bugfixes
+| | 
+* | commit 86e49f9c505930e1ec4e3d3e7ce3a9f5d8cdc2e7
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 6 18:36:07 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 63db27a4e97e804c148994d681ce4ff900c84927
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 6 18:35:52 2026 -0400
+| | 
+| |     * hermes tweaks
+| | 
+* | commit 30e8fa57250eabdcdc96395380cb56a41ab60136
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 20:08:25 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit b4a6e732970404f052abbf54b0e96d728774da6a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jun 3 20:08:16 2026 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit c068bde8096df67d37c0daa9f401772bfd7ac723
 | |\  Merge: 76576a4 a18cd6b
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Wed Jun 3 15:29:40 2026 -0400

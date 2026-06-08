@@ -645,11 +645,12 @@ x-hermes-base: &hermes-base
       - HERMES_DASHBOARD_BASIC_AUTH_PASSWORD=${hpass}
       - HERMES_DASHBOARD_PUBLIC_URL=https://hermes.example.com #change me
       - HERMES_QUIET=true
+      - browserless_url=http://${broname}:3000
+#      - browserless_token=${BROTOKEN}
+      - crawl4ai_url=http://${crawhostname}:${CRAW1}
+      - crawl4ai_token=${CRAWL4AI_API_TOKEN}
       - opencode_url=http://${codehostname}:${OCPORT}
       - searxng_url=http://${searxnghostname}:8080/
-      - browserless_url=http://${broname}:3000
-      - browserless_token=${BROTOKEN}
-      - crawl4ai_url=http://${crawhostname}:${CRAW1}
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - OPENAI_API_KEY=${OPENAI_API_KEY}
 #      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}

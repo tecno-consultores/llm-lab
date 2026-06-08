@@ -12,19 +12,19 @@ docker compose -f docker-compose.yml --env-file env.example --profile n8n --prof
 
 Profiles you can run:
 
-| Project | AMD64 | ARM64 | Other | Profile |
-| -------- | ------- | ------- | ------- | ------- |
-| [N8N](https://github.com/n8n-io/n8n) | Y | Y | | --profile n8n |
-| N8N-worker | Y | Y | | --profile n8n-worker |
-| N8N-runner (code sandbox) | Y | Y | | --profile n8n-runner |
-| [Qdrant](https://github.com/qdrant/qdrant) | Y | Y | | --profile qdrant |
-| [OpenwebUI](https://github.com/open-webui/open-webui) | Y | Y | | --profile openwebui |
-| [Ollama](https://github.com/ollama/ollama) | Y | N | Nvidia-gpu | --profile ollama-gpu |
-| Ollama | Y | Y | AMD-gpu | --profile ollama-cpu |
-| [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) | Y | Y | | --profile evolutionapi |
-| [Flowise](https://github.com/flowiseai/flowise) | Y | Y |  | --profile flowise |
-| [Opencode](https://github.com/anomalyco/opencode) | Y | Y | | --profile opencode |
-| [hermes-agent](https://github.com/nousresearch/hermes-agent) | Y | Y |  | --profile hermes |
+| Project | AMD64 | ARM64 | Other | Depends on | Profile |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| [N8N](https://github.com/n8n-io/n8n) | Y | Y | | postgres / redis | --profile n8n |
+| N8N-worker | Y | Y | | N8N| --profile n8n-worker |
+| N8N-runner (code sandbox) | Y | Y | | N8N | --profile n8n-runner |
+| [Qdrant](https://github.com/qdrant/qdrant) | Y | Y | | | --profile qdrant |
+| [OpenwebUI](https://github.com/open-webui/open-webui) | Y | Y | | postgres / redis | --profile openwebui |
+| [Ollama](https://github.com/ollama/ollama) | Y | N | Nvidia-gpu | nvidia | --profile ollama-gpu |
+| Ollama | Y | Y | AMD-gpu | | --profile ollama-cpu |
+| [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) | Y | Y | |  postgres / redis | --profile evolutionapi |
+| [Flowise](https://github.com/flowiseai/flowise) | Y | Y | |  postgres / redis | --profile flowise |
+| [Opencode](https://github.com/anomalyco/opencode) | Y | Y | | | --profile opencode |
+| [hermes-agent](https://github.com/nousresearch/hermes-agent) | Y | Y |  | | --profile hermes |
 
 Complementary services:
 

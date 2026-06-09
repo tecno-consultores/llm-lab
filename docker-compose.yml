@@ -601,8 +601,8 @@ x-opencode-base: &opencode-base
 #      - OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - GEMINI_API_KEY=${GEMINI_API_KEY}
-    ports: # comment to hide port
-      - ${OCPORT}:${OCPORT} # comment to hide port
+    ports: # comment to expose the service only to the docker network
+      - ${OCPORT}:${OCPORT} # comment to expose the service only to the docker network
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
@@ -637,7 +637,7 @@ x-hermes-base: &hermes-base
       - HERMES_TIMEZONE=${TIMEZONE}
       - HERMES_DASHBOARD_TUI=1
       - API_SERVER_ENABLED=true
-      - API_SERVER_KEY=${hapikey}
+      - API_SERVER_KEY=${hapikey} # the token to authenticate with the hermes api
       - API_SERVER_PORT=${hapiport}
       - API_SERVER_HOST=0.0.0.0
       - TERMINAL_ENV=local

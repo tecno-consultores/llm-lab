@@ -49,4 +49,4 @@ If you are collaborating on the integration of high-availability webhooks or mas
 4. Submit the *Pull Request* (PR) directed to the main development branch.
 5. The maintainers will review the Compose architecture and approve the deployment after validating its stability.
 
-Please review the [Code of Conduct](https://github.com/tecno-consultores/llm-lab/CODE_OF_CONDUCT.md) before submitting your first contribution.
+Please review the [Code of Conduct](https://github.com/tecno-consultores/llm-lab/blob/main/CODE_OF_CONDUCT.md) before submitting your first contribution.

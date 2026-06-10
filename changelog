@@ -1,22 +1,108 @@
-* commit 2c361caca210576a112de2fd5736f984e6fd9924 (HEAD -> develop, origin/develop)
+* commit 2c9b18eb2b5662250f5bce61bcbd314dcc577af9 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Mon Jun 8 19:52:45 2026 -0400
+| Date:   Wed Jun 10 12:03:06 2026 -0400
 | 
-|     * bugfix
-| 
-* commit 3943ee4b05496e4e9150cbccc9071ef6b7b6b0ef
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Mon Jun 8 19:48:04 2026 -0400
-| 
-|     * changelog
-| 
-* commit a1715e0bdb19092c0181b7faae714bab0645edd7
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Mon Jun 8 19:47:54 2026 -0400
-| 
-|     * archivos md
+|     * openwebui
 |     
-| *   commit 2bb0130a1b926eb3166706eb83e105512fc6940c (origin/main, origin/HEAD, main)
+| *   commit ff21d305c37c06dd244cb79af16ffb3a5bc05056 (origin/main, origin/HEAD, main)
+| |\  Merge: f1c41c0 3884709
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Tue Jun 9 14:50:18 2026 -0400
+| |   
+| |       Merge pull request #127 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 3884709de8bba46be2c1461b53a2bc86508bb60a
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Jun 9 14:48:43 2026 -0400
+| | 
+| |     Update env.example with new configuration options
+| | 
+* | commit a747fd2fdc72d4757d89aaa4fac877c0d7d4ac53
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Jun 9 14:48:23 2026 -0400
+| | 
+| |     Refactor environment variables in docker-compose.yml
+| |   
+| *   commit f1c41c049ddcdc3199badb13e84b8857580241d9
+| |\  Merge: 0b75208 66f89a8
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Tue Jun 9 14:35:46 2026 -0400
+| |   
+| |       Merge pull request #126 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 66f89a8a20a44ead5ecc24abb84aa89ee7604c00
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Jun 9 14:33:25 2026 -0400
+| | 
+| |     Update env.example
+| | 
+* | commit 85b26497bb7a13ba9e500c248ce262fdb90cfdd6
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Jun 9 14:26:07 2026 -0400
+| | 
+| |     Clarify comments in docker-compose.yml
+| |     
+| |     Updated comments for clarity on port exposure and API server key.
+| | 
+* | commit 23f63c33393e82699c6b0f941d0f70e5fdf885d0
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 20:36:48 2026 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit 0b75208109364543d1d2ec36e11d6f25027bacb5 (tag: v1.18.2)
+| |\  Merge: ebc28b9 063b5c6
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon Jun 8 20:04:19 2026 -0400
+| |   
+| |       Merge pull request #125 from tecno-consultores/develop
+| |       
+| |       * bugfix
+| | 
+* | commit 063b5c6b0c131c43a9be5fbe531ea5dc0d3eee28
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 20:03:13 2026 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit ebc28b9318f8c2afa2906826ef7e3a05ae3c9324
+| |\  Merge: 2bb0130 46ba8c7
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon Jun 8 19:58:54 2026 -0400
+| |   
+| |       Merge pull request #124 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 46ba8c7565a10a456385247d30fc1846e63cb08c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 19:52:55 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 2c361caca210576a112de2fd5736f984e6fd9924
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 19:52:45 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit 3943ee4b05496e4e9150cbccc9071ef6b7b6b0ef
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 19:48:04 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit a1715e0bdb19092c0181b7faae714bab0645edd7
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Jun 8 19:47:54 2026 -0400
+| | 
+| |     * archivos md
+| |   
+| *   commit 2bb0130a1b926eb3166706eb83e105512fc6940c
 | |\  Merge: fe093f4 d9d731a
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Mon Jun 8 14:18:28 2026 -0400

@@ -1,4 +1,16 @@
-* commit 1ccac8a332120917b83c942477cf03e3d6bd972a (HEAD -> develop, origin/develop)
+* commit bf7986d24c5463dffbe4514f770fb6dbca574b77 (HEAD -> develop, origin/develop)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Thu Jun 11 19:31:36 2026 -0400
+| 
+|     * redis y postgres
+| 
+* commit 1f0aec5c8f114d525f2cc6e112d4c6bf56cf82b9
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Thu Jun 11 19:27:46 2026 -0400
+| 
+|     * changelog
+| 
+* commit 1ccac8a332120917b83c942477cf03e3d6bd972a
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Thu Jun 11 19:27:38 2026 -0400
 | 

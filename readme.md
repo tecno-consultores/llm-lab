@@ -40,8 +40,8 @@ Complementary services:
 | [MongoDB](https://www.mongodb.com) | ✅ | ❌ | | | --profile mongodb |
 | [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | ✅ | ✅ | | | --profile rabbit |
 | [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | --profile proxy |
-| Postgres | ✅ | ✅ | | | --profile postgres |
-| Redis | ✅ | ✅ | | | --profile redis |
+| [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | --profile postgres |
+| [Redis](https://hub.docker.com/r/redis/redis-stack) | ✅ | ✅ | | | --profile redis |
 
 Healthcheck, ports and URLs:
 

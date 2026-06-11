@@ -51,7 +51,7 @@ Healthcheck, ports and URLs:
 | Qdrant | ✅ | 6333 | http://127.0.0.1:6333/dashboard |
 | OpenwebUI | ✅ | 8383 | http://127.0.0.1:8383 |
 | NGINX proxy manager | ✅ | 81 | http://127.0.0.1:81 |
-| Searxng | ✅ | 8181 | http://127.0.0.1:8181 |
+| Searxng | ✅ | 8189 | http://127.0.0.1:8189 |
 | EvolutionAPI | ✅ | 9191 | http://127.0.0.1:9191/manager |
 | Flowise | ✅ | 3001 | http://127.0.0.1:3001 |
 | Opencode | ✅ | 4096 | http://127.0.0.1:4096 |

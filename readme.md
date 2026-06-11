@@ -56,7 +56,7 @@ Healthcheck, ports and URLs:
 | Flowise | ✅ | 3001 | http://127.0.0.1:3001 | http://127.0.0.1:3001/api/v1 |
 | Opencode | ✅ | 4096 | http://127.0.0.1:4096 | http://127.0.0.1:4096/doc |
 | Redis Insight | ✅ | 8001 | http://127.0.0.1:8001 |
-| Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642 |
+| Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642/v1 |
 | Rabbitmq broker | ❌ | 5672 | http://127.0.0.1:5672 | |
 | Rabbitmq management | ❌ | 15672 | http://127.0.0.1:15672 | http://127.0.0.1:15672/api/ |
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |

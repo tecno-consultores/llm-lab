@@ -1,7 +1,5 @@
 # ollama
 
-Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
-
 to create model:
 
 ```bash

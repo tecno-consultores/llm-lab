@@ -40,29 +40,28 @@ Complementary services:
 | [MongoDB](https://www.mongodb.com) | ✅ | ❌ | | | --profile mongodb |
 | [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | ✅ | ✅ | | | --profile rabbit |
 | [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | --profile proxy |
-| Postgres | ✅ | ✅ | | | --profile postgres |
-| Redis | ✅ | ✅ | | | --profile redis |
+| [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | --profile postgres |
+| [Redis](https://hub.docker.com/r/redis/redis-stack) | ✅ | ✅ | | | --profile redis |
 
 Healthcheck, ports and URLs:
 
-| Name | healthcheck| Port | Example |
-| -------- | ------- | ------- | ------- |
-| N8N | ✅ | 5678 | http://127.0.0.1:5678 |
-| Qdrant | ✅ | 6333 | http://127.0.0.1:6333/dashboard |
-| OpenwebUI | ✅ | 8383 | http://127.0.0.1:8383 |
-| NGINX proxy manager | ✅ | 81 | http://127.0.0.1:81 |
-| Searxng | ✅ | 8189 | http://127.0.0.1:8189 |
-| EvolutionAPI | ✅ | 9191 | http://127.0.0.1:9191/manager |
-| Flowise | ✅ | 3001 | http://127.0.0.1:3001 |
-| Opencode | ✅ | 4096 | http://127.0.0.1:4096 |
+| Name | healthcheck| Port | Service | Api |
+| -------- | ------- | ------- | ------- | ------- |
+| N8N | ✅ | 5678 | http://127.0.0.1:5678 | http://127.0.0.1:5678/api/v1 |
+| Qdrant | ✅ | 6333 | http://127.0.0.1:6333/dashboard | http://127.0.0.1:6333 |
+| OpenwebUI | ✅ | 8383 | http://127.0.0.1:8383 | |
+| NGINX proxy manager | ✅ | 81 | http://127.0.0.1:81 | http://127.0.0.1:81/api |
+| Searxng | ✅ | 8189 | http://127.0.0.1:8189 | |
+| EvolutionAPI | ✅ | 9191 | http://127.0.0.1:9191/manager | http://127.0.0.1:9191/swagger |
+| Flowise | ✅ | 3001 | http://127.0.0.1:3001 | http://127.0.0.1:3001/api/v1 |
+| Opencode | ✅ | 4096 | http://127.0.0.1:4096 | http://127.0.0.1:4096/doc |
 | Redis Insight | ✅ | 8001 | http://127.0.0.1:8001 |
-| Hermes Agent Dashboard | ✅ | 9119 | http://127.0.0.1:9119 |
-| Hermes Agent API | ✅ | 8642 | http://127.0.0.1:8642/v1 |
-| Rabbitmq broker | ❌ | 5672 | http://127.0.0.1:5672 |
-| Rabbitmq management | ❌ | 15672 | http://127.0.0.1:15672 |
-| Browserless | ✅ | 3000 | http://127.0.0.1:3000 |
-| Whisper | ❌ | 9000 | http://127.0.0.1:9000 |
-| Crawl4ai | ✅ | 11235 | http://127.0.0.1:11235 |
+| Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642/v1 |
+| Rabbitmq broker | ❌ | 5672 | http://127.0.0.1:5672 | |
+| Rabbitmq management | ❌ | 15672 | http://127.0.0.1:15672 | http://127.0.0.1:15672/api/ |
+| Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
+| Whisper | ❌ | 9000 | | http://127.0.0.1:9000 |
+| Crawl4ai | ✅ | 11235 | | http://127.0.0.1:11235/openapi.json |
 
 To run N8N with OpenwebUI: 
 

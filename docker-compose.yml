@@ -16,10 +16,10 @@ x-ollama-base: &ollama-base
       - ollama:/root/.ollama
     healthcheck:
       test: ['CMD-SHELL', 'ollama --version && ollama ps || exit 1']
-      start_period: 5s
-      interval: 5s
-      timeout: 5s
-      retries: 10
+      start_period: 30s
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 x-openwebui-base: &openwebui-base
     image: ghcr.io/open-webui/open-webui:latest
@@ -100,13 +100,6 @@ x-openwebui-base: &openwebui-base
       - openwebui:/app/backend/data
 #    extra_hosts: # uncomment for docker model
 #      - "host.docker.internal:host-gateway" # uncomment for docker model
-    deploy:
-      mode: global
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
 
 x-openai-bridge: &openai-bridge
     image: ghcr.io/sveneisenschmidt/n8n-openai-bridge:latest
@@ -246,13 +239,6 @@ x-n8n-base: &n8n-base
       nofile:
         soft: 65536
         hard: 65536
-    deploy:
-      mode: global
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
 
 x-n8n-runner: &n8n-runner
     image: n8nio/runners:stable
@@ -276,13 +262,6 @@ x-n8n-runner: &n8n-runner
       nofile:
         soft: 65536
         hard: 65536
-    deploy:
-      mode: global
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
 
 x-postgres-base: &postgres-base
     image: postgres:17.6
@@ -302,10 +281,10 @@ x-postgres-base: &postgres-base
       - postgres:/var/lib/postgresql/data
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -h 127.0.0.1 -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
-      start_period: 5s
-      interval: 5s
-      timeout: 5s
-      retries: 10
+      start_period: 30s
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 x-redis-base: &redis-base
     image: redis/redis-stack:latest
@@ -323,10 +302,10 @@ x-redis-base: &redis-base
       - redis:/data
     healthcheck:
       test: ["CMD", "redis-cli","ping"]
-      start_period: 5s
-      interval: 5s
-      timeout: 3s
-      retries: 5
+      start_period: 30s
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 x-qdrant-base: &qdrant-base
     image: qdrant/qdrant:latest
@@ -345,10 +324,10 @@ x-qdrant-base: &qdrant-base
       - qdrant:/qdrant/storage
     healthcheck:
       test: ["CMD", "./qdrant", "-V"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
+      start_period: 30s
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 x-rabbit-base: &rabbit-base
     image: rabbitmq:management
@@ -398,10 +377,10 @@ x-crawl4ai-base: &crawl4ai-base
           memory: 1G
     healthcheck:
       test: ["CMD", "curl", "-f", "http://127.0.0.1:11235/health"]
+      start_period: 30s
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 40s
 
 x-nvidia-base: &nvidia-base
     runtime: nvidia
@@ -432,8 +411,10 @@ x-proxy-base: &proxy-base
       - letsencrypt:/etc/letsencrypt
     healthcheck:
       test: ["CMD", "/usr/bin/check-health"]
-      interval: 10s
-      timeout: 3s
+      start_period: 30s
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 x-searxng-base: &searxng-base
     image: docker.io/searxng/searxng:latest
@@ -459,10 +440,10 @@ x-searxng-base: &searxng-base
         max-file: "1"
     healthcheck:
       test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://127.0.0.1:8080/healthz || exit 1"]
+      start_period: 30s
       interval: 30s
-      timeout: 5s
+      timeout: 10s
       retries: 3
-      start_period: 20s
 
 x-mongodb-base: &mongodb-base
     image: mongo:latest
@@ -480,9 +461,10 @@ x-mongodb-base: &mongodb-base
       - mongodb:/data/db
     healthcheck:
       test: [ "CMD", "mongo", "--eval", "db.adminCommand('ping')" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      start_period: 30s
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 x-evolution-base: &evolution-base
     image: evoapicloud/evolution-api:latest
@@ -527,17 +509,10 @@ x-evolution-base: &evolution-base
       - evolution:/evolution/instances
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:8080/"]
-      interval: 15s
+      start_period: 30s
+      interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 20s
-    deploy:
-      mode: global
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
 
 x-flowise-base: &flowise-base
     image: flowiseai/flowise:latest
@@ -578,10 +553,10 @@ x-flowise-base: &flowise-base
       - /etc/localtime:/etc/localtime:ro
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/api/v1/ping || exit 1"]
+      start_period: 30s
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 40s
 
 x-opencode-base: &opencode-base
     image: ghcr.io/anomalyco/opencode:latest
@@ -614,10 +589,10 @@ x-opencode-base: &opencode-base
     entrypoint: ["/bin/sh", "-c", "opencode web --hostname 0.0.0.0 --port ${OCPORT}"]
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:4096/global/health > /dev/null || exit 1"]
-      interval: 10s
-      timeout: 5s
+      start_period: 30s
+      interval: 30s
+      timeout: 10s
       retries: 3
-      start_period: 5s
 
 x-hermes-base: &hermes-base
     image: nousresearch/hermes-agent:latest
@@ -669,10 +644,10 @@ x-hermes-base: &hermes-base
       - ${DOCKER_GID}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://127.0.0.1:${hapiport}/health"]
+      start_period: 30s
       interval: 30s
       timeout: 10s
-      retries: 5
-      start_period: 60s
+      retries: 3
     deploy:
       resources:
         limits:
@@ -709,10 +684,10 @@ x-browserless-base: &browserless-base
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://127.0.0.1:3000/pressure || exit 1"]
 #      test: ["CMD-SHELL", "curl -sf http://127.0.0.1:3000/pressure?token=${BROTOKEN} || exit 1"]
+      start_period: 30s
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 15s
 
 volumes:
   ollama:
@@ -767,10 +742,10 @@ services:
         - ${N8N_PORT2}:5679
       healthcheck:
         test: ["CMD", "sh", "-c", "(wget -q -T 5 -O - http://127.0.0.1:5678/healthz 2>/dev/null | grep -qF '{\"status\":\"ok\"}') || exit 1"]
-        start_period: 1m00s
-        interval: 5s
+        start_period: 30s
+        interval: 30s
         timeout: 10s
-        retries: 10
+        retries: 3
       links:
         - redis
       depends_on:
@@ -789,10 +764,10 @@ services:
       command: worker
       healthcheck:
         test: ["CMD", "node", "-v"]
-        start_period: 1m00s
-        interval: 5s
+        start_period: 30s
+        interval: 30s
         timeout: 10s
-        retries: 10
+        retries: 3
       links:
         - redis
       depends_on:
@@ -813,10 +788,10 @@ services:
       profiles: ["n8n-runner"]
       healthcheck:
         test: ["CMD", "node", "-v"]
-        start_period: 1m00s
-        interval: 5s
+        start_period: 30s
+        interval: 30s
         timeout: 10s
-        retries: 10
+        retries: 3
       links:
         - redis
       depends_on:

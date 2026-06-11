@@ -19,7 +19,7 @@ Profiles you can run:
 | N8N-runner (code sandbox) | ✅ | ✅ | | N8N | --profile n8n-runner |
 | [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | --profile qdrant |
 | [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | postgres / redis | --profile openwebui |
-| [Ollama](https://github.com/ollama/ollama) | ✅ | N | Nvidia-gpu | | --profile ollama-gpu |
+| [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia-gpu | | --profile ollama-gpu |
 | Ollama | ✅ | ✅ | AMD-gpu | | --profile ollama-cpu |
 | [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) | ✅ | ✅ | |  postgres / redis | --profile evolutionapi |
 | [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | |  postgres / redis | --profile flowise |
@@ -30,14 +30,14 @@ Complementary services:
 
 | Project | AMD64 | ARM64 | Other | Depends on | Profile |
 | -------- | ------- | ------- | ------- | ------- | ------- |
-| [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) | ✅ | N | | openwebui / n8n | --profile openaibridge |
-| [Whisper](https://github.com/openai/whisper) | ✅ | N | Nvidia-gpu | | --profile whisper-gpu |
+| [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) | ✅ | ❌ | | openwebui / n8n | --profile openaibridge |
+| [Whisper](https://github.com/openai/whisper) | ✅ | ❌ | Nvidia-gpu | | --profile whisper-gpu |
 | Whisper | ✅ | ✅ | Nvidia-gpu | | --profile whisper |
-| [Crawl4ai](https://github.com/unclecode/crawl4ai) | ✅ | N | | | --profile crawl4ai-amd64 |
-| Crawl4ai | N | ✅ | | | --profile crawl4ai-arm64 |
+| [Crawl4ai](https://github.com/unclecode/crawl4ai) | ✅ | ❌ | | | --profile crawl4ai-amd64 |
+| Crawl4ai | ❌ | ✅ | | | --profile crawl4ai-arm64 |
 | [Searxng](https://github.com/searxng/searxng) | ✅ | ✅ | | | --profile searxng |
 | [Browserless](https://github.com/browserless/browserless) | ✅ | ✅ | | | --profile browserless |
-| [MongoDB](https://www.mongodb.com) | ✅ | N | | | --profile mongodb |
+| [MongoDB](https://www.mongodb.com) | ✅ | ❌ | | | --profile mongodb |
 | [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | ✅ | ✅ | | | --profile rabbit |
 | [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | --profile proxy |
 | Postgres | ✅ | ✅ | | | --profile postgres |
@@ -58,10 +58,10 @@ Healthcheck, ports and URLs:
 | Redis Insight | ✅ | 8001 | http://127.0.0.1:8001 |
 | Hermes Agent Dashboard | ✅ | 9119 | http://127.0.0.1:9119 |
 | Hermes Agent API | ✅ | 8642 | http://127.0.0.1:8642/v1 |
-| Rabbitmq broker | | 5672 | http://127.0.0.1:5672 |
-| Rabbitmq management | | 15672 | http://127.0.0.1:15672 |
+| Rabbitmq broker | ❌ | 5672 | http://127.0.0.1:5672 |
+| Rabbitmq management | ❌ | 15672 | http://127.0.0.1:15672 |
 | Browserless | ✅ | 3000 | http://127.0.0.1:3000 |
-| Whisper | | 9000 | http://127.0.0.1:9000 |
+| Whisper | ❌ | 9000 | http://127.0.0.1:9000 |
 | Crawl4ai | ✅ | 11235 | http://127.0.0.1:11235 |
 
 To run N8N with OpenwebUI: 

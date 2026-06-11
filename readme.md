@@ -32,7 +32,7 @@ Complementary services:
 | -------- | ------- | ------- | ------- | ------- | ------- |
 | [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) | ✅ | ❌ | | openwebui / n8n | --profile openaibridge |
 | [Whisper](https://github.com/openai/whisper) | ✅ | ❌ | Nvidia-gpu | | --profile whisper-gpu |
-| Whisper | ✅ | ✅ | Nvidia-gpu | | --profile whisper |
+| Whisper | ✅ | ✅ | AMD-gpu | | --profile whisper |
 | [Crawl4ai](https://github.com/unclecode/crawl4ai) | ✅ | ❌ | | | --profile crawl4ai-amd64 |
 | Crawl4ai | ❌ | ✅ | | | --profile crawl4ai-arm64 |
 | [Searxng](https://github.com/searxng/searxng) | ✅ | ✅ | | | --profile searxng |

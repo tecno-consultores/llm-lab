@@ -17,5 +17,6 @@ to deactivate the thought inside ollama:
 
 ```bash
 /set nothink
+/save
 ```
 

@@ -1,58 +1,100 @@
-* commit 0d355f9d805a9e2d8f2526a338f325113d72eb84 (HEAD -> develop, origin/develop)
+* commit b431dc6fb9f6cc926289976f4a634beaebf702cc (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Jun 11 19:36:31 2026 -0400
+| Date:   Sat Jun 13 10:16:15 2026 -0400
 | 
-|     * autor
-| 
-* commit d74dfe610beb2ebaa96b91be1b157439d8d5e867
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Jun 11 19:35:31 2026 -0400
-| 
-|     * changelog
-| 
-* commit 95a932b5e7b9d37aaf30133a0f239f44a197c691
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Jun 11 19:35:23 2026 -0400
-| 
-|     * doc
-| 
-* commit 4f96b25ac8f655bd617d031623ed85e16c0b265d
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Jun 11 19:31:46 2026 -0400
-| 
-|     * changelog
-| 
-* commit bf7986d24c5463dffbe4514f770fb6dbca574b77
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Jun 11 19:31:36 2026 -0400
-| 
-|     * redis y postgres
-| 
-* commit 1f0aec5c8f114d525f2cc6e112d4c6bf56cf82b9
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Jun 11 19:27:46 2026 -0400
-| 
-|     * changelog
-| 
-* commit 1ccac8a332120917b83c942477cf03e3d6bd972a
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Jun 11 19:27:38 2026 -0400
-| 
-|     * variables
-| 
-* commit 2b091bae89b20ab23fdf098bd05e9c3c469815f4
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Jun 11 19:21:50 2026 -0400
-| 
-|     * changelog
-| 
-* commit 61c3ca4c58ac0be4c907f7dbf7e7ef19de3ad4e7
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Jun 11 19:21:38 2026 -0400
-| 
-|     * api en la tabla
-|     
-| *   commit 251eed212a703fd8eef47927a7d2dc0dd06c80b1 (origin/main, origin/HEAD, main)
+|     * ollama en readme
+|   
+*   commit aaaff35f4fa47b0f30657bb62c930bf127b1deb2
+|\  Merge: 628c30d 676f4cf
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 10:09:35 2026 -0400
+| | 
+| |     Merge pull request #130 from tecno-consultores/main
+| |     
+| |     hacia atras
+| | 
+| * commit 676f4cf22a556ff46c54d045b5ce77a8baa4f8d5 (origin/main, origin/HEAD, main)
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Jun 12 13:40:53 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+| * commit 9a3b84069d6c2aa8f3702dbbce6bc68add38736c
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Jun 12 13:36:03 2026 -0400
+| | 
+| |     Update ollama.md
+| |   
+| *   commit 16c6845267322775523f3cfd91a3354353bbf0ab (tag: v1.18.3)
+| |\  Merge: 251eed2 628c30d
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Thu Jun 11 19:37:18 2026 -0400
+| |   
+| |       Merge pull request #129 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 628c30da6290676b988fcf70bcf7f680b0034693
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jun 11 19:36:36 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 0d355f9d805a9e2d8f2526a338f325113d72eb84
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jun 11 19:36:31 2026 -0400
+| | 
+| |     * autor
+| | 
+* | commit d74dfe610beb2ebaa96b91be1b157439d8d5e867
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jun 11 19:35:31 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 95a932b5e7b9d37aaf30133a0f239f44a197c691
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jun 11 19:35:23 2026 -0400
+| | 
+| |     * doc
+| | 
+* | commit 4f96b25ac8f655bd617d031623ed85e16c0b265d
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jun 11 19:31:46 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit bf7986d24c5463dffbe4514f770fb6dbca574b77
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jun 11 19:31:36 2026 -0400
+| | 
+| |     * redis y postgres
+| | 
+* | commit 1f0aec5c8f114d525f2cc6e112d4c6bf56cf82b9
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jun 11 19:27:46 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 1ccac8a332120917b83c942477cf03e3d6bd972a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jun 11 19:27:38 2026 -0400
+| | 
+| |     * variables
+| | 
+* | commit 2b091bae89b20ab23fdf098bd05e9c3c469815f4
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jun 11 19:21:50 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 61c3ca4c58ac0be4c907f7dbf7e7ef19de3ad4e7
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Jun 11 19:21:38 2026 -0400
+| | 
+| |     * api en la tabla
+| |   
+| *   commit 251eed212a703fd8eef47927a7d2dc0dd06c80b1
 | |\  Merge: ff21d30 e64d7db
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Thu Jun 11 15:27:06 2026 -0400

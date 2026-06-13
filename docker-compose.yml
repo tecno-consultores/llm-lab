@@ -569,6 +569,7 @@ x-opencode-base: &opencode-base
     tty: true
     environment:
       - TZ=${TIMEZONE}
+#      - OPENCODE_CONFIG_CONTENT={"$$schema":"https://opencode.ai/config.json","provider":{"ollama":{"npm":"@ai-sdk/openai-compatible","name":"Ollama (local)","options":{"baseURL":"http://${ohostname}:11434/v1"},"models":{"EXAMPLEMODEL:EXAMPLEb":{"name":"EXAMPLE_NAME"}}}}} # uncomment to use with ollama
 #      - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME} # uncomment to enable user and password
 #      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # uncomment to enable user and password
 #      - OPENAI_BASE_URL=https://openrouter.ai/api/v1 # for use with openrouter

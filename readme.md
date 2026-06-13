@@ -4,35 +4,35 @@ Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tecno-consultores/llm-lab)
 
-To run N8N (with Postgres and Redis):
+To run N8N (with Postgres and Redis) and OpenwebUI:
 
 ```bash
-docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner up -d
+docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
 ```
 
 Profiles you can run:
 
-| Project | AMD64 | ARM64 | Other | Depends on | Profile |
-| -------- | ------- | ------- | ------- | ------- | ------- |
-| [N8N](https://github.com/n8n-io/n8n) | ✅ | ✅ | | postgres / redis | --profile n8n |
-| N8N-worker | ✅ | ✅ | | N8N| --profile n8n-worker |
-| N8N-runner (code sandbox) | ✅ | ✅ | | N8N | --profile n8n-runner |
-| [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | --profile qdrant |
-| [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | postgres / redis | --profile openwebui |
-| [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia-gpu | | --profile ollama-gpu |
-| Ollama | ✅ | ✅ | AMD-gpu | | --profile ollama-cpu |
-| [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) | ✅ | ✅ | |  postgres / redis | --profile evolutionapi |
-| [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | |  postgres / redis | --profile flowise |
-| [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | | --profile opencode |
-| [hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | | --profile hermes |
+| Project | AMD64 | ARM64 | GPU | Ollama | Depends on | Profile |
+| -------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| [N8N](https://github.com/n8n-io/n8n) | ✅ | ✅ | | ✅ | postgres / redis | --profile n8n |
+| N8N-worker | ✅ | ✅ | | | N8N| --profile n8n-worker |
+| N8N-runner (code sandbox) | ✅ | ✅ | | | N8N | --profile n8n-runner |
+| [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | | --profile qdrant |
+| [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | ✅ | postgres / redis | --profile openwebui |
+| [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia | | | --profile ollama-gpu |
+| Ollama | ✅ | ✅ | AMD | | | --profile ollama-cpu |
+| [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) | ✅ | ✅ | |  | postgres / redis | --profile evolutionapi |
+| [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | | ✅ | postgres / redis | --profile flowise |
+| [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | ✅ | | --profile opencode |
+| [hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | ✅ | | --profile hermes |
 
 Complementary services:
 
-| Project | AMD64 | ARM64 | Other | Depends on | Profile |
+| Project | AMD64 | ARM64 | GPU | Depends on | Profile |
 | -------- | ------- | ------- | ------- | ------- | ------- |
 | [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) | ✅ | ❌ | | openwebui / n8n | --profile openaibridge |
-| [Whisper](https://github.com/openai/whisper) | ✅ | ❌ | Nvidia-gpu | | --profile whisper-gpu |
-| Whisper | ✅ | ✅ | AMD-gpu | | --profile whisper |
+| [Whisper](https://github.com/openai/whisper) | ✅ | ❌ | Nvidia | | --profile whisper-gpu |
+| Whisper | ✅ | ✅ | AMD | | --profile whisper |
 | [Crawl4ai](https://github.com/unclecode/crawl4ai) | ✅ | ❌ | | | --profile crawl4ai-amd64 |
 | Crawl4ai | ❌ | ✅ | | | --profile crawl4ai-arm64 |
 | [Searxng](https://github.com/searxng/searxng) | ✅ | ✅ | | | --profile searxng |
@@ -62,12 +62,6 @@ Healthcheck, ports and URLs:
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
 | Whisper | ❌ | 9000 | | http://127.0.0.1:9000 |
 | Crawl4ai | ✅ | 11235 | | http://127.0.0.1:11235/openapi.json |
-
-To run N8N with OpenwebUI: 
-
-```bash
-docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
-```
 
 ------
 

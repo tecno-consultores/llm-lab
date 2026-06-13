@@ -1,3 +1,6 @@
+# nginx custom config
+
+```bash
 location / {
    proxy_pass http://n8n:5678;
    proxy_set_header Connection '';
@@ -6,3 +9,4 @@ location / {
    proxy_buffering off;
    proxy_cache off;
 }
+```

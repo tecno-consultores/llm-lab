@@ -98,8 +98,6 @@ x-openwebui-base: &openwebui-base
       - host.docker.internal:host-gateway
     volumes:
       - openwebui:/app/backend/data
-#    extra_hosts: # uncomment for docker model
-#      - "host.docker.internal:host-gateway" # uncomment for docker model
 
 x-openai-bridge: &openai-bridge
     image: ghcr.io/sveneisenschmidt/n8n-openai-bridge:latest
@@ -120,19 +118,19 @@ x-openai-bridge: &openai-bridge
       - USER_NAME_HEADERS=X-User-Name,X-OpenWebUI-User-Name
       - USER_ROLE_HEADERS=X-User-Role,X-OpenWebUI-User-Role
       - REQUEST_BODY_LIMIT=50mb
-      - MODELS_POLL_INTERVAL=3 #File polling interval in seconds (default 1)
+      - MODELS_POLL_INTERVAL=3
       - N8N_BASE_URL=http://${nhostname}:${N8N_PORT}/
       - N8N_API_BEARER_TOKEN=${napi}
       - MODEL_LOADER_TYPE=n8n-api
       - AUTO_DISCOVERY_TAG=n8n-openai-bridge
       - AUTO_DISCOVERY_POLL_INTERVAL=300
       - ENABLE_TASK_DETECTION=false # Set to 'true' to enable (default false)
-      - N8N_TIMEOUT=300000 # n8n webhook request timeout (default 5 minutes)
-      - SERVER_TIMEOUT=300000 # HTTP server request timeout (default 5 minutes)
-      - SERVER_KEEP_ALIVE_TIMEOUT=120000 # Keep-alive connection timeout (default 2 minutes)
-      - SERVER_HEADERS_TIMEOUT=121000 # Headers timeout (default 121 seconds)
+      - N8N_TIMEOUT=300000
+      - SERVER_TIMEOUT=300000
+      - SERVER_KEEP_ALIVE_TIMEOUT=120000
+      - SERVER_HEADERS_TIMEOUT=121000
       - FILE_UPLOAD_MODE=passthrough # Options passthrough, extract-json, extract-multipart, disabled
-      - RATE_LIMIT_WINDOW_MS=60000 # Time window in milliseconds (default 1 minute)
+      - RATE_LIMIT_WINDOW_MS=60000
       - RATE_LIMIT_MAX_REQUESTS=100 # Max requests per window for general endpoints (default 100)
       - RATE_LIMIT_CHAT_COMPLETIONS=30 # Max chat completion requests per window (default 30)
       - DISABLE_RATE_LIMIT=false # Set to 'true' to disable rate limiting entirely
@@ -233,8 +231,6 @@ x-n8n-base: &n8n-base
       - n8n_storage:/home/node/.n8n
       - n8n_backup:/backup
       - n8n_shared:/data/shared
-#    extra_hosts: # uncomment for docker model
-#      - "host.docker.internal:host-gateway" # uncomment for docker model
     ulimits:
       nofile:
         soft: 65536
@@ -256,8 +252,8 @@ x-n8n-runner: &n8n-runner
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
       - NODE_OPTIONS="--dns-result-order=ipv4first"
-#    volumes:
-#      - n8n_shared:/data/shared
+    volumes:
+      - n8n_shared:/data/shared
     ulimits:
       nofile:
         soft: 65536
@@ -545,8 +541,6 @@ x-flowise-base: &flowise-base
       - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
     ports:
       - ${FPORT}:3000
-#    extra_hosts: # uncomment for docker model
-#      - "host.docker.internal:host-gateway" # uncomment for docker model
     volumes:
       - flowise:/root/.flowise
       - /etc/timezone:/etc/timezone:ro
@@ -560,7 +554,6 @@ x-flowise-base: &flowise-base
 
 x-opencode-base: &opencode-base
     image: ghcr.io/anomalyco/opencode:latest
-#    image: sinfallas/opencode:latest
     hostname: ${codehostname}
     container_name: ${codehostname}
     pull_policy: ${pull_policy}
@@ -569,16 +562,16 @@ x-opencode-base: &opencode-base
     tty: true
     environment:
       - TZ=${TIMEZONE}
-#      - OPENCODE_CONFIG_CONTENT={"$$schema":"https://opencode.ai/config.json","provider":{"ollama":{"npm":"@ai-sdk/openai-compatible","name":"Ollama (local)","options":{"baseURL":"http://${ohostname}:11434/v1"},"models":{"EXAMPLEMODEL:EXAMPLEb":{"name":"EXAMPLE_NAME"}}}}} # uncomment to use with ollama
 #      - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME} # uncomment to enable user and password
 #      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # uncomment to enable user and password
+#      - OPENCODE_CONFIG_CONTENT={"$$schema":"https://opencode.ai/config.json","provider":{"ollama":{"npm":"@ai-sdk/openai-compatible","name":"Ollama (local)","options":{"baseURL":"http://${ohostname}:11434/v1"},"models":{"EXAMPLEMODEL:EXAMPLEb":{"name":"EXAMPLE_NAME"}}}}} # uncomment to use with ollama
 #      - OPENAI_BASE_URL=https://openrouter.ai/api/v1 # for use with openrouter
 #      - OPENAI_API_KEY=${OPENROUTER_API_KEY} # for use with openrouter
 #      - OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - GEMINI_API_KEY=${GEMINI_API_KEY}
-    ports: # comment to expose the service only to the docker network
-      - ${OCPORT}:${OCPORT} # comment to expose the service only to the docker network
+    ports:
+      - ${OCPORT}:${OCPORT}
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
@@ -636,8 +629,8 @@ x-hermes-base: &hermes-base
 #      - HERMES_OPENROUTER_CACHE=true
 #      - NVIDIA_API_KEY=jhvkjhvkjhvkj
     ports:
-      - ${hapiport}:${hapiport} # gateway API
-      - ${hdport}:${hdport} # dashboard port
+      - ${hapiport}:${hapiport}
+      - ${hdport}:${hdport}
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro

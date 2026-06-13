@@ -1,4 +1,16 @@
-* commit 4bd7c7da8b636cfc8c79cc8a9cbee2022a7d8a7c (HEAD -> develop, origin/develop)
+* commit 191a6ae0840045f8f4c053d3a04edb969638aa3b (HEAD -> develop, origin/develop)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Jun 13 13:58:51 2026 -0400
+| 
+|     * se elimina el soporte de coker model
+| 
+* commit 1600a2e380052e941420fcde21c22284d004f523
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Jun 13 10:22:41 2026 -0400
+| 
+|     * changelog
+| 
+* commit 4bd7c7da8b636cfc8c79cc8a9cbee2022a7d8a7c
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Sat Jun 13 10:22:35 2026 -0400
 | 

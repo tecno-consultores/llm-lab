@@ -12,19 +12,19 @@ docker compose -f docker-compose.yml --env-file env.example --profile n8n --prof
 
 Profiles you can run:
 
-| Project | AMD64 | ARM64 | Other | Depends on | Profile |
-| -------- | ------- | ------- | ------- | ------- | ------- |
-| [N8N](https://github.com/n8n-io/n8n) | ✅ | ✅ | | postgres / redis | --profile n8n |
-| N8N-worker | ✅ | ✅ | | N8N| --profile n8n-worker |
-| N8N-runner (code sandbox) | ✅ | ✅ | | N8N | --profile n8n-runner |
-| [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | --profile qdrant |
-| [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | postgres / redis | --profile openwebui |
-| [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia-gpu | | --profile ollama-gpu |
-| Ollama | ✅ | ✅ | AMD-gpu | | --profile ollama-cpu |
-| [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) | ✅ | ✅ | |  postgres / redis | --profile evolutionapi |
-| [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | |  postgres / redis | --profile flowise |
-| [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | | --profile opencode |
-| [hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | | --profile hermes |
+| Project | AMD64 | ARM64 | Other | Ollama | Depends on | Profile |
+| -------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| [N8N](https://github.com/n8n-io/n8n) | ✅ | ✅ | | ✅ | postgres / redis | --profile n8n |
+| N8N-worker | ✅ | ✅ | | | N8N| --profile n8n-worker |
+| N8N-runner (code sandbox) | ✅ | ✅ | | | N8N | --profile n8n-runner |
+| [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | | --profile qdrant |
+| [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | ✅ | postgres / redis | --profile openwebui |
+| [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia-gpu | | | --profile ollama-gpu |
+| Ollama | ✅ | ✅ | AMD-gpu | | | --profile ollama-cpu |
+| [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) | ✅ | ✅ | |  | postgres / redis | --profile evolutionapi |
+| [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | | ✅ | postgres / redis | --profile flowise |
+| [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | ✅ | | --profile opencode |
+| [hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | ✅ | | --profile hermes |
 
 Complementary services:
 

@@ -1,3 +1,5 @@
+# Example prompt
+
 Please explore this codebase and provide a clear overview of what this project is about. Specifically: 
 1. What is the core purpose and functionality of this project?
 2. What problem does it solve or what service does it provide?

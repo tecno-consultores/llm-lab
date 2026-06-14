@@ -3,13 +3,12 @@ x-ollama-base: &ollama-base
     image: ollama/ollama:latest
     hostname: ${ohostname}
     container_name: ${ohostname}
-    privileged: true
     pull_policy: ${pull_policy}
     restart: ${restart}
     stdin_open: true
     tty: true
-    ports:
-      - ${OPORT}:11434
+#    ports: # uncomment to expose port
+#      - ${OPORT}:11434 # uncomment to expose port
     ulimits:
       memlock: -1
     volumes:
@@ -275,6 +274,13 @@ x-postgres-base: &postgres-base
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
       - postgres:/var/lib/postgresql/data
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          memory: 256M
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -h 127.0.0.1 -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
       start_period: 30s
@@ -296,6 +302,11 @@ x-redis-base: &redis-base
       - ${INSIGHT_PORT}:8001
     volumes:
       - redis:/data
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
     healthcheck:
       test: ["CMD", "redis-cli","ping"]
       start_period: 30s
@@ -318,6 +329,13 @@ x-qdrant-base: &qdrant-base
 #      - 6334:6334 # uncomment to expose port
     volumes:
       - qdrant:/qdrant/storage
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          memory: 1G
     healthcheck:
       test: ["CMD", "./qdrant", "-V"]
       start_period: 30s
@@ -340,14 +358,19 @@ x-rabbit-base: &rabbit-base
     volumes:
       - rabbitmq-lib:/var/lib/rabbitmq/
       - ./rabbitmq-log:/var/log/rabbitmq/
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
 
 x-whisper-base: &whisper-base
     hostname: ${whostname}
     container_name: ${whostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-    ports:
-      - ${wport}:${wport}
+#    ports: # uncomment to expose port
+#      - ${wport}:${wport} # uncomment to expose port
     volumes:
       - whisper:/app/app
       - cache-whisper:/root/.cache
@@ -405,6 +428,11 @@ x-proxy-base: &proxy-base
     volumes:
       - proxy_data:/data
       - letsencrypt:/etc/letsencrypt
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 128M
     healthcheck:
       test: ["CMD", "/usr/bin/check-health"]
       start_period: 30s
@@ -418,8 +446,8 @@ x-searxng-base: &searxng-base
     container_name: ${searxnghostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-    ports:
-      - ${psearch}:8080
+#    ports: # uncomment to expose port
+#      - ${psearch}:8080 # uncomment to expose port
     environment:
 #      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/ uncomment to specify a static url
       - SEARXNG_LIMITER=false
@@ -434,6 +462,11 @@ x-searxng-base: &searxng-base
       options:
         max-size: "1m"
         max-file: "1"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
     healthcheck:
       test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://127.0.0.1:8080/healthz || exit 1"]
       start_period: 30s
@@ -455,6 +488,13 @@ x-mongodb-base: &mongodb-base
       - TZ=${TIMEZONE}
     volumes:
       - mongodb:/data/db
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          memory: 512M
     healthcheck:
       test: [ "CMD", "mongo", "--eval", "db.adminCommand('ping')" ]
       start_period: 30s
@@ -503,6 +543,11 @@ x-evolution-base: &evolution-base
       - ${evoport}:8080
     volumes:
       - evolution:/evolution/instances
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:8080/"]
       start_period: 30s
@@ -545,6 +590,11 @@ x-flowise-base: &flowise-base
       - flowise:/root/.flowise
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/api/v1/ping || exit 1"]
       start_period: 30s
@@ -616,13 +666,18 @@ x-hermes-base: &hermes-base
       - HERMES_QUIET=true
       - browserless_api_url=http://${broname}:3000
       - browserless_api_documentation=http://${broname}:3000/docs/swagger-ui-init.js
+      - learning_browserless=${learning_browserless}
 #      - browserless_token=${BROTOKEN}
       - crawl4ai_api_url=http://${crawhostname}:${CRAW1}
       - crawl4ai_api_documentation=http://${crawhostname}:${CRAW1}/openapi.json
       - crawl4ai_token=${CRAWL4AI_API_TOKEN}
+      - learning_crawl4ai=${learning_crawl4ai}
       - opencode_api_url=http://${codehostname}:${OCPORT}
       - opencode_api_documentation=http://${codehostname}:${OCPORT}/doc
+      - learning_opencode=${learning_opencode}
       - searxng_url=http://${searxnghostname}:8080/
+      - searcng_api_documentation=https://docs.searxng.org/dev/search_api.html
+      - learning_searxng=${learning_searxng}
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - OPENAI_API_KEY=${OPENAI_API_KEY}
 #      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
@@ -678,6 +733,13 @@ x-browserless-base: &browserless-base
       - LOG_FORMAT=json
     volumes:
       - browser_data:/user_data
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          memory: 512M
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://127.0.0.1:3000/pressure || exit 1"]
 #      test: ["CMD-SHELL", "curl -sf http://127.0.0.1:3000/pressure?token=${BROTOKEN} || exit 1"]

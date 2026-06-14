@@ -29,3 +29,17 @@ Once the report is received:
 * We will acknowledge receipt of the advisory within a reasonable timeframe.
 * We will work privately in an isolated environment to reproduce and mitigate the attack vector.
 * We will publish the corresponding patch directly in the repository accompanied, if applicable, by a Security Advisory.
+
+-------------------------------
+
+To generate a random password on Linux: 
+
+```bash
+dd if=/dev/urandom bs=1 count=64 2>/dev/null | base64 -w 0 | tr -dc _A-Z-a-z-0-9 | cut -c 1-32
+```
+
+To recreate the secrets files, execute the following:
+
+```bash
+echo -n $(dd if=/dev/urandom bs=1 count=64 2>/dev/null | base64 -w 0 | tr -dc _A-Z-a-z-0-9 | cut -c 1-32) > ./secrets/filename.txt 
+```

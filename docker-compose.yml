@@ -26,6 +26,8 @@ x-openwebui-base: &openwebui-base
     container_name: ${openhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
+    cap_drop:
+      - ALL
     environment:
       - ENV=prod
       - DOCKER=true
@@ -140,11 +142,14 @@ x-n8n-base: &n8n-base
     image: n8nio/n8n:stable
     pull_policy: ${pull_policy}
     restart: ${restart}
+    user: ${UID_USER}:${GID_USER}
+    cap_drop:
+      - ALL
     environment:
-      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
-      - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
-      - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
-      - N8N_RUNNERS_GRANT_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
+      - N8N_ENCRYPTION_KEY_FILE=/run/secrets/n8n_encryption_key
+      - N8N_USER_MANAGEMENT_JWT_SECRET_FILE=/run/secrets/n8n_jwt_secret
+      - N8N_RUNNERS_AUTH_TOKEN_FILE=/run/secrets/n8n_runners_token
+      - N8N_RUNNERS_GRANT_TOKEN_FILE=/run/secrets/n8n_runners_token
       - NODE_ENV=production
       - N8N_DIAGNOSTICS_ENABLED=false
       - N8N_PERSONALIZATION_ENABLED=true
@@ -162,7 +167,7 @@ x-n8n-base: &n8n-base
       - DB_POSTGRESDB_PORT=${POSTGRESDB_PORT}
       - DB_POSTGRESDB_DATABASE=${n8n_db_name}
       - DB_POSTGRESDB_USER=${POSTGRES_USER}
-      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_POSTGRESDB_PASSWORD_FILE=/run/secrets/postgres_pass
       - DB_POSTGRESDB_POOL_SIZE=2
       - DB_POSTGRESDB_SSL_ENABLED=false
       - N8N_TEMPLATES_ENABLED=true
@@ -234,16 +239,24 @@ x-n8n-base: &n8n-base
       nofile:
         soft: 65536
         hard: 65536
+    secrets:
+      - postgres_pass
+      - n8n_encryption_key
+      - n8n_jwt_secret
+      - n8n_runners_token
 
 x-n8n-runner: &n8n-runner
     image: n8nio/runners:stable
     pull_policy: ${pull_policy}
     restart: ${restart}
+    user: ${UID_USER}:${GID_USER}
+    cap_drop:
+      - ALL
     environment:
-      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
-      - N8N_USER_MANAGEMENT_JWT_SECRET=${N8N_USER_MANAGEMENT_JWT_SECRET}
-      - N8N_RUNNERS_AUTH_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
-      - N8N_RUNNERS_GRANT_TOKEN=${N8N_RUNNERS_AUTH_TOKEN}
+      - N8N_ENCRYPTION_KEY_FILE=/run/secrets/n8n_encryption_key
+      - N8N_USER_MANAGEMENT_JWT_SECRET_FILE=/run/secrets/n8n_jwt_secret
+      - N8N_RUNNERS_AUTH_TOKEN_FILE=/run/secrets/n8n_runners_token
+      - N8N_RUNNERS_GRANT_TOKEN_FILE=/run/secrets/n8n_runners_token
       - NODE_ENV=production
       - N8N_RUNNERS_TASK_BROKER_URI=http://${workername}:${N8N_PORT2}
       - N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT=15
@@ -257,6 +270,10 @@ x-n8n-runner: &n8n-runner
       nofile:
         soft: 65536
         hard: 65536
+    secrets:
+      - n8n_encryption_key
+      - n8n_jwt_secret
+      - n8n_runners_token
 
 x-postgres-base: &postgres-base
     image: postgres:17.6
@@ -266,7 +283,7 @@ x-postgres-base: &postgres-base
     restart: ${restart}
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_pass
       - POSTGRES_DB=${POSTGRES_DB}
       - TZ=${TIMEZONE}
 #    ports: # uncomment to expose port
@@ -274,6 +291,8 @@ x-postgres-base: &postgres-base
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
       - postgres:/var/lib/postgresql/data
+    secrets:
+      - postgres_pass
     deploy:
       resources:
         limits:
@@ -294,8 +313,10 @@ x-redis-base: &redis-base
     container_name: ${rhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
+    cap_drop:
+      - ALL
     environment:
-      - REDIS_ARGS=--save 20 3
+#      - REDIS_ARGS=--save 20 3
       - TZ=${TIMEZONE}
     ports:
 #      - ${REDIS_PORT}:6379 # uncomment to expose port
@@ -446,6 +467,8 @@ x-searxng-base: &searxng-base
     container_name: ${searxnghostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
+    cap_drop:
+      - ALL
 #    ports: # uncomment to expose port
 #      - ${psearch}:8080 # uncomment to expose port
     environment:
@@ -509,6 +532,8 @@ x-evolution-base: &evolution-base
     container_name: ${evohostname}
     restart: ${restart}
     pull_policy: ${pull_policy}
+    cap_drop:
+      - ALL
     environment:
       - SERVER_TYPE=http
       - SERVER_URL=${EVOLUTION_SERVER_URL}
@@ -562,6 +587,8 @@ x-flowise-base: &flowise-base
     container_name: ${fhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
+    cap_drop:
+      - ALL
     environment:
       - DATABASE_PATH=/root/.flowise
       - DATABASE_SSL=false
@@ -748,6 +775,8 @@ x-browserless-base: &browserless-base
       timeout: 10s
       retries: 3
 
+################################################
+
 volumes:
   ollama:
   openwebui:
@@ -779,6 +808,16 @@ configs:
         formats:
           - html
           - json
+
+secrets:
+  postgres_pass:
+    file: ./secrets/pg_password.txt
+  n8n_encryption_key:
+    file: ./secrets/n8n_encryption_key.txt
+  n8n_jwt_secret:
+    file: ./secrets/n8n_jwt_secret.txt
+  n8n_runners_token:
+    file: ./secrets/n8n_runners_token.txt
 
 ################################################
 

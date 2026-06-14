@@ -1,59 +1,115 @@
-* commit 459cc7b965b4e9f4dcdbf5bdd65c514c453a49a0 (HEAD -> develop, origin/develop)
+* commit cd76c29dcc697e4ed7ed925c52e94ab566da3388 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 13 15:14:04 2026 -0400
+| Date:   Sun Jun 14 14:29:18 2026 -0400
 | 
-|     * documentacion
+|     * nuevo learning opencode
 | 
-* commit 1e13e9114fb61ec177c6289c1699c82d90290bb5
+* commit 36404c146f0838f7531c14eacbcee6b7b4a6216c
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 13 14:17:25 2026 -0400
+| Date:   Sun Jun 14 14:10:47 2026 -0400
 | 
 |     * changelog
 | 
-* commit 726c12f1c84905e3241d3e45e875c95ab6dc1521
+* commit c6d429cc4eacf65d72798c356b4abcce1bfcd269
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 13 14:17:08 2026 -0400
+| Date:   Sun Jun 14 14:10:23 2026 -0400
 | 
-|     * markdown
+|     * informacion nueva en security
 | 
-* commit 3de294eac99caa2c92c394d36f8904f37cd944f0
+* commit 2fd9d8699bfa7f0b5e6727bf3198b66f8597fe28
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 13 13:59:01 2026 -0400
+| Date:   Sun Jun 14 14:01:33 2026 -0400
 | 
-|     * changelog
-| 
-* commit 191a6ae0840045f8f4c053d3a04edb969638aa3b
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 13 13:58:51 2026 -0400
-| 
-|     * se elimina el soporte de coker model
-| 
-* commit 1600a2e380052e941420fcde21c22284d004f523
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 13 10:22:41 2026 -0400
-| 
-|     * changelog
-| 
-* commit 4bd7c7da8b636cfc8c79cc8a9cbee2022a7d8a7c
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 13 10:22:35 2026 -0400
-| 
-|     * bugfix
-| 
-* commit 9fa1ef12e9d2ce271e28fd13d91410acd3f69784
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 13 10:16:26 2026 -0400
-| 
-|     * changelog
-| 
-* commit b431dc6fb9f6cc926289976f4a634beaebf702cc
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Jun 13 10:16:15 2026 -0400
-| 
-|     * ollama en readme
-|   
-*   commit aaaff35f4fa47b0f30657bb62c930bf127b1deb2
-|\  Merge: 628c30d 676f4cf
+|     * se agrega secrets de docker a n8n
+|     * se agrega un directorio a gitignore
+|     * se realizan cambios de seguridad en el docker compose
+|     
+| *   commit ae78648d6ce4eb05bbee35881d1530b6be37a50a (origin/main, origin/HEAD, main)
+| |\  Merge: 00c612d a832efe
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Jun 13 23:44:38 2026 -0400
+| |   
+| |       Merge pull request #132 from tecno-consultores/develop
+| |       
+| |       * deploy
+| | 
+* | commit a832efea7c3f695b0222deca4c4d8434f538d1b5
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 23:39:11 2026 -0400
+| | 
+| |     * deploy
+| |   
+| *   commit 00c612da1a107ba1c856a1c47061ed8dcc045a32 (tag: v1.18.4)
+| |\  Merge: 676f4cf 28204e0
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Jun 13 15:16:27 2026 -0400
+| |   
+| |       Merge pull request #131 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 28204e085c24e2f56315211cdca558604be5dae6
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 15:14:15 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 459cc7b965b4e9f4dcdbf5bdd65c514c453a49a0
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 15:14:04 2026 -0400
+| | 
+| |     * documentacion
+| | 
+* | commit 1e13e9114fb61ec177c6289c1699c82d90290bb5
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 14:17:25 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 726c12f1c84905e3241d3e45e875c95ab6dc1521
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 14:17:08 2026 -0400
+| | 
+| |     * markdown
+| | 
+* | commit 3de294eac99caa2c92c394d36f8904f37cd944f0
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 13:59:01 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 191a6ae0840045f8f4c053d3a04edb969638aa3b
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 13:58:51 2026 -0400
+| | 
+| |     * se elimina el soporte de coker model
+| | 
+* | commit 1600a2e380052e941420fcde21c22284d004f523
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 10:22:41 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 4bd7c7da8b636cfc8c79cc8a9cbee2022a7d8a7c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 10:22:35 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit 9fa1ef12e9d2ce271e28fd13d91410acd3f69784
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 10:16:26 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit b431dc6fb9f6cc926289976f4a634beaebf702cc
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 13 10:16:15 2026 -0400
+| | 
+| |     * ollama en readme
+| | 
+* | commit aaaff35f4fa47b0f30657bb62c930bf127b1deb2
+|\| Merge: 628c30d 676f4cf
 | | Author: Sinfallas <sinfallas@gmail.com>
 | | Date:   Sat Jun 13 10:09:35 2026 -0400
 | | 
@@ -61,7 +117,7 @@
 | |     
 | |     hacia atras
 | | 
-| * commit 676f4cf22a556ff46c54d045b5ce77a8baa4f8d5 (origin/main, origin/HEAD, main)
+| * commit 676f4cf22a556ff46c54d045b5ce77a8baa4f8d5
 | | Author: Sinfallas <sinfallas@gmail.com>
 | | Date:   Fri Jun 12 13:40:53 2026 -0400
 | | 

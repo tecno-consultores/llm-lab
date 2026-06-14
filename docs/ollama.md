@@ -14,7 +14,7 @@ This is a list of the models used for testing
 * nomic-embed-text-v2-moe
 
 ```bash
-ollama pull hermes3:8b
+ollama pull gemma4:e2b-it-qat
 ```
 
 to deactivate the thought inside ollama:

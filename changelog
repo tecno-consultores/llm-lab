@@ -1,30 +1,51 @@
-* commit cd76c29dcc697e4ed7ed925c52e94ab566da3388 (HEAD -> develop, origin/develop)
+* commit 5bb79f73925c75d1af72db2201b769a04eaf2ef4 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Jun 14 14:29:18 2026 -0400
+| Date:   Sun Jun 14 19:10:23 2026 -0400
 | 
-|     * nuevo learning opencode
-| 
-* commit 36404c146f0838f7531c14eacbcee6b7b4a6216c
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Jun 14 14:10:47 2026 -0400
-| 
-|     * changelog
-| 
-* commit c6d429cc4eacf65d72798c356b4abcce1bfcd269
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Jun 14 14:10:23 2026 -0400
-| 
-|     * informacion nueva en security
-| 
-* commit 2fd9d8699bfa7f0b5e6727bf3198b66f8597fe28
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Jun 14 14:01:33 2026 -0400
-| 
-|     * se agrega secrets de docker a n8n
-|     * se agrega un directorio a gitignore
-|     * se realizan cambios de seguridad en el docker compose
+|     * para poder ver el dashboard de qdrant
 |     
-| *   commit ae78648d6ce4eb05bbee35881d1530b6be37a50a (origin/main, origin/HEAD, main)
+| *   commit b7a3381a65c902e4fb53172bd26e9ddd5d25790e (origin/main, origin/HEAD, main)
+| |\  Merge: ae78648 49bc746
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sun Jun 14 15:34:20 2026 -0400
+| |   
+| |       Merge pull request #133 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 49bc746489cf55b89fd0845816f2907eebba4dd1
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 14 14:29:34 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit cd76c29dcc697e4ed7ed925c52e94ab566da3388
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 14 14:29:18 2026 -0400
+| | 
+| |     * nuevo learning opencode
+| | 
+* | commit 36404c146f0838f7531c14eacbcee6b7b4a6216c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 14 14:10:47 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit c6d429cc4eacf65d72798c356b4abcce1bfcd269
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 14 14:10:23 2026 -0400
+| | 
+| |     * informacion nueva en security
+| | 
+* | commit 2fd9d8699bfa7f0b5e6727bf3198b66f8597fe28
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 14 14:01:33 2026 -0400
+| | 
+| |     * se agrega secrets de docker a n8n
+| |     * se agrega un directorio a gitignore
+| |     * se realizan cambios de seguridad en el docker compose
+| |   
+| *   commit ae78648d6ce4eb05bbee35881d1530b6be37a50a
 | |\  Merge: 00c612d a832efe
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sat Jun 13 23:44:38 2026 -0400

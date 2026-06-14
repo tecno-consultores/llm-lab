@@ -345,9 +345,9 @@ x-qdrant-base: &qdrant-base
       - QDRANT__SERVICE__GRPC_PORT=6334
       - QDRANT__LOG_LEVEL=INFO
       - TZ=${TIMEZONE}
-#    ports: # uncomment to expose port
-#      - ${qdrant}:6333 # uncomment to expose port
-#      - 6334:6334 # uncomment to expose port
+    ports: # uncomment to expose port
+      - ${qdrant}:6333 # uncomment to expose port
+      - 6334:6334 # uncomment to expose port
     volumes:
       - qdrant:/qdrant/storage
     deploy:

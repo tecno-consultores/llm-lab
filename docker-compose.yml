@@ -674,7 +674,7 @@ x-hermes-base: &hermes-base
     shm_size: "1gb"
     command: gateway run # The following command for hermes cli in case they change the path of the image /opt/hermes/.venv/bin/hermes
     environment:
-      - PATH=/opt/data/.local/bin:/opt/hermes/.venv/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - PATH=/root/.local/bin:/opt/data/.local/bin:/opt/hermes/.venv/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       - HERMES_DASHBOARD=1
       - HERMES_DASHBOARD_HOST=0.0.0.0
       - HERMES_DASHBOARD_PORT=${hdport}

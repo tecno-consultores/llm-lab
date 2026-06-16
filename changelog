@@ -1,10 +1,45 @@
-* commit 5bb79f73925c75d1af72db2201b769a04eaf2ef4 (HEAD -> develop, origin/develop)
+* commit a5ab318a0f2f86787b98653e9a11214e74f60d87 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sun Jun 14 19:10:23 2026 -0400
+| Date:   Tue Jun 16 17:26:14 2026 -0400
 | 
-|     * para poder ver el dashboard de qdrant
+|     * doc
+| 
+* commit b6f02843fdb467d3552474a790f83c3b7fe0e2dd
+| Author: Sinfallas <sinfallas@gmail.com>
+| Date:   Mon Jun 15 19:03:15 2026 -0400
+| 
+|     Fix PATH variable in docker-compose.yml
 |     
-| *   commit b7a3381a65c902e4fb53172bd26e9ddd5d25790e (origin/main, origin/HEAD, main)
+|     Removed trailing slash from PATH environment variable.
+| 
+* commit be9c525bb3e69f942d4bd29c02395d2271475d6f
+| Author: Sinfallas <sinfallas@gmail.com>
+| Date:   Mon Jun 15 19:00:43 2026 -0400
+| 
+|     Update docker-compose.yml
+|     
+| *   commit ba7460f16aa5ca8aaf9a5482a2ef32caad02f083 (origin/main, origin/HEAD, main)
+| |\  Merge: b7a3381 6e512eb
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sun Jun 14 19:11:42 2026 -0400
+| |   
+| |       Merge pull request #134 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 6e512eb9eecc9bfe3c55a110ec397cdfe624a1e3
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 14 19:10:41 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 5bb79f73925c75d1af72db2201b769a04eaf2ef4
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 14 19:10:23 2026 -0400
+| | 
+| |     * para poder ver el dashboard de qdrant
+| |   
+| *   commit b7a3381a65c902e4fb53172bd26e9ddd5d25790e (tag: v1.18.5)
 | |\  Merge: ae78648 49bc746
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sun Jun 14 15:34:20 2026 -0400

@@ -20,25 +20,3 @@ And to run Hermes with the dashboard for terminal
 docker exec -it hermes hermes --tui
 ```
 
-------
-
-To use OpenWebUI as UI for hermes:
-
-* Open Open WebUI in your browser.
-* Go to ⚙️ Admin Settings → Connections → OpenAI.
-* Click ➕ Add Connection.
-* Enter the following:
-  + URL	http://hermes-ip:8642/v1
-  + API Key: the apikey in the env.example file
-
-------
-
-To connect hermes with ollama run:
-
-```bash
-docker exec -it hermes hermes model
-```
-
-select **Custom endpoint** and put the following url: **http://ollama:11434/v1** When prompted for the apikey, leave it blank.
-
-

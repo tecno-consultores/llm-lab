@@ -345,9 +345,9 @@ x-qdrant-base: &qdrant-base
       - QDRANT__SERVICE__GRPC_PORT=6334
       - QDRANT__LOG_LEVEL=INFO
       - TZ=${TIMEZONE}
-    ports: # uncomment to expose port
-      - ${qdrant}:6333 # uncomment to expose port
-      - 6334:6334 # uncomment to expose port
+    ports:
+      - ${qdrant}:6333
+      - 6334:6334
     volumes:
       - qdrant:/qdrant/storage
     deploy:
@@ -674,7 +674,7 @@ x-hermes-base: &hermes-base
     shm_size: "1gb"
     command: gateway run # The following command for hermes cli in case they change the path of the image /opt/hermes/.venv/bin/hermes
     environment:
-      - PATH=/opt/data/.local/bin:/opt/hermes/.venv/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - PATH=/root/.local/bin:/opt/data/.local/bin:/opt/hermes/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       - HERMES_DASHBOARD=1
       - HERMES_DASHBOARD_HOST=0.0.0.0
       - HERMES_DASHBOARD_PORT=${hdport}
@@ -709,7 +709,7 @@ x-hermes-base: &hermes-base
 #      - OPENAI_API_KEY=${OPENAI_API_KEY}
 #      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
 #      - HERMES_OPENROUTER_CACHE=true
-#      - NVIDIA_API_KEY=jhvkjhvkjhvkj
+#      - NVIDIA_API_KEY=${NVIDIA_API_KEY}
     ports:
       - ${hapiport}:${hapiport}
       - ${hdport}:${hdport}

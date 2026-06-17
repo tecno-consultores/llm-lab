@@ -125,16 +125,16 @@ x-openai-bridge: &openai-bridge
       - MODEL_LOADER_TYPE=n8n-api
       - AUTO_DISCOVERY_TAG=n8n-openai-bridge
       - AUTO_DISCOVERY_POLL_INTERVAL=300
-      - ENABLE_TASK_DETECTION=false # Set to 'true' to enable (default false)
+      - ENABLE_TASK_DETECTION=${ENABLE_TASK_DETECTION}
       - N8N_TIMEOUT=300000
       - SERVER_TIMEOUT=300000
       - SERVER_KEEP_ALIVE_TIMEOUT=120000
       - SERVER_HEADERS_TIMEOUT=121000
-      - FILE_UPLOAD_MODE=passthrough # Options passthrough, extract-json, extract-multipart, disabled
+      - FILE_UPLOAD_MODE=${FILE_UPLOAD_MODE}
       - RATE_LIMIT_WINDOW_MS=60000
-      - RATE_LIMIT_MAX_REQUESTS=100 # Max requests per window for general endpoints (default 100)
-      - RATE_LIMIT_CHAT_COMPLETIONS=30 # Max chat completion requests per window (default 30)
-      - DISABLE_RATE_LIMIT=false # Set to 'true' to disable rate limiting entirely
+      - RATE_LIMIT_MAX_REQUESTS=${RATE_LIMIT_MAX_REQUESTS}
+      - RATE_LIMIT_CHAT_COMPLETIONS=${RATE_LIMIT_CHAT_COMPLETIONS}
+      - DISABLE_RATE_LIMIT=${DISABLE_RATE_LIMIT}
     volumes:
       - ./models.json:/app/models.json:ro
 

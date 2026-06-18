@@ -7,8 +7,8 @@ x-ollama-base: &ollama-base
     restart: ${restart}
     stdin_open: true
     tty: true
-#    ports: # uncomment to expose port
-#      - ${OPORT}:11434 # uncomment to expose port
+#    ports:
+#      - ${OPORT}:11434
     ulimits:
       memlock: -1
     volumes:
@@ -110,7 +110,7 @@ x-openai-bridge: &openai-bridge
     ports:
       - ${obridgep}:3333
     environment:
-      - BEARER_TOKEN=${obearer} #Required Auth token for API requests TO this bridge
+      - BEARER_TOKEN=${obearer} # Required Auth token for API requests TO this bridge
       - N8N_WEBHOOK_BEARER_TOKEN=${wtoken}
       - LOG_REQUESTS=false
       - SESSION_ID_HEADERS=X-Session-Id,X-Chat-Id,X-OpenWebUI-Chat-Id
@@ -286,8 +286,8 @@ x-postgres-base: &postgres-base
       - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_pass
       - POSTGRES_DB=${POSTGRES_DB}
       - TZ=${TIMEZONE}
-#    ports: # uncomment to expose port
-#      - ${POSTGRESDB_PORT}:5432 # uncomment to expose port
+#    ports:
+#      - ${POSTGRESDB_PORT}:5432
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
       - postgres:/var/lib/postgresql/data
@@ -319,7 +319,7 @@ x-redis-base: &redis-base
 #      - REDIS_ARGS=--save 20 3
       - TZ=${TIMEZONE}
     ports:
-#      - ${REDIS_PORT}:6379 # uncomment to expose port
+#      - ${REDIS_PORT}:6379
       - ${INSIGHT_PORT}:8001
     volumes:
       - redis:/data
@@ -390,8 +390,8 @@ x-whisper-base: &whisper-base
     container_name: ${whostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-#    ports: # uncomment to expose port
-#      - ${wport}:${wport} # uncomment to expose port
+#    ports:
+#      - ${wport}:${wport}
     volumes:
       - whisper:/app/app
       - cache-whisper:/root/.cache
@@ -401,8 +401,8 @@ x-crawl4ai-base: &crawl4ai-base
     container_name: ${crawhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-#    ports: # uncomment to expose port
-#      - ${CRAW1}:11235 # uncomment to expose port
+#    ports:
+#      - ${CRAW1}:11235
     volumes:
       - /dev/shm:/dev/shm
     environment:
@@ -469,10 +469,10 @@ x-searxng-base: &searxng-base
     restart: ${restart}
     cap_drop:
       - ALL
-#    ports: # uncomment to expose port
-#      - ${psearch}:8080 # uncomment to expose port
+#    ports:
+#      - ${psearch}:8080
     environment:
-#      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/ uncomment to specify a static url
+#      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME}/ # uncomment to specify a static url
       - SEARXNG_LIMITER=false
       - SEARXNG_SECRET=${SEARXNG_SECRET}
       - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS}
@@ -503,8 +503,8 @@ x-mongodb-base: &mongodb-base
     container_name: ${mhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-#    ports: # uncomment to expose port
-#      - ${mongoport}:8081 # uncomment to expose port
+#    ports:
+#      - ${mongoport}:8081
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
@@ -738,8 +738,8 @@ x-browserless-base: &browserless-base
     container_name: ${broname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-#    ports: # uncomment to expose port
-#      - 3000:3000 # uncomment to expose port
+#    ports:
+#      - 3000:3000
     shm_size: "2gb"
     environment:
 #      - TOKEN=${BROTOKEN}

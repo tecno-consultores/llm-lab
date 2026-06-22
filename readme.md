@@ -21,7 +21,7 @@ Profiles you can run:
 | [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | ✅ | postgres / redis | --profile openwebui |
 | [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia | | | --profile ollama-gpu |
 | Ollama | ✅ | ✅ | AMD | | | --profile ollama-cpu |
-| [EvolutionAPI](https://doc.evolution-api.com/v1/en/get-started/introduction) | ✅ | ✅ | |  | postgres / redis | --profile evolutionapi |
+| [EvolutionAPI](https://github.com/evolution-foundation/evolution-api) | ✅ | ✅ | |  | postgres / redis | --profile evolutionapi |
 | [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | | ✅ | postgres / redis | --profile flowise |
 | [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | ✅ | | --profile opencode |
 | [hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | ✅ | | --profile hermes |

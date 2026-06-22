@@ -32,6 +32,12 @@ Once the report is received:
 
 -------------------------------
 
+Notes:
+
+* Sensitive services are only accessible to other containers; if you want to access them from outside the Docker network, uncomment the ports section.
+
+-------------------------------
+
 To generate a random password on Linux: 
 
 ```bash

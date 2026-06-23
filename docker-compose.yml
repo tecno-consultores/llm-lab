@@ -316,11 +316,15 @@ x-redis-base: &redis-base
     cap_drop:
       - ALL
     environment:
-#      - REDIS_ARGS=--save 20 3
+      - REDIS_ARGS='--save ""'
       - TZ=${TIMEZONE}
     ports:
 #      - ${REDIS_PORT}:6379
       - ${INSIGHT_PORT}:8001
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
     volumes:
       - redis:/data
     deploy:
@@ -689,7 +693,7 @@ x-hermes-base: &hermes-base
       - TERMINAL_ENV=local
       - HERMES_DASHBOARD_BASIC_AUTH_USERNAME=${huser}
       - HERMES_DASHBOARD_BASIC_AUTH_PASSWORD=${hpass}
-      - HERMES_DASHBOARD_PUBLIC_URL=https://hermes.example.com #change me
+      - HERMES_DASHBOARD_PUBLIC_URL=${HERMES_DASHBOARD_PUBLIC_URL}
       - HERMES_QUIET=true
       - browserless_api_url=http://${broname}:3000
       - browserless_api_documentation=http://${broname}:3000/docs/swagger-ui-init.js

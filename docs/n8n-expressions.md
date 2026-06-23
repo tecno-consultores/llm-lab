@@ -39,5 +39,3 @@
 ```bash
 {{parseInt(Math.random()*10000000000000000)}}
 ```
-cker exec -it --user root n8n sh
-5) npm install -g example1 example2

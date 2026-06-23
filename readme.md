@@ -28,20 +28,20 @@ Profiles you can run:
 
 Complementary services:
 
-| Project | AMD64 | ARM64 | GPU | Depends on | Profile |
-| -------- | ------- | ------- | ------- | ------- | ------- |
-| [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) | ✅ | ❌ | | openwebui / n8n | --profile openaibridge |
-| [Whisper](https://github.com/openai/whisper) | ✅ | ❌ | Nvidia | | --profile whisper-gpu |
-| Whisper | ✅ | ✅ | AMD | | --profile whisper |
-| [Crawl4ai](https://github.com/unclecode/crawl4ai) | ✅ | ❌ | | | --profile crawl4ai-amd64 |
-| Crawl4ai | ❌ | ✅ | | | --profile crawl4ai-arm64 |
-| [Searxng](https://github.com/searxng/searxng) | ✅ | ✅ | | | --profile searxng |
-| [Browserless](https://github.com/browserless/browserless) | ✅ | ✅ | | | --profile browserless |
-| [MongoDB](https://www.mongodb.com) | ✅ | ❌ | | | --profile mongodb |
-| [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | ✅ | ✅ | | | --profile rabbit |
-| [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | --profile proxy |
-| [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | --profile postgres |
-| [Redis](https://hub.docker.com/r/redis/redis-stack) | ✅ | ✅ | | | --profile redis |
+| Project | AMD64 | ARM64 | GPU | Ollama | Depends on | Profile |
+| -------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) | ✅ | ❌ | | | openwebui / n8n | --profile openaibridge |
+| [Whisper](https://github.com/openai/whisper) | ✅ | ❌ | Nvidia |  | | --profile whisper-gpu |
+| Whisper | ✅ | ✅ | AMD | | | --profile whisper |
+| [Crawl4ai](https://github.com/unclecode/crawl4ai) | ✅ | ❌ | | ✅ | | --profile crawl4ai-amd64 |
+| Crawl4ai | ❌ | ✅ | | | | --profile crawl4ai-arm64 |
+| [Searxng](https://github.com/searxng/searxng) | ✅ | ✅ | | | | --profile searxng |
+| [Browserless](https://github.com/browserless/browserless) | ✅ | ✅ | | | | --profile browserless |
+| [MongoDB](https://www.mongodb.com) | ✅ | ❌ | | | | --profile mongodb |
+| [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | ✅ | ✅ | | | | --profile rabbit |
+| [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | | --profile proxy |
+| [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | | --profile postgres |
+| [Redis](https://hub.docker.com/r/redis/redis-stack) | ✅ | ✅ | | | | --profile redis |
 
 Healthcheck, ports and URLs:
 

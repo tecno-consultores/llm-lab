@@ -12,6 +12,7 @@ This is a list of the models used for testing
 * hermes3:8b
 * gemma4:e2b-it-qat
 * nomic-embed-text-v2-moe
+* gemma-4-12B-coder-fable5-composer2.5-v1-GGUF
 
 ```bash
 ollama pull gemma4:e2b-it-qat

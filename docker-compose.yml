@@ -479,8 +479,6 @@ x-searxng-base: &searxng-base
     container_name: ${searxnghostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-    cap_drop:
-      - ALL
 #    ports:
 #      - ${psearch}:8080
     environment:

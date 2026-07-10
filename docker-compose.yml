@@ -315,31 +315,23 @@ x-postgres-base: &postgres-base
       timeout: 10s
       retries: 3
 
-x-redis-base: &redis-base
-    image: redis/redis-stack:latest
+x-dragonfly-base: &dragonfly-base
+    image: docker.dragonflydb.io/dragonflydb/dragonfly:latest
     hostname: ${rhostname}
     container_name: ${rhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
-    cap_drop:
-      - ALL
     environment:
-      - REDIS_ARGS='--save ""'
       - TZ=${TIMEZONE}
-    ports:
+    command: 
+      - "--default_lua_flags=allow-undeclared-keys"
+#      - "--maxmemory=1gb"
+#    ports:
 #      - ${REDIS_PORT}:6379
-      - ${INSIGHT_PORT}:8001
     ulimits:
-      nofile:
-        soft: 65536
-        hard: 65536
+      memlock: -1
     volumes:
-      - redis:/data
-    deploy:
-      resources:
-        limits:
-          cpus: '0.5'
-          memory: 256M
+      - dragonfly_data:/data
     healthcheck:
       test: ["CMD", "redis-cli","ping"]
       start_period: 30s
@@ -794,7 +786,7 @@ volumes:
   n8n_backup:
   n8n_shared:
   postgres:
-  redis:
+  dragonfly_data:
   qdrant:
   whisper:
   cache-whisper:
@@ -836,9 +828,9 @@ services:
       <<: *postgres-base
       profiles: ["postgres", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise"]
 
-    redis:
-      <<: *redis-base
-      profiles: ["redis", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise"]
+    dragonfly:
+      <<: *dragonfly-base
+      profiles: ["dragonfly", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise"]
 
     n8n:
       <<: *n8n-base
@@ -855,12 +847,12 @@ services:
         timeout: 10s
         retries: 3
       links:
-        - redis
+        - dragonfly
       depends_on:
         postgres:
           condition: service_healthy
           restart: true
-        redis:
+        dragonfly:
           condition: service_healthy
           restart: true
 
@@ -877,12 +869,12 @@ services:
         timeout: 10s
         retries: 3
       links:
-        - redis
+        - dragonfly
       depends_on:
         postgres:
           condition: service_healthy
           restart: true
-        redis:
+        dragonfly:
           condition: service_healthy
           restart: true
         n8n:
@@ -901,12 +893,12 @@ services:
         timeout: 10s
         retries: 3
       links:
-        - redis
+        - dragonfly
       depends_on:
         postgres:
           condition: service_healthy
           restart: true
-        redis:
+        dragonfly:
           condition: service_healthy
           restart: true
         n8n-worker:
@@ -921,12 +913,12 @@ services:
       <<: *openwebui-base
       profiles: ["openwebui", "openaibridge"]
       links:
-        - redis
+        - dragonfly
       depends_on:
         postgres:
           condition: service_healthy
           restart: true
-        redis:
+        dragonfly:
           condition: service_healthy
           restart: true
 
@@ -1025,12 +1017,12 @@ services:
       <<: *evolution-base
       profiles: [ "evolutionapi" ]
       links:
-        - redis
+        - dragonfly
       depends_on:
         postgres:
           condition: service_healthy
           restart: true
-        redis:
+        dragonfly:
           condition: service_healthy
           restart: true
 
@@ -1038,12 +1030,12 @@ services:
         <<: *flowise-base
         profiles: ["flowise"]
         links:
-          - redis
+          - dragonfly
         depends_on:
           postgres:
             condition: service_healthy
             restart: true
-          redis:
+          dragonfly:
             condition: service_healthy
             restart: true
 

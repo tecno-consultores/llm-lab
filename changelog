@@ -1,10 +1,240 @@
-* commit 54faa82fe5a028a0009813791eba65fdf01b3e34 (HEAD -> develop, origin/develop)
+* commit 93051a74ffc4d8682ba3ca52db634ff52724e546 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Wed Jun 17 19:11:56 2026 -0400
+| Date:   Fri Jul 10 18:06:01 2026 -0400
 | 
-|     * comentarios
-|     
-| *   commit e55e537f3eeb490154fc1073ade00b67454fe0d0 (origin/main, origin/HEAD, main)
+|     * dragonflydb
+|   
+| * commit 962ff29cfa84c4882461157abd1a92be299198e1 (origin/main, origin/HEAD, main)
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri Jul 10 18:04:27 2026 -0400
+| | 
+| |     * changelog
+| | 
+| * commit d1b3bd03103a50e4f05be799d11cccae28c41cae
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri Jul 10 18:04:15 2026 -0400
+| | 
+| |     * dragonflydb
+| |   
+| *   commit da04b999bdd6afa4f28379cc93ac395870d24339
+| |\  Merge: 8223020 87e0f2a
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon Jul 6 10:48:53 2026 -0400
+| |   
+| |       Merge pull request #143 from tecno-consultores/develop
+| |       
+| |       Update docker-compose.yml to comment out settings
+| | 
+* | commit 87e0f2aa1c962160f6c49e6d08e7f0a264f2adc8
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jul 6 10:48:10 2026 -0400
+| | 
+| |     Update docker-compose.yml to comment out settings
+| |     
+| |     Comment out ports and cap_drop configuration.
+| |   
+| *   commit 82230200237c67a5f92a7e6d3bad77ec4ea4b7cc
+| |\  Merge: 8c8850a c6bbcd3
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon Jun 29 11:00:58 2026 -0400
+| |   
+| |       Merge pull request #142 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit c6bbcd398aa5e4575f7b10270677ad253965843b
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 29 11:00:43 2026 -0400
+| | 
+| |     Update ollama.md
+| | 
+* | commit 7a46c4768fcc897640b5b9e6c1ace37aac8bdffa
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 29 10:58:49 2026 -0400
+| | 
+| |     Add 'up.example' to .gitignore
+| | 
+* | commit 313f5adb1c8fa19559ddac5e4ccb9bc783e436fc
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 29 10:58:11 2026 -0400
+| | 
+| |     Update ollama.md
+| |   
+| *   commit 8c8850ae4c9259286390edc45c8206fd440e7c24
+| |\  Merge: 8d12557 f3ff766
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sun Jun 28 15:44:20 2026 -0400
+| |   
+| |       Merge pull request #141 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit f3ff76617323760b2ef13d2030a9c7e2b40e228e
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sun Jun 28 15:37:36 2026 -0400
+| | 
+| |     * openwebui
+| | 
+* | commit f90ca0feb0a3d6457c8daf475c9b36e1a6f9e6d5
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Jun 27 13:41:52 2026 -0400
+| | 
+| |     * coding
+| |   
+| *   commit 8d12557f6b1b9033ae8855d7f52b289e12bc4176
+| |\  Merge: 7e9dee5 55ed730
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Wed Jun 24 11:00:40 2026 -0400
+| |   
+| |       Merge pull request #140 from tecno-consultores/develop
+| |       
+| |       * opencode y ollama
+| | 
+* | commit 55ed730e9e87c0b4d0b3cc24fc7c3ec6f6caf0f6
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jun 24 10:58:50 2026 -0400
+| | 
+| |     * opencode y ollama
+| |   
+| *   commit 7e9dee58d17466fcbc1f08495b24ca9b38558c32 (tag: v1.18.7)
+| |\  Merge: 7eb6f08 afe2aba
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Tue Jun 23 19:53:19 2026 -0400
+| |   
+| |       Merge pull request #139 from tecno-consultores/develop
+| |       
+| |       * redis
+| | 
+* | commit afe2aba47c61be0470c01d91fc1909fc963c7f9c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue Jun 23 19:49:30 2026 -0400
+| | 
+| |     * redis
+| |   
+| *   commit 7eb6f089c629b55a7b5bfac7fd7f7363b0a1f1ce
+| |\  Merge: 16fdd42 40ed3a4
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Tue Jun 23 19:17:26 2026 -0400
+| |   
+| |       Merge pull request #138 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 40ed3a418e6eb80512bb3d1aecc22f8434703c00
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue Jun 23 19:15:00 2026 -0400
+| | 
+| |     * n8n-lm-studio
+| | 
+* | commit 50469752326cf044a797afe63e06e0655d729dea
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Jun 23 14:22:08 2026 -0400
+| | 
+| |     Update project dependencies table in README
+| | 
+* | commit 303ce3ab95ae6aa5548cfa1ddb8b88349d8a26b8
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Jun 23 14:16:08 2026 -0400
+| | 
+| |     Rename ttyia to ttyia.sh
+| | 
+* | commit 0511f1a94b9e62d2888c8bedc5efc2009988c87e
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Jun 23 14:14:42 2026 -0400
+| | 
+| |     Clean up n8n-expressions.md
+| |     
+| |     Removed unnecessary command lines and formatted random number example.
+| | 
+* | commit 669b280b6d68bc0251d1a1c6ad0ff0831a4a69bc
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Tue Jun 23 14:13:52 2026 -0400
+| | 
+| |     Revise n8n expressions documentation
+| |     
+| |     Updated n8n expressions documentation to include various date and time formats, query examples, and random number generation. Removed outdated installation instructions for Node libraries.
+| |   
+| *   commit 16fdd420c185f4f3efdc01a6fddc70d70598a478
+| |\  Merge: 2c340d1 3cd6c52
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Tue Jun 23 14:06:52 2026 -0400
+| |   
+| |       Merge pull request #137 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 3cd6c52ea502927e645b4dfff4b5bff1a49ea680
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 22 10:17:08 2026 -0400
+| | 
+| |     Rename openwebui - n8n - webhook to openwebui-n8n-webhook.md
+| | 
+* | commit bc4a15077540165366fa291a7afffd773f07e9db
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 22 10:16:28 2026 -0400
+| | 
+| |     Create openwebui-ollama.md
+| | 
+* | commit 90d847caed8aacbbb53543457c57e770041ef277
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 22 10:09:44 2026 -0400
+| | 
+| |     Document n8n webhook setup in Openwebui
+| |     
+| |     Added instructions for setting up a webhook in n8n using Openwebui.
+| |   
+| *   commit 2c340d1924e37d6db0591c1097a57705ff0dfe2d (tag: v1.18.6)
+| |\  Merge: e55e537 39e2f12
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon Jun 22 09:52:40 2026 -0400
+| |   
+| |       Merge pull request #136 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 39e2f12e1ab538962062b97daafd100d17f03f95
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Mon Jun 22 09:50:05 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 4da5f19cf065c2cfb23c9c187ab03c4a060d2766
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Thu Jun 18 10:21:54 2026 -0400
+| | 
+| |     Update env.example
+| | 
+* | commit b498bd118d6c17be634a8f694e094e2853c85674
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Thu Jun 18 10:17:06 2026 -0400
+| | 
+| |     Update env.example
+| | 
+* | commit 36608cf8b6975457b2e10a275d20a2c9dffbd8a2
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Thu Jun 18 10:13:08 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| | 
+* | commit 69daf83791bc1371d2107aa24f461577784b528f
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Thu Jun 18 10:07:00 2026 -0400
+| | 
+| |     Update security.md
+| | 
+* | commit c978108b3a7086e5dd16c317da4d064aa683e1e6
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jun 17 19:12:08 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 54faa82fe5a028a0009813791eba65fdf01b3e34
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Wed Jun 17 19:11:56 2026 -0400
+| | 
+| |     * comentarios
+| |   
+| *   commit e55e537f3eeb490154fc1073ade00b67454fe0d0
 | |\  Merge: ba7460f 68f028b
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Wed Jun 17 10:52:05 2026 -0400

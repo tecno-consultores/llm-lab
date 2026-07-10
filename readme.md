@@ -4,7 +4,7 @@ Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tecno-consultores/llm-lab)
 
-To run N8N (with Postgres and Redis) and OpenwebUI:
+To run N8N (with Postgres and Dragonfly) and OpenwebUI:
 
 ```bash
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
@@ -14,15 +14,15 @@ Profiles you can run:
 
 | Project | AMD64 | ARM64 | GPU | Ollama | Depends on | Profile |
 | -------- | ------- | ------- | ------- | ------- | ------- | ------- |
-| [N8N](https://github.com/n8n-io/n8n) | ✅ | ✅ | | ✅ | postgres / redis | --profile n8n |
+| [N8N](https://github.com/n8n-io/n8n) | ✅ | ✅ | | ✅ | postgres / dragonfly | --profile n8n |
 | N8N-worker | ✅ | ✅ | | | N8N| --profile n8n-worker |
 | N8N-runner (code sandbox) | ✅ | ✅ | | | N8N | --profile n8n-runner |
 | [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | | --profile qdrant |
-| [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | ✅ | postgres / redis | --profile openwebui |
+| [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | ✅ | postgres / dragonfly | --profile openwebui |
 | [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia | | | --profile ollama-gpu |
 | Ollama | ✅ | ✅ | AMD | | | --profile ollama-cpu |
-| [EvolutionAPI](https://github.com/evolution-foundation/evolution-api) | ✅ | ✅ | |  | postgres / redis | --profile evolutionapi |
-| [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | | ✅ | postgres / redis | --profile flowise |
+| [EvolutionAPI](https://github.com/evolution-foundation/evolution-api) | ✅ | ✅ | |  | postgres / dragonfly | --profile evolutionapi |
+| [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | | ✅ | postgres / dragonfly | --profile flowise |
 | [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | ✅ | | --profile opencode |
 | [hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | ✅ | | --profile hermes |
 
@@ -41,7 +41,7 @@ Complementary services:
 | [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | ✅ | ✅ | | | | --profile rabbit |
 | [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | | --profile proxy |
 | [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | | --profile postgres |
-| [Redis](https://hub.docker.com/r/redis/redis-stack) | ✅ | ✅ | | | | --profile redis |
+| [Dragonfly](https://github.com/dragonflydb/dragonfly) | ✅ | ✅ | | | | --profile dragonfly |
 
 Healthcheck, ports and URLs:
 
@@ -55,7 +55,6 @@ Healthcheck, ports and URLs:
 | EvolutionAPI | ✅ | 9191 | http://127.0.0.1:9191/manager | http://127.0.0.1:9191/swagger |
 | Flowise | ✅ | 3001 | http://127.0.0.1:3001 | http://127.0.0.1:3001/api/v1 |
 | Opencode | ✅ | 4096 | http://127.0.0.1:4096 | http://127.0.0.1:4096/doc |
-| Redis Insight | ✅ | 8001 | http://127.0.0.1:8001 |
 | Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642/v1 |
 | Rabbitmq broker | ❌ | 5672 | http://127.0.0.1:5672 | |
 | Rabbitmq management | ❌ | 15672 | http://127.0.0.1:15672 | http://127.0.0.1:15672/api/ |

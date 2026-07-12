@@ -316,7 +316,8 @@ x-postgres-base: &postgres-base
       retries: 3
 
 x-keydb-base: &keydb-base
-    image: eqalpha/keydb:latest
+    image: eqalpha/keydb:x86_64_v6.3.3
+#    image: eqalpha/keydb:arm64_v6.3.3 # for raspberry pi or any other arm
     hostname: ${rhostname}
     container_name: ${rhostname}
     pull_policy: ${pull_policy}

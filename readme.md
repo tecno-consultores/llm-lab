@@ -43,8 +43,6 @@ Complementary services:
 | [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | | --profile postgres |
 | [KeyDB](https://github.com/snapchat/keydb) | ✅ | ✅ | | | | --profile KeyDB |
 
-NOTES: Starting with PostgreSQL 18, the database directory structure changes; please take these changes into account when upgrading from earlier versions.
-
 Healthcheck, ports and URLs:
 
 | Name | healthcheck| Port | Service | Api |
@@ -72,6 +70,5 @@ To stop and remove all containers use:
 docker compose -f docker-compose.yml --env-file env.example --profile "*" down
 ```
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=tecno-consultores/llm-lab&type=Date)](https://www.star-history.com/#tecno-consultores/llm-lab&Date)
+**NOTES**:
+* Starting with PostgreSQL **18**, the database directory structure changes; please take these changes into account when upgrading from earlier versions.

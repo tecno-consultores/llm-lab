@@ -284,7 +284,7 @@ x-n8n-runner: &n8n-runner
       - n8n_runners_token
 
 x-postgres-base: &postgres-base
-    image: postgres:17.6
+    image: postgres:latest
     hostname: ${DATABASE_HOST}
     container_name: ${DATABASE_HOST}
     pull_policy: ${pull_policy}
@@ -298,7 +298,7 @@ x-postgres-base: &postgres-base
 #      - ${POSTGRESDB_PORT}:5432
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
-      - postgres:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql
     secrets:
       - postgres_pass
     deploy:
@@ -315,25 +315,23 @@ x-postgres-base: &postgres-base
       timeout: 10s
       retries: 3
 
-x-dragonfly-base: &dragonfly-base
-    image: docker.dragonflydb.io/dragonflydb/dragonfly:latest
+x-keydb-base: &keydb-base
+    image: eqalpha/keydb:latest
     hostname: ${rhostname}
     container_name: ${rhostname}
     pull_policy: ${pull_policy}
     restart: ${restart}
     environment:
       - TZ=${TIMEZONE}
-    command: 
-      - "--default_lua_flags=allow-undeclared-keys"
-#      - "--maxmemory=1gb"
+    command: ["/bin/sh", "-c", "hilos=$$(nproc 2>/dev/null || echo 4); exec docker-entrypoint.sh keydb-server --protected-mode no --server-threads $$hilos"]
 #    ports:
 #      - ${REDIS_PORT}:6379
     ulimits:
       memlock: -1
     volumes:
-      - dragonfly_data:/data
+      - keydb_data:/data
     healthcheck:
-      test: ["CMD", "redis-cli","ping"]
+      test: ["CMD", "keydb-cli","ping"]
       start_period: 30s
       interval: 30s
       timeout: 10s
@@ -786,7 +784,7 @@ volumes:
   n8n_backup:
   n8n_shared:
   postgres:
-  dragonfly_data:
+  keydb_data:
   qdrant:
   whisper:
   cache-whisper:
@@ -828,9 +826,9 @@ services:
       <<: *postgres-base
       profiles: ["postgres", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise"]
 
-    dragonfly:
-      <<: *dragonfly-base
-      profiles: ["dragonfly", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise"]
+    keydb:
+      <<: *keydb-base
+      profiles: ["keydb", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise"]
 
     n8n:
       <<: *n8n-base
@@ -847,12 +845,12 @@ services:
         timeout: 10s
         retries: 3
       links:
-        - dragonfly
+        - keydb
       depends_on:
         postgres:
           condition: service_healthy
           restart: true
-        dragonfly:
+        keydb:
           condition: service_healthy
           restart: true
 
@@ -869,12 +867,12 @@ services:
         timeout: 10s
         retries: 3
       links:
-        - dragonfly
+        - keydb
       depends_on:
         postgres:
           condition: service_healthy
           restart: true
-        dragonfly:
+        keydb:
           condition: service_healthy
           restart: true
         n8n:
@@ -893,12 +891,12 @@ services:
         timeout: 10s
         retries: 3
       links:
-        - dragonfly
+        - keydb
       depends_on:
         postgres:
           condition: service_healthy
           restart: true
-        dragonfly:
+        keydb:
           condition: service_healthy
           restart: true
         n8n-worker:
@@ -913,12 +911,12 @@ services:
       <<: *openwebui-base
       profiles: ["openwebui", "openaibridge"]
       links:
-        - dragonfly
+        - keydb
       depends_on:
         postgres:
           condition: service_healthy
           restart: true
-        dragonfly:
+        keydb:
           condition: service_healthy
           restart: true
 
@@ -1017,12 +1015,12 @@ services:
       <<: *evolution-base
       profiles: [ "evolutionapi" ]
       links:
-        - dragonfly
+        - keydb
       depends_on:
         postgres:
           condition: service_healthy
           restart: true
-        dragonfly:
+        keydb:
           condition: service_healthy
           restart: true
 
@@ -1030,12 +1028,12 @@ services:
         <<: *flowise-base
         profiles: ["flowise"]
         links:
-          - dragonfly
+          - keydb
         depends_on:
           postgres:
             condition: service_healthy
             restart: true
-          dragonfly:
+          keydb:
             condition: service_healthy
             restart: true
 

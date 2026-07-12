@@ -4,7 +4,7 @@ Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tecno-consultores/llm-lab)
 
-To run N8N (with Postgres and Dragonfly) and OpenwebUI:
+To run N8N (with Postgres and KeyDB) and OpenwebUI:
 
 ```bash
 docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
@@ -14,15 +14,15 @@ Profiles you can run:
 
 | Project | AMD64 | ARM64 | GPU | Ollama | Depends on | Profile |
 | -------- | ------- | ------- | ------- | ------- | ------- | ------- |
-| [N8N](https://github.com/n8n-io/n8n) | ✅ | ✅ | | ✅ | postgres / dragonfly | --profile n8n |
+| [N8N](https://github.com/n8n-io/n8n) | ✅ | ✅ | | ✅ | postgres / KeyDB | --profile n8n |
 | N8N-worker | ✅ | ✅ | | | N8N| --profile n8n-worker |
 | N8N-runner (code sandbox) | ✅ | ✅ | | | N8N | --profile n8n-runner |
 | [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | | --profile qdrant |
-| [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | ✅ | postgres / dragonfly | --profile openwebui |
+| [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | ✅ | postgres / KeyDB | --profile openwebui |
 | [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia | | | --profile ollama-gpu |
 | Ollama | ✅ | ✅ | AMD | | | --profile ollama-cpu |
-| [EvolutionAPI](https://github.com/evolution-foundation/evolution-api) | ✅ | ✅ | |  | postgres / dragonfly | --profile evolutionapi |
-| [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | | ✅ | postgres / dragonfly | --profile flowise |
+| [EvolutionAPI](https://github.com/evolution-foundation/evolution-api) | ✅ | ✅ | |  | postgres / KeyDB | --profile evolutionapi |
+| [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | | ✅ | postgres / KeyDB | --profile flowise |
 | [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | ✅ | | --profile opencode |
 | [hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | ✅ | | --profile hermes |
 
@@ -41,7 +41,9 @@ Complementary services:
 | [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | ✅ | ✅ | | | | --profile rabbit |
 | [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | | --profile proxy |
 | [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | | --profile postgres |
-| [Dragonfly](https://github.com/dragonflydb/dragonfly) | ✅ | ✅ | | | | --profile dragonfly |
+| [KeyDB](https://github.com/snapchat/keydb) | ✅ | ✅ | | | | --profile KeyDB |
+
+NOTES: Starting with PostgreSQL 18, the database directory structure changes; please take these changes into account when upgrading from earlier versions.
 
 Healthcheck, ports and URLs:
 

@@ -1006,7 +1006,7 @@ services:
       profiles: ["n8n-ai-sandbox"]
       depends_on:
         sandbox-api:
-          condition: service_started
+          condition: service_healthy
 
     qdrant:
       <<: *qdrant-base

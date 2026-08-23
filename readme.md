@@ -42,7 +42,7 @@ Complementary services:
 | [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | ✅ | ✅ | | | | --profile rabbit |
 | [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | | --profile proxy |
 | [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | | --profile postgres |
-| [KeyDB](https://github.com/snapchat/keydb) | ✅ | ✅ | | | | --profile KeyDB |
+| [KeyDB](https://github.com/snapchat/keydb) | ✅ | ✅ | | | | --profile keydb |
 
 Healthcheck, ports and URLs:
 

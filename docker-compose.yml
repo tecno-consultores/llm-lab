@@ -239,9 +239,8 @@ x-n8n-base: &n8n-base
       - N8N_RESTRICT_FILE_ACCESS_TO="/tmp/"
       - NODE_OPTIONS="--dns-result-order=ipv4first"
       - N8N_WORKFLOW_AUTODEACTIVATION_ENABLED=true
-      - N8N_ENABLED_MODULES=instance-ai
-#      - N8N_INSTANCE_AI_MODEL=anthropic/claude-opus-4-8
-      - N8N_INSTANCE_AI_SANDBOX_ENABLED=true
+      - N8N_ENABLED_MODULES=instance-ai # comment to disable AI helper
+      - N8N_INSTANCE_AI_SANDBOX_ENABLED=${N8N_INSTANCE_AI_SANDBOX_ENABLED}
       - N8N_INSTANCE_AI_SANDBOX_IMAGE=ghcr.io/n8n-io/n8n-sandbox-service-sandbox:latest
       - N8N_INSTANCE_AI_SANDBOX_API_URL=http://${sandapi}:8080
       - N8N_SANDBOX_SERVICE_URL=http://${sandapi}:8080

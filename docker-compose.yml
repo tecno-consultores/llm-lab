@@ -186,7 +186,7 @@ x-n8n-base: &n8n-base
       - N8N_REINSTALL_MISSING_PACKAGES=true
       - N8N_METRICS=false
       - N8N_COMMUNITY_PACKAGES_ENABLED=true
-      - WEBHOOK_URL=${WEBHOOK_URL}
+      - N8N_WEBHOOK_URL=${WEBHOOK_URL}
       - N8N_EDITOR_BASE_URL=${WEBHOOK_URL}
       - N8N_PAYLOAD_SIZE_MAX=${N8N_PAYLOAD_SIZE_MAX}
       - N8N_FORMDATA_FILE_SIZE_MAX=${N8N_FORMDATA_FILE_SIZE_MAX}
@@ -240,12 +240,17 @@ x-n8n-base: &n8n-base
       - NODE_OPTIONS="--dns-result-order=ipv4first"
       - N8N_WORKFLOW_AUTODEACTIVATION_ENABLED=true
       - N8N_ENABLED_MODULES=instance-ai
-      - N8N_INSTANCE_AI_MODEL=anthropic/claude-opus-4-8
+#      - N8N_INSTANCE_AI_MODEL=anthropic/claude-opus-4-8
       - N8N_INSTANCE_AI_SANDBOX_ENABLED=true
       - N8N_INSTANCE_AI_SANDBOX_IMAGE=ghcr.io/n8n-io/n8n-sandbox-service-sandbox:latest
       - N8N_INSTANCE_AI_SANDBOX_API_URL=http://${sandapi}:8080
+      - N8N_SANDBOX_SERVICE_URL=http://${sandapi}:8080
       - N8N_INSTANCE_AI_SANDBOX_API_KEY=${SANDBOX_API_KEYS}
+      - N8N_SANDBOX_SERVICE_API_KEY=${SANDBOX_API_KEYS}
       - N8N_INSTANCE_AI_SEARXNG_URL=http://${searxnghostname}:${psearch}
+      - N8N_UNVERIFIED_PACKAGES_ENABLED=true
+      - N8N_RUNNERS_TASK_TIMEOUT=60
+      - N8N_COMPRESSION_NODE_MAX_ZIP_ENTRIES=1000
     volumes:
       - n8n_storage:/home/node/.n8n
       - n8n_backup:/backup
@@ -293,12 +298,11 @@ x-n8n-runner: &n8n-runner
 x-n8n-sandbox-certs: &n8n-sandbox-certs
     image: ghcr.io/n8n-io/n8n-sandbox-service-api:latest
     pull_policy: ${pull_policy}
-    restart: ${restart}
     hostname: ${sandcerts}
     container_name: ${sandcerts}
     user: '0:0'
     entrypoint: ['sh', '-c']
-    command: 
+    command:
       - >
         bootstrap-mtls.sh --out-dir /tls --api-san sandbox-api
         --control-san-prefix sandbox-runner &&
@@ -350,8 +354,8 @@ x-n8n-sandbox-runner: &n8n-sandbox-runner
       - SANDBOX_RUNNER_REGISTRATION_TOKEN=${SANDBOX_API_RUNNER_REGISTRATION_TOKEN}
       - SANDBOX_RUNNER_API_GRPC_ADDR=${sandapi}:9090
       - SANDBOX_RUNNER_HTTP_BASE_URL=http://${sandrunner}:8080
-      - SANDBOX_RUNNER_CONTROL_GRPC_LISTEN_ADDR=':9091'
-      - SANDBOX_RUNNER_CONTROL_GRPC_ADVERTISE_ADDR:${sandrunner}:9091
+      - SANDBOX_RUNNER_CONTROL_GRPC_LISTEN_ADDR=:9091
+      - SANDBOX_RUNNER_CONTROL_GRPC_ADVERTISE_ADDR=${sandrunner}:9091
       - SANDBOX_RUNNER_ID=${SANDBOX_RUNNER_ID}
       - SANDBOX_RUNNER_DOCKER_SANDBOX_IMAGE=ghcr.io/n8n-io/n8n-sandbox-service-sandbox:latest
       - SANDBOX_RUNNER_REGISTRATION_GRPC_CA_FILE=/tls/runner/ca.crt
@@ -363,6 +367,12 @@ x-n8n-sandbox-runner: &n8n-sandbox-runner
       - SANDBOX_RUNNER_CONTROL_GRPC_TLS_CLIENT_CA_FILE=/tls/runner/ca.crt
       - SANDBOX_RUNNER_CONTROL_CERT=/tls/runner/cert.pem
       - SANDBOX_RUNNER_CONTROL_KEY=/tls/runner/key.pem
+    healthcheck:
+      test: ["CMD", "docker", "info"]
+      start_period: 30s
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 x-postgres-base: &postgres-base
     image: postgres:latest
@@ -993,6 +1003,7 @@ services:
     sandbox-certs:
       <<: *n8n-sandbox-certs
       profiles: ["n8n-ai-sandbox"]
+      restart: "no"
 
     sandbox-api:
       <<: *n8n-sandbox-api

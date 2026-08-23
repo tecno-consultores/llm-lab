@@ -17,6 +17,7 @@ Profiles you can run:
 | [N8N](https://github.com/n8n-io/n8n) | ✅ | ✅ | | ✅ | postgres / KeyDB | --profile n8n |
 | N8N-worker | ✅ | ✅ | | | N8N| --profile n8n-worker |
 | N8N-runner (code sandbox) | ✅ | ✅ | | | N8N | --profile n8n-runner |
+| N8N-AI-SANDBOX | ✅ | ✅ | | | N8N | --profile n8n-ai-sandbox |
 | [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | | --profile qdrant |
 | [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | ✅ | postgres / KeyDB | --profile openwebui |
 | [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia | | | --profile ollama-gpu |
@@ -41,7 +42,7 @@ Complementary services:
 | [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | ✅ | ✅ | | | | --profile rabbit |
 | [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | | --profile proxy |
 | [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | | --profile postgres |
-| [KeyDB](https://github.com/snapchat/keydb) | ✅ | ✅ | | | | --profile KeyDB |
+| [KeyDB](https://github.com/snapchat/keydb) | ✅ | ✅ | | | | --profile keydb |
 
 Healthcheck, ports and URLs:
 

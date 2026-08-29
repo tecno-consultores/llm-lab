@@ -1,48 +1,90 @@
-* commit d35efa6b4dde208a40dd9379dc9a64a547b15f2a (HEAD -> develop, origin/develop)
+* commit 87fca42baa0505840edf23b99c798348dec956e2 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Aug 22 21:26:42 2026 -0400
+| Date:   Sat Aug 29 10:12:48 2026 -0400
+| 
+|     * omniroute
+| 
+* commit 3abe51014e106cfad72734a0f01c0eb73c341611
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Thu Aug 27 22:42:43 2026 -0400
 | 
 |     * bugfix
-| 
-* commit 68bbac3b9f6e98f9bf15b51d9dc7459246630950
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Aug 22 21:12:08 2026 -0400
-| 
-|     * bugfix
-| 
-* commit 8d02b6fa52f4fd312df33a0d3dd20782cd3574c0
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri Aug 21 11:38:17 2026 -0400
-| 
-|     Add N8N-AI-SANDBOX entry to readme
-| 
-* commit 25a19e0b5e32d166b6c4c00260b5165d38f3be7b
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri Aug 21 11:38:10 2026 -0400
-| 
-|     Change dependency condition to service_healthy
-| 
-* commit 354ef8b00fde6b8c94133bb474b79e2d9804b6a5
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri Aug 21 11:30:11 2026 -0400
-| 
-|     Add sandbox configuration to env.example
 |     
-|     Add sandbox configuration variables to env.example
-| 
-* commit f7e3f1e124596d797a295bd63d067e1288a1e49a
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri Aug 21 11:30:05 2026 -0400
-| 
-|     Add N8N instance AI configuration to docker-compose
-| 
-* commit edba487554b84b6b026a0a5c6124354760aaa409
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri Aug 21 09:41:06 2026 -0400
-| 
-|     Update env.example
-|     
-| *   commit 31c72ef7a0187319c6a5172e233e2555e098554b (origin/main, origin/HEAD, main)
+| *   commit 032d68a5a6dcf5a8f65a26d3403bb11ca837bf0f (tag: v1.20.0, origin/main, origin/HEAD, main)
+| |\  Merge: cb457d6 924dfbb
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Aug 22 22:32:53 2026 -0400
+| |   
+| |       Merge pull request #149 from tecno-consultores/develop
+| |       
+| |       * comentarios para desactivar ayudante de IA
+| | 
+* | commit 924dfbb2eac7ad898c80682a6483d4ff656e147f
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 22 22:24:32 2026 -0400
+| | 
+| |     * comentarios para desactivar ayudante de IA
+| |   
+| *   commit cb457d64af48144208c553a663bfec39c7939079
+| |\  Merge: 31c72ef 7a45d73
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Aug 22 21:30:18 2026 -0400
+| |   
+| |       Merge pull request #148 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 7a45d7374bb4b684df36762403a181e66ab1ce92
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 22 21:26:53 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit d35efa6b4dde208a40dd9379dc9a64a547b15f2a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 22 21:26:42 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit 68bbac3b9f6e98f9bf15b51d9dc7459246630950
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 22 21:12:08 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit 8d02b6fa52f4fd312df33a0d3dd20782cd3574c0
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Aug 21 11:38:17 2026 -0400
+| | 
+| |     Add N8N-AI-SANDBOX entry to readme
+| | 
+* | commit 25a19e0b5e32d166b6c4c00260b5165d38f3be7b
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Aug 21 11:38:10 2026 -0400
+| | 
+| |     Change dependency condition to service_healthy
+| | 
+* | commit 354ef8b00fde6b8c94133bb474b79e2d9804b6a5
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Aug 21 11:30:11 2026 -0400
+| | 
+| |     Add sandbox configuration to env.example
+| |     
+| |     Add sandbox configuration variables to env.example
+| | 
+* | commit f7e3f1e124596d797a295bd63d067e1288a1e49a
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Aug 21 11:30:05 2026 -0400
+| | 
+| |     Add N8N instance AI configuration to docker-compose
+| | 
+* | commit edba487554b84b6b026a0a5c6124354760aaa409
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Aug 21 09:41:06 2026 -0400
+| | 
+| |     Update env.example
+| |   
+| *   commit 31c72ef7a0187319c6a5172e233e2555e098554b
 | |\  Merge: c22f7ba 11d4ba9
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Mon Jul 13 09:22:30 2026 -0400

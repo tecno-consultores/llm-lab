@@ -866,6 +866,31 @@ x-browserless-base: &browserless-base
       timeout: 10s
       retries: 3
 
+x-omniroute-base: &omniroute-base
+    image: diegosouzapw/omniroute:latest
+    hostname: ${omniname}
+    container_name: ${omniname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - ${omniport}:${omniport}
+    environment:
+      - JWT_SECRET=${JWT_SECRET}
+      - API_KEY_SECRET=${API_KEY_SECRET}
+      - INITIAL_PASSWORD=${INITIAL_PASSWORD}
+      - STORAGE_ENCRYPTION_KEY=${STORAGE_ENCRYPTION_KEY}
+      - STORAGE_ENCRYPTION_KEY_VERSION=v1
+      - DISABLE_SQLITE_AUTO_BACKUP=false
+      - REDIS_URL=redis://${rhostname}:${REDIS_PORT}
+      - PORT=${omniport}
+      - LIVE_WS_HOST=0.0.0.0
+      - LIVE_WS_ALLOWED_ORIGINS=${LIVE_WS_ALLOWED_ORIGINS}
+      - OMNIROUTE_ENABLE_LIVE_WS=1
+      - MACHINE_ID_SALT=${MACHINE_ID_SALT}
+      - AUTH_COOKIE_SECURE=true
+    volumes:
+      - omniroute-data:/app/data
+
 ################################################
 
 volumes:
@@ -891,6 +916,7 @@ volumes:
   rabbitmq-lib:
   browser_data:
   sandbox-tls:
+  omniroute-data:
 
 configs:
   searxng_inline_settings:
@@ -920,7 +946,7 @@ services:
 
     keydb:
       <<: *keydb-base
-      profiles: ["keydb", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise"]
+      profiles: ["keydb", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise", "omniroute"]
 
     n8n:
       <<: *n8n-base
@@ -1168,3 +1194,10 @@ services:
         <<: *browserless-base
         profiles: ["browserless"]
 
+    omniroute:
+        <<: *omniroute-base
+        profiles: ["omniroute"]
+        depends_on:
+          keydb:
+            condition: service_healthy
+            restart: true

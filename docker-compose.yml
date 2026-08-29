@@ -241,7 +241,7 @@ x-n8n-base: &n8n-base
       - N8N_WORKFLOW_AUTODEACTIVATION_ENABLED=true
       - N8N_ENABLED_MODULES=instance-ai # comment to disable AI helper
       - N8N_INSTANCE_AI_SANDBOX_ENABLED=${N8N_INSTANCE_AI_SANDBOX_ENABLED}
-      - N8N_INSTANCE_AI_SANDBOX_IMAGE=ghcr.io/n8n-io/n8n-sandbox-service-sandbox:latest
+      - N8N_INSTANCE_AI_SANDBOX_IMAGE=${sandboximage}
       - N8N_INSTANCE_AI_SANDBOX_API_URL=http://${sandapi}:8080
       - N8N_SANDBOX_SERVICE_URL=http://${sandapi}:8080
       - N8N_INSTANCE_AI_SANDBOX_API_KEY=${SANDBOX_API_KEYS}
@@ -303,8 +303,8 @@ x-n8n-sandbox-certs: &n8n-sandbox-certs
     entrypoint: ['sh', '-c']
     command:
       - >
-        bootstrap-mtls.sh --out-dir /tls --api-san sandbox-api
-        --control-san-prefix sandbox-runner &&
+        bootstrap-mtls.sh --out-dir /tls --api-san ${sandapi}
+        --control-san-prefix ${sandrunnername} &&
         chown -R sandbox-api:sandbox-api /tls/api
     volumes:
       - sandbox-tls:/tls
@@ -315,21 +315,21 @@ x-n8n-sandbox-api: &n8n-sandbox-api
     image: ghcr.io/n8n-io/n8n-sandbox-service-api:latest
     pull_policy: ${pull_policy}
     restart: ${restart}
-    hostname: ${sandapi}
-    container_name: ${sandapi}
+    hostname: ${sandapiname}
+    container_name: ${sandapiname}
     environment:
       - SANDBOX_API_KEYS=${SANDBOX_API_KEYS}
       - SANDBOX_API_RUNNER_REGISTRATION_TOKEN=${SANDBOX_API_RUNNER_REGISTRATION_TOKEN}
       - SANDBOX_API_RUNNER_API_KEY=${SANDBOX_API_RUNNER_API_KEY}
-      - SANDBOX_API_GRPC_TLS_CERT_FILE=/tls/api/grpc-server.crt
-      - SANDBOX_API_GRPC_TLS_KEY_FILE=/tls/api/grpc-server.key
-      - SANDBOX_API_GRPC_TLS_CLIENT_CA_FILE=/tls/api/ca.crt
-      - SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_CA_FILE=/tls/api/ca.crt
-      - SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_CERT_FILE=/tls/api/control-grpc-api-client.crt
-      - SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_KEY_FILE=/tls/api/control-grpc-api-client.key
+      - SANDBOX_API_GRPC_TLS_CERT_FILE=${SANDBOX_API_GRPC_TLS_CERT_FILE}
+      - SANDBOX_API_GRPC_TLS_KEY_FILE=${SANDBOX_API_GRPC_TLS_KEY_FILE}
+      - SANDBOX_API_GRPC_TLS_CLIENT_CA_FILE=${SANDBOX_API_GRPC_TLS_CLIENT_CA_FILE}
+      - SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_CA_FILE=${SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_CA_FILE}
+      - SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_CERT_FILE=${SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_CERT_FILE}
+      - SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_KEY_FILE=${SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_KEY_FILE}
       - SANDBOX_API_RUNNER_CONTROL_GRPC_TLS_SERVER_NAME=${sandrunner}
-      - SANDBOX_TLS_CERT=/tls/api/cert.pem
-      - SANDBOX_TLS_KEY=/tls/api/key.pem
+      - SANDBOX_TLS_CERT=${SANDBOX_TLS_CERT}
+      - SANDBOX_TLS_KEY=${SANDBOX_TLS_KEY}
     volumes:
       - sandbox-tls:/tls:ro
     healthcheck:
@@ -356,16 +356,16 @@ x-n8n-sandbox-runner: &n8n-sandbox-runner
       - SANDBOX_RUNNER_CONTROL_GRPC_LISTEN_ADDR=:9091
       - SANDBOX_RUNNER_CONTROL_GRPC_ADVERTISE_ADDR=${sandrunner}:9091
       - SANDBOX_RUNNER_ID=${SANDBOX_RUNNER_ID}
-      - SANDBOX_RUNNER_DOCKER_SANDBOX_IMAGE=ghcr.io/n8n-io/n8n-sandbox-service-sandbox:latest
-      - SANDBOX_RUNNER_REGISTRATION_GRPC_CA_FILE=/tls/runner/ca.crt
-      - SANDBOX_RUNNER_REGISTRATION_GRPC_CERT_FILE=/tls/runner/grpc-client.crt
-      - SANDBOX_RUNNER_REGISTRATION_GRPC_KEY_FILE=/tls/runner/grpc-client.key
+      - SANDBOX_RUNNER_DOCKER_SANDBOX_IMAGE=${sandboximage}
+      - SANDBOX_RUNNER_REGISTRATION_GRPC_CA_FILE=${SANDBOX_RUNNER_REGISTRATION_GRPC_CA_FILE}
+      - SANDBOX_RUNNER_REGISTRATION_GRPC_CERT_FILE=${SANDBOX_RUNNER_REGISTRATION_GRPC_CERT_FILE}
+      - SANDBOX_RUNNER_REGISTRATION_GRPC_KEY_FILE=${SANDBOX_RUNNER_REGISTRATION_GRPC_KEY_FILE}
       - SANDBOX_RUNNER_REGISTRATION_GRPC_SERVER_NAME=${sandapi}
-      - SANDBOX_RUNNER_CONTROL_GRPC_TLS_CERT_FILE=/tls/runner/control-grpc-server.crt
-      - SANDBOX_RUNNER_CONTROL_GRPC_TLS_KEY_FILE=/tls/runner/control-grpc-server.key
-      - SANDBOX_RUNNER_CONTROL_GRPC_TLS_CLIENT_CA_FILE=/tls/runner/ca.crt
-      - SANDBOX_RUNNER_CONTROL_CERT=/tls/runner/cert.pem
-      - SANDBOX_RUNNER_CONTROL_KEY=/tls/runner/key.pem
+      - SANDBOX_RUNNER_CONTROL_GRPC_TLS_CERT_FILE=${SANDBOX_RUNNER_CONTROL_GRPC_TLS_CERT_FILE}
+      - SANDBOX_RUNNER_CONTROL_GRPC_TLS_KEY_FILE=${SANDBOX_RUNNER_CONTROL_GRPC_TLS_KEY_FILE}
+      - SANDBOX_RUNNER_CONTROL_GRPC_TLS_CLIENT_CA_FILE=${SANDBOX_RUNNER_CONTROL_GRPC_TLS_CLIENT_CA_FILE}
+      - SANDBOX_RUNNER_CONTROL_CERT=${SANDBOX_RUNNER_CONTROL_CERT}
+      - SANDBOX_RUNNER_CONTROL_KEY=${SANDBOX_RUNNER_CONTROL_KEY}
     healthcheck:
       test: ["CMD", "docker", "info"]
       start_period: 30s

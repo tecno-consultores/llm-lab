@@ -43,6 +43,7 @@ Complementary services:
 | [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | | --profile proxy |
 | [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | | --profile postgres |
 | [KeyDB](https://github.com/snapchat/keydb) | ✅ | ✅ | | | | --profile keydb |
+| [OmniRoute](https://github.com/diegosouzapw/OmniRoute) | ✅ | ✅ | | | | --profile omniroute |
 
 Healthcheck, ports and URLs:
 
@@ -62,6 +63,7 @@ Healthcheck, ports and URLs:
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
 | Whisper | ❌ | 9000 | | http://127.0.0.1:9000 |
 | Crawl4ai | ✅ | 11235 | | http://127.0.0.1:11235/openapi.json |
+| OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://127.0.0.1:20128/v1 |
 
 ------
 

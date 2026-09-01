@@ -31,7 +31,6 @@ Complementary services:
 
 | Project | AMD64 | ARM64 | GPU | Ollama | Depends on | Profile |
 | -------- | ------- | ------- | ------- | ------- | ------- | ------- |
-| [n8n-openai-bridge](https://github.com/sveneisenschmidt/n8n-openai-bridge/) | ✅ | ❌ | | | openwebui / n8n | --profile openaibridge |
 | [Whisper](https://github.com/openai/whisper) | ✅ | ❌ | Nvidia |  | | --profile whisper-gpu |
 | Whisper | ✅ | ✅ | AMD | | | --profile whisper |
 | [Crawl4ai](https://github.com/unclecode/crawl4ai) | ✅ | ❌ | | ✅ | | --profile crawl4ai-amd64 |

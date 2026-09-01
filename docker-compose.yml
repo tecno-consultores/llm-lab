@@ -9,8 +9,8 @@ x-ollama-base: &ollama-base
     tty: true
 #    ports:
 #      - ${OPORT}:11434
-    ulimits:
-      memlock: -1
+#    ulimits:
+#      memlock: -1
     volumes:
       - ollama:/root/.ollama
     healthcheck:
@@ -107,44 +107,6 @@ x-openwebui-base: &openwebui-base
       - host.docker.internal:host-gateway
     volumes:
       - openwebui:/app/backend/data
-
-x-openai-bridge: &openai-bridge
-    image: ghcr.io/sveneisenschmidt/n8n-openai-bridge:latest
-    init: true
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    hostname: ${obridge}
-    container_name: ${obridge}
-    ports:
-      - ${obridgep}:3333
-    environment:
-      - BEARER_TOKEN=${obearer} # Required Auth token for API requests TO this bridge
-      - N8N_WEBHOOK_BEARER_TOKEN=${wtoken}
-      - LOG_REQUESTS=false
-      - SESSION_ID_HEADERS=X-Session-Id,X-Chat-Id,X-OpenWebUI-Chat-Id
-      - USER_ID_HEADERS=X-User-Id,X-OpenWebUI-User-Id
-      - USER_EMAIL_HEADERS=X-User-Email,X-OpenWebUI-User-Email
-      - USER_NAME_HEADERS=X-User-Name,X-OpenWebUI-User-Name
-      - USER_ROLE_HEADERS=X-User-Role,X-OpenWebUI-User-Role
-      - REQUEST_BODY_LIMIT=50mb
-      - MODELS_POLL_INTERVAL=3
-      - N8N_BASE_URL=http://${nhostname}:${N8N_PORT}/
-      - N8N_API_BEARER_TOKEN=${napi}
-      - MODEL_LOADER_TYPE=n8n-api
-      - AUTO_DISCOVERY_TAG=n8n-openai-bridge
-      - AUTO_DISCOVERY_POLL_INTERVAL=300
-      - ENABLE_TASK_DETECTION=${ENABLE_TASK_DETECTION}
-      - N8N_TIMEOUT=300000
-      - SERVER_TIMEOUT=300000
-      - SERVER_KEEP_ALIVE_TIMEOUT=120000
-      - SERVER_HEADERS_TIMEOUT=121000
-      - FILE_UPLOAD_MODE=${FILE_UPLOAD_MODE}
-      - RATE_LIMIT_WINDOW_MS=60000
-      - RATE_LIMIT_MAX_REQUESTS=${RATE_LIMIT_MAX_REQUESTS}
-      - RATE_LIMIT_CHAT_COMPLETIONS=${RATE_LIMIT_CHAT_COMPLETIONS}
-      - DISABLE_RATE_LIMIT=${DISABLE_RATE_LIMIT}
-    volumes:
-      - ./models.json:/app/models.json:ro
 
 x-n8n-base: &n8n-base
     image: n8nio/n8n:stable
@@ -417,8 +379,8 @@ x-keydb-base: &keydb-base
     command: ["/bin/sh", "-c", "hilos=$$(nproc 2>/dev/null || echo 4); exec docker-entrypoint.sh keydb-server --protected-mode no --server-threads $$hilos"]
 #    ports:
 #      - ${REDIS_PORT}:6379
-    ulimits:
-      memlock: -1
+#    ulimits:
+#      memlock: -1
     volumes:
       - keydb_data:/data
     healthcheck:
@@ -1057,17 +1019,6 @@ services:
           condition: service_healthy
           restart: true
         keydb:
-          condition: service_healthy
-          restart: true
-
-    openaibridge:
-      <<: *openai-bridge
-      profiles: ["openaibridge"]
-      depends_on:
-        openwebui:
-          condition: service_healthy
-          restart: true
-        n8n:
           condition: service_healthy
           restart: true
 

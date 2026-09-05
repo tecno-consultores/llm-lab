@@ -1,28 +1,100 @@
-* commit 375f014a54a15a0626819654dcde0410c338d1a0 (HEAD -> develop, origin/develop)
+* commit 342ade99e530813f430fca6497823fcc93df8e46 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Aug 29 10:43:31 2026 -0400
+| Date:   Fri Sep 4 23:16:37 2026 -0400
 | 
-|     * readme
-| 
-* commit bf30f9fa0fe7ad0bc04f15af2472e776ae5fb031
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Aug 29 10:12:58 2026 -0400
-| 
-|     * changelog
-| 
-* commit 87fca42baa0505840edf23b99c798348dec956e2
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Aug 29 10:12:48 2026 -0400
-| 
-|     * omniroute
-| 
-* commit 3abe51014e106cfad72734a0f01c0eb73c341611
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Aug 27 22:42:43 2026 -0400
-| 
-|     * bugfix
+|     Actualizacion automatica
 |     
-| *   commit 032d68a5a6dcf5a8f65a26d3403bb11ca837bf0f (tag: v1.20.0, origin/main, origin/HEAD, main)
+| *   commit ae645e7085bdad69ae6c199652fa0707563d74ba (origin/main, origin/HEAD, main)
+| |\  Merge: 1e6cf90 312dffb
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Mon Aug 31 20:34:49 2026 -0400
+| |   
+| |       Merge pull request #153 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 312dffb82143d166e2737802170ddadd90f64e87
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Mon Aug 31 20:33:36 2026 -0400
+| | 
+| |     * limpieza
+| | 
+* | commit 2e4447f2075a2d7917ea33daa1ff43d987de667b
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 29 12:27:57 2026 -0400
+| | 
+| |     * separacion de variables
+| |   
+| *   commit 1e6cf902190498bb3199fdc6fd76e2b14074a628 (origin/openaibridge-legacy)
+| |\  Merge: ad50183 fa41d9a
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Aug 29 12:16:04 2026 -0400
+| |   
+| |       Merge pull request #152 from tecno-consultores/develop
+| |       
+| |       * se elimina la clave inicial de omnirouter para mantener el asistent…
+| | 
+* | commit fa41d9a191bbbfa6167f60775cf7192d4687c277
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 29 12:06:17 2026 -0400
+| | 
+| |     * se elimina la clave inicial de omnirouter para mantener el asistente de configuracion
+| |   
+| *   commit ad50183cfe5f2051541d13ddfcc67326fc1cb04a
+| |\  Merge: a57f07a 347ac86
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Aug 29 11:20:50 2026 -0400
+| |   
+| |       Merge pull request #151 from tecno-consultores/develop
+| |       
+| |       * variables sandbox
+| | 
+* | commit 347ac868135b8c78037c560b90727a7ce86ab87c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 29 11:15:11 2026 -0400
+| | 
+| |     * variables sandbox
+| |   
+| *   commit a57f07a8258440d1aa0e8195b9da76ba41782346
+| |\  Merge: 032d68a ad82486
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Aug 29 10:44:34 2026 -0400
+| |   
+| |       Merge pull request #150 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit ad8248623641705c38f23c31c74a28aacf98101f
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 29 10:43:36 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 375f014a54a15a0626819654dcde0410c338d1a0
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 29 10:43:31 2026 -0400
+| | 
+| |     * readme
+| | 
+* | commit bf30f9fa0fe7ad0bc04f15af2472e776ae5fb031
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 29 10:12:58 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 87fca42baa0505840edf23b99c798348dec956e2
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Aug 29 10:12:48 2026 -0400
+| | 
+| |     * omniroute
+| | 
+* | commit 3abe51014e106cfad72734a0f01c0eb73c341611
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Aug 27 22:42:43 2026 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit 032d68a5a6dcf5a8f65a26d3403bb11ca837bf0f (tag: v1.20.0)
 | |\  Merge: cb457d6 924dfbb
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sat Aug 22 22:32:53 2026 -0400

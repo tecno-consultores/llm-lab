@@ -757,6 +757,7 @@ x-hermes-base: &hermes-base
       - searxng_url=http://${searxnghostname}:8080/
       - searcng_api_documentation=https://docs.searxng.org/dev/search_api.html
       - learning_searxng=${learning_searxng}
+      - learning_acp_orchestrator=${learning_acp_orchestrator}
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - OPENAI_API_KEY=${OPENAI_API_KEY}
 #      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}

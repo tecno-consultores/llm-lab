@@ -64,7 +64,7 @@ Healthcheck, ports and URLs:
 | Whisper | ❌ | 9000 | | http://127.0.0.1:9000 |
 | Crawl4ai | ✅ | 11235 | | http://127.0.0.1:11235/openapi.json |
 | OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://127.0.0.1:20128/v1 |
-| Hermes-opencode-bridge | ✅ | 8000 | | http://127.0.0.1:8000/v1/agent/task |
+| Hermes-opencode-bridge | ❌ | 8000 | | http://127.0.0.1:8000/v1/agent/task |
 ------
 
 To stop and remove all containers use:

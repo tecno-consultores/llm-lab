@@ -695,8 +695,7 @@ x-opencode-base: &opencode-base
 #      - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME} # uncomment to enable user and password
 #      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # uncomment to enable user and password
 #      - OPENCODE_CONFIG_CONTENT={"$$schema":"https://opencode.ai/config.json","provider":{"ollama":{"npm":"@ai-sdk/openai-compatible","name":"Ollama (local)","options":{"baseURL":"http://${ohostname}:11434/v1"},"models":{"EXAMPLEMODEL:EXAMPLEb":{"name":"EXAMPLE_NAME"}}}}} # uncomment to use with ollama
-#      - OPENAI_BASE_URL=https://openrouter.ai/api/v1 # for use with openrouter
-#      - OPENAI_API_KEY=${OPENROUTER_API_KEY} # for use with openrouter
+#      - OPENCODE_CONFIG_CONTENT={"$$schema":"https://opencode.ai/config.json","provider":{"omniroute":{"npm":"@ai-sdk/openai-compatible","name":"OmniRoute","options":{"baseURL":"http://omniroute:20128/v1","apiKey":"API_KEY_HERE"},"models":{"auto":{"name":"OmniRoute Auto-Combo"}}}}} # uncomment to use with omnirouter
 #      - OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - GEMINI_API_KEY=${GEMINI_API_KEY}
@@ -851,6 +850,19 @@ x-omniroute-base: &omniroute-base
       - AUTH_COOKIE_SECURE=true
     volumes:
       - omniroute-data:/app/data
+      
+x-hermes-opencode-bridge-base: &hermes-opencode-bridge-base
+    image: sinfallas/hermes-opencode-bridge:latest
+    hostname: ${acpname}
+    container_name: ${acpname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
 ################################################
 
@@ -1130,11 +1142,11 @@ services:
 
     opencode:
         <<: *opencode-base
-        profiles: ["opencode"]
+        profiles: ["opencode", "acp-orchestrator"]
 
     hermes:
         <<: *hermes-base
-        profiles: ["hermes"]
+        profiles: ["hermes", "acp-orchestrator"]
 
     rabbit:
         <<: *rabbit-base
@@ -1151,3 +1163,12 @@ services:
           keydb:
             condition: service_healthy
             restart: true
+
+    acp-orchestrator:
+        <<: *hermes-opencode-bridge-base
+        profiles: ["acp-orchestrator"]
+        depends_on:
+          opencode:
+            condition: service_started
+          hermes:
+            condition: service_started

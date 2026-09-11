@@ -751,9 +751,6 @@ x-hermes-base: &hermes-base
       - crawl4ai_api_documentation=http://${crawhostname}:${CRAW1}/openapi.json
       - crawl4ai_token=${CRAWL4AI_API_TOKEN}
       - learning_crawl4ai=${learning_crawl4ai}
-      - opencode_api_url=http://${codehostname}:${OCPORT}
-      - opencode_api_documentation=http://${codehostname}:${OCPORT}/doc
-      - learning_opencode=${learning_opencode}
       - searxng_url=http://${searxnghostname}:8080/
       - searcng_api_documentation=https://docs.searxng.org/dev/search_api.html
       - learning_searxng=${learning_searxng}
@@ -860,6 +857,9 @@ x-hermes-opencode-bridge-base: &hermes-opencode-bridge-base
     restart: ${restart}
     ports:
       - 8000:8000
+    environment:
+      - HERMES_API_KEY=${hapikey}
+      - HERMES_API_URL=http://${hname}:${hapiport}/v1/chat/completions
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/timezone:/etc/timezone:ro

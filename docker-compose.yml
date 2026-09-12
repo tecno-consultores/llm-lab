@@ -606,10 +606,9 @@ x-opencode-base: &opencode-base
     tty: true
     environment:
       - TZ=${TIMEZONE}
+      - OPENCODE_CONFIG_CONTENT=${OPENCODE_CONFIG_CONTENT}
 #      - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME} # uncomment to enable user and password
 #      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # uncomment to enable user and password
-#      - OPENCODE_CONFIG_CONTENT={"$$schema":"https://opencode.ai/config.json","provider":{"ollama":{"npm":"@ai-sdk/openai-compatible","name":"Ollama (local)","options":{"baseURL":"http://${ohostname}:11434/v1"},"models":{"EXAMPLEMODEL:EXAMPLEb":{"name":"EXAMPLE_NAME"}}}}} # uncomment to use with ollama
-#      - OPENCODE_CONFIG_CONTENT={"$$schema":"https://opencode.ai/config.json","provider":{"omniroute":{"npm":"@ai-sdk/openai-compatible","name":"OmniRoute","options":{"baseURL":"http://omniroute:20128/v1","apiKey":"API_KEY_HERE"},"models":{"auto":{"name":"OmniRoute Auto-Combo"}}}}} # uncomment to use with omnirouter
 #      - OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - GEMINI_API_KEY=${GEMINI_API_KEY}

@@ -419,27 +419,6 @@ x-qdrant-base: &qdrant-base
       timeout: 10s
       retries: 3
 
-x-rabbit-base: &rabbit-base
-    image: rabbitmq:management
-    hostname: ${rmqname}
-    container_name: ${rmqname}
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    ports:
-      - 5672:5672
-      - 15672:15672
-    environment:
-      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
-      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
-    volumes:
-      - rabbitmq-lib:/var/lib/rabbitmq/
-      - ./rabbitmq-log:/var/log/rabbitmq/
-    deploy:
-      resources:
-        limits:
-          cpus: '1.0'
-          memory: 512M
-
 x-nvidia-base: &nvidia-base
     runtime: nvidia
     deploy:
@@ -508,34 +487,6 @@ x-searxng-base: &searxng-base
           memory: 256M
     healthcheck:
       test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://127.0.0.1:8080/healthz || exit 1"]
-      start_period: 30s
-      interval: 30s
-      timeout: 10s
-      retries: 3
-
-x-mongodb-base: &mongodb-base
-    image: mongo:latest
-    hostname: ${mhostname}
-    container_name: ${mhostname}
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-#    ports:
-#      - ${mongoport}:8081
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-      - TZ=${TIMEZONE}
-    volumes:
-      - mongodb:/data/db
-    deploy:
-      resources:
-        limits:
-          cpus: '1.0'
-          memory: 1G
-        reservations:
-          memory: 512M
-    healthcheck:
-      test: [ "CMD", "mongo", "--eval", "db.adminCommand('ping')" ]
       start_period: 30s
       interval: 30s
       timeout: 10s
@@ -837,14 +788,12 @@ volumes:
   qdrant:
   proxy_data:
   letsencrypt:
-  mongodb:
   evolution:
   flowise:
   config-opencode:
   state-opencode:
   share-opencode:
   hermes:
-  rabbitmq-lib:
   browser_data:
   sandbox-tls:
   omniroute-data:
@@ -1036,10 +985,6 @@ services:
       <<: *searxng-base
       profiles: ["searxng"]
 
-    mongodb:
-      <<: *mongodb-base
-      profiles: [ "mongodb" ]
-
     evolutionapi:
       <<: *evolution-base
       profiles: [ "evolutionapi" ]
@@ -1073,10 +1018,6 @@ services:
     hermes:
         <<: *hermes-base
         profiles: ["hermes", "acp-orchestrator"]
-
-    rabbit:
-        <<: *rabbit-base
-        profiles: ["rabbit"]
 
     browserless:
         <<: *browserless-base

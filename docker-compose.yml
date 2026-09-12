@@ -758,7 +758,7 @@ x-omniroute-base: &omniroute-base
       - AUTH_COOKIE_SECURE=true
     volumes:
       - omniroute-data:/app/data
-      
+
 x-hermes-opencode-bridge-base: &hermes-opencode-bridge-base
     image: sinfallas/hermes-opencode-bridge:latest
     hostname: ${acpname}
@@ -770,10 +770,9 @@ x-hermes-opencode-bridge-base: &hermes-opencode-bridge-base
     environment:
       - HERMES_API_KEY=${hapikey}
       - HERMES_API_URL=http://${hname}:${hapiport}/v1/chat/completions
+      - TZ=${TIMEZONE}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
 
 ################################################
 

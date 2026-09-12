@@ -31,8 +31,6 @@ Complementary services:
 
 | Project | AMD64 | ARM64 | GPU | Ollama | Depends on | Profile |
 | -------- | ------- | ------- | ------- | ------- | ------- | ------- |
-| [Whisper](https://github.com/openai/whisper) | ✅ | ❌ | Nvidia |  | | --profile whisper-gpu |
-| Whisper | ✅ | ✅ | AMD | | | --profile whisper |
 | [Searxng](https://github.com/searxng/searxng) | ✅ | ✅ | | | | --profile searxng |
 | [Browserless](https://github.com/browserless/browserless) | ✅ | ✅ | | | | --profile browserless |
 | [MongoDB](https://www.mongodb.com) | ✅ | ❌ | | | | --profile mongodb |
@@ -59,7 +57,6 @@ Healthcheck, ports and URLs:
 | Rabbitmq broker | ❌ | 5672 | http://127.0.0.1:5672 | |
 | Rabbitmq management | ❌ | 15672 | http://127.0.0.1:15672 | http://127.0.0.1:15672/api/ |
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
-| Whisper | ❌ | 9000 | | http://127.0.0.1:9000 |
 | OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://127.0.0.1:20128/v1 |
 | Hermes-opencode-bridge | ❌ | 8000 | | http://127.0.0.1:8000/v1/agent/task |
 ------

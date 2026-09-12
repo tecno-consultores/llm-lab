@@ -1,22 +1,43 @@
-* commit 170580043b4cc4d06dc7b6e40bbe8910b1921f0a (HEAD -> develop, origin/develop)
+* commit b28855d7e6b08fe5f130643ca7946d0f4bd2ec22 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 12 11:35:06 2026 -0400
+| Date:   Sat Sep 12 14:15:36 2026 -0400
 | 
-|     * limpieza de flowise
-| 
-* commit 1cf7ef4e9a831fc961f7930e26655f8829d8fd4b
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 12 11:24:08 2026 -0400
-| 
-|     * changelog
-| 
-* commit 3b73bbf89a7276fb2b3fe4cb9829e0ca9894a440
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 12 11:24:06 2026 -0400
-| 
-|     * bugfix
+|     * limpieza
 |     
-| *   commit 8854bce77bb19a951ff3365b313493037fb314c2 (origin/main, origin/flowise-legacy, origin/HEAD, main)
+| *   commit fc0cc79798a113200d9fee50dfcf17c629cc9187 (origin/main, origin/HEAD, main)
+| |\  Merge: 8854bce 69669ab
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Sep 12 11:35:53 2026 -0400
+| |   
+| |       Merge pull request #162 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 69669ab2b4b986ddcc4e3932f536cd947209f868
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 11:35:08 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 170580043b4cc4d06dc7b6e40bbe8910b1921f0a
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 11:35:06 2026 -0400
+| | 
+| |     * limpieza de flowise
+| | 
+* | commit 1cf7ef4e9a831fc961f7930e26655f8829d8fd4b
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 11:24:08 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 3b73bbf89a7276fb2b3fe4cb9829e0ca9894a440
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 11:24:06 2026 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit 8854bce77bb19a951ff3365b313493037fb314c2 (origin/flowise-legacy)
 | |\  Merge: a59fb2d 902d70a
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sat Sep 12 11:13:23 2026 -0400

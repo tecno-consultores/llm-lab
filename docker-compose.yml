@@ -566,8 +566,6 @@ x-opencode-base: &opencode-base
     ports:
       - ${OCPORT}:${OCPORT}
     volumes:
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
       - ./opencode-workspace:/workspace
       - config-opencode:/root/.config/opencode
       - state-opencode:/root/.local/state/opencode
@@ -624,8 +622,6 @@ x-hermes-base: &hermes-base
       - ${hapiport}:${hapiport}
       - ${hdport}:${hdport}
     volumes:
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
       - hermes:/opt/data
       - /var/run/docker.sock:/var/run/docker.sock
       - ./opencode-workspace:/workspace

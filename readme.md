@@ -33,8 +33,6 @@ Complementary services:
 | -------- | ------- | ------- | ------- | ------- | ------- | ------- |
 | [Searxng](https://github.com/searxng/searxng) | ✅ | ✅ | | | | --profile searxng |
 | [Browserless](https://github.com/browserless/browserless) | ✅ | ✅ | | | | --profile browserless |
-| [MongoDB](https://www.mongodb.com) | ✅ | ❌ | | | | --profile mongodb |
-| [Rabbitmq](https://github.com/rabbitmq/rabbitmq-server) | ✅ | ✅ | | | | --profile rabbit |
 | [NGINX proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | ✅ | ✅ | | | | --profile proxy |
 | [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | | --profile postgres |
 | [KeyDB](https://github.com/snapchat/keydb) | ✅ | ✅ | | | | --profile keydb |
@@ -54,8 +52,6 @@ Healthcheck, ports and URLs:
 | Flowise | ✅ | 3001 | http://127.0.0.1:3001 | http://127.0.0.1:3001/api/v1 |
 | Opencode | ✅ | 4096 | http://127.0.0.1:4096 | http://127.0.0.1:4096/doc |
 | Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642/v1 |
-| Rabbitmq broker | ❌ | 5672 | http://127.0.0.1:5672 | |
-| Rabbitmq management | ❌ | 15672 | http://127.0.0.1:15672 | http://127.0.0.1:15672/api/ |
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
 | OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://127.0.0.1:20128/v1 |
 | Hermes-opencode-bridge | ❌ | 8000 | | http://127.0.0.1:8000/v1/agent/task |

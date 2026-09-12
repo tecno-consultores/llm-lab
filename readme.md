@@ -33,8 +33,6 @@ Complementary services:
 | -------- | ------- | ------- | ------- | ------- | ------- | ------- |
 | [Whisper](https://github.com/openai/whisper) | ✅ | ❌ | Nvidia |  | | --profile whisper-gpu |
 | Whisper | ✅ | ✅ | AMD | | | --profile whisper |
-| [Crawl4ai](https://github.com/unclecode/crawl4ai) | ✅ | ❌ | | ✅ | | --profile crawl4ai-amd64 |
-| Crawl4ai | ❌ | ✅ | | | | --profile crawl4ai-arm64 |
 | [Searxng](https://github.com/searxng/searxng) | ✅ | ✅ | | | | --profile searxng |
 | [Browserless](https://github.com/browserless/browserless) | ✅ | ✅ | | | | --profile browserless |
 | [MongoDB](https://www.mongodb.com) | ✅ | ❌ | | | | --profile mongodb |
@@ -62,7 +60,6 @@ Healthcheck, ports and URLs:
 | Rabbitmq management | ❌ | 15672 | http://127.0.0.1:15672 | http://127.0.0.1:15672/api/ |
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
 | Whisper | ❌ | 9000 | | http://127.0.0.1:9000 |
-| Crawl4ai | ✅ | 11235 | | http://127.0.0.1:11235/openapi.json |
 | OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://127.0.0.1:20128/v1 |
 | Hermes-opencode-bridge | ❌ | 8000 | | http://127.0.0.1:8000/v1/agent/task |
 ------

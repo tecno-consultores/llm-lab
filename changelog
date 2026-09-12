@@ -1,10 +1,22 @@
-* commit f57d15c4f79c74d18b6ca1d318e4b8ead451f53e (HEAD -> develop, origin/develop)
+* commit 73b5144ab098df824017da9279ebe5638d60fdfb (HEAD -> develop, origin/develop)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Sep 12 10:43:19 2026 -0400
+| 
+|     * limpieza de mongo y rabbit
+| 
+* commit 480be43c58648c0134836db0818b0d6c098cebec
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Sep 12 10:37:31 2026 -0400
+| 
+|     * changelog
+| 
+* commit f57d15c4f79c74d18b6ca1d318e4b8ead451f53e
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Sat Sep 12 10:37:29 2026 -0400
 | 
 |     * limpieza
 |     
-| *   commit ce87606a1d012fb315147a45db56443b9a4401a3 (origin/main, origin/HEAD, main)
+| *   commit ce87606a1d012fb315147a45db56443b9a4401a3 (origin/rabbitmq-mongodb-legacy, origin/main, origin/HEAD, main)
 | |\  Merge: 131cbff 23748c8
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sat Sep 12 10:36:11 2026 -0400

@@ -547,55 +547,6 @@ x-evolution-base: &evolution-base
       timeout: 10s
       retries: 3
 
-x-flowise-base: &flowise-base
-    image: flowiseai/flowise:latest
-    init: true
-    hostname: ${fhostname}
-    container_name: ${fhostname}
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-    cap_drop:
-      - ALL
-    environment:
-      - DATABASE_PATH=/root/.flowise
-      - DATABASE_SSL=false
-      - APIKEY_PATH=/root/.flowise
-      - SECRETKEY_PATH=/root/.flowise
-      - LOG_PATH=/root/.flowise/logs
-      - REDIS_URL=redis://${rhostname}:${REDIS_PORT}
-      - FLOWISE_USERNAME=${FLOWISE_USERNAME}
-      - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}
-      - DATABASE_TYPE=${DATABASE_TYPE}
-      - DATABASE_HOST=${DATABASE_HOST}
-      - DATABASE_PORT=${POSTGRESDB_PORT}
-      - DATABASE_USER=${POSTGRES_USER}
-      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
-      - DATABASE_NAME=${POSTGRES_DB}
-      - FLOWISE_FILE_SIZE_LIMIT=${FLOWISE_FILE_SIZE_LIMIT}
-      - CORS_ORIGINS=${CORS_ORIGINS}
-      - IFRAME_ORIGINS=${IFRAME_ORIGINS}
-      - LOG_LEVEL=${LOG_LEVEL}
-      - ENABLE_METRICS=${ENABLE_METRICS}
-      - METRICS_OPEN_TELEMETRY_DEBUG=${METRICS_OPEN_TELEMETRY_DEBUG}
-      - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
-    ports:
-      - ${FPORT}:3000
-    volumes:
-      - flowise:/root/.flowise
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    deploy:
-      resources:
-        limits:
-          cpus: '1.0'
-          memory: 1G
-    healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/api/v1/ping || exit 1"]
-      start_period: 30s
-      interval: 30s
-      timeout: 10s
-      retries: 3
-
 x-opencode-base: &opencode-base
     image: ghcr.io/anomalyco/opencode:latest
     hostname: ${codehostname}
@@ -787,7 +738,6 @@ volumes:
   proxy_data:
   letsencrypt:
   evolution:
-  flowise:
   config-opencode:
   state-opencode:
   share-opencode:
@@ -820,11 +770,11 @@ secrets:
 services:
     postgres:
       <<: *postgres-base
-      profiles: ["postgres", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise"]
+      profiles: ["postgres", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui"]
 
     keydb:
       <<: *keydb-base
-      profiles: ["keydb", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "flowise", "omniroute"]
+      profiles: ["keydb", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "omniroute"]
 
     n8n:
       <<: *n8n-base
@@ -995,19 +945,6 @@ services:
         keydb:
           condition: service_healthy
           restart: true
-
-    flowise:
-        <<: *flowise-base
-        profiles: ["flowise"]
-        links:
-          - keydb
-        depends_on:
-          postgres:
-            condition: service_healthy
-            restart: true
-          keydb:
-            condition: service_healthy
-            restart: true
 
     opencode:
         <<: *opencode-base

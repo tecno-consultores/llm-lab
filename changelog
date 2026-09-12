@@ -1,10 +1,31 @@
-* commit 957109e56709c6f1957da8870b368f98223d74cd (HEAD -> develop, origin/develop)
+* commit f57d15c4f79c74d18b6ca1d318e4b8ead451f53e (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 12 10:34:58 2026 -0400
+| Date:   Sat Sep 12 10:37:29 2026 -0400
 | 
-|     * limpieza whisper
+|     * limpieza
 |     
-| *   commit 131cbff1dd0cf2a9bb0bc3912fb1fc630e8126dc (origin/whisper-legacy, origin/main, origin/HEAD, main)
+| *   commit ce87606a1d012fb315147a45db56443b9a4401a3 (origin/main, origin/HEAD, main)
+| |\  Merge: 131cbff 23748c8
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Sep 12 10:36:11 2026 -0400
+| |   
+| |       Merge pull request #159 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 23748c8b42ae189bea9fdf5b3d64d7bc6befc55f
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 10:34:59 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 957109e56709c6f1957da8870b368f98223d74cd
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 10:34:58 2026 -0400
+| | 
+| |     * limpieza whisper
+| |   
+| *   commit 131cbff1dd0cf2a9bb0bc3912fb1fc630e8126dc (origin/whisper-legacy)
 | |\  Merge: 8cab914 2c990ce
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sat Sep 12 10:31:26 2026 -0400

@@ -23,7 +23,6 @@ Profiles you can run:
 | [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia | | | --profile ollama-gpu |
 | Ollama | ✅ | ✅ | AMD | | | --profile ollama-cpu |
 | [EvolutionAPI](https://github.com/evolution-foundation/evolution-api) | ✅ | ✅ | |  | postgres / KeyDB | --profile evolutionapi |
-| [Flowise](https://github.com/flowiseai/flowise) | ✅ | ✅ | | ✅ | postgres / KeyDB | --profile flowise |
 | [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | ✅ | | --profile opencode |
 | [hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | ✅ | | --profile hermes |
 
@@ -49,7 +48,6 @@ Healthcheck, ports and URLs:
 | NGINX proxy manager | ✅ | 81 | http://127.0.0.1:81 | http://127.0.0.1:81/api |
 | Searxng | ✅ | 8189 | http://127.0.0.1:8189 | |
 | EvolutionAPI | ✅ | 9191 | http://127.0.0.1:9191/manager | http://127.0.0.1:9191/swagger |
-| Flowise | ✅ | 3001 | http://127.0.0.1:3001 | http://127.0.0.1:3001/api/v1 |
 | Opencode | ✅ | 4096 | http://127.0.0.1:4096 | http://127.0.0.1:4096/doc |
 | Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642/v1 |
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |

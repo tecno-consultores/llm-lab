@@ -1,22 +1,70 @@
-* commit 73b5144ab098df824017da9279ebe5638d60fdfb (HEAD -> develop, origin/develop)
+* commit 170580043b4cc4d06dc7b6e40bbe8910b1921f0a (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 12 10:43:19 2026 -0400
+| Date:   Sat Sep 12 11:35:06 2026 -0400
 | 
-|     * limpieza de mongo y rabbit
+|     * limpieza de flowise
 | 
-* commit 480be43c58648c0134836db0818b0d6c098cebec
+* commit 1cf7ef4e9a831fc961f7930e26655f8829d8fd4b
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 12 10:37:31 2026 -0400
+| Date:   Sat Sep 12 11:24:08 2026 -0400
 | 
 |     * changelog
 | 
-* commit f57d15c4f79c74d18b6ca1d318e4b8ead451f53e
+* commit 3b73bbf89a7276fb2b3fe4cb9829e0ca9894a440
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 12 10:37:29 2026 -0400
+| Date:   Sat Sep 12 11:24:06 2026 -0400
 | 
-|     * limpieza
+|     * bugfix
 |     
-| *   commit ce87606a1d012fb315147a45db56443b9a4401a3 (origin/rabbitmq-mongodb-legacy, origin/main, origin/HEAD, main)
+| *   commit 8854bce77bb19a951ff3365b313493037fb314c2 (origin/main, origin/flowise-legacy, origin/HEAD, main)
+| |\  Merge: a59fb2d 902d70a
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Sep 12 11:13:23 2026 -0400
+| |   
+| |       Merge pull request #161 from tecno-consultores/develop
+| |       
+| |       * bugfix
+| | 
+* | commit 902d70a424cd4198c6b659120ab71adb6f5a9794
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 11:12:35 2026 -0400
+| | 
+| |     * bugfix
+| |   
+| *   commit a59fb2d223658e7c19446672f0bfe158fe56a99c (tag: v1.21.0)
+| |\  Merge: ce87606 3f90bdf
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Sep 12 10:44:27 2026 -0400
+| |   
+| |       Merge pull request #160 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 3f90bdfc511f2432742919917c756a0c464df767
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 10:43:20 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 73b5144ab098df824017da9279ebe5638d60fdfb
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 10:43:19 2026 -0400
+| | 
+| |     * limpieza de mongo y rabbit
+| | 
+* | commit 480be43c58648c0134836db0818b0d6c098cebec
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 10:37:31 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit f57d15c4f79c74d18b6ca1d318e4b8ead451f53e
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 10:37:29 2026 -0400
+| | 
+| |     * limpieza
+| |   
+| *   commit ce87606a1d012fb315147a45db56443b9a4401a3 (origin/rabbitmq-mongodb-legacy)
 | |\  Merge: 131cbff 23748c8
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sat Sep 12 10:36:11 2026 -0400

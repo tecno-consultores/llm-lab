@@ -1,10 +1,22 @@
-* commit 3b73bbf89a7276fb2b3fe4cb9829e0ca9894a440 (HEAD -> develop, origin/develop)
+* commit 170580043b4cc4d06dc7b6e40bbe8910b1921f0a (HEAD -> develop, origin/develop)
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Sep 12 11:35:06 2026 -0400
+| 
+|     * limpieza de flowise
+| 
+* commit 1cf7ef4e9a831fc961f7930e26655f8829d8fd4b
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sat Sep 12 11:24:08 2026 -0400
+| 
+|     * changelog
+| 
+* commit 3b73bbf89a7276fb2b3fe4cb9829e0ca9894a440
 | Author: Jesus Palencia <sinfallas@gmail.com>
 | Date:   Sat Sep 12 11:24:06 2026 -0400
 | 
 |     * bugfix
 |     
-| *   commit 8854bce77bb19a951ff3365b313493037fb314c2 (origin/main, origin/HEAD, main)
+| *   commit 8854bce77bb19a951ff3365b313493037fb314c2 (origin/main, origin/flowise-legacy, origin/HEAD, main)
 | |\  Merge: a59fb2d 902d70a
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sat Sep 12 11:13:23 2026 -0400

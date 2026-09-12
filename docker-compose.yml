@@ -440,17 +440,6 @@ x-rabbit-base: &rabbit-base
           cpus: '1.0'
           memory: 512M
 
-x-whisper-base: &whisper-base
-    hostname: ${whostname}
-    container_name: ${whostname}
-    pull_policy: ${pull_policy}
-    restart: ${restart}
-#    ports:
-#      - ${wport}:${wport}
-    volumes:
-      - whisper:/app/app
-      - cache-whisper:/root/.cache
-
 x-nvidia-base: &nvidia-base
     runtime: nvidia
     deploy:
@@ -846,8 +835,6 @@ volumes:
   postgres:
   keydb_data:
   qdrant:
-  whisper:
-  cache-whisper:
   proxy_data:
   letsencrypt:
   mongodb:
@@ -1040,28 +1027,6 @@ services:
         - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
         - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
         - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
-
-    whisper-gpu:
-      <<: [*whisper-base, *nvidia-base]
-      image: onerahmet/openai-whisper-asr-webservice:latest-gpu
-      profiles: ["whisper-gpu"]
-      environment:
-        - ASR_DEVICE=cuda
-        - ASR_MODEL=${ASR_MODEL}
-        - ASR_ENGINE=${ASR_ENGINE}
-        - MODEL_IDLE_TIMEOUT=300
-        - NVIDIA_VISIBLE_DEVICES=all
-        - NVIDIA_DRIVER_CAPABILITIES=all
-
-    whisper:
-      <<: *whisper-base
-      image: onerahmet/openai-whisper-asr-webservice:latest
-      profiles: ["whisper"]
-      environment:
-        - ASR_DEVICE=cpu
-        - ASR_MODEL=${ASR_MODEL}
-        - ASR_ENGINE=${ASR_ENGINE}
-        - MODEL_IDLE_TIMEOUT=300
 
     proxy:
       <<: *proxy-base

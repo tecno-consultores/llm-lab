@@ -41,7 +41,7 @@ Complementary services:
 
 Healthcheck, ports and URLs:
 
-| Name | healthcheck| Port | Service | Api |
+| Name | healthcheck| Port | GUI | Api |
 | -------- | ------- | ------- | ------- | ------- |
 | N8N | ✅ | 5678 | http://127.0.0.1:5678 | http://127.0.0.1:5678/api/v1 |
 | Qdrant | ✅ | 6333 | http://127.0.0.1:6333/dashboard | http://127.0.0.1:6333 |
@@ -53,7 +53,7 @@ Healthcheck, ports and URLs:
 | Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642/v1 |
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
 | OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://127.0.0.1:20128/v1 |
-| Hermes-opencode-bridge | ❌ | 8000 | | http://127.0.0.1:8000/v1/agent/task |
+| Hermes-opencode-bridge | ✅ | 8000 | | http://127.0.0.1:8000/v1/agent/task |
 ------
 
 To stop and remove all containers use:

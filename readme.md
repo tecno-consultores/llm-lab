@@ -20,8 +20,9 @@ Profiles you can run:
 | N8N-AI-SANDBOX | ✅ | ✅ | | | N8N | --profile n8n-ai-sandbox |
 | [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | | --profile qdrant |
 | [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | ✅ | postgres / KeyDB | --profile openwebui |
-| [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia | | | --profile ollama-gpu |
-| Ollama | ✅ | ✅ | AMD | | | --profile ollama-cpu |
+| [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia | | | --profile ollama-nvidia |
+| Ollama | ✅ | ❌ | AMD | | | --profile ollama-amd |
+| Ollama | ✅ | ✅ | | | | --profile ollama-cpu |
 | [EvolutionAPI](https://github.com/evolution-foundation/evolution-api) | ✅ | ✅ | |  | postgres / KeyDB | --profile evolutionapi |
 | [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | ✅ | | --profile opencode |
 | [hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | ✅ | | --profile hermes |

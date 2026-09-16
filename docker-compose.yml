@@ -885,9 +885,20 @@ services:
           condition: service_healthy
           restart: true
 
-    ollama-cpu:
-      <<: *ollama-base
-      profiles: ["ollama-cpu"]
+    ollama-amd:
+      image: ollama/ollama:rocm
+      hostname: ${ohostname}
+      container_name: ${ohostname}
+      pull_policy: ${pull_policy}
+      restart: ${restart}
+#      ports:
+#        - ${OPORT}:11434
+      profiles: ["ollama-amd"]
+      devices:
+        - /dev/kfd:/dev/kfd
+        - /dev/dri:/dev/dri
+      group_add:
+        - video
       environment:
         - OLLAMA_DEBUG=${OLLAMA_DEBUG}
         - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
@@ -901,13 +912,40 @@ services:
         - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
         - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
         - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
+        - HSA_OVERRIDE_GFX_VERSION=${HSA_OVERRIDE_GFX_VERSION}
+        - OLLAMA_IGPU_ENABLE=${OLLAMA_IGPU_ENABLE}
+      volumes:
+        - ollama:/root/.ollama
+      healthcheck:
+        test: ['CMD-SHELL', 'ollama --version && ollama ps || exit 1']
+        start_period: 30s
+        interval: 30s
+        timeout: 10s
+        retries: 3
 
-    ollama-gpu:
+    ollama-nvidia:
       <<: [*ollama-base, *nvidia-base]
-      profiles: ["ollama-gpu"]
+      profiles: ["ollama-nvidia"]
       environment:
         - NVIDIA_VISIBLE_DEVICES=all
         - NVIDIA_DRIVER_CAPABILITIES=all
+        - OLLAMA_DEBUG=${OLLAMA_DEBUG}
+        - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
+        - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}
+        - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
+        - OLLAMA_NUM_PARALLEL=${OLLAMA_NUM_PARALLEL}
+        - OLLAMA_NOPRUNE=${OLLAMA_NOPRUNE}
+        - OLLAMA_SCHED_SPREAD=${OLLAMA_SCHED_SPREAD}
+        - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
+        - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
+        - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
+        - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
+        - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
+
+    ollama-cpu:
+      <<: *ollama-base
+      profiles: ["ollama-cpu"]
+      environment:
         - OLLAMA_DEBUG=${OLLAMA_DEBUG}
         - OLLAMA_KEEP_ALIVE=${OLLAMA_KEEP_ALIVE}
         - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}

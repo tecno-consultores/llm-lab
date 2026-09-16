@@ -891,8 +891,12 @@ services:
       container_name: ${ohostname}
       pull_policy: ${pull_policy}
       restart: ${restart}
+      stdin_open: true
+      tty: true
 #      ports:
 #        - ${OPORT}:11434
+#      ulimits:
+#        memlock: -1
       profiles: ["ollama-amd"]
       devices:
         - /dev/kfd:/dev/kfd

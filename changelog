@@ -1,10 +1,94 @@
-* commit b28855d7e6b08fe5f130643ca7946d0f4bd2ec22 (HEAD -> develop, origin/develop)
+* commit 6cd58f7846a3be0cbfbc6496e640d63f48a38fcb (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 12 14:15:36 2026 -0400
+| Date:   Thu Sep 17 21:06:56 2026 -0400
 | 
-|     * limpieza
+|     Actualizacion automatica
 |     
-| *   commit fc0cc79798a113200d9fee50dfcf17c629cc9187 (origin/main, origin/HEAD, main)
+| *   commit 02f11e00d15d7a45d32657f9df5c187945139a4b (tag: v1.22.1, origin/main, origin/HEAD, main)
+| |\  Merge: e1bed0e 64b9216
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Wed Sep 16 09:24:39 2026 -0400
+| |   
+| |       Merge pull request #166 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 64b921669e9bc3884ea6daef9980529aedc6d9ae
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Sep 16 09:20:52 2026 -0400
+| | 
+| |     Update formatting in AUTHORS.md for clarity
+| | 
+* | commit 1d767f5e0381169d67b04f9ab32d26bef485f23f
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Sep 16 09:17:20 2026 -0400
+| | 
+| |     Add GitHub links to author names
+| | 
+* | commit 3cb418a0bc47fe4498f4de0dd708030fafd03cc9
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Sep 16 09:12:00 2026 -0400
+| | 
+| |     Update readme.md
+| | 
+* | commit 7b7edb4e4378118f693ff2ca2aa4bd2aadb9b8c5
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Sep 16 09:11:02 2026 -0400
+| | 
+| |     Update Hermes-opencode-bridge status to '✅'
+| |   
+| *   commit e1bed0eaa91ca545b4ca0d6a70b838488526443d
+| |\  Merge: 2f2a5c9 a14a6ff
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Wed Sep 16 09:09:13 2026 -0400
+| |   
+| |       Merge pull request #165 from tecno-consultores/develop
+| |       
+| |       Update docker-compose.yml
+| | 
+* | commit a14a6ff8165a0c592c851cc774078758ee4f5f6f
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Wed Sep 16 09:08:03 2026 -0400
+| | 
+| |     Update docker-compose.yml
+| |   
+| *   commit 2f2a5c9561295f2dd869c0d687d34b768a9f206f (tag: v1.22.0)
+| |\  Merge: ebdc715 5f585c1
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Tue Sep 15 23:13:48 2026 -0400
+| |   
+| |       Merge pull request #164 from tecno-consultores/develop
+| |       
+| |       * separacion de amd y cpu
+| | 
+* | commit 5f585c123bc55915a24bb9a64dd0f4f82ce5294c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Tue Sep 15 23:09:04 2026 -0400
+| | 
+| |     * separacion de amd y cpu
+| |   
+| *   commit ebdc7159752ed6d49828e39d9e148c24f80aa942 (tag: v1.21.1)
+| |\  Merge: fc0cc79 d82d382
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Sep 12 14:17:02 2026 -0400
+| |   
+| |       Merge pull request #163 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit d82d3828f5f066f2d50b628aad946b900bf08c4e
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 14:15:38 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit b28855d7e6b08fe5f130643ca7946d0f4bd2ec22
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 12 14:15:36 2026 -0400
+| | 
+| |     * limpieza
+| |   
+| *   commit fc0cc79798a113200d9fee50dfcf17c629cc9187
 | |\  Merge: 8854bce 69669ab
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Sat Sep 12 11:35:53 2026 -0400

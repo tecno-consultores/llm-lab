@@ -1,6 +1,6 @@
 # Developer:
 
-* [Jesús Palencia](https://github.com/sinfallas)
+* [Jesus Palencia](https://github.com/sinfallas)
 
 # Contributors:
 

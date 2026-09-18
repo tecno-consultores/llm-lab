@@ -623,7 +623,6 @@ x-hermes-base: &hermes-base
       - ${hdport}:${hdport}
     volumes:
       - hermes:/opt/data
-      - /var/run/docker.sock:/var/run/docker.sock
       - ./opencode-workspace:/workspace
     group_add:
       - ${DOCKER_GID}

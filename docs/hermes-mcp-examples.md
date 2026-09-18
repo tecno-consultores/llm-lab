@@ -2,13 +2,16 @@
 
 ## omniroute
 
+```yaml
   omniroute_mcp:
     url: "http://omniroute:20128/api/mcp/stream"
     headers:
       Authorization: "token_here"
+```
 
 ## proxmox
 
+```yaml
   nandi-proxmox-mcp:
     command: npx
     args:
@@ -26,11 +29,13 @@
       PROXMOX_SSH_KEY_PATH: /opt/data/.ssh/proxmox_key
       PROXMOX_ALLOW_INSECURE_TLS: 'true'
       PVE_ACCESS_TIER: full
+```
 
 ## omniroute
 
+```yaml
   omniroute_mcp:
     url: http://omniroute:20128/api/mcp/stream
     headers:
       Authorization: token_here
-
+```

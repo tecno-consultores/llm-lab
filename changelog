@@ -1,10 +1,49 @@
-* commit 6cd58f7846a3be0cbfbc6496e640d63f48a38fcb (HEAD -> develop, origin/develop)
+* commit 2d89a3bc41add214bf84bcc5ee4a1c87e796845f (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Sep 17 21:06:56 2026 -0400
+| Date:   Sat Sep 19 12:37:34 2026 -0400
+| 
+|     * omniroute doc
+| 
+* commit c805f4619d6f085794871dbf39013797cdfdd6a9
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Thu Sep 17 21:55:07 2026 -0400
+| 
+|     * changelog
+| 
+* commit 20fc2f947eaf5ae8e11511d19822fc2586a9c718
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Thu Sep 17 21:55:05 2026 -0400
+| 
+|     * bugfix
+| 
+* commit fb6962566e685cecf9c5283e4fddabd958133f49
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Thu Sep 17 21:51:38 2026 -0400
 | 
 |     Actualizacion automatica
 |     
-| *   commit 02f11e00d15d7a45d32657f9df5c187945139a4b (tag: v1.22.1, origin/main, origin/HEAD, main)
+| *   commit 09ae223456ce4ed37a875a7c5ea9634ee98b51a8 (origin/main, origin/HEAD, main)
+| |\  Merge: 02f11e0 555281e
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Thu Sep 17 21:08:54 2026 -0400
+| |   
+| |       Merge pull request #167 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 555281ef28f12fde61eb08099911afa8b2f9bd7c
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Sep 17 21:07:36 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 6cd58f7846a3be0cbfbc6496e640d63f48a38fcb
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Sep 17 21:06:56 2026 -0400
+| | 
+| |     Actualizacion automatica
+| |   
+| *   commit 02f11e00d15d7a45d32657f9df5c187945139a4b (tag: v1.22.1)
 | |\  Merge: e1bed0e 64b9216
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Wed Sep 16 09:24:39 2026 -0400

@@ -30,12 +30,3 @@
       PROXMOX_ALLOW_INSECURE_TLS: 'true'
       PVE_ACCESS_TIER: full
 ```
-
-## omniroute
-
-```yaml
-  omniroute_mcp:
-    url: http://omniroute:20128/api/mcp/stream
-    headers:
-      Authorization: token_here
-```

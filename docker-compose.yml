@@ -704,20 +704,31 @@ x-omniroute-base: &omniroute-base
     volumes:
       - omniroute-data:/app/data
 
-x-hermes-opencode-bridge-base: &hermes-opencode-bridge-base
-    image: sinfallas/hermes-opencode-bridge:latest
-    hostname: ${acpname}
-    container_name: ${acpname}
+x-paperclip-base: &paperclip-base
+    image: ghcr.io/paperclipai/paperclip:latest
+    hostname: ${papername}
+    container_name: ${papername}
     pull_policy: ${pull_policy}
     restart: ${restart}
+    pids_limit: 2048
     ports:
-      - 8000:8000
+      - ${pcport}:${pcport}
     environment:
-      - HERMES_API_KEY=${hapikey}
-      - HERMES_API_URL=http://${hname}:${hapiport}/v1/chat/completions
-      - TZ=${TIMEZONE}
+      - DATABASE_URL=${DATABASE_URL}
+      - PORT=${pcport}
+      - SERVE_UI=${SERVE_UI}
+      - PAPERCLIP_DEPLOYMENT_MODE=${PAPERCLIP_DEPLOYMENT_MODE}
+      - PAPERCLIP_DEPLOYMENT_EXPOSURE=${PAPERCLIP_DEPLOYMENT_EXPOSURE}
+      - PAPERCLIP_PUBLIC_URL=${PAPERCLIP_PUBLIC_URL:-http://localhost:3100}
+      - BETTER_AUTH_SECRET="${BETTER_AUTH_SECRET:?BETTER_AUTH_SECRET must be set}"
+      - PAPERCLIP_TOOL_ACTION_SIGNING_SECRET=${PAPERCLIP_TOOL_ACTION_SIGNING_SECRET}
+      - PAPERCLIP_WORKSPACE_GIT_SCAN_CONCURRENCY=${PAPERCLIP_WORKSPACE_GIT_SCAN_CONCURRENCY}
+      - PAPERCLIP_WORKSPACE_GIT_SCAN_QUEUE_CAPACITY=${PAPERCLIP_WORKSPACE_GIT_SCAN_QUEUE_CAPACITY}
+      - PAPERCLIP_WORKSPACE_GIT_SCAN_TIMEOUT_MS=${PAPERCLIP_WORKSPACE_GIT_SCAN_TIMEOUT_MS}
+      - PAPERCLIP_WORKSPACE_GIT_SCAN_CACHE_TTL_MS=${PAPERCLIP_WORKSPACE_GIT_SCAN_CACHE_TTL_MS}
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - paperclip-data:/paperclip
 
 ################################################
 
@@ -740,6 +751,7 @@ volumes:
   browser_data:
   sandbox-tls:
   omniroute-data:
+  paperclip-data:
 
 configs:
   searxng_inline_settings:
@@ -765,7 +777,7 @@ secrets:
 services:
     postgres:
       <<: *postgres-base
-      profiles: ["postgres", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui"]
+      profiles: ["postgres", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "paperclip"]
 
     keydb:
       <<: *keydb-base
@@ -965,6 +977,10 @@ services:
     proxy:
       <<: *proxy-base
       profiles: ["proxy"]
+      networks:
+        default:
+          aliases:
+            - api.openai.com
 
     searxng:
       <<: *searxng-base
@@ -1003,11 +1019,10 @@ services:
             condition: service_healthy
             restart: true
 
-    acp-orchestrator:
-        <<: *hermes-opencode-bridge-base
-        profiles: ["acp-orchestrator"]
+    paperclip:
+        <<: *paperclip-base
+        profiles: ["paperclip"]
         depends_on:
-          opencode:
-            condition: service_started
-          hermes:
-            condition: service_started
+          postgres:
+            condition: service_healthy
+            restart: true

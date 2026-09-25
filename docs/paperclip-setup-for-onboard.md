@@ -1,3 +1,13 @@
+## set up the dependencies 
+
+* Before setting up the paperclip container, you must getting up the following containers:
+
+```bash
+ocker compose -f docker-compose.yml --env-file env.example --profile proxy --profile omniroute up -d
+```
+* omboard on omniroute and create an api key
+
+
 ## Create SSL certificate
 
 * Run the following command on the host: 
@@ -19,3 +29,11 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout openai.key -out open
 - Forward Port: 20128 (this is the internal port assigned to your OmniRoute container).
 
 * On the SSL tab, expand the menu, select the Custom certificate you just imported, check the Force SSL option, and save.
+
+# Finishing
+
+* Finally, I activated the Paperclip container.
+
+```bash
+docker compose -f docker-compose.yml --env-file env.example --profile paperclip up -d
+```

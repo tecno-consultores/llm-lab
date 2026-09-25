@@ -1,28 +1,64 @@
-* commit 2d89a3bc41add214bf84bcc5ee4a1c87e796845f (HEAD -> develop, origin/develop)
+* commit 2d8a809b1fd3c1d7815294db6403de5cff029344 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 19 12:37:34 2026 -0400
-| 
-|     * omniroute doc
-| 
-* commit c805f4619d6f085794871dbf39013797cdfdd6a9
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Sep 17 21:55:07 2026 -0400
-| 
-|     * changelog
-| 
-* commit 20fc2f947eaf5ae8e11511d19822fc2586a9c718
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Sep 17 21:55:05 2026 -0400
-| 
-|     * bugfix
-| 
-* commit fb6962566e685cecf9c5283e4fddabd958133f49
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Thu Sep 17 21:51:38 2026 -0400
+| Date:   Thu Sep 24 21:54:06 2026 -0400
 | 
 |     Actualizacion automatica
 |     
-| *   commit 09ae223456ce4ed37a875a7c5ea9634ee98b51a8 (origin/main, origin/HEAD, main)
+| *   commit 04e3daf81f3a509707781129ecdf788f7919aed9 (origin/main, origin/HEAD, main)
+| |\  Merge: fa373ba f134d78
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Sep 19 12:42:33 2026 -0400
+| |   
+| |       Merge pull request #169 from tecno-consultores/develop
+| |       
+| |       * hermes doc bugfix
+| | 
+* | commit f134d7840010c9ecf719ff9b8e6a529dd9b46446
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 19 12:40:52 2026 -0400
+| | 
+| |     * hermes doc bugfix
+| |   
+| *   commit fa373bacbb525c7064ea2203e82242e81551c306
+| |\  Merge: 09ae223 3c20355
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Sep 19 12:38:44 2026 -0400
+| |   
+| |       Merge pull request #168 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit 3c2035588ff4d0484cbd5f10359b6fb55e819c63
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 19 12:37:36 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 2d89a3bc41add214bf84bcc5ee4a1c87e796845f
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 19 12:37:34 2026 -0400
+| | 
+| |     * omniroute doc
+| | 
+* | commit c805f4619d6f085794871dbf39013797cdfdd6a9
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Sep 17 21:55:07 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 20fc2f947eaf5ae8e11511d19822fc2586a9c718
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Sep 17 21:55:05 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit fb6962566e685cecf9c5283e4fddabd958133f49
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Thu Sep 17 21:51:38 2026 -0400
+| | 
+| |     Actualizacion automatica
+| |   
+| *   commit 09ae223456ce4ed37a875a7c5ea9634ee98b51a8
 | |\  Merge: 02f11e0 555281e
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Thu Sep 17 21:08:54 2026 -0400

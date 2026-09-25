@@ -12,6 +12,8 @@ if [[ $(dpkg --get-selections | grep -w "docker-compose-plugin" | awk '{print $1
 	chmod -R 777 init
 	docker compose -f docker-compose.yml --env-file env.example --profile n8n --profile n8n-worker --profile n8n-runner --profile openwebui up -d
 	chmod -R 777 n8n
+	openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout openai.key -out openai.crt -subj "/CN=api.openai.com"
+	chmod -v 666 openai.*
 	echo "Finished."
 else
 	echo "ERROR: Docker isn´t installed."

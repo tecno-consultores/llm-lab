@@ -18,14 +18,14 @@ Profiles you can run:
 | N8N-worker | ✅ | ✅ | | | N8N| --profile n8n-worker |
 | N8N-runner (code sandbox) | ✅ | ✅ | | | N8N | --profile n8n-runner |
 | N8N-AI-SANDBOX | ✅ | ✅ | | | N8N | --profile n8n-ai-sandbox |
-| [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | | --profile qdrant |
 | [OpenwebUI](https://github.com/open-webui/open-webui) | ✅ | ✅ | | ✅ | postgres / KeyDB | --profile openwebui |
 | [Ollama](https://github.com/ollama/ollama) | ✅ | ❌ | Nvidia | | | --profile ollama-nvidia |
 | Ollama | ✅ | ❌ | AMD | | | --profile ollama-amd |
 | Ollama | ✅ | ✅ | | | | --profile ollama-cpu |
 | [EvolutionAPI](https://github.com/evolution-foundation/evolution-api) | ✅ | ✅ | |  | postgres / KeyDB | --profile evolutionapi |
 | [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | ✅ | | --profile opencode |
-| [hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | ✅ | | --profile hermes |
+| [Hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | ✅ | | --profile hermes |
+| [Paperclip](https://github.com/paperclipai/paperclip) | ✅ | ✅ |  | ❌ | postgres | --profile paperclip |
 
 Complementary services:
 
@@ -37,7 +37,7 @@ Complementary services:
 | [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | | --profile postgres |
 | [KeyDB](https://github.com/snapchat/keydb) | ✅ | ✅ | | | | --profile keydb |
 | [OmniRoute](https://github.com/diegosouzapw/OmniRoute) | ✅ | ✅ | | | | --profile omniroute |
-| [Hermes-opencode-bridge](https://github.com/tecno-consultores/hermes-opencode-bridge) | ✅ | ✅ | | | hermes / opencode | --profile acp-orchestrator |
+| [Qdrant](https://github.com/qdrant/qdrant) | ✅ | ✅ | | | | --profile qdrant |
 
 Healthcheck, ports and URLs:
 
@@ -53,7 +53,7 @@ Healthcheck, ports and URLs:
 | Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642/v1 |
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
 | OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://127.0.0.1:20128/v1 |
-| Hermes-opencode-bridge | ✅ | 8000 | | http://127.0.0.1:8000/v1/agent/task |
+| Paperclip | ✅ | 3100 | | http://127.0.0.1:3100 |
 ------
 
 To stop and remove all containers use:

@@ -53,7 +53,7 @@ Healthcheck, ports and URLs:
 | Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642/v1 |
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
 | OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://127.0.0.1:20128/v1 |
-| Paperclip | ✅ | 3100 | | http://127.0.0.1:3100 |
+| Paperclip | ✅ | 3100 | http://127.0.0.1:3100 | |
 ------
 
 To stop and remove all containers use:

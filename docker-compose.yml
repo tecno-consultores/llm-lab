@@ -704,6 +704,21 @@ x-omniroute-base: &omniroute-base
     volumes:
       - omniroute-data:/app/data
 
+x-hermes-opencode-bridge-base: &hermes-opencode-bridge-base
+    image: sinfallas/hermes-opencode-bridge:latest
+    hostname: ${acpname}
+    container_name: ${acpname}
+    pull_policy: ${pull_policy}
+    restart: ${restart}
+    ports:
+      - 8000:8000
+    environment:
+      - HERMES_API_KEY=${hapikey}
+      - HERMES_API_URL=http://${hname}:${hapiport}/v1/chat/completions
+      - TZ=${TIMEZONE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
 x-paperclip-base: &paperclip-base
     image: ghcr.io/paperclipai/paperclip:latest
     hostname: ${papername}
@@ -1019,6 +1034,15 @@ services:
           keydb:
             condition: service_healthy
             restart: true
+
+    acp-orchestrator:
+        <<: *hermes-opencode-bridge-base
+        profiles: ["acp-orchestrator"]
+        depends_on:
+          opencode:
+            condition: service_started
+          hermes:
+            condition: service_started
 
     paperclip:
         <<: *paperclip-base

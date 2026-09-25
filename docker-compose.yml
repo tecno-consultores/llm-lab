@@ -712,20 +712,23 @@ x-paperclip-base: &paperclip-base
     restart: ${restart}
     pids_limit: 2048
     ports:
-      - 3100:3100
+      - ${pcport}:${pcport}
     environment:
-      - DATABASE_URL=postgres://paperclip:paperclip@db:5432/paperclip
-      - PORT="3100"
-      - SERVE_UI="true"
-      - PAPERCLIP_DEPLOYMENT_MODE="authenticated"
-      - PAPERCLIP_DEPLOYMENT_EXPOSURE="private"
-      - PAPERCLIP_PUBLIC_URL="${PAPERCLIP_PUBLIC_URL:-http://localhost:3100}"
+      - DATABASE_URL=${DATABASE_URL}
+      - PORT=${pcport}
+      - SERVE_UI=${SERVE_UI}
+      - PAPERCLIP_DEPLOYMENT_MODE=${PAPERCLIP_DEPLOYMENT_MODE}
+      - PAPERCLIP_DEPLOYMENT_EXPOSURE=${PAPERCLIP_DEPLOYMENT_EXPOSURE}
+      - PAPERCLIP_PUBLIC_URL=${PAPERCLIP_PUBLIC_URL:-http://localhost:3100}
       - BETTER_AUTH_SECRET="${BETTER_AUTH_SECRET:?BETTER_AUTH_SECRET must be set}"
+      - PAPERCLIP_TOOL_ACTION_SIGNING_SECRET=${PAPERCLIP_TOOL_ACTION_SIGNING_SECRET}
+      - PAPERCLIP_WORKSPACE_GIT_SCAN_CONCURRENCY=${PAPERCLIP_WORKSPACE_GIT_SCAN_CONCURRENCY}
+      - PAPERCLIP_WORKSPACE_GIT_SCAN_QUEUE_CAPACITY=${PAPERCLIP_WORKSPACE_GIT_SCAN_QUEUE_CAPACITY}
+      - PAPERCLIP_WORKSPACE_GIT_SCAN_TIMEOUT_MS=${PAPERCLIP_WORKSPACE_GIT_SCAN_TIMEOUT_MS}
+      - PAPERCLIP_WORKSPACE_GIT_SCAN_CACHE_TTL_MS=${PAPERCLIP_WORKSPACE_GIT_SCAN_CACHE_TTL_MS}
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
     volumes:
       - paperclip-data:/paperclip
-    depends_on:
-      postgres:
-        condition: service_healthy
 
 ################################################
 
@@ -774,7 +777,7 @@ secrets:
 services:
     postgres:
       <<: *postgres-base
-      profiles: ["postgres", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui"]
+      profiles: ["postgres", "n8n", "n8n-runner", "n8n-worker", "evolutionapi", "openwebui", "paperclip"]
 
     keydb:
       <<: *keydb-base
@@ -974,6 +977,10 @@ services:
     proxy:
       <<: *proxy-base
       profiles: ["proxy"]
+      networks:
+        default:
+          aliases:
+            - api.openai.com
 
     searxng:
       <<: *searxng-base
@@ -1012,3 +1019,10 @@ services:
             condition: service_healthy
             restart: true
 
+    paperclip:
+        <<: *paperclip-base
+        profiles: ["paperclip"]
+        depends_on:
+          postgres:
+            condition: service_healthy
+            restart: true

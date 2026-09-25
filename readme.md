@@ -37,7 +37,6 @@ Complementary services:
 | [Postgres](https://hub.docker.com/_/postgres) | ✅ | ✅ | | | | --profile postgres |
 | [KeyDB](https://github.com/snapchat/keydb) | ✅ | ✅ | | | | --profile keydb |
 | [OmniRoute](https://github.com/diegosouzapw/OmniRoute) | ✅ | ✅ | | | | --profile omniroute |
-| [Hermes-opencode-bridge](https://github.com/tecno-consultores/hermes-opencode-bridge) | ✅ | ✅ | | | hermes / opencode | --profile acp-orchestrator |
 
 Healthcheck, ports and URLs:
 
@@ -53,7 +52,6 @@ Healthcheck, ports and URLs:
 | Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642/v1 |
 | Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
 | OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://127.0.0.1:20128/v1 |
-| Hermes-opencode-bridge | ✅ | 8000 | | http://127.0.0.1:8000/v1/agent/task |
 ------
 
 To stop and remove all containers use:

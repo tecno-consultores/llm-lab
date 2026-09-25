@@ -704,20 +704,28 @@ x-omniroute-base: &omniroute-base
     volumes:
       - omniroute-data:/app/data
 
-x-hermes-opencode-bridge-base: &hermes-opencode-bridge-base
-    image: sinfallas/hermes-opencode-bridge:latest
-    hostname: ${acpname}
-    container_name: ${acpname}
+x-paperclip-base: &paperclip-base
+    image: ghcr.io/paperclipai/paperclip:latest
+    hostname: ${papername}
+    container_name: ${papername}
     pull_policy: ${pull_policy}
     restart: ${restart}
+    pids_limit: 2048
     ports:
-      - 8000:8000
+      - 3100:3100
     environment:
-      - HERMES_API_KEY=${hapikey}
-      - HERMES_API_URL=http://${hname}:${hapiport}/v1/chat/completions
-      - TZ=${TIMEZONE}
+      - DATABASE_URL=postgres://paperclip:paperclip@db:5432/paperclip
+      - PORT="3100"
+      - SERVE_UI="true"
+      - PAPERCLIP_DEPLOYMENT_MODE="authenticated"
+      - PAPERCLIP_DEPLOYMENT_EXPOSURE="private"
+      - PAPERCLIP_PUBLIC_URL="${PAPERCLIP_PUBLIC_URL:-http://localhost:3100}"
+      - BETTER_AUTH_SECRET="${BETTER_AUTH_SECRET:?BETTER_AUTH_SECRET must be set}"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - paperclip-data:/paperclip
+    depends_on:
+      postgres:
+        condition: service_healthy
 
 ################################################
 
@@ -740,6 +748,7 @@ volumes:
   browser_data:
   sandbox-tls:
   omniroute-data:
+  paperclip-data:
 
 configs:
   searxng_inline_settings:
@@ -1003,11 +1012,3 @@ services:
             condition: service_healthy
             restart: true
 
-    acp-orchestrator:
-        <<: *hermes-opencode-bridge-base
-        profiles: ["acp-orchestrator"]
-        depends_on:
-          opencode:
-            condition: service_started
-          hermes:
-            condition: service_started

@@ -46,9 +46,9 @@ Healthcheck, ports and URLs:
 | -------- | ------- | ------- | ------- | ------- |
 | N8N | ✅ | 5678 | http://127.0.0.1:5678 | http://n8n:5678/api/v1 |
 | Qdrant | ✅ | 6333 | http://127.0.0.1:6333/dashboard | http://qdrant:6333 |
-| OpenwebUI | ✅ | 8383 | http://openwebui:8383 | |
+| OpenwebUI | ✅ | 8383 | http://127.0.0.1:8383 | |
 | NGINX proxy manager | ✅ | 81 | http://127.0.0.1:81 | http://proxy:81/api |
-| Searxng | ✅ | 8189 | http://searxng:8189 | |
+| Searxng | ✅ | 8189 | http://127.0.0.1:8189 | |
 | EvolutionAPI | ✅ | 9191 | http://127.0.0.1:9191/manager | http://evolutionapi:9191/swagger |
 | Opencode | ✅ | 4096 | http://127.0.0.1:4096 | http://opencode:4096/doc |
 | Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://hermes:8642/v1 |

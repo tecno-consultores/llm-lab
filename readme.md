@@ -42,19 +42,19 @@ Complementary services:
 
 Healthcheck, ports and URLs:
 
-| Name | healthcheck| Port | GUI | Api |
+| Name | healthcheck| Port | GUI | Api dentro de Docker |
 | -------- | ------- | ------- | ------- | ------- |
-| N8N | ✅ | 5678 | http://127.0.0.1:5678 | http://127.0.0.1:5678/api/v1 |
-| Qdrant | ✅ | 6333 | http://127.0.0.1:6333/dashboard | http://127.0.0.1:6333 |
-| OpenwebUI | ✅ | 8383 | http://127.0.0.1:8383 | |
-| NGINX proxy manager | ✅ | 81 | http://127.0.0.1:81 | http://127.0.0.1:81/api |
-| Searxng | ✅ | 8189 | http://127.0.0.1:8189 | |
-| EvolutionAPI | ✅ | 9191 | http://127.0.0.1:9191/manager | http://127.0.0.1:9191/swagger |
-| Opencode | ✅ | 4096 | http://127.0.0.1:4096 | http://127.0.0.1:4096/doc |
-| Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://127.0.0.1:8642/v1 |
-| Browserless | ✅ | 3000 | | http://127.0.0.1:3000/docs |
-| OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://127.0.0.1:20128/v1 |
-| Hermes-opencode-bridge | ✅ | 8000 | | http://127.0.0.1:8000/v1/agent/task |
+| N8N | ✅ | 5678 | http://127.0.0.1:5678 | http://n8n:5678/api/v1 |
+| Qdrant | ✅ | 6333 | http://127.0.0.1:6333/dashboard | http://qdrant:6333 |
+| OpenwebUI | ✅ | 8383 | http://openwebui:8383 | |
+| NGINX proxy manager | ✅ | 81 | http://127.0.0.1:81 | http://proxy:81/api |
+| Searxng | ✅ | 8189 | http://searxng:8189 | |
+| EvolutionAPI | ✅ | 9191 | http://127.0.0.1:9191/manager | http://evolutionapi:9191/swagger |
+| Opencode | ✅ | 4096 | http://127.0.0.1:4096 | http://opencode:4096/doc |
+| Hermes Agent | ✅ | 8642 - 9119 | http://127.0.0.1:9119 | http://hermes:8642/v1 |
+| Browserless | ✅ | 3000 | | http://browserless:3000/docs |
+| OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://omniroute:20128/v1 |
+| Hermes-opencode-bridge | ✅ | 8000 | | http://acp-orchestrator:8000/v1/agent/task |
 | Paperclip | ✅ | 3100 | http://localhost:3100 | |
 ------
 

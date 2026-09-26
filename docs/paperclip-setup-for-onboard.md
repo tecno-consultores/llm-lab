@@ -3,7 +3,7 @@
 * Before setting up the paperclip container, you must getting up the following containers:
 
 ```bash
-ocker compose -f docker-compose.yml --env-file env.example --profile proxy --profile omniroute up -d
+docker compose -f docker-compose.yml --env-file env.example --profile proxy --profile omniroute up -d
 ```
 * omboard on omniroute and create an api key
 

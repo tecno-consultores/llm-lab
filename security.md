@@ -49,3 +49,16 @@ To recreate the secrets files, execute the following:
 ```bash
 echo -n $(dd if=/dev/urandom bs=1 count=64 2>/dev/null | base64 -w 0 | tr -dc _A-Z-a-z-0-9 | cut -c 1-32) > ./secrets/filename.txt 
 ```
+-------------------------------
+
+* To generate the JWT_SECRET for Omniroute, run the following:
+
+```bash
+openssl rand -base64 48
+```
+
+* To generate the API_KEY_SECRET and STORAGE_ENCRYPTION_KEY for Omniroute, execute the following:
+  
+```bash
+openssl rand -hex 32
+```

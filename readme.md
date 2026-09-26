@@ -25,7 +25,6 @@ Profiles you can run:
 | [EvolutionAPI](https://github.com/evolution-foundation/evolution-api) | ✅ | ✅ | |  | postgres / KeyDB | --profile evolutionapi |
 | [Opencode](https://github.com/anomalyco/opencode) | ✅ | ✅ | | ✅ | | --profile opencode |
 | [Hermes-agent](https://github.com/nousresearch/hermes-agent) | ✅ | ✅ |  | ✅ | | --profile hermes |
-| [Paperclip](https://github.com/paperclipai/paperclip) | ✅ | ✅ |  | ❌ | postgres | --profile paperclip |
 
 Complementary services:
 
@@ -55,7 +54,6 @@ Healthcheck, ports and URLs:
 | Browserless | ✅ | 3000 | | http://browserless:3000/docs |
 | OmniRoute | ✅ | 20128 | http://127.0.0.1:20128 | http://omniroute:20128/v1 |
 | Hermes-opencode-bridge | ✅ | 8000 | | http://acp-orchestrator:8000/v1/agent/task |
-| Paperclip | ✅ | 3100 | http://localhost:3100 | |
 ------
 
 To stop and remove all containers use:

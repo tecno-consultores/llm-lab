@@ -1,122 +1,149 @@
-* commit a2194cb231a3a5f70c50ebf7f1a81eb26f96e916 (HEAD -> develop, origin/develop)
+* commit edc2b9632fed19b8f1cb8a58021c0737b2786a20 (HEAD -> develop, origin/develop)
 | Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 26 17:25:28 2026 -0400
-| 
-|     * se elimina paperclip
-| 
-* commit d87bcfff76e8d9f23e2a83675d055c77b5f0b807
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 26 14:15:28 2026 -0400
-| 
-|     * changelog
-| 
-* commit c004209d847100fb404e9200dae9313d622176cb
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 26 14:15:26 2026 -0400
-| 
-|     * bugfix
-| 
-* commit 7765182a16a572c4ed9cabe1956ee4156eae5622
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 26 14:13:46 2026 -0400
-| 
-|     * changelog
-| 
-* commit ad1e8c833d2da83331773e1dd376ed5c84bc31be
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 26 14:13:45 2026 -0400
-| 
-|     * readme
-| 
-* commit 3ae4c96a38c79684aa4b66bf0d0ab28738a2dd96
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 26 13:28:34 2026 -0400
-| 
-|     * changelog
-| 
-* commit 4cae16b9eeccfe025025a068cb226e46d42632f0
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 26 13:28:32 2026 -0400
-| 
-|     * bugfix
-| 
-* commit e3ee2b0025ec21313acfe6eb7f8d660839af7f95
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 26 13:17:56 2026 -0400
-| 
-|     * changelog
-| 
-* commit 56344b99f04f99ba146a4eb0b9791e3780b247c2
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Sat Sep 26 13:17:54 2026 -0400
-| 
-|     * bugfix
-| 
-* commit 1a1fddfa8de2520346011bc33b4be58d92a467cf
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Fri Sep 25 16:39:37 2026 -0400
-| 
-|     * changelog
-| 
-* commit e16092f1f00b74fd07308cc05c335cdc3d62bb47
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Fri Sep 25 16:39:35 2026 -0400
-| 
-|     * bugfix
-| 
-* commit ab0d9247260de5cc8211b17c0983984782a79023
-| Author: Jesus Palencia <sinfallas@gmail.com>
-| Date:   Fri Sep 25 15:47:20 2026 -0400
+| Date:   Mon Sep 28 20:54:33 2026 -0400
 | 
 |     Actualizacion automatica
 | 
-* commit 2660e6e7e94e9ccc9c793f19706cc4a846f59f32
-| Author: Sinfallas <sinfallas@yahoo.com>
-| Date:   Fri Sep 25 14:36:53 2026 -0400
+* commit d428e59ff5b0e5ec5d97d735b8d349b5b4715d30
+| Author: Jesus Palencia <sinfallas@gmail.com>
+| Date:   Sun Sep 27 11:56:33 2026 -0400
 | 
-|     Add files via upload
-| 
-* commit 537f52431ce4d4153765d6a9dd58e03b6462d923
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri Sep 25 13:45:36 2026 -0400
-| 
-|     Change Paperclip URL to localhost
+|     * env
 |     
-|     Updated Paperclip URL from 127.0.0.1 to localhost.
-| 
-* commit c14409df793eaf79df32cc1cea1f9709d676e22c
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri Sep 25 13:43:20 2026 -0400
-| 
-|     Update security.md with secret generation instructions
-|     
-|     Added instructions for generating JWT_SECRET, API_KEY_SECRET, and STORAGE_ENCRYPTION_KEY.
-| 
-* commit 9b10e5c33eee526eb98df947ba36901c303dd8bc
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri Sep 25 13:43:05 2026 -0400
-| 
-|     Update environment variable comments
-|     
-|     Updated environment variable comments to refer to security documentation.
-| 
-* commit 2834ba0ab50fce26a30f56d442ef3a0b38295a40
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri Sep 25 13:34:26 2026 -0400
-| 
-|     Update paperclip setup documentation
-|     
-|     Added instructions for setting up dependencies and activating the Paperclip container.
-| 
-* commit acb2ef1bb5de52d5d8da80d3c04bf300ce4233f2
-| Author: Sinfallas <sinfallas@gmail.com>
-| Date:   Fri Sep 25 13:29:58 2026 -0400
-| 
-|     Update Paperclip service URL in readme
-|     
-|     Added missing URL for Paperclip service in the documentation.
-|     
-| *   commit ff8f22a735170965e1e1a0e0e35e5c43b997ed9b (origin/main, origin/HEAD, main)
+| *   commit 60b55c2b7c929884e1f2ab506838398a809583f8 (origin/main, origin/HEAD, main)
+| |\  Merge: ff8f22a c2ab77b
+| |/  Author: Sinfallas <sinfallas@gmail.com>
+|/|   Date:   Sat Sep 26 17:26:18 2026 -0400
+| |   
+| |       Merge pull request #171 from tecno-consultores/develop
+| |       
+| |       Develop
+| | 
+* | commit c2ab77b63f18a5ce6ae0fb9db6639a42b520d7d9
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 26 17:25:30 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit a2194cb231a3a5f70c50ebf7f1a81eb26f96e916
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 26 17:25:28 2026 -0400
+| | 
+| |     * se elimina paperclip
+| | 
+* | commit d87bcfff76e8d9f23e2a83675d055c77b5f0b807
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 26 14:15:28 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit c004209d847100fb404e9200dae9313d622176cb
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 26 14:15:26 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit 7765182a16a572c4ed9cabe1956ee4156eae5622
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 26 14:13:46 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit ad1e8c833d2da83331773e1dd376ed5c84bc31be
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 26 14:13:45 2026 -0400
+| | 
+| |     * readme
+| | 
+* | commit 3ae4c96a38c79684aa4b66bf0d0ab28738a2dd96
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 26 13:28:34 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 4cae16b9eeccfe025025a068cb226e46d42632f0
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 26 13:28:32 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit e3ee2b0025ec21313acfe6eb7f8d660839af7f95
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 26 13:17:56 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit 56344b99f04f99ba146a4eb0b9791e3780b247c2
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Sat Sep 26 13:17:54 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit 1a1fddfa8de2520346011bc33b4be58d92a467cf
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri Sep 25 16:39:37 2026 -0400
+| | 
+| |     * changelog
+| | 
+* | commit e16092f1f00b74fd07308cc05c335cdc3d62bb47
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri Sep 25 16:39:35 2026 -0400
+| | 
+| |     * bugfix
+| | 
+* | commit ab0d9247260de5cc8211b17c0983984782a79023
+| | Author: Jesus Palencia <sinfallas@gmail.com>
+| | Date:   Fri Sep 25 15:47:20 2026 -0400
+| | 
+| |     Actualizacion automatica
+| | 
+* | commit 2660e6e7e94e9ccc9c793f19706cc4a846f59f32
+| | Author: Sinfallas <sinfallas@yahoo.com>
+| | Date:   Fri Sep 25 14:36:53 2026 -0400
+| | 
+| |     Add files via upload
+| | 
+* | commit 537f52431ce4d4153765d6a9dd58e03b6462d923
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Sep 25 13:45:36 2026 -0400
+| | 
+| |     Change Paperclip URL to localhost
+| |     
+| |     Updated Paperclip URL from 127.0.0.1 to localhost.
+| | 
+* | commit c14409df793eaf79df32cc1cea1f9709d676e22c
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Sep 25 13:43:20 2026 -0400
+| | 
+| |     Update security.md with secret generation instructions
+| |     
+| |     Added instructions for generating JWT_SECRET, API_KEY_SECRET, and STORAGE_ENCRYPTION_KEY.
+| | 
+* | commit 9b10e5c33eee526eb98df947ba36901c303dd8bc
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Sep 25 13:43:05 2026 -0400
+| | 
+| |     Update environment variable comments
+| |     
+| |     Updated environment variable comments to refer to security documentation.
+| | 
+* | commit 2834ba0ab50fce26a30f56d442ef3a0b38295a40
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Sep 25 13:34:26 2026 -0400
+| | 
+| |     Update paperclip setup documentation
+| |     
+| |     Added instructions for setting up dependencies and activating the Paperclip container.
+| | 
+* | commit acb2ef1bb5de52d5d8da80d3c04bf300ce4233f2
+| | Author: Sinfallas <sinfallas@gmail.com>
+| | Date:   Fri Sep 25 13:29:58 2026 -0400
+| | 
+| |     Update Paperclip service URL in readme
+| |     
+| |     Added missing URL for Paperclip service in the documentation.
+| |   
+| *   commit ff8f22a735170965e1e1a0e0e35e5c43b997ed9b
 | |\  Merge: 4db4087 58e6993
 | |/  Author: Sinfallas <sinfallas@gmail.com>
 |/|   Date:   Fri Sep 25 13:21:39 2026 -0400

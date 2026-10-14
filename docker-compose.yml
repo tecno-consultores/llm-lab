@@ -965,10 +965,6 @@ services:
     proxy:
       <<: *proxy-base
       profiles: ["proxy"]
-      networks:
-        default:
-          aliases:
-            - api.openai.com
 
     searxng:
       <<: *searxng-base

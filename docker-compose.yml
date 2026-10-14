@@ -7,6 +7,8 @@ x-ollama-base: &ollama-base
     restart: ${restart}
     stdin_open: true
     tty: true
+    group_add:
+      - video
 #    ports:
 #      - ${OPORT}:11434
 #    ulimits:
@@ -1011,4 +1013,3 @@ services:
             condition: service_started
           hermes:
             condition: service_started
-

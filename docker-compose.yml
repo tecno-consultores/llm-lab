@@ -7,6 +7,8 @@ x-ollama-base: &ollama-base
     restart: ${restart}
     stdin_open: true
     tty: true
+    group_add:
+      - video
 #    ports:
 #      - ${OPORT}:11434
 #    ulimits:
@@ -557,10 +559,10 @@ x-opencode-base: &opencode-base
     tty: true
     environment:
       - TZ=${TIMEZONE}
-      - OPENCODE_CONFIG_CONTENT=${OPENCODE_CONFIG_CONTENT}
+      - OPENCODE_CONFIG_CONTENT={"$$schema":"https://opencode.ai/config.json","provider":{"ollama":{"npm":"@ai-sdk/openai-compatible","name":"Ollama (local)","options":{"baseURL":"http://${ohostname}:${OPORT}/v1"},"models":{"${ollamamodel}:${ollamaquant}":{"name":"Ollama"}}},"omniroute":{"npm":"@ai-sdk/openai-compatible","name":"OmniRoute","options":{"baseURL":"http://${omniname}:${omniport}/v1","apiKey":"${omniroute_apikey}"},"models":{"auto":{"name":"Auto-Combo"}}}}}
 #      - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME} # uncomment to enable user and password
 #      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD} # uncomment to enable user and password
-#      - OPENAI_API_KEY=${OPENAI_API_KEY} # to use openai	
+#      - OPENAI_API_KEY=${OPENAI_API_KEY}
 #      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 #      - GEMINI_API_KEY=${GEMINI_API_KEY}
     ports:
@@ -965,10 +967,6 @@ services:
     proxy:
       <<: *proxy-base
       profiles: ["proxy"]
-      networks:
-        default:
-          aliases:
-            - api.openai.com
 
     searxng:
       <<: *searxng-base
@@ -1015,4 +1013,3 @@ services:
             condition: service_started
           hermes:
             condition: service_started
-

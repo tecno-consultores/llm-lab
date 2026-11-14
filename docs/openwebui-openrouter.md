@@ -1,11 +1,17 @@
-# Openrouter
+# OpenWebUI + OpenRouter
 
-Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
+Made by: [Tecno Consultores](https://www.tecnoconsultores.net/)
 
-To connect Open WebUI with OpenRouter
+To connect OpenWebUI with OpenRouter:
 
-* Go to **administration**, then **settings** and **connections**
-* Enable **API OpenAI** 
-* Click on the gear icon and change the OpenAI URL to: **https://openrouter.ai/api/v1**
-* Add the openrouter apikey to the **Bearer** field
-* Finally, click save.
+1. Ensure `ENABLE_OPENAI_API=true` is set in your `.env` file before starting `--profile openwebui`.
+2. Open OpenWebUI in your browser and go to **Admin Panel → Settings → Connections**.
+3. Under **OpenAI API**, enable the connection and click the **gear** icon (or **+** to add a connection).
+4. Set the **API Base URL** to:
+
+   ```text
+   https://openrouter.ai/api/v1
+   ```
+
+5. Paste your OpenRouter API key into the **API Key / Bearer** field.
+6. Click **Save**.

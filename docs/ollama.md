@@ -1,32 +1,38 @@
-# ollama
+# Ollama
 
-to create model:
+1. Start an Ollama profile (`--profile ollama-cpu`, `--profile ollama-nvidia`, or `--profile ollama-amd`).
+2. Create a custom model using a `Modelfile` (see [Modelfile.example](./Modelfile.example)):
+
+   ```bash
+   docker cp docs/Modelfile.example ollama:/tmp/Modelfile
+   docker exec -it ollama ollama create prueba -f /tmp/Modelfile
+   ```
+
+## Models Used for Testing
+
+* `qwen3.5:9b`
+* `hermes3:8b`
+* `gemma4:e2b-it-qat`
+* `nomic-embed-text-v2-moe`
+* `gemma-4-12B-coder-fable5-composer2.5-v1-GGUF` (from Hugging Face)
+
+Pull a registry model:
 
 ```bash
-ollama create prueba -f Modelfile
+docker exec -it ollama ollama pull gemma4:e2b-it-qat
 ```
 
-This is a list of the models used for testing
-
-* qwen3.5:9b
-* hermes3:8b
-* gemma4:e2b-it-qat
-* nomic-embed-text-v2-moe
-* gemma-4-12B-coder-fable5-composer2.5-v1-GGUF (from huggingface)
+Run a Hugging Face GGUF model:
 
 ```bash
-ollama pull gemma4:e2b-it-qat
+docker exec -it ollama ollama run hf.co/yuxinlu1/gemma-4-12B-coder-fable5-composer2.5-v1-GGUF:Q4_K_M
 ```
 
-+ To download from huggingface:
+## Disable Thinking Output in Interactive Sessions
 
-```bash
-ollama run hf.co/yuxinlu1/gemma-4-12B-coder-fable5-composer2.5-v1-GGUF:Q4_K_M
-```
+Inside an `ollama run` prompt session:
 
-to deactivate the thought inside ollama:
-
-```bash
+```text
 /set nothink
 /save
 ```

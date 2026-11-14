@@ -49,13 +49,12 @@ x-openwebui-base: &openwebui-base
       - ENABLE_NOTES=false
       - ENABLE_AUTOMATIONS=false
       - ENABLE_MEMORIES=false
-      - ENABLE_EASTER_EGGS==false
-      - ENABLE_TITLE_GENERATION=%{ENABLE_TITLE_GENERATION}
+      - ENABLE_EASTER_EGGS=false
+      - ENABLE_TITLE_GENERATION=${ENABLE_TITLE_GENERATION}
       - ENABLE_FOLLOW_UP_GENERATION=${ENABLE_FOLLOW_UP_GENERATION}
       - ENABLE_AUTOCOMPLETE_GENERATION=${ENABLE_AUTOCOMPLETE_GENERATION}
       - ENABLE_TAGS_GENERATION=${ENABLE_TAGS_GENERATION}
       - ENABLE_BASE_MODELS_CACHE=${ENABLE_BASE_MODELS_CACHE}
-      - MODELS_CACHE_TTL=10
       - USE_CUDA=${USE_CUDA}
       - SHOW_ADMIN_DETAILS=true
       - DEFAULT_USER_ROLE=pending
@@ -64,12 +63,10 @@ x-openwebui-base: &openwebui-base
       - ENABLE_OLLAMA_API=${ENABLE_OLLAMA_API}
       - ENABLE_OPENAI_API=${ENABLE_OPENAI_API}
       - OPENAI_API_BASE_URL=${OPENAI_API_BASE_URL}
-      - ENABLE_AUTOCOMPLETE_GENERATION=false
       - AUTOCOMPLETE_GENERATION_INPUT_MAX_LENGTH=-1
       - ENABLE_EVALUATION_ARENA_MODELS=false
       - ENABLE_MESSAGE_RATING=true
       - ENABLE_COMMUNITY_SHARING=false
-      - ENABLE_TAGS_GENERATION=true
       - ENABLE_FORWARD_USER_INFO_HEADERS=${ENABLE_FORWARD_USER_INFO_HEADERS}
       - WEBUI_SESSION_COOKIE_SAME_SITE=strict
       - WEBUI_SESSION_COOKIE_SECURE=true
@@ -210,7 +207,7 @@ x-n8n-base: &n8n-base
       - N8N_SANDBOX_SERVICE_URL=http://${sandapi}:8080
       - N8N_INSTANCE_AI_SANDBOX_API_KEY=${SANDBOX_API_KEYS}
       - N8N_SANDBOX_SERVICE_API_KEY=${SANDBOX_API_KEYS}
-      - N8N_INSTANCE_AI_SEARXNG_URL=http://${searxnghostname}:${psearch}
+      - N8N_INSTANCE_AI_SEARXNG_URL=http://${searxnghostname}:8080
       - N8N_UNVERIFIED_PACKAGES_ENABLED=true
       - N8N_RUNNERS_TASK_TIMEOUT=60
       - N8N_COMPRESSION_NODE_MAX_ZIP_ENTRIES=1000
@@ -452,7 +449,7 @@ x-proxy-base: &proxy-base
       resources:
         limits:
           cpus: '0.5'
-          memory: 128M
+          memory: 512M
     healthcheck:
       test: ["CMD", "/usr/bin/check-health"]
       start_period: 30s
@@ -787,8 +784,6 @@ services:
         interval: 30s
         timeout: 10s
         retries: 3
-      links:
-        - keydb
       depends_on:
         postgres:
           condition: service_healthy
@@ -813,8 +808,6 @@ services:
         interval: 30s
         timeout: 10s
         retries: 3
-      links:
-        - keydb
       depends_on:
         postgres:
           condition: service_healthy
@@ -837,8 +830,6 @@ services:
         interval: 30s
         timeout: 10s
         retries: 3
-      links:
-        - keydb
       depends_on:
         postgres:
           condition: service_healthy
@@ -876,8 +867,6 @@ services:
     openwebui:
       <<: *openwebui-base
       profiles: ["openwebui", "openaibridge"]
-      links:
-        - keydb
       depends_on:
         postgres:
           condition: service_healthy
@@ -915,7 +904,6 @@ services:
         - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
         - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
         - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
-        - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
         - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
         - HSA_OVERRIDE_GFX_VERSION=${HSA_OVERRIDE_GFX_VERSION}
         - OLLAMA_IGPU_ENABLE=${OLLAMA_IGPU_ENABLE}
@@ -944,7 +932,6 @@ services:
         - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
         - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
         - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
-        - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
         - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
 
     ollama-cpu:
@@ -961,7 +948,6 @@ services:
         - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION}
         - OLLAMA_KV_CACHE_TYPE=${OLLAMA_KV_CACHE_TYPE}
         - OLLAMA_LOAD_TIMEOUT=${OLLAMA_LOAD_TIMEOUT}
-        - OLLAMA_MAX_QUEUE=${OLLAMA_MAX_QUEUE}
         - OLLAMA_CONTEXT_LENGTH=${OLLAMA_CONTEXT_LENGTH}
 
     proxy:
@@ -975,8 +961,6 @@ services:
     evolutionapi:
       <<: *evolution-base
       profiles: [ "evolutionapi" ]
-      links:
-        - keydb
       depends_on:
         postgres:
           condition: service_healthy

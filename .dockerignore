@@ -1,23 +1,46 @@
+# Git & CI/CD
 .git
+.github/
 .gitignore
-Dockerfile
-docker-compose.yml
+
+# IDE
 .idea/
+
+# Secrets & Environment
 .env
+secrets/
+*.key
+*.crt
+*.pem
+
+# Documentation & Governance
+docs/
+*.md
+LICENSE
+
+# QA & AST artifacts
+graphify-out/
+.agents/
+
+# Build & Runtime Files
+docker-compose.yml
+legacy/
+init/
+misc/
+
+# Local persistent volumes & workspaces
 n8n/
 openwebui/
 pgadmin_data/
 postgres/
-init/
 qdrant/
 redis/
-n8n/
 evolution_instances/
 ollama/
-misc/
 broker/
 whisper/
 cache-whisper/
 proxy/
 searxng/
 mongodb_data/
+opencode-workspace/

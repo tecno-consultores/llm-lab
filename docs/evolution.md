@@ -1,20 +1,23 @@
 # Evolution API
 
-* esta es una lista de pasos para configurar una instancia:
+Checklist for configuring an instance in Evolution API (`--profile evolutionapi`):
 
-instancia:
-- Nombre
-- Baileys
+## Instance Settings
 
-Configurations:
-- reject calls
-- ignore groups
-- always online
-- read messages
+* **Name:** Choose an instance identifier
+* **Channel:** `Baileys`
 
-Events/webhook:
-- enable
-- webhook base64 (images)
-- message upsert
+## Behavior Configurations
 
-NOTA: en el siguiente video doy una explicacion detallada: https://youtu.be/X_B0INNSmj0
+* Reject calls
+* Ignore groups
+* Always online
+* Read messages
+
+## Events / Webhook
+
+* Enable webhook
+* Enable webhook base64 (for image payloads)
+* Subscribe to `MESSAGES_UPSERT` (`message upsert`)
+
+**Video Walkthrough:** A detailed walkthrough is available at https://youtu.be/X_B0INNSmj0.

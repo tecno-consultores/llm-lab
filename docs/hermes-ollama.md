@@ -1,10 +1,16 @@
-# hermes-agent
+# Hermes Agent + Ollama
 
-To connect hermes with ollama run:
+1. Ensure both `--profile hermes` and an Ollama profile (for example `--profile ollama-cpu`, `--profile ollama-nvidia`, or `--profile ollama-amd`) are running.
+2. Select a model provider inside the `hermes` container:
 
-```bash
-docker exec -it hermes hermes model
-```
+   ```bash
+   docker exec -it hermes hermes model
+   ```
 
-select **Custom endpoint** and put the following url: **http://ollama:11434/v1** When prompted for the apikey, leave it blank.
+3. Choose **Custom endpoint** and enter:
 
+   ```text
+   http://ollama:11434/v1
+   ```
+
+4. Leave the API key blank when prompted.

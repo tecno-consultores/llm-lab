@@ -1,4 +1,4 @@
-# Contributor Code of Conduct:
+# Contributor Code of Conduct
 
 ## Our Pledge
 
@@ -34,7 +34,12 @@ This Code of Conduct applies within all project community spaces, and also appli
 
 ## Enforcement and Reporting
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported confidentially and directly to the repository administrators. All alerts will be reviewed carefully and investigated, maintaining the confidentiality of the affected person and the reporter of the incident.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported confidentially to the repository maintainers through:
+
+* **Private Maintainer Contact:** Direct message or email via the maintainer profile in [AUTHORS.md](./AUTHORS.md) (`@sinfallas`) or the official [Tecno Consultores](https://www.tecnoconsultores.net/) contact channels.
+* **GitHub Private Reporting:** Private advisory/contact channels on the `tecno-consultores/llm-lab` repository when reporting incidents involving repository content or sensitive disclosures.
+
+All reports will be reviewed carefully and investigated promptly while protecting the confidentiality of both the reporter and the affected individuals.
 
 ## Attribution
 

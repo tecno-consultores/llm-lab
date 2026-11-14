@@ -1,39 +1,44 @@
-## set up the dependencies 
+# Paperclip Onboarding Setup (Archived)
 
-* Before setting up the paperclip container, you must getting up the following containers:
+> [!WARNING]
+> **Archived Service:** The `paperclip` container and `--profile paperclip` were removed from `docker-compose.yml` in commit `a2194cb`. This guide is retained strictly as historical reference.
+
+## 1. Start Dependencies
+
+Start the reverse proxy and OmniRoute profiles before onboarding:
 
 ```bash
-docker compose -f docker-compose.yml --env-file env.example --profile proxy --profile omniroute up -d
+docker compose -f docker-compose.yml --env-file .env --profile proxy --profile omniroute up -d
 ```
-* omboard on omniroute and create an api key
 
+Complete onboarding inside OmniRoute and generate an API key.
 
-## Create SSL certificate
+## 2. Create a Local Lab SSL Certificate
 
-* Run the following command on the host: 
+> [!CAUTION]
+> Generating a self-signed certificate for `/CN=api.openai.com` is intended **exclusively for isolated local lab interception**. Do not install custom root/override certificates for third-party domains on shared or production hosts.
+
+Run on the host:
 
 ```bash
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout openai.key -out openai.crt -subj "/CN=api.openai.com"
 ```
 
-## Setup Nginx proxy manager
+## 3. Configure NGINX Proxy Manager
 
-* Log in to your Nginx Proxy Manager web panel.
+1. Log in to the NGINX Proxy Manager web panel (`http://127.0.0.1:81`).
+2. Go to **SSL Certificates → Add SSL Certificate → Custom**, upload `openai.crt` and `openai.key`, and save.
+3. Go to **Hosts → Proxy Hosts → Add Proxy Host**. On the **Details** tab set:
+   * **Domain Names:** `api.openai.com`
+   * **Scheme:** `http`
+   * **Forward Hostname / IP:** `omniroute`
+   * **Forward Port:** `20128`
+4. On the **SSL** tab, select the custom certificate you imported, enable **Force SSL**, and save.
 
-* Go to SSL Certificates -> Add SSL Certificate -> Custom. Upload the `openai.crt` and `openai.key` files you created in step 1 and save.
+## 4. Starting Paperclip (Legacy)
 
-* Go to Hosts -> Proxy Hosts and select Add Proxy Host. On the Details tab, configure the following:
-- Domain Names: api.openai.com
-- Scheme: http
-- Forward Hostname / IP: omniroute
-- Forward Port: 20128 (this is the internal port assigned to your OmniRoute container).
-
-* On the SSL tab, expand the menu, select the Custom certificate you just imported, check the Force SSL option, and save.
-
-# Finishing
-
-* Finally, I activated the Paperclip container.
+On legacy commits prior to `a2194cb`, the container was started with:
 
 ```bash
-docker compose -f docker-compose.yml --env-file env.example --profile paperclip up -d
+docker compose -f docker-compose.yml --env-file .env --profile paperclip up -d
 ```

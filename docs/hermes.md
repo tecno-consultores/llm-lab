@@ -1,22 +1,27 @@
-# hermes-agent
+# Hermes Agent
 
-Made by: [Tecno Consultores 2023](https://www.tecnoconsultores.net/)
+Made by: [Tecno Consultores](https://www.tecnoconsultores.net/)
 
-To run hermes initial setup, run
-
-```bash
-docker exec -it hermes hermes setup
-```
-
-To run Hermes from the terminal inside the container, run
+Start the Hermes profile before running interactive CLI commands:
 
 ```bash
-docker exec -it hermes hermes
+docker compose -f docker-compose.yml --env-file .env --profile hermes up -d
 ```
 
-And to run Hermes with the dashboard for terminal
+* Run initial setup:
 
-```bash
-docker exec -it hermes hermes --tui
-```
+  ```bash
+  docker exec -it hermes hermes setup
+  ```
 
+* Open the Hermes CLI inside the container:
+
+  ```bash
+  docker exec -it hermes hermes
+  ```
+
+* Launch Hermes with the terminal dashboard (`--tui`):
+
+  ```bash
+  docker exec -it hermes hermes --tui
+  ```

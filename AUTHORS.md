@@ -1,7 +1,9 @@
-# Developer:
+# Authors & Contributors
 
-* [Jesus Palencia](https://github.com/sinfallas)
+## Maintainer
 
-# Contributors:
+* **Jesus Palencia** — [@sinfallas](https://github.com/sinfallas) ([Tecno Consultores](https://www.tecnoconsultores.net/))
 
-* [Ernesto Crespo](https://github.com/ecrespo)
+## Contributors
+
+* **Ernesto Crespo** — [@ecrespo](https://github.com/ecrespo)

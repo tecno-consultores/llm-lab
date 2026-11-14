@@ -1,41 +1,49 @@
-# n8n-expressions
+# N8N Expressions Reference
 
-* generic UTC date and time:
-```bash
-{{ new Date().toISOString() }}
-```
+* Generic UTC date and time (ISO-8601):
 
-* date and time VE:
-```bash
-{{ new Date().toLocaleString('es-VE') }}
-```
+  ```javascript
+  {{ new Date().toISOString() }}
+  ```
 
-* date and time:
-```bash
-{{ $now }}
-```
+* Localized date and time (`es-VE`):
 
-* date and time in EPOCH format:
-```bash
-{{ Date.now(); }}
-```
+  ```javascript
+  {{ new Date().toLocaleString('es-VE') }}
+  ```
 
-* query:
-```bash
-{{ $json.query }}
-```
+* Luxon current timestamp:
 
-* from-ai:
-```bash
-{{ $fromAI("name", "The commenter's name", "string", "Jane Doe") }}
-```
+  ```javascript
+  {{ $now }}
+  ```
 
-* webhook openwebui chat input:
-```bash
-{{ $json.body.chatInput }}
-```
+* Current timestamp in Epoch milliseconds:
 
-* random number:
-```bash
-{{parseInt(Math.random()*10000000000000000)}}
-```
+  ```javascript
+  {{ Date.now() }}
+  ```
+
+* Query object from input JSON:
+
+  ```javascript
+  {{ $json.query }}
+  ```
+
+* AI Agent tool parameter (`$fromAI`):
+
+  ```javascript
+  {{ $fromAI("name", "The commenter's name", "string", "Jane Doe") }}
+  ```
+
+* OpenWebUI webhook chat input:
+
+  ```javascript
+  {{ $json.body.chatInput }}
+  ```
+
+* Pseudo-random integer *(for non-security identifiers only; prefer `crypto.randomUUID()` when cryptographic randomness is required)*:
+
+  ```javascript
+  {{ parseInt(Math.random() * 10000000000000000, 10) }}
+  ```

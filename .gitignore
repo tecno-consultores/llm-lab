@@ -1,12 +1,23 @@
+# IDE & Editor
 .idea/
+
+# Environment & Local TLS/Keys
 .env
+*.key
+*.crt
+*.pem
+
+# NOTE: ./secrets/*.txt files are tracked as bootstrap placeholders in Git.
+# After regenerating them locally, run:
+#   git update-index --skip-worktree secrets/*.txt
+
+# Local persistent volumes & workspaces
 n8n/
 openwebui/
 pgadmin_data/
 postgres/
 qdrant/
 redis/
-n8n/
 evolution_instances/
 ollama/
 broker/
@@ -16,4 +27,7 @@ proxy/
 searxng/
 mongodb_data/
 opencode-workspace/
-up.example
+
+# QA & AST artifacts
+graphify-out/
+.agents/.qa-evidence.json

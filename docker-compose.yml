@@ -335,7 +335,7 @@ x-n8n-sandbox-runner: &n8n-sandbox-runner
       retries: 3
 
 x-postgres-base: &postgres-base
-    image: postgres:latest
+    image: postgres:18
     hostname: ${DATABASE_HOST}
     container_name: ${DATABASE_HOST}
     pull_policy: ${pull_policy}
